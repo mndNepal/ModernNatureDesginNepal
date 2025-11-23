@@ -5,7 +5,6 @@ interface AllProductsViewProps {
   onProductSelect?: (product: UnifiedProduct) => void;
 }
 
-// Single unified products array with sequential IDs and essential fields only
 const products: UnifiedProduct[] = [
 
   { id: 'rug-001', name: 'Aankhi Jhyal', material: 'Hand-knotted Wool', size: "9'x12'", price: '$2,899', style: 'Traditional Persian', imageUrl: '/assets/images/products/AankhiJhyal.jpg' },
