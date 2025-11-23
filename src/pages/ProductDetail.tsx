@@ -18,7 +18,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -33,7 +33,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -48,7 +48,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -63,7 +63,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -78,7 +78,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -93,7 +93,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -108,7 +108,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -123,7 +123,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -138,7 +138,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -153,7 +153,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -168,7 +168,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -183,7 +183,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -198,7 +198,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -214,7 +214,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -229,7 +229,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -244,7 +244,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -259,7 +259,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -274,7 +274,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -289,7 +289,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -304,7 +304,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -319,7 +319,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -334,7 +334,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -349,7 +349,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -364,7 +364,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -379,7 +379,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -394,7 +394,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -409,7 +409,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -424,7 +424,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -439,7 +439,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -454,7 +454,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -469,7 +469,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -484,7 +484,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -499,7 +499,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -514,7 +514,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -529,7 +529,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -544,7 +544,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -559,7 +559,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -574,7 +574,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -589,7 +589,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -604,7 +604,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -619,7 +619,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -634,7 +634,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -649,7 +649,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -664,7 +664,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -679,7 +679,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -694,7 +694,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -709,7 +709,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -724,7 +724,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -739,7 +739,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -754,7 +754,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -769,7 +769,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -784,7 +784,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -799,7 +799,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -814,7 +814,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -829,7 +829,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -844,7 +844,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -859,7 +859,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -874,7 +874,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -889,7 +889,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -904,7 +904,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -919,7 +919,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -934,7 +934,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -949,7 +949,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -964,7 +964,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -979,7 +979,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -994,7 +994,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -1010,7 +1010,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -1026,7 +1026,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
@@ -1041,7 +1041,7 @@ const getAllProducts = (): DetailedProduct[] => {
       features: [
         'Hand-knotted by master artisans',
         'Premium yarn construction',
-        'Traditional Persian design',
+        'Lorem',
         'Fade-resistant colors',
         'Durable and long-lasting',
         'Easy to maintain'
