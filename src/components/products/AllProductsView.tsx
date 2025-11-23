@@ -87,8 +87,8 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-      {/* Centered Image Section */}
-      <div className="bg-[url('/public/assets/images/color-customizer/colorbox.png')] flex justify-center items-center mb-6">
+{/*      
+      <div className="flex justify-center items-center mb-6">
         <img
           src="/assets/images/color-customizer/ColorCustomizer.png"
           alt="Color Customizer"
@@ -97,7 +97,7 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
       </div>
 
 
-      {/* Search Input */}
+     
       <div className="mb-8 flex justify-end space-x-2">
         <input
           type="text"
@@ -107,6 +107,30 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
         <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-mint-white-900 transition">
           Search
         </button>
+      </div> */}
+
+
+      <div className="flex justify-between items-center mt-10 mb-10 px-4">
+        {/* Heading - Left */}
+        <h1 className="text-4xl md:text-4xl font-bold text-gray-900 items-center">
+          <img
+            src="/assets/images/color-customizer/ColorCustomizer.png"
+            alt="Color Customizer"
+            className="w-[300px] h-[100px] object-contain"
+          />
+        </h1>
+
+        {/* Search Input - Right */}
+        <div className="flex items-center space-x-2">
+          <input
+            type="text"
+            placeholder="Search products"
+            className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
+          />
+          <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
+            Search
+          </button>
+        </div>
       </div>
 
 

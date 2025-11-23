@@ -24,7 +24,7 @@ const ProductCard = ({ product, onProductClick }: ProductCardProps) => {
         <img
           src={product.imageUrl}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
