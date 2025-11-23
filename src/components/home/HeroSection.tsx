@@ -36,6 +36,30 @@ const heroSlides: HeroSlide[] = [
   }
 ];
 
+const heroinnerSlides: HeroSlide[] = [
+  {
+    id: 'slide-1',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png',
+    title: 'Interior Alchemy',
+    subtitle: 'Transform Your Space',
+    description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
+  },
+  {
+    id: 'slide-2',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png',
+    title: 'Artisan Heritage',
+    subtitle: 'Centuries of Craftsmanship',
+    description: 'Each rug tells a story of skilled artisans preserving ancient techniques for modern homes'
+  },
+  {
+    id: 'slide-3',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png',
+    title: 'Modern Living',
+    subtitle: 'Contemporary Comfort',
+    description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
+  }
+];
+
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -261,10 +285,10 @@ export default function HeroSection() {
                   <>
                     <img
                       src={imageLoadStates[heroSlides[currentSlide].id] !== false 
-                        ? heroSlides[currentSlide].image 
+                        ? heroinnerSlides[currentSlide].image 
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
-                      alt={`${heroSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
+                      alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
                       className={`w-full h-64 object-cover rounded-lg shadow-2xl transition-all duration-1000 ease-out hover:scale-105 ${
                         imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                       }`}
