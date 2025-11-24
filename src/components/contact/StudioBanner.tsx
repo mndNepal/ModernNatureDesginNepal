@@ -78,10 +78,10 @@ export default function StudioBanner() {
     setSending(true);
 
     emailjs.send(
-      "service_cltolcq",       // Your Service ID
-      "template_4az2lqr",      // Your Template ID
+      "service_t313slu",       // Your Service ID
+      "template_l2cywnd",      // Your Template ID
       formData,                // Form data
-      "QlmN6_dT_5bIvM0tL"      // Public Key
+      "WUgx70zG43S3EF8fw"      // Public Key
     )
     .then(() => {
       setSending(false);

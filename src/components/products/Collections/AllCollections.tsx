@@ -83,19 +83,33 @@ const carpets: Carpet[] = [
   { id: 'rug-072', name: 'Thaali', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737512/Thaali_kowibc.jpg' },
 ];
 
-
 const AllCollections: React.FC = () => {
   const [activeCarpet, setActiveCarpet] = useState<Carpet | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
   const itemsPerPage = 16;
 
-  const totalPages = Math.ceil(carpets.length / itemsPerPage);
+  // Filter carpets based on search query - only match names that START with the exact search query
+  const filteredCarpets = carpets.filter((carpet) => {
+    if (searchQuery.trim() === "") return true; // Show all if search is empty
+    return carpet.name.toLowerCase().startsWith(searchQuery.toLowerCase());
+  });
+
+  const totalPages = Math.ceil(filteredCarpets.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentCarpets = carpets.slice(startIndex, endIndex);
+  const currentCarpets = filteredCarpets.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
+  };
+
+  const handleSearch = () => {
+    setCurrentPage(1); // Reset to first page when searching
+  };
+
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
   };
 
   const handlePrevious = () => {
@@ -128,43 +142,53 @@ const AllCollections: React.FC = () => {
               <input
                 type="text"
                 placeholder="Search products"
+                value={searchQuery}
+                onChange={handleSearchInputChange}
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
                 className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
               />
-              <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
+              <button 
+                onClick={handleSearch}
+                className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+              >
                 Search
               </button>
             </div>
           </div>
 
-
-
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {currentCarpets.map((carpet) => (
-              <motion.div
-                key={carpet.id}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="bg-gray-200 rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col"
-                onClick={() => setActiveCarpet(carpet)}
-              >
-                {/* UPDATED — Image now fills entire card width */}
-                <div className="flex justify-center items-center bg-gray-200 h-[400px]">
-                  <img
-                    src={carpet.imageUrl}
-                    alt={carpet.name}
-                    className="w-full h-full"
-                  />
-                </div>
+            {currentCarpets.length > 0 ? (
+              currentCarpets.map((carpet) => (
+                <motion.div
+                  key={carpet.id}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                  className="bg-gray-200 rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col"
+                  onClick={() => setActiveCarpet(carpet)}
+                >
+                  {/* Image now fills entire card width */}
+                  <div className="flex justify-center items-center bg-gray-200 h-[400px]">
+                    <img
+                      src={carpet.imageUrl}
+                      alt={carpet.name}
+                      className="w-full h-full"
+                    />
+                  </div>
 
-                {/* Carpet name container */}
-                <div className="p-1 text-center bg-gray-200">
-                  <h2 className="text-lg font-semibold text-gray-800">
-                    {carpet.name}
-                  </h2>
-                </div>
-              </motion.div>
-            ))}
+                  {/* Carpet name container */}
+                  <div className="p-1 text-center bg-gray-200">
+                    <h2 className="text-lg font-semibold text-gray-800">
+                      {carpet.name}
+                    </h2>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-xl text-gray-600">No carpets found matching "{searchQuery}"</p>
+              </div>
+            )}
           </div>
 
           {/* Pagination Controls */}
@@ -202,7 +226,7 @@ const AllCollections: React.FC = () => {
           )}
         </div>
 
-        {/* Modal (UNCHANGED) */}
+        {/* Modal */}
         <AnimatePresence>
           {activeCarpet && (
             <motion.div
@@ -270,9 +294,7 @@ const AllCollections: React.FC = () => {
 
       <Footer />
     </>
-
   );
 };
 
 export default AllCollections;
-

@@ -343,15 +343,15 @@ export default function Navbar({ className = '' }: NavbarProps) {
     };
   }, []);
 
-  const handleMegaMenuToggle = (menu: string) => {
-    if (activeMegaMenu === menu) {
-      setActiveMegaMenu(null);
-    } else {
-      setActiveMegaMenu(menu);
-      // Calculate dropdown position after state update
-      setTimeout(() => calculateDropdownPosition(), 0);
-    }
-  };
+  // const handleMegaMenuToggle = (menu: string) => {
+  //   if (activeMegaMenu === menu) {
+  //     setActiveMegaMenu(null);
+  //   } else {
+  //     setActiveMegaMenu(menu);
+  //     // Calculate dropdown position after state update
+  //     setTimeout(() => calculateDropdownPosition(), 0);
+  //   }
+  // };
 
   // Hover handlers for Products button
   const handleMouseEnter = () => {
@@ -425,9 +425,9 @@ export default function Navbar({ className = '' }: NavbarProps) {
     }
   };
 
-  const handleMegaMenuClose = () => {
-    setActiveMegaMenu(null);
-  };
+  // const handleMegaMenuClose = () => {
+  //   setActiveMegaMenu(null);
+  // };
 
   // Search filtering logic
   useEffect(() => {
@@ -586,29 +586,29 @@ export default function Navbar({ className = '' }: NavbarProps) {
     };
   }, [isSearchExpanded]);
 
-  const handleSearchToggle = () => {
-    setIsSearchExpanded(!isSearchExpanded);
-    if (isSearchExpanded) {
-      setSearchValue('');
-      setShowSearchResults(false);
-    }
-  };
+  // const handleSearchToggle = () => {
+  //   setIsSearchExpanded(!isSearchExpanded);
+  //   if (isSearchExpanded) {
+  //     setSearchValue('');
+  //     setShowSearchResults(false);
+  //   }
+  // };
 
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchValue.trim()) {
-      console.log('Search for:', searchValue);
-      // Handle search logic here
-    }
-  };
+  // const handleSearchSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (searchValue.trim()) {
+  //     console.log('Search for:', searchValue);
+  //     // Handle search logic here
+  //   }
+  // };
 
-  const handleSearchResultClick = (item: typeof searchData[0]) => {
-    console.log('Selected product:', item);
-    setSearchValue('');
-    setIsSearchExpanded(false);
-    setShowSearchResults(false);
-    // Here you could navigate to the product page or add to cart
-  };
+  // const handleSearchResultClick = (item: typeof searchData[0]) => {
+  //   console.log('Selected product:', item);
+  //   setSearchValue('');
+  //   setIsSearchExpanded(false);
+  //   setShowSearchResults(false);
+  //   // Here you could navigate to the product page or add to cart
+  // };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -636,7 +636,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
               <Link to="/">
                 <div className="flex items-center space-x-4">
                   <img
-                    src="/public/assets/images/navbar/MND_Logo.png"
+                    src="/assets/images/navbar/MND_Logo.png"
                     alt="logo"
                     className="h-16 w-16"
                   />

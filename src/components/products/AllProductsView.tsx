@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import ProductCard from './ProductCard';
 import { UnifiedProduct } from './ProductUtils';
 
@@ -76,40 +77,32 @@ const products: UnifiedProduct[] = [
   { id: 'rug-070', name: 'Kapaal', material: 'Polypropylene', size: "8'x10'", price: '$599', style: 'Weather Resistant', imageUrl: '/assets/images/products/Kapaal.jpg' },
   { id: 'rug-071', name: 'Phulchoki', material: 'Polypropylene', size: "8'x10'", price: '$599', style: 'Weather Resistant', imageUrl: '/assets/images/products/Phulchoki.jpg' },
   { id: 'rug-072', name: 'Thaali', material: 'Polypropylene', size: "8'x10'", price: '$599', style: 'Weather Resistant', imageUrl: '/assets/images/products/Thaali.jpg' },
-
-
 ];
 
 const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter products based on search query - only match names that START with the search query
+  const filteredProducts = products.filter((product) => {
+    if (searchQuery.trim() === "") return true; // Show all if search is empty
+    return product.name.toLowerCase().startsWith(searchQuery.toLowerCase());
+  });
+
   const handleProductClick = (product: UnifiedProduct) => {
     onProductSelect?.(product);
   };
 
+  const handleSearch = () => {
+    // Search logic is already reactive through filteredProducts
+    // This function can be used for additional actions if needed
+  };
+
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-{/*      
-      <div className="flex justify-center items-center mb-6">
-        <img
-          src="/assets/images/color-customizer/ColorCustomizer.png"
-          alt="Color Customizer"
-          className="w-[300px] h-[100px] object-contain mb-3 mt-3"
-        />
-      </div>
-
-
-     
-      <div className="mb-8 flex justify-end space-x-2">
-        <input
-          type="text"
-          placeholder="Search products"
-          className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
-        />
-        <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-mint-white-900 transition">
-          Search
-        </button>
-      </div> */}
-
-
       <div className="flex justify-between items-center mt-10 mb-10 px-4">
         {/* Heading - Left */}
         <h1 className="text-4xl md:text-4xl font-bold text-gray-900 items-center">
@@ -125,30 +118,39 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
           <input
             type="text"
             placeholder="Search products"
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
           />
-          <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
+          <button 
+            onClick={handleSearch}
+            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+          >
             Search
           </button>
         </div>
       </div>
 
-
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onProductClick={handleProductClick}
-          />
-        ))}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onProductClick={handleProductClick}
+            />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <p className="text-xl text-gray-600">No products found matching "{searchQuery}"</p>
+          </div>
+        )}
       </div>
     </div>
-
   );
 };
 
 export default AllProductsView;
 export type { AllProductsViewProps };
-

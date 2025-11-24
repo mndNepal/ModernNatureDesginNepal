@@ -15,21 +15,21 @@ interface ImageLoadState {
 const heroSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'assets/images/home/herosection/Altesphan.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763914063/832b2326-3b7c-4ac4-aec1-be2f78eb21b4_khljaa.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transform Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
   },
   {
     id: 'slide-2',
-    image: 'assets/images/home/herosection/Proflex.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763915179/71fa5173-6068-44f5-87b2-954410e3b1ed_vlp7sg.jpg',
     title: 'Artisan Heritage',
     subtitle: 'Centuries of Craftsmanship',
     description: 'Each rug tells a story of skilled artisans preserving ancient techniques for modern homes'
   },
   {
     id: 'slide-3',
-    image: 'assets/images/home/herosection/Sint-Zabiz.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763915733/f965caf0-3d02-42a1-ba91-57a807a274dc_jthikw.jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -39,21 +39,21 @@ const heroSlides: HeroSlide[] = [
 const heroinnerSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736726/Festival_Photorealistic_ulavyu.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transform Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
   },
   {
     id: 'slide-2',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737510/Chino_kkhyoi.jpg',
     title: 'Artisan Heritage',
     subtitle: 'Centuries of Craftsmanship',
     description: 'Each rug tells a story of skilled artisans preserving ancient techniques for modern homes'
   },
   {
     id: 'slide-3',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737840/Phulchoki_Photorealistic_xokuqk.jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -260,36 +260,24 @@ export default function HeroSection() {
                 <div className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-1000 delay-800 ease-out ${
                   isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}>
-                  {/* <button 
-                    onClick={() => scrollToSection('bestsellers')}
-                    className="bg-mint-green text-charcoal px-8 py-4 rounded-lg font-medium hover:bg-mint-green/90 hover:scale-105 transition-all duration-300 ease-out"
-                  >
-                    Shop Rugs
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('studio')}
-                    className="border-2 border-mint-green text-mint-green px-8 py-4 rounded-lg font-medium hover:bg-mint-green hover:text-charcoal hover:scale-105 transition-all duration-300 ease-out"
-                  >
-                    Visit Stores
-                  </button> */}
                 </div>
               </div>
             </div>
 
             {/* Right Content - Living Room Scene */}
-            <div className="hidden lg:block">
-              <div className={`relative transform transition-all duration-1000 delay-300 ease-out ${
+            <div  className={` relative transform transition-all duration-1000 delay-300 ease-out ${
                 isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
               }`}>
+              <div>
                 {imagesPreloaded ? (
-                  <>
+                  <div className='m-32 pl-10 pb-20'>
                     <img
                       src={imageLoadStates[heroSlides[currentSlide].id] !== false 
                         ? heroinnerSlides[currentSlide].image 
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
                       alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
-                      className={`w-full h-64 object-cover rounded-lg shadow-2xl transition-all duration-1000 ease-out hover:scale-105 ${
+                      className={` object-scale-down rounded-lg  transition-all duration-1000 ease-out hover:scale-105 ${
                         imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                       }`}
                       onError={(e) => {
@@ -300,10 +288,10 @@ export default function HeroSection() {
                         }
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent rounded-lg" />
-                  </>
-                ) : (
-                  <div className="w-full h-64 bg-charcoal/20 rounded-lg shadow-2xl flex items-center justify-center">
+                  
+                  </div>
+                  ) : (
+                  <div className="w-48 h-48 bg-charcoal/20 rounded-lg shadow-2xl flex items-center justify-center">
                     <div className="w-6 h-6 border-2 border-mint-green border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
