@@ -3,7 +3,7 @@ import { Product } from '@/components/home/ProductCard';
 
 // Unified Product Interface
 export interface UnifiedProduct {
-  id: string;
+  id: string; 
   name: string;
   category?: string;
   subcategoryId?: string;

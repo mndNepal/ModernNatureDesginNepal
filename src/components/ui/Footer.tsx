@@ -121,13 +121,16 @@ export default function Footer(): JSX.Element {
             {/* BRAND */}
             <div
               className={`lg:col-span-2 transform transition-all duration-800 ease-out ${animatedElements.has("brand")
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
                 }`}
             >
-              <h2 className="font-serif text-xl mb-3">
-                Modern Nature Design Nepal
-              </h2>
+              <div className="flex flex-column gap-2">
+                <img src="/public/assets/images/navbar/MND_Logo.png" className="h-8 w-8" />
+                <h2 className="font-serif text-xl mb-3">
+                  Modern Nature Design Nepal
+                </h2>
+              </div>
               <p className="text-off-white/70 text-sm mb-4">
                 Hand-Knotted in Nepal, each rug is a masterpiece of heritage and
                 precision, seamlessly blending traditional weaving artistry with
@@ -143,8 +146,8 @@ export default function Footer(): JSX.Element {
               <div
                 key={idx}
                 className={`transform transition-all duration-800 ${animatedElements.has("links")
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
                   }`}
               >
                 <h3 className="font-medium mb-3 text-sm">
@@ -152,11 +155,11 @@ export default function Footer(): JSX.Element {
                 </h3>
                 <ul className="space-y-2">
                   {group.links.map((l, index) => (
-                    <li key={index} className="flex items-center">
-                      {l.icon && <span className="">{l.icon}</span>}
+                    <li key={index} className="flex items-center space-x-2 whitespace-nowrap">
+                      {l.icon && <span>{l.icon}</span>}
                       <button
                         onClick={l.action}
-                        className="text-off-white/70 hover:text-mint-green text-sm"
+                        className="text-off-white/70 hover:text-mint-green text-sm whitespace-nowrap"
                       >
                         {l.name}
                       </button>
@@ -168,8 +171,8 @@ export default function Footer(): JSX.Element {
 
             <div
               className={`transform transition-all duration-800 ${animatedElements.has("social")
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
                 }`}
             >
               <h3 className="font-medium mb-3 text-sm ml-28">Follow Us</h3>

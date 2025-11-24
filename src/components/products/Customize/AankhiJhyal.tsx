@@ -1037,7 +1037,7 @@ const colorData1000 = [
 
 
 const AankhiJhyal = () => {
-  const INITIAL_COLORS: { [key in 1 | 2 ]: string } = {
+  const INITIAL_COLORS: { [key in 1 | 2]: string } = {
     1: "#b2945f",
     2: "#191e2a",
 
@@ -1192,9 +1192,26 @@ const AankhiJhyal = () => {
 
         <div className="flex w-full max-w-7xl gap-6">
           <div className="w-2/5 relative">
-            <div className='mb-5'>
-              <h2>Description of Carpet</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus nisi impedit obcaecati quis quam, doloribus corporis ex, minima aut iste odio sed harum sunt totam itaque voluptas alias. Dolor ex vel, temporibus excepturi facere tempora quod repudiandae deleniti Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ex corporis itaque aut. Eveniet numquam quam consequuntur, aliquam soluta unde deserunt nulla.</p>
+            <div className="mb-5">
+              <h2 className="text-xl font-semibold mb-3">Key Features</h2>
+              <ul className="space-y-2">
+                {[
+                  'Hand-knotted by master artisans',
+                  'Premium yarn construction',
+                  'Lorem',
+                  'Fade-resistant colors',
+                  'Durable and long-lasting',
+                  'Easy to maintain'
+                ].map((feature, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start"
+                  >
+                    <span className="text-green-600 mr-2">✔</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div
               className="border bg-gray-50"
