@@ -159,7 +159,7 @@ export default function Footer(): JSX.Element {
                       {l.icon && <span>{l.icon}</span>}
                       <button
                         onClick={l.action}
-                        className="text-off-white/70 hover:text-mint-green text-sm whitespace-nowrap"
+                        className="text-off-white/70 hover:text-gray-400 text-sm whitespace-nowrap"
                       >
                         {l.name}
                       </button>

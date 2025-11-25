@@ -97,15 +97,15 @@ function ExperienceCardComponent({ card, isVisible, index }: ExperienceCardCompo
     >
       {/* Icon */}
       <div className="flex justify-center mb-3 flex-shrink-0">
-        <div className="p-3 bg-mint-green/10 rounded-full text-mint-green group-hover:bg-mint-green group-hover:text-white transition-all duration-300">
-          <div className="w-7 h-7">{card.icon}</div>
+        <div className="p-3 rounded-full text-gray-400 group-hover:bg-gray-400 group-hover:text-white transition-all duration-300">
+          <div className="w-8 h-8">{card.icon}</div>
         </div>
       </div>
       
       {/* Content Container */}
       <div className="flex-1 flex flex-col justify-center min-h-0">
         {/* Title */}
-        <h3 className="font-serif text-xl font-semibold text-charcoal text-center mb-3 group-hover:text-mint-green transition-colors duration-300 line-clamp-2 break-words">
+        <h3 className="font-serif text-xl font-semibold text-charcoal text-center mb-3 group-hover:text-gray-400 transition-colors duration-300 line-clamp-2 break-words">
           {card.title}
         </h3>
         
@@ -191,7 +191,7 @@ export default function OurExperience() {
             <SectionHeading
               title="Mastery in Motion"
               subtitle="Mastering the Art of Hand-Knotted Rugs - Nepal's Trusted Artisans"
-              className="mb-12 lg:mb-16"
+              className="mb-12 lg:mb-16 font-bold"
             />
           </div>
         </div>
