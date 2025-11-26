@@ -29,7 +29,14 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 'slide-3',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763915733/f965caf0-3d02-42a1-ba91-57a807a274dc_jthikw.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764170211/91f208b0-8d01-415c-bb60-c506d75e2bcf_y6dbr2.jpg',
+    title: 'Modern Living',
+    subtitle: 'Contemporary Comfort',
+    description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
+  },
+  {
+    id: 'slide-4',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764170225/4c5ae8b4-c02e-4074-9e24-9497d3e0f4f8_p8esi1.jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -53,7 +60,15 @@ const heroinnerSlides: HeroSlide[] = [
   },
   {
     id: 'slide-3',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737840/Phulchoki_Photorealistic_xokuqk.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736682/Broken_Mirror_uge5aq.jpg',
+    title: 'Modern Living',
+    subtitle: 'Contemporary Comfort',
+    description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
+  },
+
+  {
+    id: 'slide-4',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737324/Ring_3_Color_kyf4w3.jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
