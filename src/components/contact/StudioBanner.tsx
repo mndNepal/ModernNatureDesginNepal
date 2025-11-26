@@ -104,9 +104,9 @@ export default function StudioBanner() {
         <div className="grid lg:grid-cols-2 gap-2 lg:gap-12 items-start">
           {/* Left Column: Contact Form */}
           <div className={`bg-white rounded-lg shadow-lg p-2 lg:p-8 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl lg:text-4xl font-serif font-medium text-charcoal mb-3 text-center">Contact Us</h2>
+            <h2 className="text-3xl lg:text-4xl font-serif font-medium text-charcoal mb-5 text-center">Contact Us</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-2 max-w-lg mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-3 max-w-lg mx-auto">
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block mb-1 text-gray-700">Name</label>

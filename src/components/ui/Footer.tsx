@@ -93,6 +93,7 @@ export default function Footer(): JSX.Element {
         { name: "+977-9801037585", icon: <Phone className="w-4 h-4 mr-2" />, action: () => { } },
         { name: "Thaiba-14, Lalitpur, Nepal", icon: <MapPin className="w-4 h-4 mr-2" />, action: () => { } },
         { name: "info@modernnaturedesignnepal.com", icon: <Mail className="w-4 h-4 mr-2" />, action: () => { } },
+        { name: "modernnaturedesignnepal@gmail.com", icon: <Mail className="w-4 h-4 mr-2" />, action: () => { } },
       ],
     },
 
