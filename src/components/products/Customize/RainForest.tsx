@@ -1381,7 +1381,22 @@ const RainForest = () => {
                                 style={{
                                   backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})`,
                                 }}
-                                onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b))}
+                               onClick={() => {
+                                applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b));
+                                setLayerNameList((lname) => {
+                                  let newName = colorItem.name
+                                  let lArray = [];
+                                  lname.map((cname, index) => {
+                                    if (index + 1 == activeLayer) {
+                                      lArray.push(newName);
+                                    } else {
+                                      lArray.push(cname);
+                                    }
+                                  })
+                                  return lArray;
+                                })
+
+                              }}
                                 onKeyDown={(e) => { if (e.key === 'Enter') applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b)); }}
                                 role="button"
                                 tabIndex={0}
