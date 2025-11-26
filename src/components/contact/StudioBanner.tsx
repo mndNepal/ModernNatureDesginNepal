@@ -211,7 +211,7 @@ export default function StudioBanner() {
                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                }}>
             <div className="mb-6">
-              <span className={`inline-block text-sm font-medium text-mint-green uppercase tracking-wide mb-2 transition-all duration-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+              <span className={`inline-block text-sm font-medium  uppercase tracking-wide mb-2 transition-all duration-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
                 Experience Hand-Knotted Mastery
               </span>
               <h2 className={`font-serif text-3xl lg:text-4xl font-medium text-charcoal mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
@@ -249,6 +249,11 @@ export default function StudioBanner() {
                     <p className="flex items-center space-x-2">
                       <Mail className="w-4 h-4" />
                       <span>info@modernnaturedesignnepal.com</span>
+                    </p>
+
+                    <p className="flex items-center space-x-2">
+                      <Mail className="w-4 h-4" />
+                      <span>modernnaturedesignnepal@gmail.com</span>
                     </p>
                   </div>
                 </div>
