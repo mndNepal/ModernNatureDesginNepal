@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function AankhiJhyalLayer({ layers }) {
+export default function AankhiJhyalLayer({ layers, imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);
@@ -22,8 +22,12 @@ export default function AankhiJhyalLayer({ layers }) {
         redraw(); // draw once when image loads
       };
     });
-  }, []);
 
+  }, []);
+  console.log("canvasref:", canvasRefs);
+  useEffect(() => {
+    imgref.current = containerRef.current;
+  }, []);
   // Redraw function without blinking
   const redraw = () => {
     const container = containerRef.current;

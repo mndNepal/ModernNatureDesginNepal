@@ -1,4 +1,4 @@
-// MajesticPersian.tsx
+// AankhiJhyal.tsx
 
 import React, { useState, useMemo, useEffect } from 'react';
 import colorDataA from '../../../../color.json';
@@ -10,6 +10,11 @@ import colorDataE from '../../../../colorE.json';
 import AankhiJhyalLayer from '@/components/products/Customize/AankhiJhyalLayer';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+
+
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 
 const colorData1000 = [
@@ -1040,9 +1045,6 @@ const AankhiJhyal = () => {
   const INITIAL_COLORS: { [key in 1 | 2]: string } = {
     1: "#b2945f",
     2: "#191e2a",
-
-
-
   };
 
   const [colors, setColors] = useState(INITIAL_COLORS);
@@ -1182,6 +1184,163 @@ const AankhiJhyal = () => {
 
 
 
+
+
+  const imgRef = useRef(null);
+  useEffect(() => {
+    console.log('Image ref:', imgRef);
+  }, [imgRef]);
+
+
+  const getMergedImage = async () => {
+    const element = imgRef.current;
+    const canvas = await html2canvas(element, { scale: 2 });
+    return canvas.toDataURL("image/png");
+  };
+
+  const downloadPDF = async () => {
+    const imgData = await getMergedImage();
+    const logoData = "/assets/images/navbar/MND_Logo.png";  // <-- put your logo path here
+
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // ---------- HEADER BACKGROUND ----------
+    pdf.setFillColor(240, 240, 240);
+    pdf.rect(0, 0, pageWidth, 40, "F");
+
+    // ---------- LOGO + TITLE COMBINED ----------
+    const logoWidth = 15;
+    const logoHeight = 15;
+
+    const title = "Modern Nature Design Nepal";
+    pdf.setFontSize(24);
+    pdf.setFont("helvetica", "bold");
+
+    const titleWidth = pdf.getTextWidth(title);
+    const totalWidth = logoWidth + 4 + titleWidth;
+
+    // Center the combined block
+    const startX = (pageWidth - totalWidth) / 2;
+    const centerY = 24;
+
+    // Logo
+    pdf.addImage(logoData, "PNG", startX, centerY - logoHeight + 5, logoWidth, logoHeight);
+
+    // Title
+    pdf.text(title, startX + logoWidth + 4, centerY);
+
+    // ---------- SUBTITLE (White Background) ----------
+    pdf.setFontSize(16);
+    pdf.setFont("helvetica", "bold");
+    pdf.setTextColor(0, 0, 0);
+
+
+
+    const DesignName = "Aakhi Jhyal";
+    const Design = pdf.getTextWidth(DesignName);
+
+    pdf.text(DesignName, (pageWidth - Design) / 2, 50);
+
+
+    pdf.setFontSize(14);
+    pdf.setFont("helvetica", "normal");
+    pdf.setTextColor(0, 0, 0);
+
+    const subtitle = "Custom Design Preview";
+    const sWidth = pdf.getTextWidth(subtitle);
+
+    pdf.text(subtitle, (pageWidth - sWidth) / 2, 60);
+
+    // ---------- IMAGE ----------
+    const imgWidth = 120;
+    const imgHeight = 160;
+    const imgX = (pageWidth - imgWidth) / 2;
+    const imgY = 70;
+
+    pdf.addImage(imgData, "PNG", imgX, imgY, imgWidth, imgHeight);
+
+    // ---------- CHOSEN COLORS (Below Image) ----------
+    // const colorsText = `Chosen Colors: ${layerNameList.join(" , ")}`;
+    // pdf.setFont("helvetica", "bold");
+    // pdf.setFontSize(12);
+    // pdf.setTextColor(100, 100, 100);
+
+    // const cWidth = pdf.getTextWidth(colorsText);
+    // const colorsY = imgY + imgHeight + 15;
+
+    // pdf.text(colorsText, (pageWidth - cWidth) / 2, colorsY);
+
+
+
+    // ---------- CHOSEN COLORS (Below Image) ----------
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(14);
+    pdf.setTextColor(50, 50, 50);
+
+    const sectionTitle = "Chosen Colors";
+    const sectionW = pdf.getTextWidth(sectionTitle);
+    const sectionY = imgY + imgHeight + 10;
+
+    pdf.text(sectionTitle, (pageWidth - sectionW) / 2, sectionY);
+
+    // Colors start 10mm below the title
+    let yBase = sectionY + 10;
+
+    // Number of items (you can have 1–3)
+    const entries = Object.entries(colors);
+    const count = entries.length;
+
+    // Total width for each block
+    const blockWidth = pageWidth / count;
+
+    // entries.forEach(([name, hex], index) => {
+    //   const xCenter = blockWidth * index + blockWidth / 4;
+    // Colors start 10mm below the title
+    
+
+    // Fixed spacing
+    const boxSize = 15;        // size of color box
+    const spacing = 40;        // horizontal space between blocks
+    const startXY = (pageWidth - (entries.length * boxSize + (entries.length - 1) * spacing)) / 2; // center row
+
+    entries.forEach(([name, hex], index) => {
+      const xCenter = startXY + index * (15 + spacing) + 15 / 2;
+
+      // Color name
+      pdf.setFontSize(12);
+      pdf.setTextColor(80, 80, 80);
+
+      const nameW = pdf.getTextWidth(layerNameList[index]);
+      pdf.text(layerNameList[index], xCenter - nameW / 2, yBase);
+
+      // Convert hex → RGB
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
+
+      // Color box under the name
+      const boxSize = 15;
+      pdf.setFillColor(r, g, b);
+      pdf.rect(xCenter - boxSize / 2, yBase + 4, boxSize, boxSize, "F");
+    });
+
+    // ---------- DISCLAIMER ----------
+    pdf.setFontSize(10);
+    pdf.setTextColor(150, 150, 150);
+
+    const disclaimer = "Images are color simulations for visualization purposes only.";
+    pdf.setFont("helvetica", "bold");
+
+    const dWidth = pdf.getTextWidth(disclaimer);
+
+    pdf.text(disclaimer, (pageWidth - dWidth) / 2, pageHeight - 20);
+
+    pdf.save("AankhiJhyal.pdf");
+  };
+
   return (
     <>
       <Navbar />
@@ -1222,7 +1381,8 @@ const AankhiJhyal = () => {
               }}
             >
               <div className="w-full h-full">
-                <AankhiJhyalLayer layers={layers} />
+
+                <AankhiJhyalLayer layers={layers} imgref={imgRef} />
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
@@ -1372,21 +1532,21 @@ const AankhiJhyal = () => {
                                   backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})`,
                                 }}
                                 onClick={() => {
-                                applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b));
-                                setLayerNameList((lname) => {
-                                  let newName = colorItem.name
-                                  let lArray = [];
-                                  lname.map((cname, index) => {
-                                    if (index + 1 == activeLayer) {
-                                      lArray.push(newName);
-                                    } else {
-                                      lArray.push(cname);
-                                    }
+                                  applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b));
+                                  setLayerNameList((lname) => {
+                                    let newName = colorItem.name
+                                    let lArray = [];
+                                    lname.map((cname, index) => {
+                                      if (index + 1 == activeLayer) {
+                                        lArray.push(newName);
+                                      } else {
+                                        lArray.push(cname);
+                                      }
+                                    })
+                                    return lArray;
                                   })
-                                  return lArray;
-                                })
 
-                              }}
+                                }}
                                 onKeyDown={(e) => { if (e.key === 'Enter') applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b)); }}
                                 role="button"
                                 tabIndex={0}
@@ -1442,7 +1602,7 @@ const AankhiJhyal = () => {
             </div>
 
             {/* Save Button */}
-            <button className="bg-black text-white px-6 py-3 mt-4 self-start ml-60">
+            <button onClick={downloadPDF} className="bg-black text-white px-6 py-3 mt-4 self-start ml-60">
               🖨 Save your creation as PDF
             </button>
 

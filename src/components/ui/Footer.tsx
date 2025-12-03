@@ -127,7 +127,7 @@ export default function Footer(): JSX.Element {
                 }`}
             >
               <div className="flex flex-column gap-2">
-                <img src="/public/assets/images/navbar/MND_Logo.png" className="h-8 w-8" />
+                <img src="/assets/images/navbar/MND_Logo.png" className="h-8 w-8" />
                 <h2 className="font-serif text-xl mb-3">
                   Modern Nature Design Nepal
                 </h2>
