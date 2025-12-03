@@ -1299,18 +1299,19 @@ const AankhiJhyal = () => {
     // entries.forEach(([name, hex], index) => {
     //   const xCenter = blockWidth * index + blockWidth / 4;
     // Colors start 10mm below the title
-    
+
 
     // Fixed spacing
-    const boxSize = 15;        // size of color box
-    const spacing = 40;        // horizontal space between blocks
-    const startXY = (pageWidth - (entries.length * boxSize + (entries.length - 1) * spacing)) / 2; // center row
+    const boxSize = 6;        // size of color box
+    const spacing = 2;        // horizontal space between blocks
+    const boxesWidth = entries.length * boxSize + (entries.length - 1) * spacing;
+    const startXY = (pageWidth - boxesWidth) / 2;
 
     entries.forEach(([name, hex], index) => {
-      const xCenter = startXY + index * (15 + spacing) + 15 / 2;
+        const xCenter = startXY + index * (6 + spacing);
 
       // Color name
-      pdf.setFontSize(12);
+      pdf.setFontSize(7);
       pdf.setTextColor(80, 80, 80);
 
       const nameW = pdf.getTextWidth(layerNameList[index]);
@@ -1322,9 +1323,9 @@ const AankhiJhyal = () => {
       const b = parseInt(hex.slice(5, 7), 16);
 
       // Color box under the name
-      const boxSize = 15;
+      const boxSize = 6;
       pdf.setFillColor(r, g, b);
-      pdf.rect(xCenter - boxSize / 2, yBase + 4, boxSize, boxSize, "F");
+      pdf.rect(xCenter - boxSize / 2, yBase + 3, boxSize, boxSize, "F");
     });
 
     // ---------- DISCLAIMER ----------
