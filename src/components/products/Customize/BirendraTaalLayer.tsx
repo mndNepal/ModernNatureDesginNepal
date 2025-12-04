@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function BirendraTaalLayer({ layers }) {
+export default function BirendraTaalLayer({ layers , imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);
@@ -24,6 +24,10 @@ export default function BirendraTaalLayer({ layers }) {
     });
   }, []);
 
+  console.log("canvasref:", canvasRefs);
+  useEffect(() => {
+    imgref.current = containerRef.current;
+  }, []);
   // Redraw function without blinking
   const redraw = () => {
     const container = containerRef.current;

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function PariLayer({ layers }) {
+export default function PariLayer({ layers , imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);
@@ -23,7 +23,10 @@ export default function PariLayer({ layers }) {
       };
     });
   }, []);
-
+ console.log("canvasref:", canvasRefs);
+  useEffect(() => {
+    imgref.current = containerRef.current;
+  }, []);
   // Redraw function without blinking
   const redraw = () => {
     const container = containerRef.current;

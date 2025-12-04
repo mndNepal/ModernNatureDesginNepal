@@ -18,6 +18,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 
+
 const colorData1000 = [
   // my 1000 color series is here   
 

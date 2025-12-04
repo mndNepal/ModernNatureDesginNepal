@@ -11,6 +11,9 @@ import PhulchokiLayer from './PhulchokiLayer';
 import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
 
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const colorData1000 = [
   // my 1000 color series is here   
@@ -1180,6 +1183,161 @@ const Phulchoki = () => {
     return result;
   };
 
+const imgRef = useRef(null);
+  useEffect(() => {
+    console.log('Image ref:', imgRef);
+  }, [imgRef]);
+
+
+  const getMergedImage = async () => {
+    const element = imgRef.current;
+    const canvas = await html2canvas(element, { scale: 2 });
+    return canvas.toDataURL("image/png");
+  };
+
+  const downloadPDF = async () => {
+    const imgData = await getMergedImage();
+    const logoData = "/assets/images/navbar/MND_Logo.png";  // <-- put your logo path here
+
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // ---------- HEADER BACKGROUND ----------
+    pdf.setFillColor(240, 240, 240);
+    pdf.rect(0, 0, pageWidth, 40, "F");
+
+    // ---------- LOGO + TITLE COMBINED ----------
+    const logoWidth = 15;
+    const logoHeight = 15;
+
+    const title = "Modern Nature Design Nepal";
+    pdf.setFontSize(24);
+    pdf.setFont("helvetica", "bold");
+
+    const titleWidth = pdf.getTextWidth(title);
+    const totalWidth = logoWidth + 4 + titleWidth;
+
+    // Center the combined block
+    const startX = (pageWidth - totalWidth) / 2;
+    const centerY = 24;
+
+    // Logo
+    pdf.addImage(logoData, "PNG", startX, centerY - logoHeight + 5, logoWidth, logoHeight);
+
+    // Title
+    pdf.text(title, startX + logoWidth + 4, centerY);
+
+    // ---------- SUBTITLE (White Background) ----------
+    pdf.setFontSize(16);
+    pdf.setFont("helvetica", "bold");
+    pdf.setTextColor(0, 0, 0);
+
+
+
+    const DesignName = "Phulchoki";
+    const Design = pdf.getTextWidth(DesignName);
+
+    pdf.text(DesignName, (pageWidth - Design) / 2, 50);
+
+
+    pdf.setFontSize(14);
+    pdf.setFont("helvetica", "normal");
+    pdf.setTextColor(0, 0, 0);
+
+    const subtitle = "Custom Design Preview";
+    const sWidth = pdf.getTextWidth(subtitle);
+
+    pdf.text(subtitle, (pageWidth - sWidth) / 2, 60);
+
+    // ---------- IMAGE ----------
+    const imgWidth = 120;
+    const imgHeight = 160;
+    const imgX = (pageWidth - imgWidth) / 2;
+    const imgY = 70;
+
+    pdf.addImage(imgData, "PNG", imgX, imgY, imgWidth, imgHeight);
+
+    // ---------- CHOSEN COLORS (Below Image) ----------
+    // const colorsText = `Chosen Colors: ${layerNameList.join(" , ")}`;
+    // pdf.setFont("helvetica", "bold");
+    // pdf.setFontSize(12);
+    // pdf.setTextColor(100, 100, 100);
+
+    // const cWidth = pdf.getTextWidth(colorsText);
+    // const colorsY = imgY + imgHeight + 15;
+
+    // pdf.text(colorsText, (pageWidth - cWidth) / 2, colorsY);
+
+
+
+    // ---------- CHOSEN COLORS (Below Image) ----------
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(14);
+    pdf.setTextColor(50, 50, 50);
+
+    const sectionTitle = "Chosen Colors";
+    const sectionW = pdf.getTextWidth(sectionTitle);
+    const sectionY = imgY + imgHeight + 10;
+
+    pdf.text(sectionTitle, (pageWidth - sectionW) / 2, sectionY);
+
+    // Colors start 10mm below the title
+    let yBase = sectionY + 10;
+
+    // Number of items (you can have 1–3)
+    const entries = Object.entries(colors);
+    const count = entries.length;
+
+    // Total width for each block
+    const blockWidth = pageWidth / count;
+
+    // entries.forEach(([name, hex], index) => {
+    //   const xCenter = blockWidth * index + blockWidth / 4;
+    // Colors start 10mm below the title
+
+
+    // Fixed spacing
+    const boxSize = 6;        // size of color box
+    const spacing = 2;        // horizontal space between blocks
+    const boxesWidth = entries.length * boxSize + (entries.length - 1) * spacing;
+    const startXY = (pageWidth - boxesWidth) / 2;
+
+    entries.forEach(([name, hex], index) => {
+      const xCenter = startXY + index * (6 + spacing);
+
+      // Color name
+      pdf.setFontSize(7);
+      pdf.setTextColor(80, 80, 80);
+
+      const nameW = pdf.getTextWidth(layerNameList[index]);
+      pdf.text(layerNameList[index], xCenter - nameW / 2, yBase);
+
+      // Convert hex → RGB
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
+
+      // Color box under the name
+      const boxSize = 6;
+      pdf.setFillColor(r, g, b);
+      pdf.rect(xCenter - boxSize / 2, yBase + 3, boxSize, boxSize, "F");
+    });
+
+    // ---------- DISCLAIMER ----------
+    pdf.setFontSize(10);
+    pdf.setTextColor(150, 150, 150);
+
+    const disclaimer = "Images are color simulations for visualization purposes only.";
+    pdf.setFont("helvetica", "bold");
+
+    const dWidth = pdf.getTextWidth(disclaimer);
+
+    pdf.text(disclaimer, (pageWidth - dWidth) / 2, pageHeight - 20);
+
+    pdf.save("Phulchoki.pdf");
+  };
 
 
   return (
@@ -1197,11 +1355,11 @@ const Phulchoki = () => {
               <ul className="space-y-2">
                 {[
                   'Hand-knotted by master artisans',
-                  'Premium yarn construction',
-                  'Lorem',
+                  'Premium yarn construction',       
                   'Fade-resistant colors',
                   'Durable and long-lasting',
-                  'Easy to maintain'
+                  'Easy to maintain',
+                 'Delivery Time : 2.5-3 months',
                 ].map((feature, index) => (
                   <li
                     key={index}
@@ -1222,7 +1380,7 @@ const Phulchoki = () => {
               }}
             >
               <div className="w-full h-full">
-                <PhulchokiLayer layers={layers} />
+                <PhulchokiLayer layers={layers} imgref={imgRef}/>
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
@@ -1235,10 +1393,10 @@ const Phulchoki = () => {
 
           <div className="w-3/5 flex flex-col gap-6">
             <div className="bg-gray-100 p-4 shadow-sm border">
-              <h2 className="font-semibold mb-2">TO CHANGE COLORS:</h2>
+              <h2 className="font-semibold mb-2">Changing Colors is Easy:</h2>
               <ol className="list-decimal ml-4 text-sm text-gray-700 space-y-1">
-                <li>Click on the color window below corresponding to the part of the design that you want to re-color.</li>
-                <li>Then click on the desired color in the color chart.</li>
+                <li>Click the color window for the design area you want to recolor.</li>
+                <li>Choose your preferred color from the color chart.</li>
               </ol>
             </div>
             <div className="flex items-center gap-4 flex-wrap">
@@ -1442,7 +1600,7 @@ const Phulchoki = () => {
             </div>
 
             {/* Save Button */}
-            <button className="bg-black text-white px-6 py-3 mt-4 self-start ml-60">
+            <button onClick={downloadPDF} className="bg-black text-white px-6 py-3 mt-4 self-start ml-60">
               🖨 Save your creation as PDF
             </button>
 

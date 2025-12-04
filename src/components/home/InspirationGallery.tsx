@@ -28,14 +28,14 @@ const ITEMS: Item[] = [
   },
   {
     id: "m2",
-    title: "MOuntains",
+    title: "Mountains",
     short: "Warm tones inspired by drifting sands",
-    photo: "/assets/images/home/InspirationGallery/4.JPG",
+    photo: "/assets/images/home/InspirationGallery/4.jpg",
     design: "/assets/images/home/InspirationGallery/5.jpg",
     carpet: "/assets/images/home/InspirationGallery/6.jpg",
-    inspirationDesc: "Rippling sands and desert wind patterns sparking soft geometry.",
-    translationDesc: "Sketch exploring curves, shadows, and warm tonal gradients.",
-    finishedDesc: "Crafted using blended ochres to mirror natural dune textures.",
+    inspirationDesc: "A meditative weave born from Himalayan temples.",
+    translationDesc: "From raw earth to refined expressions.",
+    finishedDesc: "A testment to precision, passion, and Nepali craftsmanship.",
   },
 
   {
@@ -48,6 +48,18 @@ const ITEMS: Item[] = [
     inspirationDesc: "Rippling sands and desert wind patterns sparking soft geometry.",
     translationDesc: "Sketch exploring curves, shadows, and warm tonal gradients.",
     finishedDesc: "Crafted using blended ochres to mirror natural dune textures.",
+  },
+
+  {
+    id: "m4",
+    title: "Mountains",
+    short: "Warm tones inspired by drifting sands",
+    photo: "/assets/images/home/InspirationGallery/10.jpg",
+    design: "/assets/images/home/InspirationGallery/11.jpg",
+    carpet: "/assets/images/home/InspirationGallery/9.jpg",
+    inspirationDesc: "An abstract celebration of Tihar's soulful energy.",
+    translationDesc: "Where organic beauty becomes woven expression. ",
+    finishedDesc: "an heirloom-level rug, born from Nepal's finest hands",
   },
 ];
 

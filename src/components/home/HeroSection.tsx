@@ -30,9 +30,9 @@ const heroSlides: HeroSlide[] = [
   {
     id: 'slide-3',
     image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764170211/91f208b0-8d01-415c-bb60-c506d75e2bcf_y6dbr2.jpg',
-    title: 'Modern Living',
-    subtitle: 'Contemporary Comfort',
-    description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
+    title: 'Interior Alchemy',
+    subtitle: 'Transfer Your Space',
+    description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design.'
   },
   {
     id: 'slide-4',
@@ -69,9 +69,10 @@ const heroinnerSlides: HeroSlide[] = [
   {
     id: 'slide-4',
     image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737324/Ring_3_Color_kyf4w3.jpg',
-    title: 'Modern Living',
-    subtitle: 'Contemporary Comfort',
-    description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
+    title: 'Interior Alchemy',
+    subtitle: 'Transfer Your Space',
+    description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design.'
+
   }
 ];
 
@@ -195,9 +196,9 @@ export default function HeroSection() {
   };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="hero" 
+      id="hero"
       className="relative h-screen flex items-center overflow-hidden"
     >
       {/* Background Images */}
@@ -213,20 +214,18 @@ export default function HeroSection() {
         {heroSlides.map((slide, index) => {
           const isLoaded = imageLoadStates[slide.id];
           const fallbackImage = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
-          
+
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide && imagesPreloaded ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide && imagesPreloaded ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               <img
                 src={isLoaded !== false ? slide.image : fallbackImage}
                 alt={slide.title}
-                className={`w-full text-center h-full object-cover transition-opacity duration-500 ${
-                  isLoaded !== false ? 'opacity-100' : 'opacity-75'
-                }`}
+                className={`w-full text-center h-full object-cover transition-opacity duration-500 ${isLoaded !== false ? 'opacity-100' : 'opacity-75'
+                  }`}
                 onError={(e) => {
                   console.warn(`Image failed to load: ${slide.image}`);
                   const target = e.target as HTMLImageElement;
@@ -252,49 +251,42 @@ export default function HeroSection() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white">
-              <div className={`bg-charcoal/80 backdrop-blur-sm p-8 lg:p-12 rounded-lg transform transition-all duration-1000 ease-out ${
-                isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
-              }`}>
-                <h1 className={`font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-4 transform transition-all duration-1000 delay-200 ease-out ${
-                  isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              <div className={`bg-charcoal/80 backdrop-blur-sm p-8 lg:p-12 rounded-lg transform transition-all duration-1000 ease-out ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
                 }`}>
+                <h1 className={`font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-4 transform transition-all duration-1000 delay-200 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  }`}>
                   {heroSlides[currentSlide].title}
                 </h1>
-                <h2 className={`text-xl md:text-2xl font-medium text-mint-green mb-6 transform transition-all duration-1000 delay-400 ease-out ${
-                  isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                }`}>
+                <h2 className={`text-xl md:text-2xl font-medium text-mint-green mb-6 transform transition-all duration-1000 delay-400 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  }`}>
                   {heroSlides[currentSlide].subtitle}
                 </h2>
-                <p className={`text-lg leading-relaxed mb-8 text-off-white transform transition-all duration-1000 delay-600 ease-out ${
-                  isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                }`}>
+                <p className={`text-lg leading-relaxed mb-8 text-off-white transform transition-all duration-1000 delay-600 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  }`}>
                   {heroSlides[currentSlide].description}
                 </p>
-                
+
                 {/* CTAs */}
-                <div className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-1000 delay-800 ease-out ${
-                  isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                }`}>
+                <div className={`flex flex-col sm:flex-row gap-4 transform transition-all duration-1000 delay-800 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  }`}>
                 </div>
               </div>
             </div>
 
             {/* Right Content - Living Room Scene */}
-            <div  className={` relative transform transition-all duration-1000 delay-300 ease-out ${
-                isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
+            <div className={` relative transform transition-all duration-1000 delay-300 ease-out ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
               }`}>
               <div>
                 {imagesPreloaded ? (
                   <div className='m-32 pl-10 pb-20'>
                     <img
-                      src={imageLoadStates[heroSlides[currentSlide].id] !== false 
-                        ? heroinnerSlides[currentSlide].image 
+                      src={imageLoadStates[heroSlides[currentSlide].id] !== false
+                        ? heroinnerSlides[currentSlide].image
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
                       alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
-                      className={` object-scale-down rounded-lg  transition-all duration-1000 ease-out hover:scale-105 ${
-                        imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
-                      }`}
+                      className={` object-scale-down rounded-lg  transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                        }`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         const fallback = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
@@ -303,9 +295,9 @@ export default function HeroSection() {
                         }
                       }}
                     />
-                  
+
                   </div>
-                  ) : (
+                ) : (
                   <div className="w-48 h-48 bg-charcoal/20 rounded-lg shadow-2xl flex items-center justify-center">
                     <div className="w-6 h-6 border-2 border-mint-green border-t-transparent rounded-full animate-spin"></div>
                   </div>

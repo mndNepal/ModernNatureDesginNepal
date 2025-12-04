@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function Sweet16Layer({ layers }) {
+export default function Sweet16Layer({ layers , imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);
@@ -24,6 +24,11 @@ export default function Sweet16Layer({ layers }) {
     });
   }, []);
 
+  console.log("canvasref:", canvasRefs);
+  useEffect(() => {
+    imgref.current = containerRef.current;
+  }, []);
+  
   // Redraw function without blinking
   const redraw = () => {
     const container = containerRef.current;

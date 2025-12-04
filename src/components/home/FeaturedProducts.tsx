@@ -32,18 +32,12 @@ function ProductCard({ product, onCardClick, isVisible, index, aspectRatio }: Pr
 
   // Use high-quality rug images from Unsplash
   const rugImages = [
-    'assets/images/home/shopbestsellers/Cloudato.jpg',
-    'assets/images/home/shopbestsellers/Pyroqace.jpg',
-    'assets/images/home/shopbestsellers/Sint-Zabiz.jpg',
-    'assets/images/home/shopbestsellers/Unon-Extin.jpg',
+    'assets/images/home/shopbestsellers/Lakheyface.jpg',
+    'assets/images/home/shopbestsellers/mirror.jpg',
+    'assets/images/home/shopbestsellers/nbc.jpg',
+    'assets/images/home/shopbestsellers/path.jpg',
   ];
 
-  // const formatPrice = (price: number) => {
-  //   return new Intl.NumberFormat('en-US', {
-  //     style: 'currency',
-  //     minimumFractionDigits: 0
-  //   }).format(price);
-  // };
 
   return (
     <div
@@ -114,10 +108,10 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
   // Use the same high-quality images as the cards
   const rugImages = [
-    'assets/images/home/shopbestsellers/Cloudato.jpg',
-    'assets/images/home/shopbestsellers/Pyroqace.jpg',
-    'assets/images/home/shopbestsellers/Sint-Zabiz.jpg',
-    'assets/images/home/shopbestsellers/Unon-Extin.jpg',
+     'assets/images/home/shopbestsellers/Lakheyface.jpg',
+    'assets/images/home/shopbestsellers/mirror.jpg',
+    'assets/images/home/shopbestsellers/nbc.jpg',
+    'assets/images/home/shopbestsellers/path.jpg',
   ];
 
   const productIndex = productsData.products.findIndex(p => p.id === product.id);

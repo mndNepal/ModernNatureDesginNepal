@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function PuranoJhyalLayer({ layers }) {
+export default function PuranoJhyalLayer({ layers , imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);
@@ -22,6 +22,11 @@ export default function PuranoJhyalLayer({ layers }) {
         redraw(); // draw once when image loads
       };
     });
+  }, []);
+
+   console.log("canvasref:", canvasRefs);
+  useEffect(() => {
+    imgref.current = containerRef.current;
   }, []);
 
   // Redraw function without blinking

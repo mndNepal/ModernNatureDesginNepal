@@ -14,6 +14,7 @@ export default function MajestyLayer({ layers, imgref }) {
       const img = new Image();
       img.src = layer.src;
 
+      
       img.onload = () => {
         offscreen.width = img.width;
         offscreen.height = img.height;

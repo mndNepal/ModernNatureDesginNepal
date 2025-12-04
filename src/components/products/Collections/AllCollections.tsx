@@ -16,7 +16,7 @@ const carpets: Carpet[] = [
   { id: 'rug-002', name: 'Attraction', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763738052/Attraction10_Photorealistic_g9z17g.jpg' },
   { id: 'rug-003', name: 'Baasn', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737722/Baasn_Photorealistic_hppdaq.jpg' },
   { id: 'rug-004', name: 'Bayleaves', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736690/bayleaves_Photorealistic_waod6o.jpg' },
-  { id: 'rug-005', name: 'Bubbles', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737341/Bubble_1_Photorealistic_cd3vv8.jpg' },
+  { id: 'rug-005', name: 'Bubbles', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737328/bubble_Photorealistic_wwvnt4.jpg' },
   { id: 'rug-006', name: 'Burning Rope', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737343/Burning_Rope_Photorealistic_zdlj22.jpg' },
   { id: 'rug-007', name: 'Cells', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737339/cells_1_Photorealistic_ppbblq.jpg' },
   { id: 'rug-008', name: 'Childhood', imageUrl: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736692/Childhood_9_x_12_1_1_Photorealistic_z9b3lh.jpg' },

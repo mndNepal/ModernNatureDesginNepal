@@ -3,6 +3,7 @@ import Footer from '@/components/ui/Footer'
 import Navbar from '@/components/ui/Navbar'
 import ServicePage from '@/components/services/Service'
 import MaterialsCarousel from '@/components/services/MaterialsCarousel'
+import WhoWeServe from '@/components/services/Serve'
 
 
 const Services = () => {
@@ -11,6 +12,7 @@ const Services = () => {
       <Navbar />
       <ServicePage />
       <MaterialsCarousel />
+      <WhoWeServe />
       <Footer />
     </div>
   )

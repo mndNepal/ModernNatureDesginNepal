@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function LakheFaceLayer({ layers }) {
+export default function LakheFaceLayer({ layers, imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);
@@ -23,6 +23,12 @@ export default function LakheFaceLayer({ layers }) {
       };
     });
   }, []);
+
+  console.log("canvasref:", canvasRefs);
+  useEffect(() => {
+    imgref.current = containerRef.current;
+  }, []);
+
 
   // Redraw function without blinking
   const redraw = () => {
