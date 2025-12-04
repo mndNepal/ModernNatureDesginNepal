@@ -15,7 +15,7 @@ const services: ServiceSection[] = [
     id: "1",
     title: "Strike-Offs & Samples",
     subtitle: "See. Feel. Perfect Your Design.",
-    image: "/assets/images/services/strikeoffs-and-samples.png",
+    image: "/assets/images/services/strikeoffs-and-samples.jpg",
     description: `
       At Modern Nature Design Nepal, we know that perfection begins with the smallest detail. That’s why we offer strike-offs and samples — your opportunity to experience the true color, texture, and craftsmanship of your rug before full production.<br /><br />
       Our strike-offs showcase every element — yarn quality, pile height, and weaving precision — so you can confidently finalize your design. Available in <strong>30×30 cm</strong>, <strong>60×60 cm</strong>, or custom sizes, they ensure your rug turns out exactly as envisioned.<br /><br />
@@ -83,7 +83,7 @@ const Services: React.FC = () => {
   );
 
   return (
-    <section className="relative z-30  bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
+    <section className="bg-[url('/public/assets/images/services/background1.jpg')] relative z-30  bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
       <div className="w-11/12 md:w-4/5">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
           Our Services
@@ -127,7 +127,7 @@ const Services: React.FC = () => {
           {activeService && (
             <motion.div
               key="modal"
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex justify-center items-center p-6"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex justify-center items-center p-6 mt-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

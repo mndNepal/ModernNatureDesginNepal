@@ -6,11 +6,12 @@ import SectionHeading from './SectionHeading';
 
 interface DesignCard {
   id: string;
+  name: String;
   title: string;
   description: string;
   image: string;
   detailedDescription: string;
-  materials: string;
+  materials?: string;
   // dimensions: string;
   // price: string;
 }
@@ -18,44 +19,78 @@ interface DesignCard {
 const latestDesigns: DesignCard[] = [
   {
     id: 'design-1',
-    title: 'Beehive',
+    name: 'Beehive',
+    title: 'Key Features',
     description: 'Rich, tactile weaves inspired by mountain landscapes',
     image: 'assets/images/home/latestdesigns/Beehive.jpg',
-    detailedDescription: 'Our Himalayan Texture collection draws inspiration from the majestic mountain ranges of Nepal. Each rug features rich, tactile weaves that capture the essence of rugged landscapes and serene valleys. Hand-crafted by master artisans using traditional techniques passed down through generations.',
-    materials: 'Premium Tibetan wool, Natural silk highlights',
+    detailedDescription: `
+            Hand-knotted by master artisans
+            Premium yarn construction
+            Fade-resistant colors
+            Durable and long-lasting
+            Easy to maintain
+            Delivery Time : 2.5-3 months`,
+    // materials: 'Premium Tibetan wool, Natural silk highlights',
 
   },
   {
     id: 'design-2',
-    title: 'Lalitpur',
+    name: 'Lalitpur',
+    title: 'Key Features',
     description: 'Intricate hand-knotted patterns with contemporary appeal',
     image: 'assets/images/home/latestdesigns/Lalitpur.jpg',
-    detailedDescription: 'The Artisan Knots series showcases the pinnacle of Nepalese craftsmanship. Each piece features intricate hand-knotted patterns that blend traditional motifs with contemporary design sensibilities. The result is a timeless piece that complements modern interiors while honoring ancient traditions.',
-    materials: 'Hand-spun wool, Bamboo silk accents',
+    detailedDescription: `
+            Hand-knotted by master artisans
+            Premium yarn construction
+            Fade-resistant colors
+            Durable and long-lasting
+            Easy to maintain
+            Delivery Time : 2.5-3 months`,
+    // materials: 'Hand-spun wool, Bamboo silk accents',
   },
   {
     id: 'design-3',
-    title: 'Majesty',
+    name: 'Majesty',
+    title: 'Key Features',
     description: 'Traditional techniques reimagined for today\'s interiors',
     image: 'assets/images/home/latestdesigns/Majesty.jpg',
-    detailedDescription: 'Modern Heritage represents the evolution of traditional rug-making for contemporary living spaces. These pieces maintain the soul of classical Nepalese designs while incorporating modern color palettes and simplified patterns that speak to today\'s aesthetic preferences.',
-    materials: 'Organic wool, Natural dyes, Cotton foundation',
+    detailedDescription: `
+            Hand-knotted by master artisans
+            Premium yarn construction
+            Fade-resistant colors
+            Durable and long-lasting
+            Easy to maintain
+            Delivery Time : 2.5-3 months`,
+    // materials: 'Organic wool, Natural dyes, Cotton foundation',
   },
   {
     id: 'design-4',
-    title: 'ManasluCircuit',
+    name: 'Manaslu Circuit',
+    title: 'Key Features',
     description: 'Clean lines and subtle textures for modern spaces',
     image: 'assets/images/home/latestdesigns/ManasluCircut.jpg',
-    detailedDescription: 'Zen Minimalism embodies the philosophy of \'less is more\'. These rugs feature clean lines, subtle textures, and a restrained color palette that creates a sense of calm and balance in any space. Perfect for contemporary homes seeking tranquility.',
-    materials: 'Fine wool, Linen blend, Natural fibers',
+    detailedDescription: `
+            Hand-knotted by master artisans
+            Premium yarn construction
+            Fade-resistant colors
+            Durable and long-lasting
+            Easy to maintain
+            Delivery Time : 2.5-3 months`,
   },
   {
     id: 'design-5',
-    title: 'Namche Bazar',
+    name: 'Namche Bazar',
+    title: 'Key Features',
     description: 'East meets West in harmonious design',
     image: 'assets/images/home/latestdesigns/NamcheBazar.jpg',
-    detailedDescription: 'Cultural Fusion celebrates the meeting of Eastern and Western design philosophies. These rugs incorporate traditional Nepalese motifs with contemporary Western aesthetics, creating pieces that are both globally inspired and locally crafted.',
-    materials: 'Highland wool, Silk details, Eco-friendly dyes',
+    detailedDescription: `
+            Hand-knotted by master artisans
+            Premium yarn construction
+            Fade-resistant colors
+            Durable and long-lasting
+            Easy to maintain
+            Delivery Time : 2.5-3 months`,
+    // materials: 'Highland wool, Silk details, Eco-friendly dyes',
   }
 ];
 
@@ -68,11 +103,10 @@ interface CarouselCardProps {
 
 function CarouselCard({ design, onClick, isVisible = true, index = 0 }: CarouselCardProps) {
   return (
-    <div 
-      className={`flex-shrink-0 w-72 sm:w-80 h-80 sm:h-96 cursor-pointer group transition-all duration-500 hover:scale-105 hover:z-20 relative transform will-change-transform ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-      }`}
-      style={{ 
+    <div
+      className={`flex-shrink-0 w-72 sm:w-80 h-80 sm:h-96 cursor-pointer group transition-all duration-500 hover:scale-105 hover:z-20 relative transform will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        }`}
+      style={{
         transitionDelay: `${400 + (index * 100)}ms`,
         transform: 'translate3d(0, 0, 0)' // Hardware acceleration
       }}
@@ -88,10 +122,10 @@ function CarouselCard({ design, onClick, isVisible = true, index = 0 }: Carousel
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
         </div>
-        
+
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
           <h3 className="font-serif text-lg sm:text-xl font-medium mb-2 group-hover:text-mint-green transition-colors duration-300">
-            {design.title}
+            {design.name}
           </h3>
           {/* <p className="text-off-white/90 leading-relaxed text-xs sm:text-sm line-clamp-2">
             {design.description}
@@ -100,9 +134,9 @@ function CarouselCard({ design, onClick, isVisible = true, index = 0 }: Carousel
             Click to explore →
           </div>
         </div>
-        
+
         <div className="absolute inset-0 bg-mint-green/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Subtle border on hover */}
         <div className="absolute inset-0 border-2 border-mint-green/30 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
@@ -116,11 +150,11 @@ function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | n
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
         onClick={onClose}
       />
-      
+
       {/* Modal */}
       <div className="relative bg-off-white rounded-2xl shadow-2xl hover:shadow-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100">
         {/* Close Button */}
@@ -131,7 +165,7 @@ function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | n
         >
           <X className="w-5 h-5" />
         </button>
-        
+
         <div className="grid md:grid-cols-2 gap-0 h-full">
           {/* Image Section */}
           <div className="relative h-64 md:h-full">
@@ -142,24 +176,34 @@ function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | n
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
           </div>
-          
+
           {/* Content Section */}
           <div className="p-8 overflow-y-auto">
             <h2 className="font-serif text-3xl font-medium text-charcoal mb-4">
               {design.title}
             </h2>
-            
-            <p className="text-charcoal/70 leading-relaxed mb-6 text-lg">
-              {design.detailedDescription}
-            </p>
-            
-            {/* Details */}
+
+
+            <ul className="text-charcoal/70 leading-relaxed mb-6 text-lg space-y-2">
+              {design.detailedDescription
+                .trim()
+                .split("\n")
+                .map((line, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-gray-500 font-bold">✔</span>
+                    <span>{line.trim()}</span>
+                  </li>
+                ))}
+            </ul>
+       
+
+            {/* Details
             <div className="space-y-4 mb-8">
               <div>
                 <h3 className="font-medium text-charcoal mb-2">Materials</h3>
                 <p className="text-charcoal/70">{design.materials}</p>
               </div>            
-            </div>           
+            </div>            */}
           </div>
         </div>
       </div>
@@ -204,39 +248,39 @@ export default function LatestDesigns() {
   }, []);
 
   // Auto-scroll functionality
-   useEffect(() => {
-     const carousel = carouselRef.current;
-     if (!carousel || isPaused) return;
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel || isPaused) return;
 
-     const scroll = () => {
-       scrollPosition.current += 0.8; // Smooth scrolling speed
-       
-       // Reset position when we've scrolled through one complete set
-       const cardWidth = 320 + 24; // w-80 (320px) + gap-6 (24px)
-       const singleSetWidth = cardWidth * latestDesigns.length;
-       
-       // Reset to the middle set when reaching the end of second set
-       if (scrollPosition.current >= singleSetWidth * 2) {
-         scrollPosition.current = singleSetWidth;
-       }
-       
-       carousel.style.transform = `translateX(-${scrollPosition.current}px)`;
-       animationRef.current = requestAnimationFrame(scroll);
-     };
+    const scroll = () => {
+      scrollPosition.current += 0.8; // Smooth scrolling speed
 
-     // Start from the middle set to allow seamless backward looping if needed
-     const cardWidth = 320 + 24;
-     const singleSetWidth = cardWidth * latestDesigns.length;
-     scrollPosition.current = singleSetWidth;
-     
-     animationRef.current = requestAnimationFrame(scroll);
+      // Reset position when we've scrolled through one complete set
+      const cardWidth = 320 + 24; // w-80 (320px) + gap-6 (24px)
+      const singleSetWidth = cardWidth * latestDesigns.length;
 
-     return () => {
-       if (animationRef.current) {
-         cancelAnimationFrame(animationRef.current);
-       }
-     };
-   }, [isPaused]);
+      // Reset to the middle set when reaching the end of second set
+      if (scrollPosition.current >= singleSetWidth * 2) {
+        scrollPosition.current = singleSetWidth;
+      }
+
+      carousel.style.transform = `translateX(-${scrollPosition.current}px)`;
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    // Start from the middle set to allow seamless backward looping if needed
+    const cardWidth = 320 + 24;
+    const singleSetWidth = cardWidth * latestDesigns.length;
+    scrollPosition.current = singleSetWidth;
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPaused]);
 
   const handleCardClick = (design: DesignCard) => {
     setSelectedDesign(design);
@@ -260,54 +304,52 @@ export default function LatestDesigns() {
     <>
       <section ref={sectionRef} className="py-20 bg-off-white overflow-hidden">
         <Container>
-          <div className={`transform transition-all duration-1000 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}>
+          <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}>
             <SectionHeading
               title="Latest Designs"
               subtitle="Discover our newest creations, where traditional craftsmanship meets contemporary design"
             />
           </div>
         </Container>
-        
+
         {/* Horizontal Scrolling Carousel */}
-         <div className={`mt-16 relative transform transition-all duration-1000 delay-300 ${
-           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-         }`}>
-           <div 
-             className="overflow-hidden cursor-grab active:cursor-grabbing"
-             onMouseEnter={handleMouseEnter}
-             onMouseLeave={handleMouseLeave}
-           >
-             <div
-               ref={carouselRef}
-               className="flex gap-6 will-change-transform"
-               style={{ 
-                 width: 'fit-content',
-                 transform: 'translateX(0px)'
-               }}
-             >
-               {duplicatedDesigns.map((design, index) => {
-                 const cardIndex = index % latestDesigns.length;
-                 
-                 return (
-                   <CarouselCard
-                     key={`${design.id}-${index}`}
-                     design={design}
-                     onClick={() => handleCardClick(design)}
-                     isVisible={isVisible}
-                     index={cardIndex}
-                   />
-                 );
-               })}
-             </div>
-           </div>
-           
-           {/* Gradient overlays for smooth edges */}
-           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
-           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
-         </div>
-        
+        <div className={`mt-16 relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+          <div
+            className="overflow-hidden cursor-grab active:cursor-grabbing"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div
+              ref={carouselRef}
+              className="flex gap-6 will-change-transform"
+              style={{
+                width: 'fit-content',
+                transform: 'translateX(0px)'
+              }}
+            >
+              {duplicatedDesigns.map((design, index) => {
+                const cardIndex = index % latestDesigns.length;
+
+                return (
+                  <CarouselCard
+                    key={`${design.id}-${index}`}
+                    design={design}
+                    onClick={() => handleCardClick(design)}
+                    isVisible={isVisible}
+                    index={cardIndex}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Gradient overlays for smooth edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
+        </div>
+
         {/* Instructions */}
         <div className="text-center mt-8">
         </div>
