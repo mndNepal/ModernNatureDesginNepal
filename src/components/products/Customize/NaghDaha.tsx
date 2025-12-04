@@ -1226,9 +1226,9 @@ const NaghDaha = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/public/assets/images/ProductDetailImages/naghdaha1.jpg' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/naghdaha2.jpg' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/naghdaha3.jpg' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/naghdaha1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/naghdaha2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/naghdaha3.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

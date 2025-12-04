@@ -1235,9 +1235,9 @@ const Tihar = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/public/assets/images/ProductDetailImages/tihar1.jpg' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/tihar2.jpg' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/tihar3.jpg' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/tihar1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/tihar2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/tihar3.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

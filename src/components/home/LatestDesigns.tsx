@@ -3,7 +3,6 @@ import { X } from 'lucide-react';
 import Container from '../ui/Container.tsx';
 
 import SectionHeading from './SectionHeading';
-import { Link } from 'react-router-dom';
 
 interface DesignCard {
   id: string;

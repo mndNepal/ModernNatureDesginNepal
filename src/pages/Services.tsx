@@ -2,7 +2,7 @@
 import Footer from '@/components/ui/Footer'
 import Navbar from '@/components/ui/Navbar'
 import ServicePage from '@/components/services/Service'
-import MaterialsCarousel from '@/components/about/MaterialsCarousel'
+import MaterialsCarousel from '@/components/services/MaterialsCarousel'
 
 
 const Services = () => {

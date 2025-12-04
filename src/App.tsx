@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import ProductDetail from "@/pages/ProductDetail";
-// import ChatbotWidget from "@/components/home/ChatbotWidget";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
