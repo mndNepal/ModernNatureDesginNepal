@@ -16,12 +16,12 @@ const OurHistoryPage: React.FC = () => {
       variants={fadeInUp}
     >
       <div className="mt-4 max-w-5xl mx-auto space-y-6 text-justify">
-        <h2 className="text-4xl md:text-3xl font-bold text-gray-800 drop-shadow-sm">
+        <h2 className="text-2xl font-bold text-center text-gray-800 drop-shadow-sm">
           Decades of Weaving Excellence from Heart of Nepal
         </h2>
 
         <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-          Founded in <span className="font-semibold text-gray-800">2016 A.D.</span>, Modern Nature Design Nepal (MND Nepal)
+          Founded in <span className="font-semibold text-gray-800">1990 A.D.</span>, Modern Nature Design Nepal (MND Nepal)
           has grown into one of Nepal’s leading manufacturers and exporters of hand-knotted rugs.
           Based in Lalitpur - the artistic hub of Nepal - MND Nepal was built with a clear vision:
           to share Nepal’s finest craftsmanship with the world.

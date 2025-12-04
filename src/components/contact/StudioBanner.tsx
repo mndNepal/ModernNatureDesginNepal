@@ -261,7 +261,7 @@ export default function StudioBanner() {
             </div>
 
             <button
-              onClick={() => scrollToSection('footer')}
+              onClick={() => window.location.href = "https://www.google.com/maps/place/Modern+Nature+Design+Nepal/@27.6277525,85.3437677,133m/data=!3m1!1e3!4m6!3m5!1s0x39eb173a709414c3:0x982c4a313e31facb!8m2!3d27.6277484!4d85.3441998!16s%2Fg%2F11d_tqv0p9?entry=ttu&g_ep=EgoyMDI1MTIwMS4wIKXMDSoASAFQAw%3D%3D"}
               className={`bg-mint-green text-charcoal px-8 py-4 rounded-lg font-medium hover:bg-mint-green/90 transition-all duration-600 w-full sm:w-auto ${isVisible ? 'opacity-100 translate-y-0 shadow-md hover:shadow-lg' : 'opacity-0 translate-y-4 shadow-sm'}`}
               style={{
                 transitionDelay: isVisible ? '500ms' : '0ms',

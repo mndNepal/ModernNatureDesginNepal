@@ -37,23 +37,28 @@ const AboutUsPage: React.FC = () => {
       <div className="flex flex-col lg:flex-row w-4.5/5 mx-auto">
 
         {/* Left Content */}
-        <div className="w-full lg:w-1/2 max-w-5xl mx-auto space-y-6 lg:text-left">
-          <h2 className="text-4xl md:text-3xl font-bold text-gray-800 drop-shadow-sm">
+        <div className="w-full lg:w-1/2 max-w-5xl mx-auto space-y-6 lg:text-left text-center">
+          <h2 className="text-2xl  font-bold text-gray-800 text-center drop-shadow-sm ">
             Weaving Heritage into Modern Elegance
           </h2>
 
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed text-justify">
             Modern Nature Design Nepal (MND Nepal) weaves stories of tradition, craftsmanship, and creativity into every rug. Inspired by the ancient artistry of Tibet and brought to life by the skilled hands of Nepalese weavers, we create premium, export-quality hand-knotted rugs that unite timeless heritage with modern design sensibilities.
-            <br/> <br/>
-            Celebrated across international markets, our rugs are admired for their graphic elegance, intricate detailing, and lasting durability. With over 2,000 color shades and knot densities of 60, 80, and 100 150 knots, each rug is meticulously hand-knotted to a 5 mm thickness, showcasing precision and artistry in perfect harmony.
+            <br /> <br />
+            Celebrated across international markets, our rugs are admired for their graphic elegance, intricate detailing, and lasting durability. With over 2,000 color shades and knot densities of 60, 80, 100 and 150 knots, each rug is meticulously hand-knotted to a 5 mm thickness, showcasing precision and artistry in perfect harmony.
             We supply exclusively on a wholesale basis, crafting custom rugs to meet the unique needs of clients worldwide.
-             <br/> <br/>
+            <br /> <br />
             At MND Nepal, craftsmanship goes hand-in-hand with conscience:
-            ✨100% child labor-free production 
-            🌿All-natural materials, high-quality sheep’s wool and eco-friendly fibers
-            🧶Entirely handmade, preserving Nepal’s traditional weaving heritage 
-             <br/> <br/>
+
+            <br /> <br />
+            <div className="text-lg  text-gray-700 leading-relaxed">
+              <p>✨ <span className="font-semibold">100% child labor-free production</span></p>
+              <p>🌿 <span className="font-semibold">All-natural materials, high-quality sheep’s wool and eco-friendly fibers</span></p>
+              <p>🧶 <span className="font-semibold">Entirely handmade, preserving Nepal’s traditional weaving heritage</span></p>
+            </div>
+            <br />
             Beyond business, we believe in empowerment and purpose - offering fair employment to skilled artisans and helping preserve Nepal’s cultural legacy. Every rug we create is a unique masterpiece - a fusion of artistry, ethics, and emotion - adorning prestigious interiors, homes, and hotels around the world.
+            <br /> <br />
             At Modern Nature Design Nepal, we don’t just make rugs - we craft timeless expressions of Nepalese artistry for the world to cherish.
           </p>
         </div>

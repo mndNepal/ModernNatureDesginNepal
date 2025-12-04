@@ -1358,10 +1358,10 @@ const AankhiJhyal = () => {
                 {[
                   'Hand-knotted by master artisans',
                   'Premium yarn construction',
-                  'Lorem',
                   'Fade-resistant colors',
                   'Durable and long-lasting',
-                  'Easy to maintain'
+                  'Easy to maintain',
+                  'Delivery Time : 2.5-3 months',
                 ].map((feature, index) => (
                   <li
                     key={index}
@@ -1396,10 +1396,10 @@ const AankhiJhyal = () => {
 
           <div className="w-3/5 flex flex-col gap-6">
             <div className="bg-gray-100 p-4 shadow-sm border">
-              <h2 className="font-semibold mb-2">TO CHANGE COLORS:</h2>
+              <h2 className="font-semibold mb-2">Changing Colors is Easy:</h2>
               <ol className="list-decimal ml-4 text-sm text-gray-700 space-y-1">
-                <li>Click on the color window below corresponding to the part of the design that you want to re-color.</li>
-                <li>Then click on the desired color in the color chart.</li>
+                <li>Click the color window for the design area you want to recolor.</li>
+                <li>Choose your preferred color from the color chart.</li>
               </ol>
             </div>
             <div className="flex items-center gap-4 flex-wrap">

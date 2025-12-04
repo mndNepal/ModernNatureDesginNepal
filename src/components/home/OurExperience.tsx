@@ -48,8 +48,8 @@ const experienceCards: ExperienceCard[] = [
   {
     id: 'craftsmanship',
     icon: <Clock className="w-8 h-8" />,
-    title: '10+ Years of Craftsmanship',
-    description: 'Serving homes with hand-Knotted rugs since 2016.'
+    title: '30+ Years of Craftsmanship',
+    description: 'Serving homes with hand-Knotted rugs since 1990 A.D.'
   },
   {
     id: 'authentic',

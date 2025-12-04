@@ -22,9 +22,9 @@ const ITEMS: Item[] = [
     photo: "/assets/images/home/InspirationGallery/1.png",
     design: "/assets/images/home/InspirationGallery/2.png",
     carpet: "/assets/images/home/InspirationGallery/3.png",
-    inspirationDesc: "Captured during your trek - the moment that sparked the idea.",
-    translationDesc: "Sketch transforming morning light and peaks into minimalist forms.",
-    finishedDesc: "Hand-knotted to reflect the cold blues and warm sunrise glow.",
+    inspirationDesc: "From the trail to creation — inspired by a timeless moment at Gokyo Lake.",
+    translationDesc: "Transforming natural forms into artistic language — woven into a rug.",
+    finishedDesc: "A meticulously hand-knotted masterpiece brought to life by skilled Nepalese artisans.",
   },
   {
     id: "m2",

@@ -16,9 +16,9 @@ const heroSlides: HeroSlide[] = [
   {
     id: 'slide-1',
     image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763914063/832b2326-3b7c-4ac4-aec1-be2f78eb21b4_khljaa.jpg',
-    title: 'Interior Alchemy',
-    subtitle: 'Transform Your Space',
-    description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
+    title: 'Welcome To',
+    subtitle: '',
+    description: 'the leading manufacturing company of hand-knotted area rugs, knotted by skilled Nepalese artisans, turning tradition, texture, and inspiration into luxury'
   },
   {
     id: 'slide-2',
@@ -224,7 +224,7 @@ export default function HeroSection() {
               <img
                 src={isLoaded !== false ? slide.image : fallbackImage}
                 alt={slide.title}
-                className={`w-full h-full object-cover transition-opacity duration-500 ${
+                className={`w-full text-center h-full object-cover transition-opacity duration-500 ${
                   isLoaded !== false ? 'opacity-100' : 'opacity-75'
                 }`}
                 onError={(e) => {
