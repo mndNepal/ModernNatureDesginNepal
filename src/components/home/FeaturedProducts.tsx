@@ -10,13 +10,15 @@ interface Product {
   id: string;
   name: string;
   description: string;
+  price: number;
   images: string[];
   colors: { id: string; name: string; hex: string }[];
   category: string;
   isBestseller: boolean;
   isNew: boolean;
-  dimensions: string;
+  color?: string;
   material: string;
+  dimensions?: string;
 }
 
 interface ProductCardProps {
@@ -126,7 +128,7 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative bg-off-white w-[900px] h-[600px] max-w-[90vw] max-h-[90vh] flex flex-col lg:flex-row animate-in zoom-in-95 duration-500 ease-out rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300 overflow-hidden">
+      <div className="relative bg-off-white w-[900px] h-[600px] max-w-[90vw] max-h-[90vh] flex flex-col lg:flex-row animate-in zoom-in-95  ease-out rounded-lg shadow-2xl hover:shadow-xl transition-shadow duration-300 overflow-hidden">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -166,23 +168,23 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
             </h2>
 
 
-            <p className="text-charcoal/70 leading-relaxed mb-6">
+            <p className="text-charcoal/70 leading-relaxed mb-6 font-bold">
               {product.description}
             </p>
 
             {/* Product Details */}
             <div className="space-y-3 mb-6">
-              <div className="flex justify-between">
-                <span className="text-charcoal/60">Dimensions:</span>
-                <span className="text-charcoal font-medium">{product.dimensions}</span>
+              <div className="flex ">
+                <span className="text-charcoal font-semibold"></span>
+                <span className="text-charcoal/70 text-base font-normal whitespace-pre-line ">{product.dimensions}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-charcoal/60">Material:</span>
-                <span className="text-charcoal font-medium">{product.material}</span>
+                <span className="text-charcoal font-semibold"></span>
+                <span className="text-charcoal/70 text-base font-normal whitespace-pre-line">{product.material}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-charcoal/60">Category:</span>
-                <span className="text-charcoal font-medium capitalize">
+                <span className="text-charcoal font-semibold"></span>
+                <span className="text-charcoal/70 text-base font-normal whitespace-pre-line">
                   {product.category.replace('-', ' ')}
                 </span>
               </div>

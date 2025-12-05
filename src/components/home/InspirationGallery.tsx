@@ -56,7 +56,7 @@ const ITEMS: Item[] = [
     short: "Warm tones inspired by drifting sands",
     photo: "/assets/images/home/InspirationGallery/10.jpg",
     design: "/assets/images/home/InspirationGallery/11.jpg",
-    carpet: "/assets/images/home/InspirationGallery/9.jpg",
+    carpet: "/assets/images/home/InspirationGallery/12.jpg",
     inspirationDesc: "An abstract celebration of Tihar's soulful energy.",
     translationDesc: "Where organic beauty becomes woven expression. ",
     finishedDesc: "an heirloom-level rug, born from Nepal's finest hands",

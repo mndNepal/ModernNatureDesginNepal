@@ -156,7 +156,7 @@ function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | n
       />
 
       {/* Modal */}
-      <div className="relative bg-off-white rounded-2xl shadow-2xl hover:shadow-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100">
+      <div className="relative bg-off-white rounded-2xl shadow-2xl hover:shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100">
         {/* Close Button */}
         <button
           onClick={onClose}

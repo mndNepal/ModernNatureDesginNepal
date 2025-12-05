@@ -220,7 +220,7 @@ const ImageComponent = ({ card }: { card: Card }) => {
 const SelectedCard = ({ selected, onClose }: { selected: Card | null; onClose: () => void }) => {
   return (
     <motion.div 
-      className="bg-transparent min-h-full w-full flex flex-col justify-center py-8 rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300 relative z-[60] max-w-4xl mx-auto"
+      className="bg-transparent min-h-full w-full flex flex-col justify-center py-8 rounded-lg shadow-2xl hover:shadow-xl transition-shadow duration-300 relative z-[60] max-w-4xl mx-auto"
       onClick={(e) => e.stopPropagation()}
       variants={modalVariants}
       initial="hidden"

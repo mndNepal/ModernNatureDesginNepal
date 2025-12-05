@@ -3,8 +3,8 @@
   "products": [
     {
       "id": "rug-001",
-      "name": "Aankhi Jhyal",
-      "description": "Hand-knotted yarn rug with traditional Nepalese patterns",
+      "name": "Lakhey Face",
+      "description": "Its Features:",
       "price": 1299,
       "images": [
         "/assets/rugs/himalayan-heritage-1.jpg",
@@ -15,16 +15,16 @@
         { "id": "c2", "name": "Mint", "hex": "#CDE6DC" },
         { "id": "c3", "name": "Beige", "hex": "#E9DFD3" }
       ],
-      "category": "living-room",
+      "category": "The busy, swirling texture gives the pattern a sense of energy and movement, reflecting the dynamic nature of the Lakhe dance.",
       "isBestseller": true,
       "isNew": false,
-      "dimensions": "8' x 10'",
-      "material": "100% Wool"
+      "dimensions": "Deep red (for ferocity/vermillion), earthy browns/grays, and off-white/cream (for eyes/teeth).",
+      "material": "Strong symmetry and repeating circular shapes mimic the Lakhe's wide, staring eyes. Jagged, claw-like patterns represent the fangs or teeth."
     },
     {
       "id": "rug-002",
-      "name": "Sweet16",
-      "description": "Contemporary design with subtle texture variations",
+      "name": "Mirror",
+      "description": "",
       "price": 899,
       "images": [
         "/assets/rugs/mountain-mist-1.jpg",
@@ -34,125 +34,46 @@
         { "id": "c4", "name": "Off-White", "hex": "#FAF7F2" },
         { "id": "c5", "name": "Warm Beige", "hex": "#E9DFD3" }
       ],
-      "category": "bedroom",
+      "category": "The surrounding dense, rectangular strokes represent the blurred, static energy of the reflection itself.\n\nVibe: Modern, textural, and minimalist, conveying a quiet sense of motion, decay, or abstract self-observation.",
       "isBestseller": true,
-      "isNew": true,
-      "dimensions": "6' x 9'",
-      "material": "Wool & Silk Blend"
+      "isNew": false,
+      "dimensions": "This design is a high-contrast study in texture, simulating a reflected image that is breaking down or subtly shifting.\n\nPalette: Predominantly a sleek, minimalist canvas of Off-White/Silver contrasted with muted Charcoal Grays and subtle Sage Greens.",
+      "material": "Concept: It simulates a 'digital reflection' or a fractured image. The rectangular, blocky patterns are a grid being distorted—like a mirror that is fogging up or a video feed that is glitching."
     },
     {
       "id": "rug-003",
-      "name": "Holi",
-      "description": "Intricate hand-woven patterns inspired by ancient motifs",
+      "name": "Manaslu Circuit",
+      "description": "",
       "price": 1599,
       "images": [
-        "/assets/rugs/artisan-dream-1.jpg",
-        "/assets/rugs/artisan-dream-2.jpg"
       ],
       "colors": [
         { "id": "c6", "name": "Deep Charcoal", "hex": "#1F1F1F" },
         { "id": "c7", "name": "Sage Green", "hex": "#CDE6DC" }
       ],
-      "category": "dining-room",
+      "category": "Vibe: A powerful, isolated, and textured vision of Himalayan majesty.",
       "isBestseller": false,
-      "isNew": true,
-      "dimensions": "9' x 12'",
-      "material": "100% Handspun Wool"
+      "isNew": false,
+      "dimensions": "This is a rugged, abstract snapshot of the peak's colossal power.\n\nPalette: Icy White, deep Earthy Browns, and striking Golden highlights.",
+      "material": "Concept: Vertical, elemental climb—the white is raw glacier ice, the browns are sheer rock faces, and the gold is dramatic, high-altitude sun hitting the mountain's profile."
     },
     {
       "id": "rug-004",
-      "name": "Jungle Tribes",
-      "description": "Soft textures reminiscent of Himalayan valleys",
+      "name": "Path",
+      "description": "Description:",
       "price": 749,
       "images": [
-        "/assets/rugs/valley-whisper-1.jpg",
-        "/assets/rugs/valley-whisper-2.jpg"
       ],
       "colors": [
         { "id": "c8", "name": "Natural Beige", "hex": "#E9DFD3" },
         { "id": "c9", "name": "Cream", "hex": "#FAF7F2" }
       ],
-      "category": "living-room",
+      "category": "",
       "isBestseller": true,
       "isNew": false,
-      "dimensions": "5' x 8'",
-      "material": "Organic Cotton & Wool"
-    },
-    {
-      "id": "rug-005",
-      "name": "Tibetan Sunrise",
-      "description": "Vibrant colors capturing the essence of dawn",
-      "price": 1199,
-      "images": [
-        "/assets/rugs/tibetan-sunrise-1.jpg",
-        "/assets/rugs/tibetan-sunrise-2.jpg"
-      ],
-      "colors": [
-        { "id": "c10", "name": "Warm Terracotta", "hex": "#D4A574" },
-        { "id": "c11", "name": "Mint Green", "hex": "#CDE6DC" }
-      ],
-      "category": "bedroom",
-      "isBestseller": true,
-      "isNew": false,
-      "dimensions": "8' x 10'",
-      "material": "Tibetan Highland Wool"
-    },
-    {
-      "id": "rug-006",
-      "name": "Sherpa Trail",
-      "description": "Geometric patterns inspired by mountain paths",
-      "price": 999,
-      "images": [
-        "/assets/rugs/sherpa-trail-1.jpg",
-        "/assets/rugs/sherpa-trail-2.jpg"
-      ],
-      "colors": [
-        { "id": "c12", "name": "Stone Gray", "hex": "#8B8B8B" },
-        { "id": "c13", "name": "Charcoal", "hex": "#1F1F1F" }
-      ],
-      "category": "hallway",
-      "isBestseller": false,
-      "isNew": true,
-      "dimensions": "3' x 12'",
-      "material": "Hand-Knotted Wool"
-    },
-    {
-      "id": "rug-007",
-      "name": "Everest Base",
-      "description": "Bold design celebrating the majesty of the Himalayas",
-      "price": 1799,
-      "images": [
-        "/assets/rugs/everest-base-1.jpg",
-        "/assets/rugs/everest-base-2.jpg"
-      ],
-      "colors": [
-        { "id": "c14", "name": "Deep Blue", "hex": "#2C3E50" },
-        { "id": "c15", "name": "Silver Gray", "hex": "#BDC3C7" }
-      ],
-      "category": "living-room",
-      "isBestseller": true,
-      "isNew": false,
-      "dimensions": "10' x 14'",
-      "material": "Premium Yak Wool"
-    },
-    {
-      "id": "rug-008",
-      "name": "Kathmandu Nights",
-      "description": "Sophisticated urban-inspired design with traditional roots",
-      "price": 1399,
-      "images": [
-        "/assets/rugs/kathmandu-nights-1.jpg",
-        "/assets/rugs/kathmandu-nights-2.jpg"
-      ],
-      "colors": [
-        { "id": "c16", "name": "Midnight Black", "hex": "#1F1F1F" },
-        { "id": "c17", "name": "Gold Accent", "hex": "#F39C12" }
-      ],
-      "category": "dining-room",
-      "isBestseller": true,
-      "isNew": true,
-      "dimensions": "8' x 11'",
-      "material": "Silk & Wool Blend"
+      "dimensions": "This rug draws inspiration from the gentle flow of natural pathways. Set on a warm earthy brown base, it features soft olive and moss-green lines that sweep across the surface in smooth, looping curves. These interconnected paths create a calm sense of movement, while subtle beige and brown textures add depth and a handcrafted touch. The overall design feels organic, modern, and beautifully balanced—perfect for bringing warmth and a nature-inspired elegance to any interior.",
+      "material": ""
     }
+   
   ]
 }

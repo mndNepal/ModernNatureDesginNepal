@@ -15,7 +15,7 @@ interface ImageLoadState {
 const heroSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763914063/832b2326-3b7c-4ac4-aec1-be2f78eb21b4_khljaa.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764909175/12_iqrbxb.jpg',
     title: 'Welcome To',
     subtitle: '',
     description: 'the leading manufacturing company of hand-knotted area rugs, knotted by skilled Nepalese artisans, turning tradition, texture, and inspiration into luxury'
@@ -36,7 +36,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 'slide-4',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764170225/4c5ae8b4-c02e-4074-9e24-9497d3e0f4f8_p8esi1.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763914063/832b2326-3b7c-4ac4-aec1-be2f78eb21b4_khljaa.jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -46,7 +46,7 @@ const heroSlides: HeroSlide[] = [
 const heroinnerSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736726/Festival_Photorealistic_ulavyu.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737574/Tihar_Photorealistic_mcjxd8.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transform Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
@@ -68,7 +68,7 @@ const heroinnerSlides: HeroSlide[] = [
 
   {
     id: 'slide-4',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737324/Ring_3_Color_kyf4w3.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736726/Festival_Photorealistic_ulavyu.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transfer Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design.'
