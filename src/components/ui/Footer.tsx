@@ -132,14 +132,13 @@ export default function Footer(): JSX.Element {
                   Modern Nature Design Nepal
                 </h2>
               </div>
-              <p className="text-off-white/70 text-sm mb-4">
+              <p className="text-off-white/70 text-sm mb-4 ">
                 Hand-Knotted in Nepal, each rug is a masterpiece of heritage and
                 precision, seamlessly blending traditional weaving artistry with
                 contemporary design. Crafted for discerning interiors around the
                 world, Our rugs embody timeless elegance, exceptional quality and
                 ethical craftmanship - a statement of sophistication for
-                generations to come.
-              </p>
+                generations to come.</p>
             </div>
 
             {/* FOOTER NAV LINKS */}

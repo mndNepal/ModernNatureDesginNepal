@@ -45,9 +45,9 @@ const ITEMS: Item[] = [
     photo: "/assets/images/home/InspirationGallery/7.JPG",
     design: "/assets/images/home/InspirationGallery/8.jpg",
     carpet: "/assets/images/home/InspirationGallery/9.jpg",
-    inspirationDesc: "Rippling sands and desert wind patterns sparking soft geometry.",
-    translationDesc: "Sketch exploring curves, shadows, and warm tonal gradients.",
-    finishedDesc: "Crafted using blended ochres to mirror natural dune textures.",
+    inspirationDesc: "Are  reflection of Panchakunda Lake's still waters and spiritual calm -woven into luxury.",
+    translationDesc: "Panchakunda Lake's crystal calm and himalayan power, woven into timeless design.",
+    finishedDesc: "from loom to living room pure elegance underfoot.",
   },
 
   {
