@@ -1385,9 +1385,9 @@ const imgRef = useRef(null);
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/public/assets/images/ProductDetailImages/festival1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/festival2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/festival3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/assets/images/ProductDetailImages/festival1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/assets/images/ProductDetailImages/festival2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/assets/images/ProductDetailImages/festival3.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

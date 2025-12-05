@@ -17,10 +17,10 @@ const services: ServiceSection[] = [
     subtitle: "See. Feel. Perfect Your Design.",
     image: "/assets/images/services/strikeoffs-and-samples.jpg",
     description: `
-      At Modern Nature Design Nepal, we know that perfection begins with the smallest detail. That’s why we offer strike-offs and samples — your opportunity to experience the true color, texture, and craftsmanship of your rug before full production.<br /><br />
+      At Modern Nature Design Nepal, we know that perfection begins with the smallest detail. That's why we offer strike-offs and samples — your opportunity to experience the true color, texture, and craftsmanship of your rug before full production.<br /><br />
       Our strike-offs showcase every element — yarn quality, pile height, and weaving precision — so you can confidently finalize your design. Available in <strong>30×30 cm</strong>, <strong>60×60 cm</strong>, or custom sizes, they ensure your rug turns out exactly as envisioned.<br /><br />
       We also offer expert color matching services, allowing us to perfectly replicate shades from swatches, yarn samples, tufts, or fabric references you provide. Every hue is matched with precision to bring your creative vision to life.<br />
-      We value our clients and partners — that’s why we provide special discounts or even free strike-offs for regular clients, depending on sample value.<br /><br />
+      We value our clients and partners — that's why we provide special discounts or even free strike-offs for regular clients, depending on sample value.<br /><br />
       ✨ From concept to craftsmanship, every detail is woven to perfection.
     `,
   },
@@ -32,20 +32,20 @@ const services: ServiceSection[] = [
     description: `
       We match any shade — from fabric swatches, yarns, leather, or Pantone codes — in wool, silk, or other materials. Create your custom color kits or mini rug swatches for a perfect preview.<br /><br />
       Instant access to a world of shades:<br />
-      <strong>ARS 1200 Wool Box</strong> – 1,200 colors<br />
-      <strong>ARS 700 Viscose Box</strong> – 700 colors<br />
-      <strong>ARS 1000 Viscose Box</strong> – 1,000 colors<br /><br />
+      <strong>ARS 1200 Wool Box</strong> - 1,200 colors<br />
+      <strong>ARS 700 Viscose Box</strong> - 700 colors<br />
+      <strong>ARS 1000 Viscose Box</strong> - 1,000 colors<br /><br />
       ✨ Turn your vision into vibrant reality — one perfect shade at a time.
     `,
   },
   {
     id: "3",
     title: "Online Color Customizer",
-    subtitle: "Your Vision, Your Colors — Instantly",
+    subtitle: "Your Vision, Your Colors",
     image: "/assets/images/services/online-color-customizer.png",
     description: `
       No color kits? No problem. Our Online Color Customizer lets you choose, adjust, and share your color preferences directly online — making communication seamless and precise. Whether you’re exploring new palettes or matching existing shades, our digital tool ensures your colors are clear, consistent, and ready for creation.<br /><br />
-      ✨ Design from anywhere — we’ll bring your colors to life.
+      ✨ Design from anywhere — we'll bring your colors to life.
     `,
   },
   {
@@ -68,9 +68,9 @@ const services: ServiceSection[] = [
     image: "/assets/images/services/shipping.png",
     description: `
       We ship your rugs as agreed — small orders via couriers (door-to-door) or air cargo, larger shipments via the same fast, reliable channels.<br /><br />
-      <strong>FedEx, DHL, UPS:</strong> 3–5 days<br />
-      <strong>Air cargo:</strong> 5–7 days to your nearest airport.<br /><br />
-      Shipping cost depends on weight or volume, and we provide all documents — invoice, packing list, GSP form, and certificate of origin — for smooth customs clearance.<br /><br />
+      <strong>FedEx, DHL, UPS:</strong> 3-5 days<br />
+      <strong>Air cargo:</strong> 5-7 days to your nearest airport.<br /><br />
+      Shipping cost depends on weight or volume, and we provide all documents - invoice, packing list, GSP form, and certificate of origin — for smooth customs clearance.<br /><br />
       Classified under <strong>HS Code 5701.10.4000</strong> and registered under the <strong>EU REX system</strong>, our rugs qualify for generalized tariff preferences.<br /><br />
       ✨ Fast, compliant, and ready to deliver your handcrafted masterpiece anywhere in the world.
     `,
@@ -90,24 +90,23 @@ const Services: React.FC = () => {
         </h1>
 
         {/* Service Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="flex flex-wrap justify-center gap-20">
           {services.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
+              className="w-[340px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
               onClick={() => setActiveService(service)}
             >
               <div className="relative w-full h-56 overflow-hidden flex items-center justify-center bg-white">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
-                    service.id === "3"
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3"
                       ? "object-contain p-4 bg-white"
                       : "object-cover"
-                  }`}
+                    }`}
                 />
               </div>
               <div className="p-6">
@@ -145,11 +144,10 @@ const Services: React.FC = () => {
                   <img
                     src={activeService.image}
                     alt={activeService.title}
-                    className={`w-full h-full ${
-                      activeService.id === "3"
+                    className={`w-full h-full ${activeService.id === "3"
                         ? "object-contain p-6 bg-white"
                         : "object-cover"
-                    }`}
+                      }`}
                   />
                 </div>
 
