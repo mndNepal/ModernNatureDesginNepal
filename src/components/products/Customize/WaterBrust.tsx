@@ -1342,6 +1342,15 @@ const WaterBrust = () => {
 
     pdf.text(disclaimer, (pageWidth - dWidth) / 2, pageHeight - 20);
 
+     pdf.setFontSize(9);
+    pdf.setTextColor(120, 120, 120);
+    pdf.setFont("helvetica", "normal");
+
+    const copyrightText = "© Modern Nature Design Nepal";
+
+    // Use jsPDF's built-in center-align option
+    pdf.text(copyrightText, pageWidth / 2, pageHeight - 12, { align: "center" });
+
     pdf.save("Water Brust.pdf");
   };
 

@@ -44,7 +44,7 @@ import TeraiFarm from "./components/products/Customize/TeraiFarm";
 import Thoughts from "./components/products/Customize/Thoughts";
 import Tides from "./components/products/Customize/Tides";
 import Trek from "./components/products/Customize/Trek";
-import TsumValleyPatan from "./components/products/Customize/TsumValleyPatan";
+import TsumValleyPatan from "./components/products/Customize/TsumValley";
 import UndefinedUniverse from "./components/products/Customize/UndefinedUniverse";
 import Vines from "./components/products/Customize/Vines";
 import WaterBrust from "./components/products/Customize/WaterBrust";

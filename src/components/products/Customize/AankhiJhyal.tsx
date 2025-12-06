@@ -1308,7 +1308,7 @@ const AankhiJhyal = () => {
     const startXY = (pageWidth - boxesWidth) / 2;
 
     entries.forEach(([name, hex], index) => {
-        const xCenter = startXY + index * (6 + spacing);
+      const xCenter = startXY + index * (6 + spacing);
 
       // Color name
       pdf.setFontSize(7);
@@ -1338,6 +1338,15 @@ const AankhiJhyal = () => {
     const dWidth = pdf.getTextWidth(disclaimer);
 
     pdf.text(disclaimer, (pageWidth - dWidth) / 2, pageHeight - 20);
+
+    pdf.setFontSize(9);
+    pdf.setTextColor(120, 120, 120);
+    pdf.setFont("helvetica", "normal");
+
+    const copyrightText = "© Modern Nature Design Nepal";
+
+    // Use jsPDF's built-in center-align option
+    pdf.text(copyrightText, pageWidth / 2, pageHeight - 12, { align: "center" });
 
     pdf.save("AankhiJhyal.pdf");
   };
@@ -1387,9 +1396,9 @@ const AankhiJhyal = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='assets/images/ProductDetailImages/AankhiJhyal2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='assets/images/ProductDetailImages/AankhiJhyal1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='assets/images/ProductDetailImages/AankhiJhyal3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/public/assets/images/ProductDetailImages/aankhijhyal1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='assets/images/ProductDetailImages/aankhijhyal2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='assets/images/ProductDetailImages/aankhijhyal3.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

@@ -1190,7 +1190,7 @@ const MorningSun = () => {
     return result;
   };
 
-const imgRef = useRef(null);
+  const imgRef = useRef(null);
   useEffect(() => {
     console.log('Image ref:', imgRef);
   }, [imgRef]);
@@ -1343,6 +1343,15 @@ const imgRef = useRef(null);
 
     pdf.text(disclaimer, (pageWidth - dWidth) / 2, pageHeight - 20);
 
+    pdf.setFontSize(9);
+    pdf.setTextColor(120, 120, 120);
+    pdf.setFont("helvetica", "normal");
+
+    const copyrightText = "© Modern Nature Design Nepal";
+
+    // Use jsPDF's built-in center-align option
+    pdf.text(copyrightText, pageWidth / 2, pageHeight - 12, { align: "center" });
+
     pdf.save("Morning Sun.pdf");
   };
 
@@ -1361,11 +1370,11 @@ const imgRef = useRef(null);
               <ul className="space-y-2">
                 {[
                   'Hand-knotted by master artisans',
-                  'Premium yarn construction',       
+                  'Premium yarn construction',
                   'Fade-resistant colors',
                   'Durable and long-lasting',
                   'Easy to maintain',
-                 'Delivery Time : 2.5-3 months',
+                  'Delivery Time : 2.5-3 months',
                 ].map((feature, index) => (
                   <li
                     key={index}
@@ -1386,7 +1395,7 @@ const imgRef = useRef(null);
               }}
             >
               <div className="w-full h-full">
-                <MorningSunLayer layers={layers}  imgref={imgRef} />
+                <MorningSunLayer layers={layers} imgref={imgRef} />
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
@@ -1536,21 +1545,21 @@ const imgRef = useRef(null);
                                   backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})`,
                                 }}
                                 onClick={() => {
-                                applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b));
-                                setLayerNameList((lname) => {
-                                  let newName = colorItem.name
-                                  let lArray = [];
-                                  lname.map((cname, index) => {
-                                    if (index + 1 == activeLayer) {
-                                      lArray.push(newName);
-                                    } else {
-                                      lArray.push(cname);
-                                    }
+                                  applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b));
+                                  setLayerNameList((lname) => {
+                                    let newName = colorItem.name
+                                    let lArray = [];
+                                    lname.map((cname, index) => {
+                                      if (index + 1 == activeLayer) {
+                                        lArray.push(newName);
+                                      } else {
+                                        lArray.push(cname);
+                                      }
+                                    })
+                                    return lArray;
                                   })
-                                  return lArray;
-                                })
 
-                              }}
+                                }}
                                 onKeyDown={(e) => { if (e.key === 'Enter') applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b)); }}
                                 role="button"
                                 tabIndex={0}
