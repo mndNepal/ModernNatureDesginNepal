@@ -47,7 +47,7 @@ const ITEMS: Item[] = [
     carpet: "/assets/images/home/InspirationGallery/9.jpg",
     inspirationDesc: "Are  reflection of Panchakunda Lake's still waters and spiritual calm -woven into luxury.",
     translationDesc: "Panchakunda Lake's crystal calm and himalayan power, woven into timeless design.",
-    finishedDesc: "from loom to living room pure elegance underfoot.",
+    finishedDesc: "From loom to living room pure elegance underfoot.",
   },
 
   {
@@ -59,7 +59,7 @@ const ITEMS: Item[] = [
     carpet: "/assets/images/home/InspirationGallery/12.jpg",
     inspirationDesc: "An abstract celebration of Tihar's soulful energy.",
     translationDesc: "Where organic beauty becomes woven expression. ",
-    finishedDesc: "an heirloom-level rug, born from Nepal's finest hands",
+    finishedDesc: "An heirloom-level rug, born from Nepal's finest hands",
   },
 ];
 

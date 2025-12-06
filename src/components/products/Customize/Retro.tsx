@@ -1383,9 +1383,9 @@ const Retro = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/public/assets/images/ProductDetailImages/retro1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/retro2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/public/assets/images/ProductDetailImages/retro3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/assets/images/ProductDetailImages/retro1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/assets/images/ProductDetailImages/retro2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='/assets/images/ProductDetailImages/retro3.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

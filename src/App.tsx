@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
+
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import ProductDetail from "@/pages/ProductDetail";
@@ -82,6 +84,7 @@ import OurExperience from "./components/home/OurExperience";
 
 export default function App() {
   return (
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/craftmanship" element={<OurExperience />} />
@@ -89,79 +92,79 @@ export default function App() {
 
 
         <Route path="/collections" element={<AllCollections />} />
-        
+
         <Route path="/products" element={<Products />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
 
         <Route path="/products/aankhijhyal" element={<AankhiJhyal />} />
-        <Route path="/products/attraction" element={<Attraction/>} />
-        <Route path="/products/baasn" element={<Baasn/>} />
-        <Route path="/products/bayleaves" element={<BayLeaves/>} />
-        <Route path="/products/bubbles" element={<Bubbles/>} />
-        <Route path="/products/burningrope" element={<BurningRope/>} />
-        <Route path="/products/cells" element={<Cells/>} />
-        <Route path="/products/childhood" element={<Childhood/>} />
-        <Route path="/products/festival" element={<Festival/>} />
-        <Route path="/products/fountainwater" element={<FountainWater/>} />
-        <Route path="/products/gurung" element={<Gurung/>} />
-        <Route path="/products/holi" element={<Holi/>} />
-        <Route path="/products/imagination" element={<Imagination/>} />
-        <Route path="/products/jungletribes" element={<JungleTribes/>} />
-        <Route path="/products/lakheface" element={<LakheFace/>} />
-        <Route path="/products/majesty" element={<Majesty/>} />
-        <Route path="/products/manaslucircuit" element={<ManasluCircuit/>} />
-        <Route path="/products/maze" element={<Maze/>} />
-        <Route path="/products/mirror" element={<Mirror/>} />
-        <Route path="/products/monkeytemple" element={<MonkeyTemple/>} />
-        <Route path="/products/morningsun" element={<MorningSun/>} />
-        <Route path="/products/naghdaha" element={<NaghDaha/>} />
-        <Route path="/products/namchebazar" element={<NamcheBazar/>} />
-        <Route path="/products/onboard" element={<OnBoard/>} />
-        <Route path="/products/ontheroad" element={<OnTheRoad/>} />
-        <Route path="/products/begnaslake" element={<BegnasLake/>} />
-        <Route path="/products/path" element={<Path/>} />
-        <Route path="/products/rainforest" element={<RainForest/>} />
-        <Route path="/products/retro" element={<Retro/>} />
-        <Route path="/products/sherpalove" element={<SherpaLove/>} />
-        <Route path="/products/shreepanch" element={<Shreepanch/>} />
-        <Route path="/products/shyala" element={<Shyala/>} />
-        <Route path="/products/sweet16" element={<Sweet16/>} />
-        <Route path="/products/teraifarm" element={<TeraiFarm/>} />
-        <Route path="/products/thoughts" element={<Thoughts/>} />
-        <Route path="/products/tides" element={<Tides/>} />
-        <Route path="/products/trek" element={<Trek/>} />
-        <Route path="/products/tsumvalleypatan" element={<TsumValleyPatan/>} />
-        <Route path="/products/undefineduniverse" element={<UndefinedUniverse/>} />
-        <Route path="/products/vines" element={<Vines/>} />
-        <Route path="/products/waterbrust" element={<WaterBrust/>} />
-        <Route path="/products/watercoin" element={<WaterCoin/>} />
-        <Route path="/products/weave" element={<Weave/>} />
-        <Route path="/products/pari" element={<Pari/>} />
-        <Route path="/products/chakati" element={<Chakati/>} />
-        <Route path="/products/chino" element={<Chino/>} />
-        <Route path="/products/kaath" element={<Kaath/>} />
-        <Route path="/products/landmark" element={<Landmark/>} />
-        <Route path="/products/paisa" element={<Paisa/>} />
-        <Route path="/products/ping" element={<Ping/>} />
-        <Route path="/products/puranojhyal" element={<PuranoJhyal/>} />
-        <Route path="/products/smoke" element={<Smoke/>} />
-        <Route path="/products/mandro" element={<Mandro/>} />
-        <Route path="/products/tihar" element={<Tihar/>} />
-        <Route path="/products/thewall" element={<TheWall/>} />
-        <Route path="/products/ring" element={<Ring/>} />
-        <Route path="/products/lalitpur" element={<Lalitpur/>} />
-        <Route path="/products/brokenmirror" element={<BrokenMirror/>} />
-        <Route path="/products/illusion" element={<Illusion/>} />
-        <Route path="/products/beehive" element={<Beehive/>} />
-        <Route path="/products/kunda" element={<Kunda/>} />
-        <Route path="/products/budiaunla" element={<BudiAunla/>} />
-        <Route path="/products/sukool" element={<Sukool/>} />
-        <Route path="/products/waterlilies" element={<WaterLilies/>} />
-        <Route path="/products/birendrataal" element={<BirendraTaal/>} />
-         <Route path="/products/echo" element={<Echo/>} />
-        <Route path="/products/kapaal" element={<Kapaal/>} />
-        <Route path="/products/phulchoki" element={<Phulchoki/>} />
-        <Route path="/products/thaali" element={<Thaali/>} /> 
+        <Route path="/products/attraction" element={<Attraction />} />
+        <Route path="/products/baasn" element={<Baasn />} />
+        <Route path="/products/bayleaves" element={<BayLeaves />} />
+        <Route path="/products/bubbles" element={<Bubbles />} />
+        <Route path="/products/burningrope" element={<BurningRope />} />
+        <Route path="/products/cells" element={<Cells />} />
+        <Route path="/products/childhood" element={<Childhood />} />
+        <Route path="/products/festival" element={<Festival />} />
+        <Route path="/products/fountainwater" element={<FountainWater />} />
+        <Route path="/products/gurung" element={<Gurung />} />
+        <Route path="/products/holi" element={<Holi />} />
+        <Route path="/products/imagination" element={<Imagination />} />
+        <Route path="/products/jungletribes" element={<JungleTribes />} />
+        <Route path="/products/lakheface" element={<LakheFace />} />
+        <Route path="/products/majesty" element={<Majesty />} />
+        <Route path="/products/manaslucircuit" element={<ManasluCircuit />} />
+        <Route path="/products/maze" element={<Maze />} />
+        <Route path="/products/mirror" element={<Mirror />} />
+        <Route path="/products/monkeytemple" element={<MonkeyTemple />} />
+        <Route path="/products/morningsun" element={<MorningSun />} />
+        <Route path="/products/naghdaha" element={<NaghDaha />} />
+        <Route path="/products/namchebazar" element={<NamcheBazar />} />
+        <Route path="/products/onboard" element={<OnBoard />} />
+        <Route path="/products/ontheroad" element={<OnTheRoad />} />
+        <Route path="/products/begnaslake" element={<BegnasLake />} />
+        <Route path="/products/path" element={<Path />} />
+        <Route path="/products/rainforest" element={<RainForest />} />
+        <Route path="/products/retro" element={<Retro />} />
+        <Route path="/products/sherpalove" element={<SherpaLove />} />
+        <Route path="/products/shreepanch" element={<Shreepanch />} />
+        <Route path="/products/shyala" element={<Shyala />} />
+        <Route path="/products/sweet16" element={<Sweet16 />} />
+        <Route path="/products/teraifarm" element={<TeraiFarm />} />
+        <Route path="/products/thoughts" element={<Thoughts />} />
+        <Route path="/products/tides" element={<Tides />} />
+        <Route path="/products/trek" element={<Trek />} />
+        <Route path="/products/tsumvalleypatan" element={<TsumValleyPatan />} />
+        <Route path="/products/undefineduniverse" element={<UndefinedUniverse />} />
+        <Route path="/products/vines" element={<Vines />} />
+        <Route path="/products/waterbrust" element={<WaterBrust />} />
+        <Route path="/products/watercoin" element={<WaterCoin />} />
+        <Route path="/products/weave" element={<Weave />} />
+        <Route path="/products/pari" element={<Pari />} />
+        <Route path="/products/chakati" element={<Chakati />} />
+        <Route path="/products/chino" element={<Chino />} />
+        <Route path="/products/kaath" element={<Kaath />} />
+        <Route path="/products/landmark" element={<Landmark />} />
+        <Route path="/products/paisa" element={<Paisa />} />
+        <Route path="/products/ping" element={<Ping />} />
+        <Route path="/products/puranojhyal" element={<PuranoJhyal />} />
+        <Route path="/products/smoke" element={<Smoke />} />
+        <Route path="/products/mandro" element={<Mandro />} />
+        <Route path="/products/tihar" element={<Tihar />} />
+        <Route path="/products/thewall" element={<TheWall />} />
+        <Route path="/products/ring" element={<Ring />} />
+        <Route path="/products/lalitpur" element={<Lalitpur />} />
+        <Route path="/products/brokenmirror" element={<BrokenMirror />} />
+        <Route path="/products/illusion" element={<Illusion />} />
+        <Route path="/products/beehive" element={<Beehive />} />
+        <Route path="/products/kunda" element={<Kunda />} />
+        <Route path="/products/budiaunla" element={<BudiAunla />} />
+        <Route path="/products/sukool" element={<Sukool />} />
+        <Route path="/products/waterlilies" element={<WaterLilies />} />
+        <Route path="/products/birendrataal" element={<BirendraTaal />} />
+        <Route path="/products/echo" element={<Echo />} />
+        <Route path="/products/kapaal" element={<Kapaal />} />
+        <Route path="/products/phulchoki" element={<Phulchoki />} />
+        <Route path="/products/thaali" element={<Thaali />} />
 
 
 
@@ -170,10 +173,22 @@ export default function App() {
 
 
 
-        
+
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      {/* 🔥 WhatsApp Floating Button */}
+
+      <a
+        href="https://wa.me/9779851197564"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-10 right-8 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform"
+      >
+        <FaWhatsapp size={40} />
+      </a>
+    </>
   );
 }

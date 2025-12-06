@@ -32,9 +32,9 @@ const services: ServiceSection[] = [
     description: `
       We match any shade — from fabric swatches, yarns, leather, or Pantone codes — in wool, silk, or other materials. Create your custom color kits or mini rug swatches for a perfect preview.<br /><br />
       Instant access to a world of shades:<br />
-      <strong>ARS 1200 Wool Box</strong> – 1,200 colors<br />
-      <strong>ARS 700 Viscose Box</strong> – 700 colors<br />
-      <strong>ARS 1000 Viscose Box</strong> – 1,000 colors<br /><br />
+      <strong>ARS 1200 Wool Box</strong> - 1,200 colors<br />
+      <strong>ARS 700 Viscose Box</strong> - 700 colors<br />
+      <strong>ARS 1000 Viscose Box</strong> - 1,000 colors<br /><br />
       ✨ Turn your vision into vibrant reality — one perfect shade at a time.
     `,
   },
@@ -58,9 +58,9 @@ const services: ServiceSection[] = [
     image: "/assets/images/services/shipping.png",
     description: `
       We ship your rugs as agreed — small orders via couriers (door-to-door) or air cargo, larger shipments via the same fast, reliable channels.<br /><br />
-      <strong>FedEx, DHL, UPS:</strong> 3–5 days<br />
-      <strong>Air cargo:</strong> 5–7 days to your nearest airport.<br /><br />
-      Shipping cost depends on weight or volume, and we provide all documents — invoice, packing list, GSP form, and certificate of origin — for smooth customs clearance.<br /><br />
+      <strong>FedEx, DHL, UPS:</strong> 3-5 days<br />
+      <strong>Air cargo:</strong> 5-7 days to your nearest airport.<br /><br />
+      Shipping cost depends on weight or volume, and we provide all documents - invoice, packing list, GSP form, and certificate of origin — for smooth customs clearance.<br /><br />
       Classified under <strong>HS Code 5701.10.4000</strong> and registered under the <strong>EU REX system</strong>, our rugs qualify for generalized tariff preferences.<br /><br />
       ✨ Fast, compliant, and ready to deliver your handcrafted masterpiece anywhere in the world.
     `,
@@ -94,22 +94,21 @@ const Services: React.FC = () => {
         </h1>
 
         {/* First Row - 3 Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+        {/* First Row - 3 Boxes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10 place-items-center">
           {firstRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
+              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
               onClick={() => setActiveService(service)}
             >
               <div className="relative w-full h-56 overflow-hidden flex items-center justify-center bg-white">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3"
-                      ? "object-contain p-4 bg-white"
-                      : "object-cover"
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3" ? "object-contain p-4 bg-white" : "object-cover"
                     }`}
                 />
               </div>
@@ -125,25 +124,21 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* Second Row - 2 Boxes, same size as first row */}
-        <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-10">
-          {secondRowServices.map((service, index) => (
+        {/* Second Row - 2 Boxes (same width + same gap) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 ml-40 mr-40 place-items-center">
+          {secondRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              // This class pushes the second box to the third column on large screens
-              className={`bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer
-                }`}
+              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
               onClick={() => setActiveService(service)}
             >
-              <div className="relative w-full h-56 overflow-hidden flex items-center  bg-white">
+              <div className="relative w-full h-56 overflow-hidden flex items-center justify-center bg-white">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3"
-                      ? "object-contain p-4 bg-white"
-                      : "object-cover"
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3" ? "object-contain p-4 bg-white" : "object-cover"
                     }`}
                 />
               </div>
@@ -158,6 +153,7 @@ const Services: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
         {/* Expanded Modal */}
         <AnimatePresence>
           {activeService && (
@@ -182,8 +178,8 @@ const Services: React.FC = () => {
                     src={activeService.image}
                     alt={activeService.title}
                     className={`w-full h-full ${activeService.id === "3"
-                        ? "object-contain p-6 bg-white"
-                        : "object-cover"
+                      ? "object-contain p-6 bg-white"
+                      : "object-cover"
                       }`}
                   />
                 </div>
