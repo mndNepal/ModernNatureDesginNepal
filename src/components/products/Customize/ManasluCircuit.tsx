@@ -1409,9 +1409,9 @@ const ManasluCircuit = () => {
                             </div>
                         </div>
                         <div className='flex flex-column gap-2.5'>
-                            <img src='/assets/images/ProductDetailImages/manaslucircuit1.webp' className='h-52 w-40 object-cover mt-4' />
-                            <img src='/assets/images/ProductDetailImages/manaslucircuit2.webp' className='h-52 w-40 object-cover mt-4' />
-                            <img src='/assets/images/ProductDetailImages/manaslucircuit3.webp' className='h-52 w-40 object-cover mt-4' />
+                            <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085677/manaslucircuit1_ksjb9t.webp' className='h-52 w-40 object-cover mt-4' />
+                            <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085678/manaslucircuit2_yrzmyz.webp' className='h-52 w-40 object-cover mt-4' />
+                            <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085682/manaslucircuit3_spekb2.webp' className='h-52 w-40 object-cover mt-4' />
 
                         </div>
                     </div>

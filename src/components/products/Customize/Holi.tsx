@@ -1397,9 +1397,9 @@ const Holi = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/holi1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/holi2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/holi3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085645/holi1_e4clbg.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085645/holi2_l9d8yr.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085647/holi3_dte61f.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

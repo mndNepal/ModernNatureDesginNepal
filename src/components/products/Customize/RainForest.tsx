@@ -1403,9 +1403,9 @@ const imgRef = useRef(null);
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/rainforest1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/rainforest2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/rainforest3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085722/rainforest1_s8pfct.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085722/rainforest2_clbtzr.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085723/rainforest3_kz0rmc.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

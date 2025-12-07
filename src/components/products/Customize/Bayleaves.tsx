@@ -1391,9 +1391,9 @@ const BayLeaves = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/bayleaves1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/bayleaves2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/bayleaves3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085603/bayleaves1_ofyxmo.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085609/bayleaves2_kvnsky.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085608/bayleaves3_exjrql.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

@@ -242,13 +242,13 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 lg:py-24 bg-warm-beige/20">
+    <section ref={sectionRef} className="py-6 lg:py-10 bg-warm-beige/20">
       <Container>
-        <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}>
+        <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <SectionHeading
             title="The Rugs Everyone's Talking About - Hand Knotted for You"
-            className="mb-12 lg:mb-16"
+            className="mb-6 lg:mb-14 whitespace-nowrap text-[clamp(14px,4vw,24px)]"
+
           />
         </div>
 

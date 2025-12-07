@@ -1351,7 +1351,7 @@ const MonkeyTemple = () => {
       <Navbar />
       <div className="mt-12 min-h-screen bg-white flex flex-col items-center justify-start py-10">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-serif mt-2">MonkeyTemple</h1>
+          <h1 className="text-3xl font-serif mt-2">Monkey Temple</h1>
         </div>
 
         <div className="flex w-full max-w-7xl gap-6">
@@ -1390,9 +1390,9 @@ const MonkeyTemple = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/monkeytemple1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/monkeytemple2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/monkeytemple3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085688/monkeytemple1_fusbza.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085689/monkeytemple2_j2kzx9.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085693/monkeytemple3_f4awyj.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

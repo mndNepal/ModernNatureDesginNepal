@@ -1361,7 +1361,7 @@ const imgRef = useRef(null);
       <Navbar />
       <div className="mt-12 min-h-screen bg-white flex flex-col items-center justify-start py-10">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-serif mt-2">OnBoard</h1>
+          <h1 className="text-3xl font-serif mt-2">On Board</h1>
         </div>
 
         <div className="flex w-full max-w-7xl gap-6">
@@ -1400,9 +1400,9 @@ const imgRef = useRef(null);
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/onboard1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/onboard2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/onboard3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085699/onboard1_dikuiw.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085702/onboard2_bargyg.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085703/onboard3_jgzuyd.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

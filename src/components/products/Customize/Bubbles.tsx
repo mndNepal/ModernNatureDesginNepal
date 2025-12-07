@@ -1392,9 +1392,9 @@ const Bubbles = () => {
             </div>
           </div>
           <div className='flex flex-column gap-2.5'>
-            <img src='/assets/images/ProductDetailImages/bubble1.webp' className='h-52 w-40 object-cover mt-4' />
-            <img src='/assets/images/ProductDetailImages/bubble2.webp' className='h-52 w-40 object-cover mt-4' />
-            <img src='/assets/images/ProductDetailImages/bubble3.webp' className='h-52 w-40 object-cover mt-4' />
+            <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085622/bubble1_hd6go1.webp' className='h-52 w-40 object-cover mt-4' />
+            <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085622/bubble2_ok4wec.webp' className='h-52 w-40 object-cover mt-4' />
+            <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085625/bubble3_a4l5xv.webp' className='h-52 w-40 object-cover mt-4' />
 
           </div>
         </div>

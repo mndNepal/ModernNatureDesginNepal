@@ -1360,7 +1360,7 @@ const MorningSun = () => {
       <Navbar />
       <div className="mt-12 min-h-screen bg-white flex flex-col items-center justify-start py-10">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-serif mt-2">MorningSun</h1>
+          <h1 className="text-3xl font-serif mt-2">Morning Sun</h1>
         </div>
 
         <div className="flex w-full max-w-7xl gap-6">
@@ -1399,9 +1399,9 @@ const MorningSun = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/morningsun1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/morningsun2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/morningsun3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085691/morningsun1_cwxlrl.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085692/morningsun2_i38jvv.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085691/morningsun3_pb5qaz.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

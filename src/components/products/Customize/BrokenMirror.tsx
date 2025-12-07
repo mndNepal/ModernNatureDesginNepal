@@ -1360,7 +1360,7 @@ const BrokenMirror = () => {
       <Navbar />
       <div className="mt-12 min-h-screen bg-white flex flex-col items-center justify-start py-10">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-serif mt-2">BrokenMirror</h1>
+          <h1 className="text-3xl font-serif mt-2">Broken Mirror</h1>
         </div>
 
         <div className="flex w-full max-w-7xl gap-6">
@@ -1399,9 +1399,9 @@ const BrokenMirror = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/brokenmirror1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/brokenmirror2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/brokenmirror3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085619/brokenmirror1_iuur3r.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085617/brokenmirror2_vemauy.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085618/brokenmirror3_dnvaqb.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>

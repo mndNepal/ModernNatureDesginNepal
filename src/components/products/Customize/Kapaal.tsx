@@ -1353,9 +1353,7 @@ const imgRef = useRef(null);
       <Navbar />
       <div className="mt-12 min-h-screen bg-white flex flex-col items-center justify-start py-10">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-serif mt-2">Kapaal
-
-          </h1>
+          <h1 className="text-3xl font-serif mt-2">Kapaal</h1>
         </div>
 
         <div className="flex w-full max-w-7xl gap-6">
@@ -1394,9 +1392,9 @@ const imgRef = useRef(null);
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='/assets/images/ProductDetailImages/kapaal1.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/kapaal2.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='/assets/images/ProductDetailImages/kapaal3.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085664/kapaal1_g2bdbg.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085681/kapaal2_qazmoi.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085663/kapaal3_w3tnaq.webp' className='h-52 w-40 object-cover mt-4' />
 
             </div>
           </div>
