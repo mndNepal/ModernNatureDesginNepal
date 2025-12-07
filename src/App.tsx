@@ -88,10 +88,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/craftmanship" element={<OurExperience />} />
 
-
-
         <Route path="/collections" element={<AllCollections />} />
-
         <Route path="/products" element={<Products />} />
 
         <Route path="/products/aankhijhyal" element={<AankhiJhyal />} />
@@ -163,13 +160,6 @@ export default function App() {
         <Route path="/products/kapaal" element={<Kapaal />} />
         <Route path="/products/phulchoki" element={<Phulchoki />} />
         <Route path="/products/thaali" element={<Thaali />} />
-
-
-
-
-
-
-
 
 
         <Route path="/about" element={<About />} />

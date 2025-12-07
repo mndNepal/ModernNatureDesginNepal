@@ -87,11 +87,7 @@ const Services: React.FC = () => {
   const secondRowServices = services.slice(3);
 
   return (
-<<<<<<< Updated upstream
     <section className="bg-[url('https://res.cloudinary.com/dflytue4b/image/upload/v1765089670/background1_exalls.jpg')] relative z-30 bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
-=======
-    <section className="bg-[url('/assets/images/services/background1.jpg')] relative z-30 bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
->>>>>>> Stashed changes
       <div className="w-11/12 md:w-4/5">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
           Our Services
