@@ -112,7 +112,7 @@ const ProductCard = ({ product, onProductClick }: ProductCardProps) => {
         />
       </div>
 
-      <div className="p-4">
+      <div className="p-2">
         <h3 className="text-center font-medium text-charcoal line-clamp-2">
           {product.name}
         </h3>
