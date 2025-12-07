@@ -67,7 +67,7 @@ const AboutUsPage: React.FC = () => {
         <div className="w-full lg:w-1/2 ml-12 flex justify-center">
           <video
             ref={videoRef}
-            src="/assets/images/about/video.mov"
+            src="https://res.cloudinary.com/dflytue4b/video/upload/v1765089630/video_mioxdg.mov"
             controls
             className="rounded-2xl shadow-lg w-full h-[820px] object-cover"
           />

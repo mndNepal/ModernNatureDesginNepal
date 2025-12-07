@@ -21,7 +21,7 @@ interface Step {
 const steps: Step[] = [
   {
     title: "Wool Sorting & Washing",
-    image: "assets/images/about/1.jpeg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089595/1_i9ilms.jpg",
     description:
       "Raw wool is carefully sorted, impurities removed, and thoroughly cleaned.",
     detailedDescription:
@@ -29,7 +29,7 @@ const steps: Step[] = [
   },
   {
     title: "Wool Carding",
-    image: "assets/images/about/2.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089597/2_cpv1fu.jpg",
     description:
       "Fibers are combed to remove residues and prepare for spinning.",
     detailedDescription:
@@ -37,7 +37,7 @@ const steps: Step[] = [
   },
   {
     title: "Spinning",
-    image: "assets/images/about/3.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089599/3_fdycny.jpg",
     description:
       "Traditional spinning wheels twist threads into yarn.",
     detailedDescription:
@@ -45,7 +45,7 @@ const steps: Step[] = [
   },
       {
     title: "Dyeing",
-    image: "assets/images/about/4.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089601/4_ay8lxh.jpg",
     description:
       "Yarns are dyed with Swiss chrome azo-free or vegetable dyes.",
     detailedDescription:
@@ -53,7 +53,7 @@ const steps: Step[] = [
   },
   {
     title: "Weaving",
-    image: "assets/images/about/5.jpeg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089603/5_ao9yay.jpg",
     description:
       "Weavers handcraft rugs using looms and traditional tools.",
     detailedDescription:
@@ -61,7 +61,7 @@ const steps: Step[] = [
   },
   {
     title: "Clipping & Carving",
-    image: "assets/images/about/6.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089605/6_qqa8es.jpg",
     description:
       "Edges are clipped and designs refined for a smooth finish.",
     detailedDescription:
@@ -69,7 +69,7 @@ const steps: Step[] = [
   },
   {
     title: "Washing & Drying",
-    image: "assets/images/about/7.jpeg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089607/7_fx5osw.jpg",
     description:
       "Rugs are washed with soap and left to dry naturally.",
     detailedDescription:
@@ -77,28 +77,28 @@ const steps: Step[] = [
   },
   {
     title: "Second Clipping and Carving",
-    image: "assets/images/about/8.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089609/8_ihdlve.jpg",
     description: "Surfaces are clipped again for uniformity.",
     detailedDescription:
       "After drying, the rug receives another round of fine clipping and carving. This step ensures a perfectly balanced surface and sharp, clean patterns - the final polish of perfection."
   },
   {
     title: "Stretching",
-    image: "assets/images/about/9.jpeg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089612/9_jmqvsd.jpg",
     description: "Rugs are stretched on frames to lock their shape.",
     detailedDescription:
       "To maintain shape and symmetry, the rug is stretched on iron frames using hooks on all four sides. It remains in place for at least 7-8 hours, allowing the weave to settle evenly for flawless alignment and structure."
   },
   {
     title: "Final Finishing & Quality Check",
-    image: "assets/images/about/10.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089614/10_qnse7q.jpg",
     description: "Experts inspect rugs for size, texture, and quality.",
     detailedDescription:
       "Each rug undergoes strict quality inspection by our experts. Every detail - size, color, texture, design, and surface - is examined to meet our highest standards. Only rugs that embody excellence move forward for packaging."
   },
   {
     title: "Packing",
-    image: "assets/images/about/11.png",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089616/11_zja6pf.png",
     description:
       "Rugs are packed in waterproof sheets for safe transport.",
     detailedDescription:
@@ -106,7 +106,7 @@ const steps: Step[] = [
   },
   {
     title: "Shipping",
-    image: "assets/images/about/12.jpg",
+    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089618/12_qbzaw0.jpg",
     description: "Dispatched worldwide with trusted couriers.",
     detailedDescription:
       "Shipping The rugs are shipped with the fastest courier service, which normally takes 3-4 business days."

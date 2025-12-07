@@ -22,7 +22,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Beehive',
     title: 'Key Features',
     description: 'Rich, tactile weaves inspired by mountain landscapes',
-    image: 'assets/images/home/latestdesigns/Beehive.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089529/Beehive_rylcas.jpg',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -38,7 +38,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Lalitpur',
     title: 'Key Features',
     description: 'Intricate hand-knotted patterns with contemporary appeal',
-    image: 'assets/images/home/latestdesigns/Lalitpur.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089531/Lalitpur_tegkca.jpg',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -53,7 +53,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Majesty',
     title: 'Key Features',
     description: 'Traditional techniques reimagined for today\'s interiors',
-    image: 'assets/images/home/latestdesigns/Majesty.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089531/Majesty_fjgmr3.jpg',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -68,7 +68,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Manaslu Circuit',
     title: 'Key Features',
     description: 'Clean lines and subtle textures for modern spaces',
-    image: 'assets/images/home/latestdesigns/ManasluCircut.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089535/ManasluCircut_mgltie.jpg',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -82,7 +82,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Namche Bazar',
     title: 'Key Features',
     description: 'East meets West in harmonious design',
-    image: 'assets/images/home/latestdesigns/NamcheBazar.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089537/NamcheBazar_edrcon.jpg',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction

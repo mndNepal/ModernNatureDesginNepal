@@ -34,10 +34,10 @@ function ProductCard({ product, onCardClick, isVisible, index, aspectRatio }: Pr
 
   // Use high-quality rug images from Unsplash
   const rugImages = [
-    'assets/images/home/shopbestsellers/Lakheyface.jpg',
-    'assets/images/home/shopbestsellers/mirror.jpg',
-    'assets/images/home/shopbestsellers/nbc.jpg',
-    'assets/images/home/shopbestsellers/path.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089557/Lakheyface_usav0g.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089560/mirror_y7bwi2.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089562/nbc_ghtryj.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089564/path_oyp1n7.jpg',
   ];
 
 
@@ -110,10 +110,10 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
   // Use the same high-quality images as the cards
   const rugImages = [
-     'assets/images/home/shopbestsellers/Lakheyface.jpg',
-    'assets/images/home/shopbestsellers/mirror.jpg',
-    'assets/images/home/shopbestsellers/nbc.jpg',
-    'assets/images/home/shopbestsellers/path.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089557/Lakheyface_usav0g.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089560/mirror_y7bwi2.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089562/nbc_ghtryj.jpg',
+    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089564/path_oyp1n7.jpg',
   ];
 
   const productIndex = productsData.products.findIndex(p => p.id === product.id);

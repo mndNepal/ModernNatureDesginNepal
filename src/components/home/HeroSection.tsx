@@ -46,21 +46,21 @@ const heroSlides: HeroSlide[] = [
 const heroinnerSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737574/Tihar_Photorealistic_mcjxd8.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085869/Tihar_g7bwww.webp',
     title: 'Interior Alchemy',
     subtitle: 'Transform Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
   },
   {
     id: 'slide-2',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763737510/Chino_kkhyoi.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085835/Chino_ebgomw.webp',
     title: 'Artisan Heritage',
     subtitle: 'Centuries of Craftsmanship',
     description: 'Each rug tells a story of skilled artisans preserving ancient techniques for modern homes'
   },
   {
     id: 'slide-3',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736682/Broken_Mirror_uge5aq.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085825/BrokenMirror_vmwvbl.webp',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -68,7 +68,7 @@ const heroinnerSlides: HeroSlide[] = [
 
   {
     id: 'slide-4',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763736726/Festival_Photorealistic_ulavyu.jpg',
+    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085835/Festival_fsgvws.webp',
     title: 'Interior Alchemy',
     subtitle: 'Transfer Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design.'
