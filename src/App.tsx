@@ -3,7 +3,6 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
-import ProductDetail from "@/pages/ProductDetail";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -94,7 +93,6 @@ export default function App() {
         <Route path="/collections" element={<AllCollections />} />
 
         <Route path="/products" element={<Products />} />
-        <Route path="/product/:productId" element={<ProductDetail />} />
 
         <Route path="/products/aankhijhyal" element={<AankhiJhyal />} />
         <Route path="/products/attraction" element={<Attraction />} />
