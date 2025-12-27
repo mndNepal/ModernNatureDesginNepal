@@ -19,7 +19,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={`${alignmentClasses[alignment]} ${className}`}>
-      <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-charcoal mb-4">
+      <h2 className="font-serif text-3xl md:text-4xl lg:text-4xl font-medium text-charcoal mb-4">
         {title}
       </h2>
       {subtitle && (

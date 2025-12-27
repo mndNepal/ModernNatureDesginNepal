@@ -1398,11 +1398,10 @@ const Vines = () => {
                 <VinesLayer layers={layers} imgref={imgRef}/>
               </div>
             </div>
-            <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085772/vines1_jkzfnm.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085773/vines2_trn8qy.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085779/vines3_vb0xdy.webp' className='h-52 w-40 object-cover mt-4' />
-
+             <div className='flex flex-column gap-2.5'>
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/vines1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/vines2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/vines3.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
 

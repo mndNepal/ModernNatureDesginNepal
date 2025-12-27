@@ -1399,11 +1399,10 @@ const Thaali = () => {
                 <ThaaliLayer layers={layers} imgref={imgRef}  />
               </div>
             </div>
-            <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085750/thaali1_upxtoo.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085754/thaali2_zntio6.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085760/thaali3_sqfbh9.webp' className='h-52 w-40 object-cover mt-4' />
-
+             <div className='flex flex-column gap-2.5'>
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/thaali1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/thaali2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/thaali3.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
 

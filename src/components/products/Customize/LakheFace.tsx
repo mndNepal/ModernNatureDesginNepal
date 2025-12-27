@@ -1405,10 +1405,9 @@ const LakheFace = () => {
               </div>
             </div>
             <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085666/lakheface1_cssouu.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085667/lakheface2_ae5syk.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085668/lakheface3_sfraw6.webp' className='h-52 w-40 object-cover mt-4' />
-
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/lakheface1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/lakheface2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/lakheface3.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
 

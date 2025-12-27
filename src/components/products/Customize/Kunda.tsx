@@ -1393,11 +1393,10 @@ const imgRef = useRef(null);
                 <KundaLayer layers={layers} imgref={imgRef}  />
               </div>
             </div>
-            <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085663/kunda1_vzcvja.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085662/kunda2_edlkht.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085668/kunda3_utb78e.webp' className='h-52 w-40 object-cover mt-4' />
-
+             <div className='flex flex-column gap-2.5'>
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/kunda1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/kunda2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/kunda3.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
 

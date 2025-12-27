@@ -260,7 +260,7 @@ export default function FeaturedProducts() {
             let aspectRatio = "aspect-[4/3]";
 
             if (index === 0) {
-              // First card: 3:1 aspect ratio, spans 2 columns
+              // First card: 3:1 aspect ratio, spans 2 columns on md and up
               gridClasses = "md:col-span-2";
               aspectRatio = "aspect-[3/1]";
             } else if (index === 1) {
@@ -272,7 +272,7 @@ export default function FeaturedProducts() {
               gridClasses = "md:col-span-1";
               aspectRatio = "aspect-[4/3]";
             } else if (index === 3) {
-              // Fourth card: 3:1 aspect ratio, spans 2 columns
+              // Fourth card: 3:1 aspect ratio, spans 2 columns on md and up
               gridClasses = "md:col-span-2";
               aspectRatio = "aspect-[3/1]";
             }

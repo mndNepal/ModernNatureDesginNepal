@@ -1397,11 +1397,10 @@ const imgRef = useRef(null);
                 <Sweet16Layer layers={layers} imgref={imgRef} />
               </div>
             </div>
-            <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085743/sweet161_n6ogmb.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085744/sweet162_tnjnxh.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085747/sweet163_ofpfaf.webp' className='h-52 w-40 object-cover mt-4' />
-
+             <div className='flex flex-column gap-2.5'>
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/sweet161.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/sweet162.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/sweet163.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
 

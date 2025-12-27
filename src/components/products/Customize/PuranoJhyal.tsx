@@ -1393,11 +1393,10 @@ const PuranoJhyal = () => {
                 <PuranoJhyalLayer layers={layers} imgref={imgRef} />
               </div>
             </div>
-            <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085719/puranojhyal1_abyf4j.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085721/puranojhyal2_ekrlrk.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085723/puranojhyal3_sxvhfw.webp' className='h-52 w-40 object-cover mt-4' />
-
+             <div className='flex flex-column gap-2.5'>
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/puranojhyal1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/puranojhyal2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/puranojhyal3.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
           <div className="w-3/5 flex flex-col gap-6">

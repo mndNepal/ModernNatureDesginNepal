@@ -278,14 +278,14 @@ export default function HeroSection() {
               }`}>
               <div>
                 {imagesPreloaded ? (
-                  <div className='m-32 pl-10 pb-20'>
+                  <div className='md:m-0 md:p-0 m-0 p-4 md:pb-0'>
                     <img
                       src={imageLoadStates[heroSlides[currentSlide].id] !== false
                         ? heroinnerSlides[currentSlide].image
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
                       alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
-                      className={` object-scale-down rounded-lg  transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                      className={`w-full h-auto max-w-sm md:max-w-none object-scale-down rounded-lg transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;

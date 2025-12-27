@@ -128,7 +128,7 @@ export default function InspirationGalleryMinimal() {
               </div>
 
               <motion.div
-                className="w-[500px] h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full max-w-sm md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.photo} className="w-full h-full object-cover" />
@@ -136,9 +136,9 @@ export default function InspirationGalleryMinimal() {
             </div>
 
             {/* CENTER COLUMN */}
-            <div className="space-y-6 text-center ml-14">
+            <div className="space-y-6 text-center md:ml-14">
               <motion.div
-                className="w-[80%] mx-auto h-[480px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full max-w-xs md:w-[80%] mx-auto h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.design} className="w-full h-full object-cover" />
@@ -168,7 +168,7 @@ export default function InspirationGalleryMinimal() {
               </div>
 
               <motion.div
-                className="w-[500px] h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full max-w-sm md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.carpet} className="w-full h-full object-cover" />

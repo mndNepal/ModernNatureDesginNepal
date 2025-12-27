@@ -17,6 +17,8 @@ import Footer from '@/components/ui/Footer';
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+
+
 const colorData1000 = [
   // my 1000 color series is here   
 
@@ -1404,11 +1406,10 @@ const imgRef = useRef(null);
                 <UndefinedUniverseLayer layers={layers} imgref={imgRef} />
               </div>
             </div>
-            <div className='flex flex-column gap-2.5'>
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085769/undefineduniverse1_dwrb3j.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085770/undefineduniverse2_nh6lsw.webp' className='h-52 w-40 object-cover mt-4' />
-              <img src='https://res.cloudinary.com/dflytue4b/image/upload/v1765085774/undefineduniverse3_iyzbrb.webp' className='h-52 w-40 object-cover mt-4' />
-
+             <div className='flex flex-column gap-2.5'>
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/undefineduniverse1.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/undefineduniverse2.webp' className='h-52 w-40 object-cover mt-4' />
+              <img src='https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/undefineduniverse3.webp' className='h-52 w-40 object-cover mt-4' />
             </div>
           </div>
 

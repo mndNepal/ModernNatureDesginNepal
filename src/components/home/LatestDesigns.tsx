@@ -22,7 +22,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Beehive',
     title: 'Key Features',
     description: 'Rich, tactile weaves inspired by mountain landscapes',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089529/Beehive_rylcas.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Beehive.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -38,7 +38,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Lalitpur',
     title: 'Key Features',
     description: 'Intricate hand-knotted patterns with contemporary appeal',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089531/Lalitpur_tegkca.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Lalitpur.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -53,7 +53,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Majesty',
     title: 'Key Features',
     description: 'Traditional techniques reimagined for today\'s interiors',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089531/Majesty_fjgmr3.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Majesty.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -68,7 +68,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Manaslu Circuit',
     title: 'Key Features',
     description: 'Clean lines and subtle textures for modern spaces',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089535/ManasluCircut_mgltie.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/ManasluCircut.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -82,7 +82,7 @@ const latestDesigns: DesignCard[] = [
     name: 'Namche Bazar',
     title: 'Key Features',
     description: 'East meets West in harmonious design',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765089537/NamcheBazar_edrcon.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/NamcheBazar.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction

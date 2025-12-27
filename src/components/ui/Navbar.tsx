@@ -636,7 +636,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
               <Link to="/">
                 <div className="flex items-center space-x-4">
                   <img
-                    src="https://res.cloudinary.com/dflytue4b/image/upload/v1765089744/MND_Logo_zsyuli.png"
+                    src="/assets/images/navbar/MND_Logo.png"
                     alt="logo"
                     className="h-16 w-16"
                   />
