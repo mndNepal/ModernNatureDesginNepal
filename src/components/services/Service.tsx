@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -15,7 +15,7 @@ const services: ServiceSection[] = [
     id: "1",
     title: "Strike-Offs & Samples",
     subtitle: "See. Feel. Perfect Your Design.",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.png',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.webp',
     description: `
       At Modern Nature Design Nepal, we know that perfection begins with the smallest detail. That's why we offer strike-offs and samples — your opportunity to experience the true color, texture, and craftsmanship of your rug before full production.<br /><br />
       Our strike-offs showcase every element — yarn quality, pile height, and weaving precision — so you can confidently finalize your design. Available in <strong>30×30 cm</strong>, <strong>60×60 cm</strong>, or custom sizes, they ensure your rug turns out exactly as envisioned.<br /><br />
@@ -28,7 +28,7 @@ const services: ServiceSection[] = [
     id: "2",
     title: "Color Poms & Tufts",
     subtitle: "Bring Your Colors to Life",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service2.png',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service2.webp',
     description: `
       We match any shade — from fabric swatches, yarns, leather, or Pantone codes — in wool, silk, or other materials. Create your custom color kits or mini rug swatches for a perfect preview.<br /><br />
       Instant access to a world of shades:<br />
@@ -78,9 +78,21 @@ const services: ServiceSection[] = [
 ];
 
 const Services: React.FC = () => {
-  const [activeService, setActiveService] = useState<ServiceSection | null>(
+   const [activeService, setActiveService] = useState<ServiceSection | null>(
     null
   );
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (activeService) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [activeService]);
 
   // Split services into two arrays
   const firstRowServices = services.slice(0, 3);
@@ -108,7 +120,7 @@ const Services: React.FC = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3" ? "object-contain p-4 bg-white" : "object-cover"
+                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105
                     }`}
                 />
               </div>
@@ -138,7 +150,7 @@ const Services: React.FC = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${service.id === "3" ? "object-contain p-4 bg-white" : "object-cover"
+                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105
                     }`}
                 />
               </div>
@@ -177,10 +189,7 @@ const Services: React.FC = () => {
                   <img
                     src={activeService.image}
                     alt={activeService.title}
-                    className={`w-full h-full ${activeService.id === "3"
-                      ? "object-contain p-6 bg-white"
-                      : "object-cover"
-                      }`}
+                    className={`w-full h-full object-cover`}
                   />
                 </div>
 
