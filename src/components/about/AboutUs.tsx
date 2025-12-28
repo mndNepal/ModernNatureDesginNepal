@@ -67,7 +67,7 @@ const AboutUsPage: React.FC = () => {
         <div className="w-full lg:w-1/2 ml-12 flex justify-center">
           <video
             ref={videoRef}
-            src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/video.mp4"
+            src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/IMG_5373.MOV"
             controls
             className="rounded-2xl shadow-lg w-full h-[820px] object-cover"
           />
