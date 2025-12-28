@@ -21,7 +21,7 @@ interface Step {
 const steps: Step[] = [
   {
     title: "Wool Sorting & Washing",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/1.webp",
     description:
       "Raw wool is carefully sorted, impurities removed, and thoroughly cleaned.",
     detailedDescription:
@@ -29,7 +29,7 @@ const steps: Step[] = [
   },
   {
     title: "Wool Carding",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/2.webp",
     description:
       "Fibers are combed to remove residues and prepare for spinning.",
     detailedDescription:
@@ -37,7 +37,7 @@ const steps: Step[] = [
   },
   {
     title: "Spinning",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/3.webp",
     description:
       "Traditional spinning wheels twist threads into yarn.",
     detailedDescription:
@@ -45,7 +45,7 @@ const steps: Step[] = [
   },
       {
     title: "Dyeing",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/4.webp",
     description:
       "Yarns are dyed with Swiss chrome azo-free or vegetable dyes.",
     detailedDescription:
@@ -53,7 +53,7 @@ const steps: Step[] = [
   },
   {
     title: "Weaving",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/5.webp",
     description:
       "Weavers handcraft rugs using looms and traditional tools.",
     detailedDescription:
@@ -61,7 +61,7 @@ const steps: Step[] = [
   },
   {
     title: "Clipping & Carving",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/6.webp",
     description:
       "Edges are clipped and designs refined for a smooth finish.",
     detailedDescription:
@@ -69,7 +69,7 @@ const steps: Step[] = [
   },
   {
     title: "Washing & Drying",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/7.webp",
     description:
       "Rugs are washed with soap and left to dry naturally.",
     detailedDescription:
@@ -77,28 +77,28 @@ const steps: Step[] = [
   },
   {
     title: "Second Clipping and Carving",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/8.webp",
     description: "Surfaces are clipped again for uniformity.",
     detailedDescription:
       "After drying, the rug receives another round of fine clipping and carving. This step ensures a perfectly balanced surface and sharp, clean patterns - the final polish of perfection."
   },
   {
     title: "Stretching",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/9.webp",
     description: "Rugs are stretched on frames to lock their shape.",
     detailedDescription:
       "To maintain shape and symmetry, the rug is stretched on iron frames using hooks on all four sides. It remains in place for at least 7-8 hours, allowing the weave to settle evenly for flawless alignment and structure."
   },
   {
     title: "Final Finishing & Quality Check",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/10.webp",
     description: "Experts inspect rugs for size, texture, and quality.",
     detailedDescription:
       "Each rug undergoes strict quality inspection by our experts. Every detail - size, color, texture, design, and surface - is examined to meet our highest standards. Only rugs that embody excellence move forward for packaging."
   },
   {
     title: "Packing",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/11.webp",
     description:
       "Rugs are packed in waterproof sheets for safe transport.",
     detailedDescription:
@@ -106,7 +106,7 @@ const steps: Step[] = [
   },
   {
     title: "Shipping",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/12.webp",
     description: "Dispatched worldwide with trusted couriers.",
     detailedDescription:
       "Shipping The rugs are shipped with the fastest courier service, which normally takes 3-4 business days."
