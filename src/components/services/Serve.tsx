@@ -23,7 +23,7 @@ export default function WhoWeServe() {
   );
 
   return (
-    <section className="bg-[url('https://res.cloudinary.com/dflytue4b/image/upload/v1765089685/shyala_ffkplg.jpg')] w-full py-20 bg-[#eef2f5]">
+    <section className="bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Begnas%20Lake.png')] w-full py-20 bg-[#eef2f5]">
       <h2 className="text-center text-3xl font-semibold text-[#1f3b5c] mb-12">
         WHO WE SERVE ?
       </h2>

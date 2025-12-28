@@ -15,28 +15,28 @@ interface ImageLoadState {
 const heroSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764909175/12_iqrbxb.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar1.jpg',
     title: 'Welcome To',
     subtitle: '',
     description: 'the leading manufacturing company of hand-knotted area rugs, knotted by skilled Nepalese artisans, turning tradition, texture, and inspiration into luxury'
   },
   {
     id: 'slide-2',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763915179/71fa5173-6068-44f5-87b2-954410e3b1ed_vlp7sg.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/chino1.jpg',
     title: 'Artisan Heritage',
     subtitle: 'Centuries of Craftsmanship',
     description: 'Each rug tells a story of skilled artisans preserving ancient techniques for modern homes'
   },
   {
     id: 'slide-3',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1764170211/91f208b0-8d01-415c-bb60-c506d75e2bcf_y6dbr2.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/festival2.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transfer Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design.'
   },
   {
     id: 'slide-4',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1763914063/832b2326-3b7c-4ac4-aec1-be2f78eb21b4_khljaa.jpg',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/broken%20mirror%20(2).jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -46,21 +46,21 @@ const heroSlides: HeroSlide[] = [
 const heroinnerSlides: HeroSlide[] = [
   {
     id: 'slide-1',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085869/Tihar_g7bwww.webp',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transform Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design'
   },
   {
     id: 'slide-2',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085835/Chino_ebgomw.webp',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/chino.jpg',
     title: 'Artisan Heritage',
     subtitle: 'Centuries of Craftsmanship',
     description: 'Each rug tells a story of skilled artisans preserving ancient techniques for modern homes'
   },
   {
     id: 'slide-3',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085825/BrokenMirror_vmwvbl.webp',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/festival.jpg',
     title: 'Modern Living',
     subtitle: 'Contemporary Comfort',
     description: 'Experience the perfect blend of luxury, sustainability, and timeless design'
@@ -68,7 +68,7 @@ const heroinnerSlides: HeroSlide[] = [
 
   {
     id: 'slide-4',
-    image: 'https://res.cloudinary.com/dflytue4b/image/upload/v1765085835/Festival_fsgvws.webp',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Broken Mirror.jpg',
     title: 'Interior Alchemy',
     subtitle: 'Transfer Your Space',
     description: 'Discover handcrafted rugs that bridge traditional Nepalese artistry with contemporary design.'
@@ -285,7 +285,7 @@ export default function HeroSection() {
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
                       alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
-                      className={`w-full h-auto max-w-sm md:max-w-none object-scale-down rounded-lg transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                      className={`w-full h-[450px] max-w-sm md:max-w-none object-scale-down rounded-lg transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;

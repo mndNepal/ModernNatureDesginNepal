@@ -108,7 +108,7 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
         {/* Heading - Left */}
         <h1 className="text-4xl md:text-4xl font-bold text-gray-900 items-center">
           <img
-            src="https://res.cloudinary.com/dflytue4b/image/upload/v1765089713/ColorCustomizer_qqieqq.png"
+            src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/ChatGPT%20Image%20Nov%208%2C%202025%2C%2005_19_23%20PM.png"
             alt="Color Customizer"
             className="w-[300px] h-[100px] object-contain"
           />

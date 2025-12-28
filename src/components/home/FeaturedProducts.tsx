@@ -34,10 +34,10 @@ function ProductCard({ product, onCardClick, isVisible, index, aspectRatio }: Pr
 
   // Use high-quality rug images from Unsplash
   const rugImages = [
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089557/Lakheyface_usav0g.jpg',
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089560/mirror_y7bwi2.jpg',
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089562/nbc_ghtryj.jpg',
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089564/path_oyp1n7.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Lakheyface.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/mirror.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/3ddd263e-dec3-4aa9-b376-24c13ed5020c.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/path.jpg',
   ];
 
 
@@ -110,10 +110,10 @@ function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
   // Use the same high-quality images as the cards
   const rugImages = [
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089557/Lakheyface_usav0g.jpg',
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089560/mirror_y7bwi2.jpg',
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089562/nbc_ghtryj.jpg',
-    'https://res.cloudinary.com/dflytue4b/image/upload/v1765089564/path_oyp1n7.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Lakheyface.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/mirror.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/3ddd263e-dec3-4aa9-b376-24c13ed5020c.jpg',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/path.jpg',
   ];
 
   const productIndex = productsData.products.findIndex(p => p.id === product.id);

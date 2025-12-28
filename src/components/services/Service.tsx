@@ -15,7 +15,7 @@ const services: ServiceSection[] = [
     id: "1",
     title: "Strike-Offs & Samples",
     subtitle: "See. Feel. Perfect Your Design.",
-    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089687/strikeoffs-and-samples_i2bevz.jpg",
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp',
     description: `
       At Modern Nature Design Nepal, we know that perfection begins with the smallest detail. That's why we offer strike-offs and samples — your opportunity to experience the true color, texture, and craftsmanship of your rug before full production.<br /><br />
       Our strike-offs showcase every element — yarn quality, pile height, and weaving precision — so you can confidently finalize your design. Available in <strong>30×30 cm</strong>, <strong>60×60 cm</strong>, or custom sizes, they ensure your rug turns out exactly as envisioned.<br /><br />
@@ -28,7 +28,7 @@ const services: ServiceSection[] = [
     id: "2",
     title: "Color Poms & Tufts",
     subtitle: "Bring Your Colors to Life",
-    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089675/colorpoms_fi6b9l.png",
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp',
     description: `
       We match any shade — from fabric swatches, yarns, leather, or Pantone codes — in wool, silk, or other materials. Create your custom color kits or mini rug swatches for a perfect preview.<br /><br />
       Instant access to a world of shades:<br />
@@ -39,10 +39,20 @@ const services: ServiceSection[] = [
     `,
   },
   {
+    id: "3",
+    title: "Online Color Customizer",
+    subtitle: "Your Vision, Your Colors — Instantly",
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp',
+    description: `
+      No color kits? No problem. Our Online Color Customizer lets you choose, adjust, and share your color preferences directly online — making communication seamless and precise. Whether you're exploring new palettes or matching existing shades, our digital tool ensures your colors are clear, consistent, and ready for creation.<br /><br />
+      ✨ Design from anywhere — we'll bring your colors to life.
+    `,
+  },
+  {
     id: "4",
     title: "Renderings & CAD",
     subtitle: "Where Imagination Meets Precision",
-    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089681/rendering_iwe0rg.png",
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp',
     description: `
       Every great rug begins with a vision. Our exclusive rendering and CAD service transforms your ideas into detailed, lifelike designs that capture the essence of your concept before weaving begins.<br /><br />
       Whether inspired by fabric colors, artworks, wall hangings, or real photographs, our skilled designers translate any reference into elegant rug compositions that mirror your imagination with stunning accuracy.<br /><br />
@@ -55,7 +65,7 @@ const services: ServiceSection[] = [
     id: "5",
     title: "Shipment & Delivery",
     subtitle: "Your Rugs, Anywhere in the World",
-    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089683/shipping_pt0aoj.png",
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/aankhijhyal1.webp',
     description: `
       We ship your rugs as agreed — small orders via couriers (door-to-door) or air cargo, larger shipments via the same fast, reliable channels.<br /><br />
       <strong>FedEx, DHL, UPS:</strong> 3-5 days<br />
@@ -63,16 +73,6 @@ const services: ServiceSection[] = [
       Shipping cost depends on weight or volume, and we provide all documents - invoice, packing list, GSP form, and certificate of origin — for smooth customs clearance.<br /><br />
       Classified under <strong>HS Code 5701.10.4000</strong> and registered under the <strong>EU REX system</strong>, our rugs qualify for generalized tariff preferences.<br /><br />
       ✨ Fast, compliant, and ready to deliver your handcrafted masterpiece anywhere in the world.
-    `,
-  },
-  {
-    id: "3",
-    title: "Online Color Customizer",
-    subtitle: "Your Vision, Your Colors — Instantly",
-    image: "https://res.cloudinary.com/dflytue4b/image/upload/v1765089676/online-color-customizer_gmyrr0.png",
-    description: `
-      No color kits? No problem. Our Online Color Customizer lets you choose, adjust, and share your color preferences directly online — making communication seamless and precise. Whether you're exploring new palettes or matching existing shades, our digital tool ensures your colors are clear, consistent, and ready for creation.<br /><br />
-      ✨ Design from anywhere — we'll bring your colors to life.
     `,
   },
 ];
@@ -87,7 +87,7 @@ const Services: React.FC = () => {
   const secondRowServices = services.slice(3);
 
   return (
-    <section className="bg-[url('https://res.cloudinary.com/dflytue4b/image/upload/v1765089670/background1_exalls.jpg')] relative z-30 bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
+    <section className="bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/1c4725c6-9f4d-4f84-a439-197e6e827a29.jpg')] relative z-30 bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
       <div className="w-11/12 md:w-4/5">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
           Our Services
