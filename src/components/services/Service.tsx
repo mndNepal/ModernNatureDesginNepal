@@ -1,6 +1,7 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ServiceSection {
   id: string;
@@ -15,7 +16,8 @@ const services: ServiceSection[] = [
     id: "1",
     title: "Strike-Offs & Samples",
     subtitle: "See. Feel. Perfect Your Design.",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.webp',
+    image:
+      "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.webp",
     description: `
       At Modern Nature Design Nepal, we know that perfection begins with the smallest detail. That's why we offer strike-offs and samples — your opportunity to experience the true color, texture, and craftsmanship of your rug before full production.<br /><br />
       Our strike-offs showcase every element — yarn quality, pile height, and weaving precision — so you can confidently finalize your design. Available in <strong>30×30 cm</strong>, <strong>60×60 cm</strong>, or custom sizes, they ensure your rug turns out exactly as envisioned.<br /><br />
@@ -28,7 +30,8 @@ const services: ServiceSection[] = [
     id: "2",
     title: "Color Poms & Tufts",
     subtitle: "Bring Your Colors to Life",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service2.webp',
+    image:
+      "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service2.jpeg",
     description: `
       We match any shade — from fabric swatches, yarns, leather, or Pantone codes — in wool, silk, or other materials. Create your custom color kits or mini rug swatches for a perfect preview.<br /><br />
       Instant access to a world of shades:<br />
@@ -42,7 +45,8 @@ const services: ServiceSection[] = [
     id: "3",
     title: "Online Color Customizer",
     subtitle: "Your Vision, Your Colors — Instantly",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service3.png',
+    image:
+      "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service3.png",
     description: `
       No color kits? No problem. Our Online Color Customizer lets you choose, adjust, and share your color preferences directly online — making communication seamless and precise. Whether you're exploring new palettes or matching existing shades, our digital tool ensures your colors are clear, consistent, and ready for creation.<br /><br />
       ✨ Design from anywhere — we'll bring your colors to life.
@@ -52,7 +56,8 @@ const services: ServiceSection[] = [
     id: "4",
     title: "Renderings & CAD",
     subtitle: "Where Imagination Meets Precision",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service4.png',
+    image:
+      "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service4.jpeg",
     description: `
       Every great rug begins with a vision. Our exclusive rendering and CAD service transforms your ideas into detailed, lifelike designs that capture the essence of your concept before weaving begins.<br /><br />
       Whether inspired by fabric colors, artworks, wall hangings, or real photographs, our skilled designers translate any reference into elegant rug compositions that mirror your imagination with stunning accuracy.<br /><br />
@@ -65,7 +70,8 @@ const services: ServiceSection[] = [
     id: "5",
     title: "Shipment & Delivery",
     subtitle: "Your Rugs, Anywhere in the World",
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service5.png',
+    image:
+      "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service5.jpeg",
     description: `
       We ship your rugs as agreed — small orders via couriers (door-to-door) or air cargo, larger shipments via the same fast, reliable channels.<br /><br />
       <strong>FedEx, DHL, UPS:</strong> 3-5 days<br />
@@ -78,143 +84,124 @@ const services: ServiceSection[] = [
 ];
 
 const Services: React.FC = () => {
-   const [activeService, setActiveService] = useState<ServiceSection | null>(
-    null
-  );
+  const [activeService, setActiveService] = useState<ServiceSection | null>(null);
 
-  // Lock body scroll when modal is open
   useEffect(() => {
-    if (activeService) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = activeService ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [activeService]);
 
-  // Split services into two arrays
   const firstRowServices = services.slice(0, 3);
   const secondRowServices = services.slice(3);
 
   return (
-    <section className="bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/1c4725c6-9f4d-4f84-a439-197e6e827a29.jpg')] relative z-30 bg-cover bg-center bg-no-repeat min-h-screen bg-[#fdfdfb] py-28 flex justify-center">
+    <section className="relative z-30 min-h-screen py-28 flex justify-center bg-cover bg-center bg-no-repeat bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/1c4725c6-9f4d-4f84-a439-197e6e827a29.jpg')]">
       <div className="w-11/12 md:w-4/5">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
           Our Services
         </h1>
 
-        {/* First Row - 3 Boxes */}
-        {/* First Row - 3 Boxes */}
+        {/* First Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10 place-items-center">
           {firstRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
+              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border cursor-pointer"
               onClick={() => setActiveService(service)}
             >
-              <div className="relative w-full h-56 overflow-hidden flex items-center justify-center bg-white">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105
-                    }`}
-                />
-              </div>
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-56 object-cover"
+              />
               <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                  {service.title}
-                </h2>
-                <p className="text-lg font-medium text-black-600">
-                  {service.subtitle}
-                </p>
+                <h2 className="text-2xl font-semibold">{service.title}</h2>
+                <p className="text-lg">{service.subtitle}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Second Row - 2 Boxes (same width + same gap) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 ml-40 mr-40 place-items-center">
+        {/* Second Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center ml-40 mr-40">
           {secondRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg cursor-pointer"
+              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border cursor-pointer"
               onClick={() => setActiveService(service)}
             >
-              <div className="relative w-full h-56 overflow-hidden flex items-center justify-center bg-white">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105
-                    }`}
-                />
-              </div>
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-56 object-cover"
+              />
               <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                  {service.title}
-                </h2>
-                <p className="text-lg font-medium text-black-600">
-                  {service.subtitle}
-                </p>
+                <h2 className="text-2xl font-semibold">{service.title}</h2>
+                <p className="text-lg">{service.subtitle}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Expanded Modal */}
+        {/* Modal */}
         <AnimatePresence>
           {activeService && (
             <motion.div
-              key="modal"
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex justify-center items-center p-6 mt-20"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex items-center justify-center p-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
               <motion.div
-                key={activeService.id}
-                className="bg-white rounded-3xl shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row"
-                initial={{ scale: 0.95, opacity: 0, y: 50 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.95, opacity: 0, y: 50 }}
-                transition={{ duration: 0.3 }}
+                className="bg-white rounded-3xl shadow-2xl w-full max-w-5xl flex flex-col md:flex-row overflow-hidden"
+                initial={{ scale: 0.95, y: 50, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                exit={{ scale: 0.95, y: 50, opacity: 0 }}
               >
-                {/* Left Image */}
-                <div className="md:w-1/2 h-64 md:h-auto flex items-center justify-center bg-white">
-                  <img
-                    src={activeService.image}
-                    alt={activeService.title}
-                    className={`w-full h-full object-cover`}
-                  />
-                </div>
+                <img
+                  src={activeService.image}
+                  alt={activeService.title}
+                  className="md:w-1/2 h-64 md:h-auto object-cover"
+                />
 
-                {/* Right Content */}
                 <div className="md:w-1/2 p-8 overflow-y-auto max-h-[90vh]">
-                  <div className="flex justify-between items-start mb-4">
-                    <h2 className="text-3xl font-semibold text-gray-900">
+                  <div className="flex justify-between mb-4">
+                    <h2 className="text-3xl font-semibold">
                       {activeService.title}
                     </h2>
-                    <button
-                      onClick={() => setActiveService(null)}
-                      className="text-gray-400 hover:text-gray-700 transition"
-                    >
+                    <button onClick={() => setActiveService(null)}>
                       <X size={28} />
                     </button>
                   </div>
-                  <p className="text-lg font-medium text-black-600 mb-6">
+
+                  <p className="text-lg mb-6">
                     {activeService.subtitle}
                   </p>
+
                   <div
-                    className="text-gray-700 leading-relaxed"
+                    className="text-gray-700"
                     dangerouslySetInnerHTML={{
                       __html: activeService.description,
                     }}
-                  ></div>
+                  />
+
+                  {activeService.id === "3" && (
+                    <div className="mt-8 flex justify-center">
+                      <Link
+                        to="/products"
+                        className="inline-flex items-center px-6 py-2 rounded-xl text-lg font-bold shadow-md transition-all duration-300
+                        bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 hover:scale-105"
+                      >
+                        COLOR CUSTOMIZER
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </motion.div>

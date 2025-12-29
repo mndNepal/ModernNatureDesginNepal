@@ -20,14 +20,14 @@ interface Step {
 const steps: Step[] = [
   {
     title: "Warm Water Washing",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/13.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/13.jpeg",
     description: "✨ Pure. Safe. Vibrant. Crafted to last.",
     detailedDescription:
       `Before dyeing, yarns are gently washed to remove impurities, ensuring deep, even color absorption and a radiant finish.`,
   },
   {
     title: "Precision Color Sampling",
-    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/14.webp",
+    image: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/14.jpeg",
     description: "✨ Pure. Safe. Vibrant. Crafted to last.",
     detailedDescription: `
 Dye master prepares a small sample tuft to match your desired shade. Once approved, the same formula is used for the full batch-guaranteeing consistency and perfection. The dyeing is done manually, heating pots gradually to 90-95°C. Yarns are then sun-dried naturally, giving them a luminous, lasting shine.
