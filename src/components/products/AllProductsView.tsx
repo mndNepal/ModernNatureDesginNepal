@@ -103,30 +103,30 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-      <div className="flex justify-between items-center mt-10 mb-10 px-4">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4">
         {/* Heading - Left */}
-        <h1 className="text-4xl md:text-4xl font-bold text-gray-900 items-center">
+        <h1 className="font-bold text-gray-900">
           <img
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/ChatGPT%20Image%20Nov%208%2C%202025%2C%2005_19_23%20PM.png"
             alt="Color Customizer"
-            className="w-[300px] h-[100px] object-contain"
+            className="w-[150px] h-[50px] sm:w-[200px] sm:h-[70px] md:w-[250px] md:h-[85px] lg:w-[300px] lg:h-[100px] object-contain"
           />
         </h1>
 
         {/* Search Input - Right */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 w-full sm:w-auto">
           <input
             type="text"
             placeholder="Search products"
             value={searchQuery}
             onChange={handleSearchInputChange}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-            className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
+            className="border border-gray-900 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-xs sm:text-sm flex-1 sm:flex-none sm:w-40 md:w-48"
           />
           <button 
             onClick={handleSearch}
-            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+            className="bg-gray-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-gray-700 transition text-xs sm:text-sm"
           >
             Search
           </button>
@@ -134,7 +134,7 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard
@@ -144,8 +144,8 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
             />
           ))
         ) : (
-          <div className="col-span-full text-center py-12">
-            <p className="text-xl text-gray-600">No products found matching "{searchQuery}"</p>
+          <div className="col-span-full text-center py-8 sm:py-12">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600">No products found matching "{searchQuery}"</p>
           </div>
         )}
       </div>

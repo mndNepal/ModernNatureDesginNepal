@@ -346,8 +346,8 @@ export default function LatestDesigns() {
           </div>
 
           {/* Gradient overlays for smooth edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-r from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-l from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
         </div>
 
         {/* Instructions */}

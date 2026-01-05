@@ -628,19 +628,19 @@ export default function Navbar({ className = '' }: NavbarProps) {
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo - Left Aligned */}
-          <div className="flex-shrink-0 mr-8">
+          <div className="flex-shrink min-w-0 mr-2 sm:mr-4 lg:mr-8">
             <h1
               className="logo-animation font-serif text-xl lg:text-2xl font-medium text-charcoal drop-shadow-sm cursor-pointer"
               onClick={scrollToTop}
             >
               <Link to="/">
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2 sm:space-x-4">
                   <img
                     src="/assets/images/navbar/MND_Logo.png"
                     alt="logo"
-                    className="h-16 w-16"
+                    className="h-10 w-10 sm:h-12 sm:w-12 lg:h-16 lg:w-16 flex-shrink-0"
                   />
-                  <span className="text-xl font-semibold">
+                  <span className="text-sm sm:text-base lg:text-xl font-semibold truncate">
                     Modern Nature Design Nepal
                   </span>
                 </div>
@@ -830,7 +830,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Mobile menu button */}
           <button
-            className="menu-button lg:hidden p-3 text-charcoal drop-shadow-sm rounded-lg"
+            className="menu-button lg:hidden p-2 sm:p-3 text-charcoal drop-shadow-sm rounded-lg flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -844,29 +844,14 @@ export default function Navbar({ className = '' }: NavbarProps) {
         <div className={`lg:hidden border-t border-white/30 ${isScrolled ? 'bg-white/95 backdrop-blur-lg' : 'bg-off-white'
           }`}>
           <Container>
-            <div className="py-4 space-y-4">
+            <div className="py-4 space-y-2">
               <Link
-                to="/products"
+                to="/collections"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mobile-menu-item block w-full text-left text-charcoal drop-shadow-sm hover:bg-white/30 px-4 py-3 rounded-lg text-base"
               >
-                Products
+                Collections
               </Link>
-
-              {/* Product Categories for Mobile */}
-              <div className="ml-4 space-y-2">
-                {megaMenuItems.shop.sections.map((section) => (
-                  <Link
-                    key={section.categoryId}
-                    to={`/products?category=${section.categoryId}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-item block text-charcoal/80 drop-shadow-sm hover:bg-white/30 px-3 py-2 rounded-lg text-sm"
-                  >
-                    {section.title}
-                  </Link>
-                ))}
-              </div>
-
               <Link
                 to="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -887,6 +872,15 @@ export default function Navbar({ className = '' }: NavbarProps) {
                 className="mobile-menu-item block w-full text-left text-charcoal drop-shadow-sm hover:bg-white/30 px-4 py-3 rounded-lg text-base"
               >
                 Contact
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mobile-menu-item block w-full text-center font-bold hover:scale-105 px-4 py-3 rounded-xl text-base shadow-md bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 transition-all duration-300"
+              >
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 bg-clip-text text-transparent">
+                  COLOR CUSTOMIZER
+                </span>
               </Link>
             </div>
           </Container>

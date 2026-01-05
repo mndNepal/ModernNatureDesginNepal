@@ -90,9 +90,10 @@ const MaterialsCarousel: React.FC = () => {
   };
 
   const layout = useMemo(() => {
-    const STEP_X = 360; // horizontal spacing between cards
+    // Responsive horizontal spacing
+    const STEP_X = isMobile ? 280 : 360; // smaller spacing on mobile
     const SCALE_FACTOR = 0.08; // scale reduction for side cards
-    const MAX_VISIBLE = 1; // left/right cards relative to center
+    const MAX_VISIBLE = isMobile ? 0 : 1; // show only active card on mobile
 
     return materials.map((_, i) => {
       let d = i - active;
@@ -108,24 +109,27 @@ const MaterialsCarousel: React.FC = () => {
 
       return { d, tx, scale, opacity, z };
     });
-  }, [active]);
+  }, [active, isMobile]);
 
   return (
-    <section className="bg-no-repeat  py-16 select-none">
-      <div className="w-11/12 max-w-6xl mx-auto">
-        <h2 className="text-center text-3xl md:text-4xl font-extrabold text-slate-900">
+    <section className="bg-no-repeat py-10 sm:py-12 md:py-16 select-none overflow-hidden">
+      <div className="w-[95%] sm:w-11/12 max-w-6xl mx-auto px-2 sm:px-4">
+        <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900">
           Materials We Offer
         </h2>
 
         {/* Carousel */}
-        <div className="relative mt-12">
-          {/* Arrows */}
+        <div className="relative mt-6 sm:mt-8 md:mt-12">
+          {/* Cards */}
+          <div className="relative z-10 h-[380px] sm:h-[420px] md:h-[450px] flex justify-center items-center px-10 sm:px-12 md:px-0">
+
+          {/* Arrows - higher z-index to be above cards */}
           <button
             aria-label="Previous"
             onClick={goPrev}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center"
+            className="absolute left-0 sm:left-2 md:-left-4 top-1/2 -translate-y-1/2 z-50 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" className="text-slate-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" className="text-slate-900 sm:w-5 sm:h-5">
               <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" strokeWidth="2" />
             </svg>
           </button>
@@ -133,15 +137,12 @@ const MaterialsCarousel: React.FC = () => {
           <button
             aria-label="Next"
             onClick={goNext}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center"
+            className="absolute right-0 sm:right-2 md:-right-4 top-1/2 -translate-y-1/2 z-50 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" className="text-slate-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" className="text-slate-900 sm:w-5 sm:h-5">
               <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" strokeWidth="2" />
             </svg>
           </button>
-
-          {/* Cards */}
-          <div className="relative z-40 h-[400px] sm:h-[450px] flex justify-center items-center">
             {materials.map((m, i) => {
               const { tx, scale, opacity, z } = layout[i];
               if (opacity === 0) return null; // hide cards outside visible range
@@ -149,15 +150,15 @@ const MaterialsCarousel: React.FC = () => {
               return (
                 <div
                   key={i}
-                  className="bg-gray-300 absolute w-[300px] sm:w-[340px] h-[360px] sm:h-[400px] bg-gray-50 p-6 rounded-xl shadow-lg flex flex-col transition-transform duration-1000 overflow-hidden"
+                  className="bg-gray-300 absolute w-[260px] sm:w-[300px] md:w-[340px] h-[340px] sm:h-[380px] md:h-[400px] bg-gray-50 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-lg flex flex-col transition-transform duration-1000 overflow-hidden"
                   style={{
                     transform: `translateX(${tx}px) scale(${scale})`,
                     zIndex: z,
                     opacity,
                   }}
                 >
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-center">{m.title}</h3>
-                  <div className={`text-sm md:text-base text-gray-700 text-center flex-1 ${expanded[i] ? 'overflow-auto' : ''}`}>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-center">{m.title}</h3>
+                  <div className={`text-xs sm:text-sm md:text-base text-gray-700 text-center flex-1 ${expanded[i] ? 'overflow-auto' : ''}`}>
                     {m.title === "New Zealand Wool" ? (
                       <>
                         <p className="mb-2">

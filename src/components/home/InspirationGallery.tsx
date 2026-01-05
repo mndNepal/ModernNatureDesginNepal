@@ -79,30 +79,30 @@ export default function InspirationGalleryMinimal() {
   const item = ITEMS[index];
 
   return (
-    <div className="w-full bg-[#f7f7f7] py-20 relative overflow-hidden -ml-[15px]">
+    <div className="w-full bg-[#f7f7f7] py-20 relative overflow-hidden">
 
-      {/* LEFT ARROW — OUTSIDE */}
+      {/* LEFT ARROW */}
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full 
-                   z-20 p-3 rounded-full bg-white shadow hover:shadow-lg transition"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 
+                   z-20 p-2 md:p-3 rounded-full bg-white/90 shadow hover:shadow-lg transition"
       >
-        <ChevronLeft size={26} />
+        <ChevronLeft size={22} className="md:w-6 md:h-6" />
       </button>
 
-      {/* RIGHT ARROW — OUTSIDE */}
+      {/* RIGHT ARROW */}
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full 
-                   z-20 p-3 rounded-full bg-white shadow hover:shadow-lg transition"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 
+                   z-20 p-2 md:p-3 rounded-full bg-white/90 shadow hover:shadow-lg transition"
       >
-        <ChevronRight size={26} />
+        <ChevronRight size={22} className="md:w-6 md:h-6" />
       </button>
 
       <div className="w-[90%] mx-auto px-4">
-        <div className="mb-14">
-          <h2 className="text-center text-4xl md:text-3xl font-extrabold mt-1 leading-tight">
-            From Nature’s Palette to Timeless Hand-Knotted Rugs
+        <div className="mb-8 md:mb-14">
+          <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mt-1 leading-tight">
+            From Nature's Palette to Timeless Hand-Knotted Rugs
           </h2>
         </div>
 
@@ -113,10 +113,10 @@ export default function InspirationGalleryMinimal() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="grid grid-cols-1 md:grid-cols-3"
+            className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6"
           >
             {/* LEFT COLUMN */}
-            <div className="space-y-6 text-center md:text-left mt-10">
+            <div className="space-y-6 text-center md:text-left w-full max-w-xl mx-auto md:mx-0">
               <div className="flex flex-col items-center md:items-start gap-2">
                 <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
                   <span className="text-xl">▲</span>
@@ -128,7 +128,7 @@ export default function InspirationGalleryMinimal() {
               </div>
 
               <motion.div
-                className="w-full max-w-sm md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.photo} className="w-full h-full object-cover" />
@@ -136,9 +136,9 @@ export default function InspirationGalleryMinimal() {
             </div>
 
             {/* CENTER COLUMN */}
-            <div className="space-y-6 text-center md:ml-14">
+            <div className="flex flex-col-reverse md:flex-col gap-6 text-center w-full max-w-xl mx-auto md:ml-14 md:max-w-none md:w-auto">
               <motion.div
-                className="w-full max-w-xs md:w-[80%] mx-auto h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.design} className="w-full h-full object-cover" />
@@ -156,13 +156,13 @@ export default function InspirationGalleryMinimal() {
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="space-y-6 text-center md:text-right mt-10">
-              <div className="flex flex-col md:items-end gap-2">
+            <div className="space-y-6 text-center md:text-right w-full max-w-xl mx-auto md:mx-0">
+              <div className="flex flex-col items-center md:items-end gap-2">
                 <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
                   <span className="text-xl">❉</span>
                 </div>
                 <h3 className="text-lg font-semibold tracking-wide">FINISHED CARPET</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+                <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
                   {item.finishedDesc}
                 </p>
               </div>

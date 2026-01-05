@@ -127,29 +127,29 @@ const AllCollections: React.FC = () => {
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-[#fdfdfb] py-20">
-        {/* Container with 80% width centered */}
-        <div className="w-4/5 mx-auto">
+      <section className="min-h-screen bg-[#fdfdfb] pt-20 pb-10 sm:py-20">
+        {/* Container with responsive width centered */}
+        <div className="w-[95%] sm:w-[90%] md:w-4/5 mx-auto">
 
-          <div className="flex justify-between items-center mt-10 mb-10 px-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4 sm:mt-6 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4">
             {/* Heading - Left */}
-            <h1 className="text-4xl md:text-4xl font-bold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
               All Collections
             </h1>
 
             {/* Search Input - Right */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 w-full sm:w-auto">
               <input
                 type="text"
                 placeholder="Search products"
                 value={searchQuery}
                 onChange={handleSearchInputChange}
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
+                className="border border-gray-900 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-xs sm:text-sm flex-1 sm:flex-none sm:w-40 md:w-48"
               />
               <button 
                 onClick={handleSearch}
-                className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+                className="bg-gray-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-gray-700 transition text-xs sm:text-sm"
               >
                 Search
               </button>
@@ -157,18 +157,18 @@ const AllCollections: React.FC = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-2 md:px-0">
             {currentCarpets.length > 0 ? (
               currentCarpets.map((carpet) => (
                 <motion.div
                   key={carpet.id}
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className="bg-gray-200 rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col"
+                  className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col"
                   onClick={() => setActiveCarpet(carpet)}
                 >
                   {/* Image now fills entire card width */}
-                  <div className="flex justify-center items-center bg-gray-200 h-[400px]">
+                  <div className="flex justify-center items-center bg-gray-200 h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px]">
                     <img
                       src={carpet.imageUrl}
                       alt={carpet.name}
@@ -193,20 +193,20 @@ const AllCollections: React.FC = () => {
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div className="flex justify-center items-center mt-10 space-x-2">
+            <div className="flex justify-center items-center mt-6 sm:mt-10 space-x-1 sm:space-x-2">
               <button
                 onClick={handlePrevious}
                 disabled={currentPage === 1}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
               >
-                Previous
+                Prev
               </button>
 
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
-                  className={`px-4 py-2 rounded-lg transition ${currentPage === index + 1
+                  className={`px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-lg transition ${currentPage === index + 1
                     ? 'bg-gray-800 text-white'
                     : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                     }`}
@@ -218,7 +218,7 @@ const AllCollections: React.FC = () => {
               <button
                 onClick={handleNext}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
               >
                 Next
               </button>

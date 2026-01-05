@@ -6,80 +6,79 @@ import Products from "@/pages/Products";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import AankhiJhyal from "./components/products/Customize/AankhiJhyal";
-import Attraction from "./components/products/Customize/Attraction";
-import Baasn from "./components/products/Customize/Baasn";
-import BayLeaves from "./components/products/Customize/Bayleaves";
-import Bubbles from "./components/products/Customize/Bubbles";
-import BurningRope from "./components/products/Customize/BurningRope";
-import Cells from "./components/products/Customize/Cells";
-import Childhood from "./components/products/Customize/Childhood";
-import Festival from "./components/products/Customize/Festival";
-import FountainWater from "./components/products/Customize/FountainWater";
-import Gurung from "./components/products/Customize/Gurung";
-import Holi from "./components/products/Customize/Holi";
-import Imagination from "./components/products/Customize/Imagination";
-import JungleTribes from "./components/products/Customize/JungleTribes";
-import LakheFace from "./components/products/Customize/LakheFace";
-import Majesty from "./components/products/Customize/Majesty";
-import ManasluCircuit from "./components/products/Customize/ManasluCircuit";
-import Maze from "./components/products/Customize/Maze";
-import Mirror from "./components/products/Customize/Mirror";
-import MonkeyTemple from "./components/products/Customize/MonkeyTemple";
-import MorningSun from "./components/products/Customize/MorningSun";
-import NaghDaha from "./components/products/Customize/NaghDaha";
-import NamcheBazar from "./components/products/Customize/NamcheBazar";
-import OnBoard from "./components/products/Customize/OnBoard";
-import OnTheRoad from "./components/products/Customize/OnTheRoad";
-import BegnasLake from "./components/products/Customize/BegnasLake";
-import Path from "./components/products/Customize/Path";
-import RainForest from "./components/products/Customize/RainForest";
-import Retro from "./components/products/Customize/Retro";
-import SherpaLove from "./components/products/Customize/SherpaLove";
-import Shreepanch from "./components/products/Customize/Shreepanch";
-import Shyala from "./components/products/Customize/Shyala";
-import Sweet16 from "./components/products/Customize/Sweet16";
-import TeraiFarm from "./components/products/Customize/TeraiFarm";
-import Thoughts from "./components/products/Customize/Thoughts";
-import Tides from "./components/products/Customize/Tides";
-import Trek from "./components/products/Customize/Trek";
-import TsumValleyPatan from "./components/products/Customize/TsumValley";
-import UndefinedUniverse from "./components/products/Customize/UndefinedUniverse";
-import Vines from "./components/products/Customize/Vines";
-import WaterBrust from "./components/products/Customize/WaterBrust";
-import WaterCoin from "./components/products/Customize/WaterCoin";
-import Weave from "./components/products/Customize/Weave";
-import Pari from "./components/products/Customize/Pari";
-import Chakati from "./components/products/Customize/Chakati";
-import Chino from "./components/products/Customize/Chino";
-import Kaath from "./components/products/Customize/Kaath";
-import Landmark from "./components/products/Customize/Landmark";
-import Paisa from "./components/products/Customize/Paisa";
-import Ping from "./components/products/Customize/Ping";
-import PuranoJhyal from "./components/products/Customize/PuranoJhyal";
-import Smoke from "./components/products/Customize/Smoke";
 import AllCollections from "./components/products/Collections/AllCollections";
-import Mandro from "./components/products/Customize/Mandro";
-import Tihar from "./components/products/Customize/Tihar";
-import TheWall from "./components/products/Customize/TheWall";
-import Ring from "./components/products/Customize/Ring";
-import Lalitpur from "./components/products/Customize/Lalitpur";
-import BrokenMirror from "./components/products/Customize/BrokenMirror";
-import Illusion from "./components/products/Customize/Illusion";
-import Beehive from "./components/products/Customize/Beehive";
-import Kunda from "./components/products/Customize/Kunda";
-import BudiAunla from "./components/products/Customize/BudiAunla";
-import Sukool from "./components/products/Customize/Sukool";
-import WaterLilies from "./components/products/Customize/WaterLilies";
-import Echo from "./components/products/Customize/Echo";
-import BirendraTaal from "./components/products/Customize/BirendraTaal";
-import Phulchoki from "./components/products/Customize/Phulchoki";
-import Kapaal from "./components/products/Customize/Kapaal";
-import Thaali from "./components/products/Customize/Thaali";
 import OurExperience from "./components/home/OurExperience";
 
-
-
+// Import all new responsive product components
+import AankhiJhyal from "./components/products/Customize/AankhiJhyalNew";
+import Attraction from "./components/products/Customize/AttractionNew";
+import Baasn from "./components/products/Customize/BaasnNew";
+import BayLeaves from "./components/products/Customize/BayleavesNew";
+import Beehive from "./components/products/Customize/BeehiveNew";
+import BegnasLake from "./components/products/Customize/BegnasLakeNew";
+import BirendraTaal from "./components/products/Customize/BirendraTaalNew";
+import BrokenMirror from "./components/products/Customize/BrokenMirrorNew";
+import Bubbles from "./components/products/Customize/BubblesNew";
+import BudiAunla from "./components/products/Customize/BudiAunlaNew";
+import BurningRope from "./components/products/Customize/BurningRopeNew";
+import Cells from "./components/products/Customize/CellsNew";
+import Chakati from "./components/products/Customize/ChakatiNew";
+import Childhood from "./components/products/Customize/ChildhoodNew";
+import Chino from "./components/products/Customize/ChinoNew";
+import Echo from "./components/products/Customize/EchoNew";
+import Festival from "./components/products/Customize/FestivalNew";
+import FountainWater from "./components/products/Customize/FountainWaterNew";
+import Gurung from "./components/products/Customize/GurungNew";
+import Holi from "./components/products/Customize/HoliNew";
+import Illusion from "./components/products/Customize/IllusionNew";
+import Imagination from "./components/products/Customize/ImaginationNew";
+import JungleTribes from "./components/products/Customize/JungleTribesNew";
+import Kaath from "./components/products/Customize/KaathNew";
+import Kapaal from "./components/products/Customize/KapaalNew";
+import Kunda from "./components/products/Customize/KundaNew";
+import LakheFace from "./components/products/Customize/LakheFaceNew";
+import Lalitpur from "./components/products/Customize/LalitpurNew";
+import Landmark from "./components/products/Customize/LandmarkNew";
+import Majesty from "./components/products/Customize/MajestyNew";
+import ManasluCircuit from "./components/products/Customize/ManasluCircuitNew";
+import Mandro from "./components/products/Customize/MandroNew";
+import Maze from "./components/products/Customize/MazeNew";
+import Mirror from "./components/products/Customize/MirrorNew";
+import MonkeyTemple from "./components/products/Customize/MonkeyTempleNew";
+import MorningSun from "./components/products/Customize/MorningSunNew";
+import NaghDaha from "./components/products/Customize/NaghDahaNew";
+import NamcheBazar from "./components/products/Customize/NamcheBazarNew";
+import OnBoard from "./components/products/Customize/OnBoardNew";
+import OnTheRoad from "./components/products/Customize/OnTheRoadNew";
+import Paisa from "./components/products/Customize/PaisaNew";
+import Pari from "./components/products/Customize/PariNew";
+import Path from "./components/products/Customize/PathNew";
+import Phulchoki from "./components/products/Customize/PhulchokiNew";
+import Ping from "./components/products/Customize/PingNew";
+import PuranoJhyal from "./components/products/Customize/PuranoJhyalNew";
+import RainForest from "./components/products/Customize/RainForestNew";
+import Retro from "./components/products/Customize/RetroNew";
+import Ring from "./components/products/Customize/RingNew";
+import SherpaLove from "./components/products/Customize/SherpaLoveNew";
+import Shreepanch from "./components/products/Customize/ShreepanchNew";
+import Shyala from "./components/products/Customize/ShyalaNew";
+import Smoke from "./components/products/Customize/SmokeNew";
+import Sukool from "./components/products/Customize/SukoolNew";
+import Sweet16 from "./components/products/Customize/Sweet16New";
+import TeraiFarm from "./components/products/Customize/TeraiFarmNew";
+import Thaali from "./components/products/Customize/ThaaliNew";
+import TheWall from "./components/products/Customize/TheWallNew";
+import Thoughts from "./components/products/Customize/ThoughtsNew";
+import Tides from "./components/products/Customize/TidesNew";
+import Tihar from "./components/products/Customize/TiharNew";
+import Trek from "./components/products/Customize/TrekNew";
+import TsumValleyPatan from "./components/products/Customize/TsumValleyNew";
+import UndefinedUniverse from "./components/products/Customize/UndefinedUniverseNew";
+import Vines from "./components/products/Customize/VinesNew";
+import WaterBrust from "./components/products/Customize/WaterBrustNew";
+import WaterCoin from "./components/products/Customize/WaterCoinNew";
+import WaterLilies from "./components/products/Customize/WaterLiliesNew";
+import Weave from "./components/products/Customize/WeaveNew";
 
 export default function App() {
   return (
@@ -95,19 +94,34 @@ export default function App() {
         <Route path="/products/attraction" element={<Attraction />} />
         <Route path="/products/baasn" element={<Baasn />} />
         <Route path="/products/bayleaves" element={<BayLeaves />} />
+        <Route path="/products/beehive" element={<Beehive />} />
+        <Route path="/products/begnaslake" element={<BegnasLake />} />
+        <Route path="/products/birendrataal" element={<BirendraTaal />} />
+        <Route path="/products/brokenmirror" element={<BrokenMirror />} />
         <Route path="/products/bubbles" element={<Bubbles />} />
+        <Route path="/products/budiaunla" element={<BudiAunla />} />
         <Route path="/products/burningrope" element={<BurningRope />} />
         <Route path="/products/cells" element={<Cells />} />
+        <Route path="/products/chakati" element={<Chakati />} />
         <Route path="/products/childhood" element={<Childhood />} />
+        <Route path="/products/chino" element={<Chino />} />
+        <Route path="/products/echo" element={<Echo />} />
         <Route path="/products/festival" element={<Festival />} />
         <Route path="/products/fountainwater" element={<FountainWater />} />
         <Route path="/products/gurung" element={<Gurung />} />
         <Route path="/products/holi" element={<Holi />} />
+        <Route path="/products/illusion" element={<Illusion />} />
         <Route path="/products/imagination" element={<Imagination />} />
         <Route path="/products/jungletribes" element={<JungleTribes />} />
+        <Route path="/products/kaath" element={<Kaath />} />
+        <Route path="/products/kapaal" element={<Kapaal />} />
+        <Route path="/products/kunda" element={<Kunda />} />
         <Route path="/products/lakheface" element={<LakheFace />} />
+        <Route path="/products/lalitpur" element={<Lalitpur />} />
+        <Route path="/products/landmark" element={<Landmark />} />
         <Route path="/products/majesty" element={<Majesty />} />
         <Route path="/products/manaslucircuit" element={<ManasluCircuit />} />
+        <Route path="/products/mandro" element={<Mandro />} />
         <Route path="/products/maze" element={<Maze />} />
         <Route path="/products/mirror" element={<Mirror />} />
         <Route path="/products/monkeytemple" element={<MonkeyTemple />} />
@@ -116,51 +130,35 @@ export default function App() {
         <Route path="/products/namchebazar" element={<NamcheBazar />} />
         <Route path="/products/onboard" element={<OnBoard />} />
         <Route path="/products/ontheroad" element={<OnTheRoad />} />
-        <Route path="/products/begnaslake" element={<BegnasLake />} />
+        <Route path="/products/paisa" element={<Paisa />} />
+        <Route path="/products/pari" element={<Pari />} />
         <Route path="/products/path" element={<Path />} />
+        <Route path="/products/phulchoki" element={<Phulchoki />} />
+        <Route path="/products/ping" element={<Ping />} />
+        <Route path="/products/puranojhyal" element={<PuranoJhyal />} />
         <Route path="/products/rainforest" element={<RainForest />} />
         <Route path="/products/retro" element={<Retro />} />
+        <Route path="/products/ring" element={<Ring />} />
         <Route path="/products/sherpalove" element={<SherpaLove />} />
         <Route path="/products/shreepanch" element={<Shreepanch />} />
         <Route path="/products/shyala" element={<Shyala />} />
+        <Route path="/products/smoke" element={<Smoke />} />
+        <Route path="/products/sukool" element={<Sukool />} />
         <Route path="/products/sweet16" element={<Sweet16 />} />
         <Route path="/products/teraifarm" element={<TeraiFarm />} />
+        <Route path="/products/thaali" element={<Thaali />} />
+        <Route path="/products/thewall" element={<TheWall />} />
         <Route path="/products/thoughts" element={<Thoughts />} />
         <Route path="/products/tides" element={<Tides />} />
+        <Route path="/products/tihar" element={<Tihar />} />
         <Route path="/products/trek" element={<Trek />} />
         <Route path="/products/tsumvalleypatan" element={<TsumValleyPatan />} />
         <Route path="/products/undefineduniverse" element={<UndefinedUniverse />} />
         <Route path="/products/vines" element={<Vines />} />
         <Route path="/products/waterbrust" element={<WaterBrust />} />
         <Route path="/products/watercoin" element={<WaterCoin />} />
-        <Route path="/products/weave" element={<Weave />} />
-        <Route path="/products/pari" element={<Pari />} />
-        <Route path="/products/chakati" element={<Chakati />} />
-        <Route path="/products/chino" element={<Chino />} />
-        <Route path="/products/kaath" element={<Kaath />} />
-        <Route path="/products/landmark" element={<Landmark />} />
-        <Route path="/products/paisa" element={<Paisa />} />
-        <Route path="/products/ping" element={<Ping />} />
-        <Route path="/products/puranojhyal" element={<PuranoJhyal />} />
-        <Route path="/products/smoke" element={<Smoke />} />
-        <Route path="/products/mandro" element={<Mandro />} />
-        <Route path="/products/tihar" element={<Tihar />} />
-        <Route path="/products/thewall" element={<TheWall />} />
-        <Route path="/products/ring" element={<Ring />} />
-        <Route path="/products/lalitpur" element={<Lalitpur />} />
-        <Route path="/products/brokenmirror" element={<BrokenMirror />} />
-        <Route path="/products/illusion" element={<Illusion />} />
-        <Route path="/products/beehive" element={<Beehive />} />
-        <Route path="/products/kunda" element={<Kunda />} />
-        <Route path="/products/budiaunla" element={<BudiAunla />} />
-        <Route path="/products/sukool" element={<Sukool />} />
         <Route path="/products/waterlilies" element={<WaterLilies />} />
-        <Route path="/products/birendrataal" element={<BirendraTaal />} />
-        <Route path="/products/echo" element={<Echo />} />
-        <Route path="/products/kapaal" element={<Kapaal />} />
-        <Route path="/products/phulchoki" element={<Phulchoki />} />
-        <Route path="/products/thaali" element={<Thaali />} />
-
+        <Route path="/products/weave" element={<Weave />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />

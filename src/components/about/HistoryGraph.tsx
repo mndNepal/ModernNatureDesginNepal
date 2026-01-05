@@ -20,30 +20,32 @@ const data = [
 const HistoryGraph: React.FC = () => {
   return (
     <>
-      <div className="bg-white shadow-md rounded-2xl p-6 mt-10 mb-10">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
+      <div className="bg-white shadow-md rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 mt-6 sm:mt-10 mb-6 sm:mb-10">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4 text-center">
           MND Nepal Growth Timeline
         </h3>
-        <ResponsiveContainer width="100%" height={580}>
-          <LineChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip
-              formatter={(value, name, props) => [
-                `${value} rugs`,
-                props.payload.milestone,
-              ]}
-            />
-            <Line
-              type="monotone"
-              dataKey="rugs"
-              stroke="#14b8a6"
-              strokeWidth={3}
-              dot={{ r: 6 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+        <div className="w-full h-[280px] sm:h-[380px] md:h-[480px] lg:h-[580px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="year" tick={{ fontSize: 12 }} />
+              <YAxis tick={{ fontSize: 12 }} />
+              <Tooltip
+                formatter={(value, name, props) => [
+                  `${value} rugs`,
+                  props.payload.milestone,
+                ]}
+              />
+              <Line
+                type="monotone"
+                dataKey="rugs"
+                stroke="#14b8a6"
+                strokeWidth={2}
+                dot={{ r: 4 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* <p className="text-gray-600 text-lg md:text-xl leading-relaxed">

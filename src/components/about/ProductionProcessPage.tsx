@@ -118,17 +118,17 @@ const ProductionProcessPage: React.FC = () => {
 
   return (
     <motion.section
-      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-20 px-6 md:px-20"
+      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
       <motion.div className="max-w-6xl mx-auto" variants={fadeInUp}>
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-6 drop-shadow-sm">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-4 sm:mb-6 drop-shadow-sm">
           Production Process
         </h2>
-        <p className="text-center text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12">
           Every rug is a masterpiece woven by hand — from raw wool to final
           finish, each step reflects dedication, tradition, and craftsmanship.
         </p>
