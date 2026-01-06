@@ -103,10 +103,10 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-0">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-0 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4">
         {/* Heading - Left */}
-        <h1 className="font-bold text-gray-900">
+        <h1 className="font-bold text-gray-900 mx-auto sm:mx-0">
           <img
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/ChatGPT%20Image%20Nov%208%2C%202025%2C%2005_19_23%20PM.png"
             alt="Color Customizer"

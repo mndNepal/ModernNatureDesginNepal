@@ -36,11 +36,7 @@ const Products = () => {
       <Navbar />
 
       <div className="pt-20">
-        <div className="p-8">
-          <Container>
-            <AllProductsView onProductSelect={handleProductSelect} />
-          </Container>
-        </div>
+        <AllProductsView onProductSelect={handleProductSelect} />
       </div>
 
       <Footer />

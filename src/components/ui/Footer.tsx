@@ -118,10 +118,10 @@ export default function Footer(): JSX.Element {
     >
       <Container>
         <div className="py-8 lg:pt-8 lg:pb-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-8 items-start">
             {/* BRAND */}
             <div
-              className={`lg:col-span-2 transform transition-all duration-800 ease-out ${animatedElements.has("brand")
+              className={`xl:col-span-2 transform transition-all duration-800 ease-out ${animatedElements.has("brand")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
                 }`}
@@ -132,11 +132,11 @@ export default function Footer(): JSX.Element {
                   Modern Nature Design Nepal
                 </h2>
               </div>
-              <p className="text-off-white/70 text-sm mb-4 ">
+              <p className="text-off-white/70 text-sm mb-4 text-justify">
                 Hand-Knotted in Nepal, each rug is a masterpiece of heritage and
                 precision, seamlessly blending traditional weaving artistry with
                 contemporary design. Crafted for discerning interiors around the
-                world, Our rugs embody timeless elegance, exceptional quality and
+                world. Our rugs embody timeless elegance, exceptional quality and
                 ethical craftmanship - a statement of sophistication for
                 generations to come.</p>
             </div>
@@ -170,13 +170,13 @@ export default function Footer(): JSX.Element {
             ))}
 
             <div
-              className={`transform transition-all duration-800 ${animatedElements.has("social")
+              className={`flex flex-col items-center md:items-start xl:items-end transform transition-all duration-800 ${animatedElements.has("social")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
                 }`}
             >
-              <h3 className="font-medium mb-3 text-sm ml-28">Follow Us</h3>
-              <div className="flex space-x-6 ml-24">
+              <h3 className="font-medium mb-3 text-sm text-center md:text-left xl:text-right">Follow Us</h3>
+              <div className="flex space-x-6 justify-center md:justify-start xl:justify-end">
                 {socialLinks.map((s, i) => (
                   <a
                     key={i}

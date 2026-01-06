@@ -87,7 +87,7 @@ const AllCollections: React.FC = () => {
   const [activeCarpet, setActiveCarpet] = useState<Carpet | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-  const itemsPerPage = 16;
+  const itemsPerPage = 20;
 
   // Filter carpets based on search query - only match names that START with the exact search query
   const filteredCarpets = carpets.filter((carpet) => {
@@ -131,7 +131,7 @@ const AllCollections: React.FC = () => {
         {/* Container with responsive width centered */}
         <div className="w-[95%] sm:w-[90%] md:w-4/5 mx-auto">
 
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4 sm:mt-6 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4 sm:mt-6 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4 max-w-[254.4px] sm:max-w-none mx-auto sm:mx-0">
             {/* Heading - Left */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
               All Collections
@@ -157,18 +157,18 @@ const AllCollections: React.FC = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-2 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-2 md:px-0">
             {currentCarpets.length > 0 ? (
               currentCarpets.map((carpet) => (
                 <motion.div
                   key={carpet.id}
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col"
+                  className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col max-w-[254.4px] sm:max-w-[240px] md:max-w-[180px] lg:max-w-none mx-auto"
                   onClick={() => setActiveCarpet(carpet)}
                 >
                   {/* Image now fills entire card width */}
-                  <div className="flex justify-center items-center bg-gray-200 h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px]">
+                  <div className="flex justify-center items-center bg-gray-200 h-[318px] sm:h-[260px] md:h-[240px] lg:h-[280px] xl:h-[380px]">
                     <img
                       src={carpet.imageUrl}
                       alt={carpet.name}

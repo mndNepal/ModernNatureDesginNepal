@@ -33,24 +33,24 @@ export default function WhoWeServe() {
       
       <div className="relative z-10">
         <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-semibold text-[#1f3b5c] mb-6 sm:mb-8 md:mb-12 drop-shadow-sm">
-          WHO WE SERVE ?
-        </h2>
+        WHO WE SERVE ?
+      </h2>
 
         <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-10">
-          {/* Top row: 1 column on mobile, 2 on sm, 3 on lg */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+          {/* Top row: 1 column on mobile, 2 on sm, 3 on xl */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 sm:[&>*:nth-child(3)]:col-span-2 sm:[&>*:nth-child(3)]:justify-self-center xl:[&>*:nth-child(3)]:col-span-1">
             {topRowItems.map((item, i) => (
-              <Card key={i} icon={item.icon} title={item.title} />
-            ))}
-          </div>
+            <Card key={i} icon={item.icon} title={item.title} />
+          ))}
+        </div>
 
           {/* Bottom row: 1 column on mobile, 2 centered on larger screens */}
-          <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-16">
+          <div className="mt-3 sm:mt-4 md:mt-6 lg:mt-8 grid grid-cols-1 sm:grid-cols-2 xl:flex xl:justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-16 place-items-center">
             {bottomRowItems.map((item, i) => (
-              <div key={i} className="lg:w-[280px]">
+              <div key={i} className="xl:w-[280px] w-full">
                 <Card icon={item.icon} title={item.title} />
               </div>
-            ))}
+          ))}
           </div>
         </div>
       </div>

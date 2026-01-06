@@ -101,10 +101,10 @@ export default function StudioBanner() {
       className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-sage-green/10 to-mint-green/10 px-4 sm:px-6"
     >
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 lg:items-stretch">
           {/* Left Column: Contact Form */}
-          <div className={`bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-charcoal mb-4 sm:mb-5 text-center">Contact Us</h2>
+          <div className={`bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 transition-all duration-800 h-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-charcoal mb-4 sm:mb-5 text-center pt-6 sm:pt-0">Contact Us</h2>
 
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 max-w-lg mx-auto">
               {/* Name */}
@@ -261,7 +261,7 @@ export default function StudioBanner() {
             </div>
 
             <button
-              onClick={() => window.location.href = "https://www.google.com/maps/place/Modern+Nature+Design+Nepal/@27.6277525,85.3437677,133m/data=!3m1!1e3!4m6!3m5!1s0x39eb173a709414c3:0x982c4a313e31facb!8m2!3d27.6277484!4d85.3441998!16s%2Fg%2F11d_tqv0p9?entry=ttu&g_ep=EgoyMDI1MTIwMS4wIKXMDSoASAFQAw%3D%3D"}
+              onClick={() => window.open("https://www.google.com/maps/place/Modern+Nature+Design+Nepal/@27.6277525,85.3437677,133m/data=!3m1!1e3!4m6!3m5!1s0x39eb173a709414c3:0x982c4a313e31facb!8m2!3d27.6277484!4d85.3441998!16s%2Fg%2F11d_tqv0p9?entry=ttu&g_ep=EgoyMDI1MTIwMS4wIKXMDSoASAFQAw%3D%3D", '_blank', 'noopener,noreferrer')}
               className={`bg-mint-green text-charcoal px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base font-medium hover:bg-mint-green/90 transition-all duration-600 w-full sm:w-auto ${isVisible ? 'opacity-100 translate-y-0 shadow-md hover:shadow-lg' : 'opacity-0 translate-y-4 shadow-sm'}`}
               style={{
                 transitionDelay: isVisible ? '500ms' : '0ms',

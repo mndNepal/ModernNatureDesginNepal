@@ -34,11 +34,11 @@ const AboutUsPage: React.FC = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
-      <div className="flex flex-col lg:flex-row w-[95%] sm:w-[90%] lg:w-4/5 mx-auto gap-8 lg:gap-12">
+      <div className="flex flex-col xl:flex-row w-[95%] sm:w-[90%] xl:w-4/5 mx-auto gap-8 xl:gap-12">
 
         {/* Left Content */}
-        <div className="w-full lg:w-1/2 max-w-5xl mx-auto space-y-4 sm:space-y-6 lg:text-left text-center">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-center drop-shadow-sm">
+        <div className="w-full xl:w-1/2 max-w-5xl mx-auto space-y-4 sm:space-y-6 xl:text-left text-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-center drop-shadow-sm pt-6 sm:pt-0">
             Weaving Heritage into Modern Elegance
           </h2>
 
@@ -64,12 +64,12 @@ const AboutUsPage: React.FC = () => {
         </div>
 
         {/* Right Video (updated) */}
-        <div className="w-full lg:w-1/2 flex justify-center mt-6 lg:mt-0">
+        <div className="w-full xl:w-1/2 flex justify-center mt-6 xl:mt-0">
           <video
             ref={videoRef}
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/IMG_5373.MOV"
             controls
-            className="rounded-2xl shadow-lg w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[820px] object-cover"
+            className="rounded-2xl shadow-lg w-full h-[400px] sm:h-[500px] md:h-[600px] xl:h-[820px] object-cover"
           />
         </div>
 

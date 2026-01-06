@@ -79,29 +79,29 @@ export default function InspirationGalleryMinimal() {
   const item = ITEMS[index];
 
   return (
-    <div className="w-full bg-[#f7f7f7] py-20 relative overflow-hidden">
+    <div className="w-full bg-[#f7f7f7] py-12 md:py-16 relative overflow-hidden">
 
       {/* LEFT ARROW */}
       <button
         onClick={prevSlide}
         className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 
-                   z-20 p-2 md:p-3 rounded-full bg-white/90 shadow hover:shadow-lg transition"
+                   z-20 p-1.5 md:p-2 rounded-full bg-white/90 shadow hover:shadow-lg transition"
       >
-        <ChevronLeft size={22} className="md:w-6 md:h-6" />
+        <ChevronLeft size={18} className="md:w-5 md:h-5" />
       </button>
 
       {/* RIGHT ARROW */}
       <button
         onClick={nextSlide}
         className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 
-                   z-20 p-2 md:p-3 rounded-full bg-white/90 shadow hover:shadow-lg transition"
+                   z-20 p-1.5 md:p-2 rounded-full bg-white/90 shadow hover:shadow-lg transition"
       >
-        <ChevronRight size={22} className="md:w-6 md:h-6" />
+        <ChevronRight size={18} className="md:w-5 md:h-5" />
       </button>
 
-      <div className="w-[90%] mx-auto px-4">
-        <div className="mb-8 md:mb-14">
-          <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mt-1 leading-tight">
+      <div className="w-[92%] mx-auto px-3 md:px-4">
+        <div className="mb-6 md:mb-10">
+          <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold leading-tight">
             From Nature's Palette to Timeless Hand-Knotted Rugs
           </h2>
         </div>
@@ -113,22 +113,22 @@ export default function InspirationGalleryMinimal() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6"
           >
             {/* LEFT COLUMN */}
-            <div className="space-y-6 text-center md:text-left w-full max-w-xl mx-auto md:mx-0">
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
-                  <span className="text-xl">▲</span>
+            <div className="space-y-4 text-center md:text-left">
+              <div className="flex flex-col items-center md:items-start gap-1.5">
+                <div className="w-8 h-8 border rounded-full flex items-center justify-center text-gray-700">
+                  <span className="text-base">▲</span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-wide">INSPIRATION</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+                <h3 className="text-base font-semibold tracking-wide">INSPIRATION</h3>
+                <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
                   {item.inspirationDesc}
                 </p>
               </div>
 
               <motion.div
-                className="w-full md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full h-56 md:h-64 lg:h-72 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.photo} className="w-full h-full object-cover" />
@@ -136,39 +136,39 @@ export default function InspirationGalleryMinimal() {
             </div>
 
             {/* CENTER COLUMN */}
-            <div className="flex flex-col-reverse md:flex-col gap-6 text-center w-full max-w-xl mx-auto md:ml-14 md:max-w-none md:w-auto">
+            <div className="flex flex-col-reverse md:flex-col gap-4 text-center">
               <motion.div
-                className="w-full h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full h-70 md:h-80 lg:h-[360px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.design} className="w-full h-full object-cover" />
               </motion.div>
 
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
-                  <span className="text-xl">✦</span>
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="w-8 h-8 border rounded-full flex items-center justify-center text-gray-700">
+                  <span className="text-base">✦</span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-wide">ARTISTIC TRANSLATION</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+                <h3 className="text-base font-semibold tracking-wide">ARTISTIC TRANSLATION</h3>
+                <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
                   {item.translationDesc}
                 </p>
               </div>
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="space-y-6 text-center md:text-right w-full max-w-xl mx-auto md:mx-0">
-              <div className="flex flex-col items-center md:items-end gap-2">
-                <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
-                  <span className="text-xl">❉</span>
+            <div className="space-y-4 text-center md:text-right">
+              <div className="flex flex-col items-center md:items-end gap-1.5">
+                <div className="w-8 h-8 border rounded-full flex items-center justify-center text-gray-700">
+                  <span className="text-base">❉</span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-wide">FINISHED CARPET</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                <h3 className="text-base font-semibold tracking-wide">FINISHED CARPET</h3>
+                <p className="text-gray-600 text-xs leading-relaxed max-w-xs mx-auto md:mx-0">
                   {item.finishedDesc}
                 </p>
               </div>
 
               <motion.div
-                className="w-full max-w-sm md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full h-56 md:h-64 lg:h-72 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.carpet} className="w-full h-full object-cover" />
@@ -178,12 +178,12 @@ export default function InspirationGalleryMinimal() {
         </AnimatePresence>
 
         {/* DOTS */}
-        <div className="flex justify-center gap-3 mt-10">
+        <div className="flex justify-center gap-2 mt-6 md:mt-8">
           {ITEMS.map((_, i) => (
             <motion.div
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${index === i ? "bg-black scale-125" : "bg-gray-400"
+              className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full cursor-pointer transition-all duration-300 ${index === i ? "bg-black scale-125" : "bg-gray-400"
                 }`}
               whileHover={{ scale: 1.3 }}
             ></motion.div>
