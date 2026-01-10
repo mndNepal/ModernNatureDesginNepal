@@ -247,21 +247,21 @@ export default function HeroSection() {
 
       {/* Content */}
       <div ref={contentRef} className="relative z-10 w-full">
-        <div className="max-w-container mx-auto px-4 md:px-gutter">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="text-white relative z-20 flex justify-center md:justify-start px-6 md:px-0">
-              <div className={`bg-charcoal/80 backdrop-blur-sm p-5 md:p-6 lg:p-8 rounded-lg transform transition-all duration-1000 ease-out w-full max-w-xs md:max-w-sm lg:max-w-md md:ml-6 lg:ml-8 ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
+              <div className={`bg-charcoal/90 backdrop-blur-md p-6 md:p-8 lg:p-12 rounded-2xl transform transition-all duration-1000 ease-out w-full ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
                 }`}>
-                <h1 className={`font-serif text-2xl md:text-3xl lg:text-4xl font-medium mb-3 transform transition-all duration-1000 delay-200 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                <h1 className={`font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6 transform transition-all duration-1000 delay-200 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                   {heroSlides[currentSlide].title}
                 </h1>
-                <h2 className={`text-base md:text-lg lg:text-xl font-medium text-mint-green mb-3 lg:mb-4 transform transition-all duration-1000 delay-400 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                <h2 className={`text-lg md:text-xl lg:text-2xl font-medium text-mint-green mb-4 lg:mb-6 transform transition-all duration-1000 delay-400 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                   {heroSlides[currentSlide].subtitle}
                 </h2>
-                <p className={`text-xs md:text-sm lg:text-base leading-relaxed mb-4 lg:mb-6 text-off-white transform transition-all duration-1000 delay-600 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                <p className={`text-sm md:text-base lg:text-lg leading-relaxed text-off-white/90 transform transition-all duration-1000 delay-600 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                   {heroSlides[currentSlide].description}
                 </p>
@@ -273,19 +273,19 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right Content - Living Room Scene */}
-            <div className={`relative transform transition-all duration-1000 delay-300 ease-out flex justify-center md:justify-start px-6 md:px-0 ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
+            {/* Right Content - Rug Image */}
+            <div className={`relative transform transition-all duration-1000 delay-300 ease-out flex justify-center md:justify-end px-6 md:px-0 mt-6 md:mt-8 lg:mt-12 ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
               }`}>
-              <div className="w-full max-w-[200px] md:max-w-[250px] lg:max-w-[280px] md:ml-12 lg:ml-20">
+              <div className="w-full max-w-xs md:max-w-xs lg:max-w-sm xl:max-w-md">
                 {imagesPreloaded ? (
-                  <div className='p-0'>
+                  <div className='shadow-2xl rounded-xl overflow-hidden'>
                     <img
                       src={imageLoadStates[heroSlides[currentSlide].id] !== false
                         ? heroinnerSlides[currentSlide].image
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
-                      alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
-                      className={`w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-lg transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                      alt={`${heroinnerSlides[currentSlide].title} - Handcrafted rug`}
+                      className={`w-full h-[280px] md:h-[350px] lg:h-[450px] xl:h-[500px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -297,8 +297,8 @@ export default function HeroSection() {
                     />
                   </div>
                 ) : (
-                  <div className="w-48 h-48 bg-charcoal/20 rounded-lg shadow-2xl flex items-center justify-center mx-auto">
-                    <div className="w-6 h-6 border-2 border-mint-green border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-full h-96 bg-charcoal/20 rounded-xl shadow-2xl flex items-center justify-center">
+                    <div className="w-8 h-8 border-2 border-mint-green border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
               </div>
