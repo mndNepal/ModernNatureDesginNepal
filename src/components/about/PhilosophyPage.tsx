@@ -274,25 +274,25 @@ const PhilosophyPage: React.FC = () => {
             onClick={() => setActiveCard(null)}
           >
             <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[80vh]"
+              className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-md sm:max-w-lg md:max-w-xl w-full p-4 sm:p-6 relative overflow-y-auto max-h-[70vh] sm:max-h-[75vh]"
               variants={modalVariants}
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setActiveCard(null)}
-                className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+                className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
               {/* Icon and Heading in a single line */}
-              <div className="flex items-center gap-4 mb-6 border-b pb-3">
-                {selectedCard.icon}
-                <h3 className="text-3xl font-semibold text-gray-800">{selectedCard.title}</h3>
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 border-b pb-2">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0">{selectedCard.icon}</div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">{selectedCard.title}</h3>
               </div>
 
               {/* Content */}
-              <div className="text-left">{selectedCard.content}</div>
+              <div className="text-left text-sm sm:text-base">{selectedCard.content}</div>
             </motion.div>
           </motion.div>
         )}

@@ -649,7 +649,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
           </div>
 
           {/* Desktop Navigation - Right Aligned */}
-          <div className="hidden lg:flex items-center space-x-6 ml-auto">
+          <div className="hidden xl:flex items-center space-x-6 ml-auto">
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
               <div
@@ -830,7 +830,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Mobile menu button */}
           <button
-            className="menu-button lg:hidden p-2 sm:p-3 text-charcoal drop-shadow-sm rounded-lg flex-shrink-0"
+            className="menu-button xl:hidden p-2 sm:p-3 text-charcoal drop-shadow-sm rounded-lg flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -841,7 +841,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className={`lg:hidden border-t border-white/30 ${isScrolled ? 'bg-white/95 backdrop-blur-lg' : 'bg-off-white'
+        <div className={`xl:hidden border-t border-white/30 ${isScrolled ? 'bg-white/95 backdrop-blur-lg' : 'bg-off-white'
           }`}>
           <Container>
             <div className="py-4 space-y-2">

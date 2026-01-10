@@ -254,10 +254,10 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
         </div>
 
         {/* Main Content Grid */}
-        <div className="flex flex-col lg:flex-row w-full max-w-7xl gap-4 sm:gap-6">
+        <div className="flex flex-col md:flex-row w-full max-w-7xl gap-4 sm:gap-6">
           
           {/* Left Column - Preview & Features */}
-          <div className="w-full lg:w-2/5 space-y-4">
+          <div className="w-full md:w-1/2 lg:w-2/5 space-y-4">
             {/* Key Features */}
             <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
               <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3">Key Features</h2>
@@ -271,10 +271,12 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
               </ul>
             </div>
 
-            {/* Product Preview */}
+            <p className="mt-4 text-sm sm:text-base font-bold">
+              Product Preview
+            </p>
             <div
-              className="border bg-gray-50 w-full overflow-hidden rounded-lg"
-              style={{ maxWidth: '100%', aspectRatio: '500/580' }}
+              className="border bg-gray-50 w-full overflow-hidden rounded-lg md:max-w-md lg:max-w-full"
+              style={{ aspectRatio: '500/580' }}
             >
               <div className="w-full h-full" ref={imgRef}>
                 <LayerComponent layers={layers} imgref={imgRef} />
@@ -282,7 +284,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
             </div>
 
             {/* Detail Images */}
-            {detailImages.length > 0 && (
+            {/* {detailImages.length > 0 && (
               <div className="flex flex-wrap gap-2 sm:gap-2.5 justify-center sm:justify-start">
                 {detailImages.map((img, index) => (
                   <img
@@ -293,23 +295,25 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   />
                 ))}
               </div>
-            )}
+            )} */}
           </div>
 
           {/* Right Column - Color Selection */}
-          <div className="w-full lg:w-3/5 flex flex-col gap-4 sm:gap-6">
+          <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col gap-4 sm:gap-6">
             
             {/* Instructions */}
             <div className="bg-gray-100 p-3 sm:p-4 shadow-sm border rounded-lg">
               <h2 className="font-semibold text-sm sm:text-base mb-2">Changing Colors is Easy:</h2>
               <ol className="list-decimal ml-4 text-xs sm:text-sm text-gray-700 space-y-1">
-                <li>Click the color window for the design area you want to recolor.</li>
+                <li>Click the color window.</li>
+                <li>Select the design area you want to recolor.</li>
                 <li>Choose your preferred color from the color chart.</li>
+                <li>Visit the next page for more color templates.</li>
               </ol>
             </div>
 
             {/* Layer Color Selectors */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
+            <div className="mt-2 flex flex-wrap items-center gap-2 sm:gap-2 md:gap-2 lg:gap-4">
               {layerNameList.map((layerName, index) => (
                 <div
                   key={index}
@@ -318,14 +322,14 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   onClick={() => setActiveLayer(index + 1)}
                   onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(index + 1)}
                   tabIndex={0}
-                  className={`p-2 sm:p-3 border rounded-md flex items-center gap-2 sm:gap-3 cursor-pointer select-none transition-all
+                  className={`p-2 sm:p-2 md:p-2 lg:p-3 border rounded-md flex items-center gap-2 sm:gap-2 md:gap-2 lg:gap-3 cursor-pointer select-none transition-all
                     ${activeLayer === index + 1 ? 'ring-2 ring-gray-800 bg-gray-50' : 'hover:bg-gray-50'}`}
                 >
                   <div
-                    className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 border rounded"
+                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 border rounded"
                     style={{ backgroundColor: colors[index + 1] }}
                   />
-                  <div className="text-xs sm:text-sm">
+                  <div className="text-xs sm:text-xs md:text-xs lg:text-sm">
                     <div className="font-medium">{layerName}</div>
                     <div className="text-[10px] sm:text-xs text-gray-600 hidden sm:block">{colors[index + 1]}</div>
                   </div>
@@ -335,14 +339,14 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
               {/* Reset Button */}
               <button
                 onClick={resetColors}
-                className="text-xs sm:text-sm underline text-gray-600 hover:text-black ml-auto"
+                className="text-xs sm:text-xs md:text-xs lg:text-sm underline text-gray-600 hover:text-black ml-auto whitespace-nowrap"
               >
                 ⟳ Reset colors
               </button>
             </div>
 
             {/* Color Charts */}
-            <div className="bg-gray-100 p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl shadow-md w-full">
+            <div className="bg-gray-100 p-3 sm:p-4 md:p-6 pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-8 md:pb-10 rounded-xl sm:rounded-2xl shadow-md w-full mt-4 sm:mt-6 md:mt-0">
               {!showChart1000 ? (
                 <>
                   {/* Chart 1200 */}
@@ -351,26 +355,28 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   </h2>
                   
                   {/* Color Grid */}
-                  <div className="flex flex-row justify-center flex-wrap gap-0.5 sm:gap-1 overflow-x-auto">
-                    {split20(getCurrentColorData1200()).reverse().map((group, i) => (
-                      <div className="flex flex-row gap-1 sm:gap-2 md:gap-3" key={i}>
-                        {group.map((colorItem: ColorItem) => (
-                          <div key={colorItem.name} className="flex flex-col items-center">
-                            <div
-                              className="w-3 h-3 sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
-                              style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
-                              onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
-                              role="button"
-                              tabIndex={0}
-                              aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
-                            />
-                            <div className="text-[5px] sm:text-[6px] md:text-[7px] text-center mt-0.5 text-gray-600 hidden sm:block">
-                              {colorItem.name}
+                  <div className="w-full overflow-x-auto">
+                    <div className="flex flex-col items-center gap-0.5 sm:gap-1 min-w-fit">
+                      {split20(getCurrentColorData1200()).reverse().map((group, i) => (
+                        <div className="flex flex-row gap-0.5 sm:gap-1" key={i}>
+                          {group.map((colorItem: ColorItem) => (
+                            <div key={colorItem.name} className="flex flex-col items-center">
+                              <div
+                                className="w-[14px] h-[14px] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
+                                style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
+                                onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
+                              />
+                              <div className="text-[5px] sm:text-[6px] md:text-[7px] text-center mt-0.5 text-gray-600 hidden sm:block max-w-[14px] sm:max-w-4 md:max-w-[18px] overflow-hidden text-ellipsis whitespace-nowrap">
+                                {colorItem.name}
+                              </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Pagination */}
@@ -409,26 +415,28 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   </h2>
                   
                   {/* Color Grid */}
-                  <div className="flex flex-row justify-center flex-wrap gap-0.5 sm:gap-1 overflow-x-auto">
-                    {split20(colorData1000.slice((currentPage1000 - 1) * 200, 200 * currentPage1000).reverse()).map((group, i) => (
-                      <div className="flex flex-row gap-1 sm:gap-2 md:gap-3" key={i}>
-                        {group.reverse().map((colorItem: ColorItem) => (
-                          <div key={colorItem.name} className="flex flex-col items-center">
-                            <div
-                              className="w-3 h-3 sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
-                              style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
-                              onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
-                              role="button"
-                              tabIndex={0}
-                              aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
-                            />
-                            <div className="text-[5px] sm:text-[6px] md:text-[7px] text-center mt-0.5 text-gray-600 hidden sm:block">
-                              {colorItem.name}
+                  <div className="w-full overflow-x-auto">
+                    <div className="flex flex-col items-center gap-0.5 sm:gap-1 min-w-fit">
+                      {split20(colorData1000.slice((currentPage1000 - 1) * 200, 200 * currentPage1000).reverse()).map((group, i) => (
+                        <div className="flex flex-row gap-0.5 sm:gap-1" key={i}>
+                          {group.reverse().map((colorItem: ColorItem) => (
+                            <div key={colorItem.name} className="flex flex-col items-center">
+                              <div
+                                className="w-[14px] h-[14px] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
+                                style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
+                                onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
+                              />
+                              <div className="text-[5px] sm:text-[6px] md:text-[7px] text-center mt-0.5 text-gray-600 hidden sm:block max-w-[14px] sm:max-w-4 md:max-w-[18px] overflow-hidden text-ellipsis whitespace-nowrap">
+                                {colorItem.name}
+                              </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Pagination */}
@@ -473,7 +481,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
             {/* Save PDF Button */}
             <button
               onClick={downloadPDF}
-              className="bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg self-center sm:self-start hover:bg-gray-800 transition-colors"
+              className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
             >
               🖨 Save your creation as PDF
             </button>

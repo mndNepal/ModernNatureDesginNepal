@@ -157,22 +157,22 @@ const AllCollections: React.FC = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-2 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:768px)_and_(max-width:820px)]:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-2 md:px-0">
             {currentCarpets.length > 0 ? (
               currentCarpets.map((carpet) => (
                 <motion.div
                   key={carpet.id}
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col max-w-[254.4px] sm:max-w-[240px] md:max-w-[180px] lg:max-w-none mx-auto"
+                  className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col max-w-[254.4px] sm:max-w-[240px] [@media(min-width:768px)_and_(max-width:820px)]:max-w-none md:max-w-[180px] lg:max-w-none mx-auto"
                   onClick={() => setActiveCarpet(carpet)}
                 >
                   {/* Image now fills entire card width */}
-                  <div className="flex justify-center items-center bg-gray-200 h-[318px] sm:h-[260px] md:h-[240px] lg:h-[280px] xl:h-[380px]">
+                  <div className="flex justify-center items-center bg-gray-200 h-[318px] sm:h-[260px] [@media(min-width:768px)_and_(max-width:820px)]:h-[320px] md:h-[240px] lg:h-[280px] xl:h-[380px]">
                     <img
                       src={carpet.imageUrl}
                       alt={carpet.name}
-                      className="w-full h-full"
+                      className="w-full h-full object-cover"
                     />
                   </div>
 

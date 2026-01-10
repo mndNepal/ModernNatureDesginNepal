@@ -29,13 +29,13 @@ export default function About() {
 
       <AboutUsPage />
 
-      <div className="flex flex-col lg:flex-row gap-8 w-[90%] mx-auto mb-10">
+      <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto mb-10 px-4 sm:px-6 md:px-8">
         {/* TARGET SCROLL SECTION */}
-        <div id="ourstory-section" className="w-full lg:w-45%">
+        <div id="ourstory-section" className="w-full lg:w-[48%]">
           <OurHistoryPage />
         </div>
 
-        <div className="w-full lg:w-45%">
+        <div className="w-full lg:w-[48%]">
           <HistoryGraph />
         </div>
       </div>

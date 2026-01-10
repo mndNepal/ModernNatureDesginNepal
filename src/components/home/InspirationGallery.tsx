@@ -22,9 +22,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/inspiration2.jpg",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/inspiration2_1.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/inspiration2_3.jpg",
-    inspirationDesc: "From the trail to creation — inspired by a timeless moment at Gokyo Lake.",
-    translationDesc: "Transforming natural forms into artistic language — woven into a rug.",
-    finishedDesc: "A meticulously hand-knotted masterpiece brought to life by skilled Nepalese artisans.",
+    inspirationDesc: "From the trail to creation — inspired by Gokyo Lake's beauty.",
+    translationDesc: "Transforming natural forms into artistic language — woven into timeless rugs.",
+    finishedDesc: "A meticulously hand-knotted masterpiece brought to life by skilled artisans.",
   },
   {
     id: "m2",
@@ -33,9 +33,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/manaslu.jpg",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/manaslu1.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/manaslu3.jpg",
-    inspirationDesc: "A meditative weave born from Himalayan temples.",
-    translationDesc: "From raw earth to refined expressions.",
-    finishedDesc: "A testment to precision, passion, and Nepali craftsmanship.",
+    inspirationDesc: "A meditative weave born from the sacred beauty of Himalayan temples.",
+    translationDesc: "From raw earth to refined artistic expressions of timeless design.",
+    finishedDesc: "A testament to precision, passion, and the finest Nepali craftsmanship.",
   },
 
   {
@@ -45,9 +45,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Pancha Kunda Photo.JPG",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Pancha Kunda 1.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/panchkunda1.jpg",
-    inspirationDesc: "Are  reflection of Panchakunda Lake's still waters and spiritual calm -woven into luxury.",
-    translationDesc: "Panchakunda Lake's crystal calm and himalayan power, woven into timeless design.",
-    finishedDesc: "From loom to living room pure elegance underfoot.",
+    inspirationDesc: "A reflection of Panchakunda Lake's still waters and spiritual calm.",
+    translationDesc: "Panchakunda's crystal calm and Himalayan power, woven into timeless design.",
+    finishedDesc: "From loom to living room — pure elegance woven underfoot.",
   },
 
   {
@@ -57,9 +57,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar3.jpg",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar1.jpg",
-    inspirationDesc: "An abstract celebration of Tihar's soulful energy.",
-    translationDesc: "Where organic beauty becomes woven expression. ",
-    finishedDesc: "An heirloom-level rug, born from Nepal's finest hands",
+    inspirationDesc: "An abstract celebration of Tihar's vibrant colors and soulful energy.",
+    translationDesc: "Where organic beauty and tradition become woven artistic expression.",
+    finishedDesc: "An heirloom-quality rug, handcrafted by Nepal's finest artisans.",
   },
 ];
 
@@ -138,7 +138,7 @@ export default function InspirationGalleryMinimal() {
             {/* CENTER COLUMN */}
             <div className="flex flex-col-reverse md:flex-col gap-4 text-center">
               <motion.div
-                className="w-full h-70 md:h-80 lg:h-[360px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="mx-auto overflow-hidden rounded-lg shadow-md hover:shadow-xl transition h-[330px] md:h-[370px] lg:h-[470px] w-[65%] md:w-[70%]"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.design} className="w-full h-full object-cover" />

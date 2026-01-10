@@ -24,7 +24,7 @@ const HistoryGraph: React.FC = () => {
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4 text-center">
           MND Nepal Growth Timeline
         </h3>
-        <div className="w-full h-[280px] sm:h-[380px] md:h-[480px] lg:h-[580px]">
+        <div className="w-full md:w-[85%] md:mx-auto h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" />

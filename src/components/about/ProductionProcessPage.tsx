@@ -164,14 +164,14 @@ const ProductionProcessPage: React.FC = () => {
       <AnimatePresence>
         {selectedStep && (
           <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedStep(null)}
           >
             <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-5xl w-[90%] p-6 relative flex flex-col md:flex-row gap-6"
+              className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden p-4 sm:p-6 relative flex flex-col md:flex-row gap-4 sm:gap-6"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -181,28 +181,31 @@ const ProductionProcessPage: React.FC = () => {
               {/* Close button */}
               <button
                 onClick={() => setSelectedStep(null)}
-                className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+                className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-500 hover:text-gray-800 text-2xl sm:text-3xl font-bold z-10 w-8 h-8 flex items-center justify-center"
               >
                 ×
               </button>
 
-              {/* Left Side - Image */}
-              <div className="md:w-1/2 w-full">
-                <img
-                  src={selectedStep.image}
-                  alt={selectedStep.title}
-                  className="w-full h-80 object-cover rounded-xl"
-                />
-              </div>
+              {/* Content Container with Scroll */}
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-6 overflow-y-auto max-h-full">
+                {/* Left Side - Image */}
+                <div className="md:w-1/2 w-full flex-shrink-0">
+                  <img
+                    src={selectedStep.image}
+                    alt={selectedStep.title}
+                    className="w-full h-48 sm:h-64 md:h-80 object-cover rounded-xl"
+                  />
+                </div>
 
-              {/* Right Side - Description */}
-              <div className="md:w-1/2 w-full flex flex-col justify-center overflow-y-auto max-h-[80vh] pr-2">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-3">
-                  {selectedStep.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
-                  {selectedStep.detailedDescription || selectedStep.description}
-                </p>
+                {/* Right Side - Description */}
+                <div className="md:w-1/2 w-full flex flex-col justify-start">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3 pr-8">
+                    {selectedStep.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
+                    {selectedStep.detailedDescription || selectedStep.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           </motion.div>

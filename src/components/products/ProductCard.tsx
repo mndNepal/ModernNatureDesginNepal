@@ -96,14 +96,14 @@ const ProductCard = ({ product, onProductClick }: ProductCardProps) => {
 
   return (
     <div 
-      className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 group cursor-pointer"
+      className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col max-w-[254.4px] sm:max-w-[240px] [@media(min-width:768px)_and_(max-width:820px)]:max-w-none md:max-w-none mx-auto sm:mx-0 [@media(min-width:768px)_and_(max-width:820px)]:mx-auto"
       onClick={handleClick}
     >
-      <div className="aspect-[4/5] overflow-hidden relative">
+      <div className="flex justify-center items-center bg-gray-200 h-[318px] sm:h-[260px] [@media(min-width:768px)_and_(max-width:820px)]:h-[320px] md:h-[240px] lg:h-[280px] xl:h-[388px]">
         <img
           src={product.imageUrl}
           alt={product.name}
-          className="w-full h-full group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
           onError={(e) => {
             const target = e.target as HTMLImageElement;

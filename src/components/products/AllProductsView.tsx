@@ -103,10 +103,10 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-0">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-0 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4">
-        {/* Heading - Left */}
-        <h1 className="font-bold text-gray-900 mx-auto sm:mx-0">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-0 [@media(min-width:768px)_and_(max-width:820px)]:w-[90%] [@media(min-width:768px)_and_(max-width:820px)]:px-2">
+      <div className="flex flex-col items-center gap-4 mt-0 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4 [@media(min-width:768px)_and_(max-width:820px)]:max-w-none [@media(min-width:768px)_and_(max-width:820px)]:px-4">
+        {/* Heading - Center */}
+        <h1 className="font-bold text-gray-900">
           <img
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/ChatGPT%20Image%20Nov%208%2C%202025%2C%2005_19_23%20PM.png"
             alt="Color Customizer"
@@ -114,19 +114,21 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
           />
         </h1>
 
-        {/* Search Input - Right */}
-        <div className="flex items-center space-x-2 w-full sm:w-auto">
+        {/* Search Input - Center */}
+        <div className="flex items-center space-x-2" style={{ width: '238px' }}>
           <input
             type="text"
             placeholder="Search products"
             value={searchQuery}
             onChange={handleSearchInputChange}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-            className="border border-gray-900 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-xs sm:text-sm flex-1 sm:flex-none sm:w-40 md:w-48"
+            className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
+            style={{ width: '160px' }}
           />
           <button 
             onClick={handleSearch}
-            className="bg-gray-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-gray-700 transition text-xs sm:text-sm"
+            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm"
+            style={{ width: '70px' }}
           >
             Search
           </button>
@@ -134,7 +136,7 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:768px)_and_(max-width:820px)]:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 [@media(min-width:768px)_and_(max-width:820px)]:gap-6 [@media(min-width:768px)_and_(max-width:820px)]:px-4">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard
