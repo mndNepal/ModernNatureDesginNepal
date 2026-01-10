@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
+import { BiMessageRoundedDots } from "react-icons/bi";
 
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
@@ -164,6 +165,20 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+
+
+      {/* 💬 Chatbot Floating Button */}
+      <button
+        onClick={() => {
+          // TODO: open chatbot modal / widget
+          console.log("Open Chatbot");
+        }}
+        className="mb-5 fixed bottom-28 right-8 z-50 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform"
+      >
+        <BiMessageRoundedDots size={40} />
+      </button>
+
 
       {/* 🔥 WhatsApp Floating Button */}
 
