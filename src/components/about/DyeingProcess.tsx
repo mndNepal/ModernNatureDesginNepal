@@ -48,7 +48,7 @@ const DyingProcessPage: React.FC = () => {
 
   return (
     <motion.section
-      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20"
+      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-[10px] px-4 sm:px-6 md:px-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -75,7 +75,7 @@ const DyingProcessPage: React.FC = () => {
                 <img
                   src={step.image}
                   alt={step.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-64 sm:h-72 md:h-80 object-cover"
                 />
               )}
               <div className="p-5">

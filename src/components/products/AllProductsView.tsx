@@ -104,8 +104,8 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
 
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-0 [@media(min-width:768px)_and_(max-width:820px)]:w-[90%] [@media(min-width:768px)_and_(max-width:820px)]:px-2">
-      <div className="flex flex-col items-center gap-4 mt-0 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4 [@media(min-width:768px)_and_(max-width:820px)]:max-w-none [@media(min-width:768px)_and_(max-width:820px)]:px-4">
-        {/* Heading - Center */}
+      <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 mt-0 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4 [@media(min-width:768px)_and_(max-width:820px)]:max-w-none [@media(min-width:768px)_and_(max-width:820px)]:px-4">
+        {/* Heading */}
         <h1 className="font-bold text-gray-900">
           <img
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/ChatGPT%20Image%20Nov%208%2C%202025%2C%2005_19_23%20PM.png"
@@ -114,21 +114,19 @@ const AllProductsView = ({ onProductSelect }: AllProductsViewProps) => {
           />
         </h1>
 
-        {/* Search Input - Center */}
-        <div className="flex items-center space-x-2" style={{ width: '238px' }}>
+        {/* Search Input */}
+        <div className="flex items-center space-x-2">
           <input
             type="text"
             placeholder="Search products"
             value={searchQuery}
             onChange={handleSearchInputChange}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-            className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
-            style={{ width: '160px' }}
+            className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm w-[180px] md:w-[220px] lg:w-[280px]"
           />
           <button 
             onClick={handleSearch}
-            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm"
-            style={{ width: '70px' }}
+            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm w-[80px] md:w-[90px] lg:w-[100px]"
           >
             Search
           </button>

@@ -274,9 +274,9 @@ export default function HeroSection() {
             </div>
 
             {/* Right Content - Rug Image */}
-            <div className={`relative transform transition-all duration-1000 delay-300 ease-out flex justify-center md:justify-end px-6 md:px-0 mt-6 md:mt-8 lg:mt-12 ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
+            <div className={`relative transform transition-all duration-1000 delay-300 ease-out flex justify-center md:justify-center px-6 md:px-0 mt-6 md:mt-8 lg:mt-12 ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
               }`}>
-              <div className="w-full max-w-xs md:max-w-xs lg:max-w-sm xl:max-w-md">
+              <div className="w-full max-w-[200px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[320px]">
                 {imagesPreloaded ? (
                   <div className='shadow-2xl rounded-xl overflow-hidden'>
                     <img
@@ -285,7 +285,7 @@ export default function HeroSection() {
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
                       alt={`${heroinnerSlides[currentSlide].title} - Handcrafted rug`}
-                      className={`w-full h-[280px] md:h-[350px] lg:h-[450px] xl:h-[500px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                      className={`w-full h-[240px] md:h-[300px] lg:h-[380px] xl:h-[420px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;

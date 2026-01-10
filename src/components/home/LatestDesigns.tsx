@@ -104,7 +104,7 @@ interface CarouselCardProps {
 function CarouselCard({ design, onClick, isVisible = true, index = 0 }: CarouselCardProps) {
   return (
     <div
-      className={`flex-shrink-0 w-72 sm:w-80 h-80 sm:h-96 cursor-pointer group transition-all duration-500 hover:scale-105 hover:z-20 relative transform will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+      className={`flex-shrink-0 w-40 sm:w-80 h-64 sm:h-96 cursor-pointer group transition-all duration-500 hover:scale-105 hover:z-20 relative transform will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       style={{
         transitionDelay: `${400 + (index * 100)}ms`,

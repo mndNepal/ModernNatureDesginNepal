@@ -28,7 +28,7 @@ const AboutUsPage: React.FC = () => {
 
   return (
     <motion.section
-      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-20 [@media(min-width:1024px)_and_(max-width:1366px)]:px-8"
+      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -37,7 +37,7 @@ const AboutUsPage: React.FC = () => {
       <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8 xl:gap-12">
 
         {/* Left Content */}
-        <div className="w-full xl:w-1/2 space-y-4 sm:space-y-6 xl:text-left text-center px-4 sm:px-6 md:px-8">
+        <div className="w-full xl:w-1/2 space-y-4 sm:space-y-6 xl:text-left text-center">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 text-center drop-shadow-sm pt-6 sm:pt-0">
             Weaving Heritage into Modern Elegance
           </h2>
@@ -49,8 +49,7 @@ const AboutUsPage: React.FC = () => {
             We supply exclusively on a wholesale basis, crafting custom rugs to meet the unique needs of clients worldwide.
             <br /> <br />
             At MND Nepal, craftsmanship goes hand-in-hand with conscience:
-
-            <br /> <br />
+            
             <div className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
               <p>✨ <span className="font-semibold">100% child labor-free production</span></p>
               <p>🌿 <span className="font-semibold">All-natural, high-quality wool and eco-friendly fibers</span></p>
@@ -58,18 +57,16 @@ const AboutUsPage: React.FC = () => {
             </div>
             <br />
             Beyond business, we believe in empowerment and purpose - offering fair employment to skilled artisans and helping preserve Nepal's cultural legacy. Every rug we create is a unique masterpiece - a fusion of artistry, ethics, and emotion - adorning prestigious interiors, homes, and hotels around the world.
-            <br /> <br />
-            At Modern Nature Design Nepal, we don't just make rugs - we craft timeless expressions of Nepalese artistry for the world to cherish.
-          </p>
+            </p>
         </div>
 
-        {/* Right Video (updated) */}
-        <div className="w-full xl:w-1/2 flex justify-center mt-6 xl:mt-0 [@media(min-width:1024px)_and_(max-width:1366px)]:w-auto">
+        {/* Right Video */}
+        <div className="w-full xl:w-1/2 flex justify-center items-start mt-6 xl:mt-0">
           <video
             ref={videoRef}
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/IMG_5373.MOV"
             controls
-            className="rounded-2xl shadow-lg w-full h-[400px] sm:h-[500px] md:h-[600px] xl:h-[820px] object-cover [@media(min-width:1024px)_and_(max-width:1366px)]:w-[450px] [@media(min-width:1024px)_and_(max-width:1366px)]:h-[600px]"
+            className="rounded-2xl shadow-lg w-[280px] h-[380px] sm:w-[320px] sm:h-[450px] md:w-[350px] md:h-[500px] xl:w-full xl:h-[820px] object-cover [@media(min-width:1024px)_and_(max-width:1366px)]:w-[350px] [@media(min-width:1024px)_and_(max-width:1366px)]:h-[500px]"
           />
         </div>
 

@@ -29,16 +29,18 @@ export default function About() {
 
       <AboutUsPage />
 
-      <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto mb-10 px-4 sm:px-6 md:px-8">
-        {/* TARGET SCROLL SECTION */}
-        <div id="ourstory-section" className="w-full lg:w-[48%]">
-          <OurHistoryPage />
-        </div>
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20">
+        <div className="flex flex-col xl:flex-row gap-8 max-w-6xl mx-auto">
+          {/* TARGET SCROLL SECTION */}
+          <div id="ourstory-section" className="w-full xl:w-[48%]">
+            <OurHistoryPage />
+          </div>
 
-        <div className="w-full lg:w-[48%]">
-          <HistoryGraph />
+          <div className="w-full md:w-[70%] lg:w-[60%] xl:w-[48%] md:mx-auto xl:mx-0">
+            <HistoryGraph />
+          </div>
         </div>
-      </div>
+      </section>
 
       <ProductionProcessPage />
       <DyingProcessPage />

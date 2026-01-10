@@ -9,15 +9,16 @@ const fadeInUp: Variants = {
 const OurHistoryPage: React.FC = () => {
   return (
     <motion.section
-      className="mt-6 sm:mt-10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
-      <div className="max-w-5xl space-y-4 sm:space-y-6 text-justify px-4 sm:px-6 md:px-8">
+      <div className="w-full space-y-4 sm:space-y-6 text-justify">
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center text-gray-800 drop-shadow-sm">
-          Decades of Weaving Excellence from Heart of Nepal
+          "Decades of Crafting Excellence"
+          <br />
+          From the Heart of Nepal
         </h2>
 
         <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">

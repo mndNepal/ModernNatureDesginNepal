@@ -129,7 +129,7 @@ const AllCollections: React.FC = () => {
       <Navbar />
       <section className="min-h-screen bg-[#fdfdfb] pt-20 pb-10 sm:py-20">
         {/* Container with responsive width centered */}
-        <div className="w-[95%] sm:w-[90%] md:w-4/5 mx-auto">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 [@media(min-width:768px)_and_(max-width:820px)]:w-[90%] [@media(min-width:768px)_and_(max-width:820px)]:px-2">
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4 sm:mt-6 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4 max-w-[254.4px] sm:max-w-none mx-auto sm:mx-0">
             {/* Heading - Left */}
@@ -157,7 +157,7 @@ const AllCollections: React.FC = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:768px)_and_(max-width:820px)]:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-2 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:768px)_and_(max-width:820px)]:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 [@media(min-width:768px)_and_(max-width:820px)]:gap-6 [@media(min-width:768px)_and_(max-width:820px)]:px-4">
             {currentCarpets.length > 0 ? (
               currentCarpets.map((carpet) => (
                 <motion.div

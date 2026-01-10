@@ -14,8 +14,8 @@ interface ServiceSection {
 const services: ServiceSection[] = [
   {
     id: "1",
-    title: "Strike-Offs & Samples",
-    subtitle: "See. Feel. Perfect Your Design.",
+    title: "Trial & Samples",
+    subtitle: "From Feel to Finish",
     image:
       "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.webp",
     description: `
@@ -69,7 +69,7 @@ const services: ServiceSection[] = [
   {
     id: "5",
     title: "Shipment & Delivery",
-    subtitle: "Your Rugs, Anywhere in the World",
+    subtitle: "Rugs Without Borders",
     image:
       "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service5.jpeg",
     description: `
@@ -103,47 +103,47 @@ const Services: React.FC = () => {
           Our Services
         </h1>
 
-        {/* First Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-4 sm:mb-6 md:mb-10 place-items-center sm:[&>*:nth-child(3)]:col-span-2 sm:[&>*:nth-child(3)]:justify-self-center xl:[&>*:nth-child(3)]:col-span-1">
+        {/* First Row - 3 cards */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-6 md:mb-10">
           {firstRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-full max-w-[320px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px] bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden border cursor-pointer"
+              className="w-[280px] sm:w-[46%] lg:w-[320px] xl:w-[340px] max-w-[340px] bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden border cursor-pointer"
               onClick={() => setActiveService(service)}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-40 sm:h-48 md:h-56 object-cover"
+                className="w-full h-40 sm:h-44 md:h-48 object-cover"
               />
-              <div className="p-4 sm:p-5 md:p-6">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">{service.title}</h2>
-                <p className="text-sm sm:text-base md:text-lg">{service.subtitle}</p>
+              <div className="p-4 sm:p-4 md:p-5">
+                <h2 className="text-lg sm:text-lg md:text-xl font-semibold">{service.title}</h2>
+                <p className="text-sm sm:text-sm md:text-base">{service.subtitle}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Second Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 place-items-center max-w-3xl mx-auto">
+        {/* Second Row - 2 cards */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6">
           {secondRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-full max-w-[320px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px] bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden border cursor-pointer"
+              className="w-[280px] sm:w-[46%] lg:w-[320px] xl:w-[340px] max-w-[340px] bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden border cursor-pointer"
               onClick={() => setActiveService(service)}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-40 sm:h-48 md:h-56 object-cover"
+                className="w-full h-40 sm:h-44 md:h-48 object-cover"
               />
-              <div className="p-4 sm:p-5 md:p-6">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">{service.title}</h2>
-                <p className="text-sm sm:text-base md:text-lg">{service.subtitle}</p>
+              <div className="p-4 sm:p-4 md:p-5">
+                <h2 className="text-lg sm:text-lg md:text-xl font-semibold">{service.title}</h2>
+                <p className="text-sm sm:text-sm md:text-base">{service.subtitle}</p>
               </div>
             </motion.div>
           ))}
@@ -160,47 +160,51 @@ const Services: React.FC = () => {
               onClick={() => setActiveService(null)}
             >
               <motion.div
-                className="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-5xl flex flex-col md:flex-row overflow-hidden max-h-[95vh] md:max-h-[90vh]"
+                className="bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-2xl flex flex-col md:flex-row overflow-hidden max-h-[80vh]"
                 initial={{ scale: 0.95, y: 50, opacity: 0 }}
                 animate={{ scale: 1, y: 0, opacity: 1 }}
                 exit={{ scale: 0.95, y: 50, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <img
-                  src={activeService.image}
-                  alt={activeService.title}
-                  className="md:w-1/2 h-40 sm:h-52 md:h-auto object-cover flex-shrink-0"
-                />
+                {/* Image Section */}
+                <div className="md:w-2/5 flex-shrink-0">
+                  <img
+                    src={activeService.image}
+                    alt={activeService.title}
+                    className="w-full h-40 sm:h-48 md:h-full object-cover"
+                  />
+                </div>
 
-                <div className="md:w-1/2 p-4 sm:p-6 md:p-8 overflow-y-auto">
-                  <div className="flex justify-between items-start mb-3 sm:mb-4">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold pr-2">
+                {/* Content Section */}
+                <div className="md:w-3/5 p-4 sm:p-5 overflow-y-auto max-h-[45vh] md:max-h-[80vh]">
+                  <div className="flex justify-between items-start mb-2 sm:mb-3">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold pr-2">
                       {activeService.title}
                     </h2>
                     <button 
                       onClick={() => setActiveService(null)}
                       className="flex-shrink-0 p-1 hover:bg-gray-100 rounded-full transition-colors"
                     >
-                      <X size={24} className="sm:w-7 sm:h-7" />
+                      <X size={20} />
                     </button>
                   </div>
 
-                  <p className="text-base sm:text-lg mb-4 sm:mb-6">
+                  <p className="text-sm sm:text-base font-medium text-gray-600 mb-3 sm:mb-4">
                     {activeService.subtitle}
                   </p>
 
                   <div
-                    className="text-sm sm:text-base text-gray-700"
+                    className="text-xs sm:text-sm text-gray-700 leading-relaxed"
                     dangerouslySetInnerHTML={{
                       __html: activeService.description,
                     }}
                   />
 
                   {activeService.id === "3" && (
-                    <div className="mt-6 sm:mt-8 flex justify-center">
+                    <div className="mt-4 sm:mt-6 flex justify-center">
                       <Link
                         to="/products"
-                        className="inline-flex items-center px-4 sm:px-6 py-2 rounded-lg sm:rounded-xl text-base sm:text-lg font-bold shadow-md transition-all duration-300
+                        className="inline-flex items-center px-4 py-2 rounded-lg text-sm sm:text-base font-bold shadow-md transition-all duration-300
                         bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 hover:scale-105"
                       >
                         COLOR CUSTOMIZER

@@ -174,9 +174,9 @@ export default function App() {
           // TODO: open chatbot modal / widget
           console.log("Open Chatbot");
         }}
-        className="mb-5 fixed bottom-28 right-8 z-50 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform"
+        className="fixed bottom-28 right-8 z-50 bg-blue-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:scale-110 transition-transform"
       >
-        <BiMessageRoundedDots size={40} />
+        <BiMessageRoundedDots className="w-7 h-7 sm:w-10 sm:h-10" />
       </button>
 
 
@@ -186,9 +186,9 @@ export default function App() {
         href="https://wa.me/9779851197564"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-10 right-8 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform"
+        className="fixed bottom-10 right-8 z-50 bg-green-500 text-white rounded-full p-3 sm:p-4 shadow-lg hover:scale-110 transition-transform"
       >
-        <FaWhatsapp size={40} />
+        <FaWhatsapp className="w-7 h-7 sm:w-10 sm:h-10" />
       </a>
     </>
   );

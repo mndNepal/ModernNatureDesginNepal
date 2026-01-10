@@ -247,7 +247,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
   return (
     <>
       <Navbar />
-      <div className="mt-12 sm:mt-16 min-h-screen bg-white flex flex-col items-center justify-start py-6 sm:py-8 md:py-10 px-3 sm:px-4 md:px-6">
+      <div className="mt-12 sm:mt-16 bg-white flex flex-col items-center justify-start py-6 sm:py-8 md:py-10 px-3 sm:px-4 md:px-6">
         {/* Title */}
         <div className="text-center mb-4 sm:mb-6">
           <h1 className="text-2xl sm:text-3xl font-serif mt-2">{name}</h1>
@@ -283,19 +283,19 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
               </div>
             </div>
 
-            {/* Detail Images */}
-            {/* {detailImages.length > 0 && (
-              <div className="flex flex-wrap gap-2 sm:gap-2.5 justify-center sm:justify-start">
+            {/* Detail Images - Hidden on mobile, visible on iPad and larger */}
+            {detailImages.length > 0 && (
+              <div className="hidden md:flex flex-nowrap gap-2 lg:gap-2.5 justify-center md:justify-start overflow-x-auto">
                 {detailImages.map((img, index) => (
                   <img
                     key={index}
                     src={img}
-                    className="h-32 sm:h-40 md:h-52 w-24 sm:w-32 md:w-40 object-cover rounded-md"
+                    className="h-28 w-20 md:h-32 md:w-24 lg:h-52 lg:w-40 object-cover rounded-md flex-shrink-0"
                     alt={`${name} detail ${index + 1}`}
                   />
                 ))}
               </div>
-            )} */}
+            )}
           </div>
 
           {/* Right Column - Color Selection */}
@@ -346,7 +346,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
             </div>
 
             {/* Color Charts */}
-            <div className="bg-gray-100 p-3 sm:p-4 md:p-6 pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-8 md:pb-10 rounded-xl sm:rounded-2xl shadow-md w-full mt-4 sm:mt-6 md:mt-0">
+            <div className="bg-gray-100 p-2 sm:p-3 md:p-4 pt-4 sm:pt-5 md:pt-6 pb-4 sm:pb-5 md:pb-6 rounded-xl sm:rounded-2xl shadow-md w-full mt-4 sm:mt-6 md:mt-0">
               {!showChart1000 ? (
                 <>
                   {/* Chart 1200 */}
@@ -355,21 +355,21 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   </h2>
                   
                   {/* Color Grid */}
-                  <div className="w-full overflow-x-auto">
-                    <div className="flex flex-col items-center gap-0.5 sm:gap-1 min-w-fit">
+                  <div className="w-full overflow-x-auto flex justify-center">
+                    <div className="flex flex-col gap-0.5 sm:gap-1">
                       {split20(getCurrentColorData1200()).reverse().map((group, i) => (
                         <div className="flex flex-row gap-0.5 sm:gap-1" key={i}>
                           {group.map((colorItem: ColorItem) => (
                             <div key={colorItem.name} className="flex flex-col items-center">
                               <div
-                                className="w-[14px] h-[14px] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
+                                className="w-[18px] h-[18px] sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
                                 style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
                                 onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
                                 role="button"
                                 tabIndex={0}
                                 aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
                               />
-                              <div className="text-[5px] sm:text-[6px] md:text-[7px] text-center mt-0.5 text-gray-600 hidden sm:block max-w-[14px] sm:max-w-4 md:max-w-[18px] overflow-hidden text-ellipsis whitespace-nowrap">
+                              <div className="text-[6px] sm:text-[7px] md:text-[8px] text-center mt-0.5 text-gray-600 max-w-[18px] sm:max-w-5 md:max-w-6 overflow-hidden text-ellipsis whitespace-nowrap">
                                 {colorItem.name}
                               </div>
                             </div>
@@ -415,21 +415,21 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   </h2>
                   
                   {/* Color Grid */}
-                  <div className="w-full overflow-x-auto">
-                    <div className="flex flex-col items-center gap-0.5 sm:gap-1 min-w-fit">
+                  <div className="w-full overflow-x-auto flex justify-center">
+                    <div className="flex flex-col gap-0.5 sm:gap-1">
                       {split20(colorData1000.slice((currentPage1000 - 1) * 200, 200 * currentPage1000).reverse()).map((group, i) => (
                         <div className="flex flex-row gap-0.5 sm:gap-1" key={i}>
                           {group.reverse().map((colorItem: ColorItem) => (
                             <div key={colorItem.name} className="flex flex-col items-center">
                               <div
-                                className="w-[14px] h-[14px] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
+                                className="w-[18px] h-[18px] sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
                                 style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
                                 onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
                                 role="button"
                                 tabIndex={0}
                                 aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
                               />
-                              <div className="text-[5px] sm:text-[6px] md:text-[7px] text-center mt-0.5 text-gray-600 hidden sm:block max-w-[14px] sm:max-w-4 md:max-w-[18px] overflow-hidden text-ellipsis whitespace-nowrap">
+                              <div className="text-[6px] sm:text-[7px] md:text-[8px] text-center mt-0.5 text-gray-600 max-w-[18px] sm:max-w-5 md:max-w-6 overflow-hidden text-ellipsis whitespace-nowrap">
                                 {colorItem.name}
                               </div>
                             </div>
