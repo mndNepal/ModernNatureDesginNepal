@@ -652,6 +652,14 @@ export default function Navbar({ className = '' }: NavbarProps) {
           <div className="hidden xl:flex items-center space-x-6 ml-auto">
             {/* Navigation Links */}
             <div className="flex items-center space-x-6">
+              <Link
+                to="/about"
+                onClick={() => scrollToSection('about')}
+                onMouseEnter={() => setActiveNavItem('about')}
+                onMouseLeave={() => setActiveNavItem(null)}
+                className={`navbar-item text-charcoal drop-shadow-sm hover:bg-white/20 px-4 py-3 rounded-lg text-base ${activeNavItem === 'about' ? 'active' : ''
+                  }`}
+              >About</Link>
               <div
                 ref={dropdownRef}
                 className="relative group"
@@ -670,14 +678,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                 </Link>
               </div>
 
-              <Link
-                to="/about"
-                onClick={() => scrollToSection('about')}
-                onMouseEnter={() => setActiveNavItem('about')}
-                onMouseLeave={() => setActiveNavItem(null)}
-                className={`navbar-item text-charcoal drop-shadow-sm hover:bg-white/20 px-4 py-3 rounded-lg text-base ${activeNavItem === 'about' ? 'active' : ''
-                  }`}
-              >About</Link>
+
               <Link
                 to="/services"
                 onClick={() => scrollToSection('services')}
@@ -780,7 +781,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
               </div>
 
               {/* Search Results Dropdown */}
-              {/* {showSearchResults && searchResults.length > 0 && (
+            {/* {showSearchResults && searchResults.length > 0 && (
                 <div
                   ref={searchResultsRef}
                   className={`search-dropdown absolute w-96 shadow-2xl border border-white/30 rounded-lg overflow-y-auto z-[9998] ${searchVerticalPosition === 'top'
@@ -826,7 +827,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                 </div>
               )}
             </div> */}
-          </div> 
+          </div>
 
           {/* Mobile menu button */}
           <button
