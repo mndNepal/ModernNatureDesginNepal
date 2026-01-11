@@ -134,46 +134,80 @@ export default function HeroSection() {
     };
   }, []);
 
-  // Image preloading
+  // Optimized image preloading - load first image immediately, others lazily
   useEffect(() => {
     const preloadImages = async () => {
-      const loadPromises = heroSlides.map((slide) => {
-        return new Promise<void>((resolve, reject) => {
+      // Load first image immediately for fast initial render
+      const firstSlide = heroSlides[0];
+      const firstImg = new Image();
+      firstImg.onload = () => {
+        setImageLoadStates(prev => ({ ...prev, [firstSlide.id]: true }));
+        setImagesPreloaded(true); // Allow render after first image loads
+      };
+      firstImg.onerror = () => {
+        setImageLoadStates(prev => ({ ...prev, [firstSlide.id]: false }));
+        setImagesPreloaded(true);
+      };
+      firstImg.src = firstSlide.image;
+
+      // Load remaining images in background after a delay
+      setTimeout(() => {
+        heroSlides.slice(1).forEach((slide) => {
           const img = new Image();
           img.onload = () => {
             setImageLoadStates(prev => ({ ...prev, [slide.id]: true }));
-            resolve();
           };
           img.onerror = () => {
             console.warn(`Failed to load image: ${slide.image}`);
             setImageLoadStates(prev => ({ ...prev, [slide.id]: false }));
-            resolve(); // Still resolve to not block other images
           };
           img.src = slide.image;
         });
-      });
-
-      try {
-        await Promise.all(loadPromises);
-        setImagesPreloaded(true);
-      } catch (error) {
-        console.error('Error preloading images:', error);
-        setImagesPreloaded(true); // Continue anyway
-      }
+      }, 1000); // Delay loading other images by 1 second
     };
 
     preloadImages();
   }, []);
 
-  // Autoplay functionality
+  // Autoplay functionality with visibility detection
   useEffect(() => {
     if (!imagesPreloaded) return;
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 7000);
+    let intervalId: ReturnType<typeof setInterval> | null = null;
 
-    return () => clearInterval(interval);
+    const startAutoplay = () => {
+      if (intervalId) return;
+      intervalId = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      }, 7000);
+    };
+
+    const stopAutoplay = () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Start autoplay if tab is visible
+    if (!document.hidden) {
+      startAutoplay();
+    }
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      stopAutoplay();
+    };
   }, [imagesPreloaded]);
 
   const goToSlide = (index: number) => {
@@ -226,6 +260,7 @@ export default function HeroSection() {
                 alt={slide.title}
                 className={`w-full text-center h-full object-cover transition-opacity duration-500 ${isLoaded !== false ? 'opacity-100' : 'opacity-75'
                   }`}
+                decoding="async"
                 onError={(e) => {
                   console.warn(`Image failed to load: ${slide.image}`);
                   const target = e.target as HTMLImageElement;
@@ -287,6 +322,7 @@ export default function HeroSection() {
                       alt={`${heroinnerSlides[currentSlide].title} - Handcrafted rug`}
                       className={`w-full h-[340px] sm:h-[300px] md:h-[300px] lg:h-[380px] xl:h-[420px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
+                      decoding="async"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         const fallback = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';

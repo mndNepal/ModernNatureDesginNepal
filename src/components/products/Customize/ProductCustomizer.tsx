@@ -1,6 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import React, { useState, useMemo, useRef, useCallback, memo, useEffect } from 'react';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 
@@ -71,6 +69,34 @@ const split20 = <T,>(array: T[]): T[][] => {
   return result;
 };
 
+// ==================== COLOR SWATCH COMPONENT ====================
+
+interface ColorSwatchProps {
+  colorItem: ColorItem;
+  activeLayer: number;
+  onApplyColor: (hex: string, name: string) => void;
+}
+
+const ColorSwatch = memo(function ColorSwatch({ colorItem, activeLayer, onApplyColor }: ColorSwatchProps) {
+  const hex = rgbToHex(colorItem.r, colorItem.g, colorItem.b);
+  
+  return (
+    <div className="flex flex-col items-center">
+      <div
+        className="w-[18px] h-[18px] sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
+        style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
+        onClick={() => onApplyColor(hex, colorItem.name)}
+        role="button"
+        tabIndex={0}
+        aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
+      />
+      <div className="text-[6px] sm:text-[7px] md:text-[8px] text-center mt-0.5 text-gray-600 max-w-[18px] sm:max-w-5 md:max-w-6 overflow-hidden text-ellipsis whitespace-nowrap">
+        {colorItem.name}
+      </div>
+    </div>
+  );
+});
+
 // ==================== MAIN COMPONENT ====================
 
 const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
@@ -106,10 +132,24 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
   const [currentPage1000, setCurrentPage1000] = useState(1);
   const [currentPage1200, setCurrentPage1200] = useState(1);
   const [showChart1000, setShowChart1000] = useState(false);
+  const [isColorChartReady, setIsColorChartReady] = useState(false);
   const totalPages1000 = 5;
   const totalPages1200 = 5;
 
   const imgRef = useRef<HTMLDivElement>(null);
+
+  // Defer color chart rendering to allow main UI to paint first
+  // Also reset color chart on unmount to reduce cleanup work
+  useEffect(() => {
+    const timer = requestAnimationFrame(() => {
+      setIsColorChartReady(true);
+    });
+    return () => {
+      cancelAnimationFrame(timer);
+      // Reset state before unmount to reduce DOM cleanup work
+      setIsColorChartReady(false);
+    };
+  }, []);
 
   // Get current 1200 color data based on page
   const getCurrentColorData1200 = () => {
@@ -132,7 +172,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
   }, [layerConfigs, colors]);
 
   // Apply color to active layer
-  const applyColor = (hex: string, colorName: string) => {
+  const applyColor = useCallback((hex: string, colorName: string) => {
     const nextHex = hex.toUpperCase();
     setColors((prev) => ({ ...prev, [activeLayer]: nextHex }));
     setLayerNameList((prev) => {
@@ -140,17 +180,23 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
       newList[activeLayer - 1] = colorName;
       return newList;
     });
-  };
+  }, [activeLayer]);
 
   // Reset all colors
-  const resetColors = () => {
+  const resetColors = useCallback(() => {
     setColors(initialColors);
     setLayerNameList(initialNames);
-  };
+  }, [initialColors, initialNames]);
 
-  // PDF Download
-  const downloadPDF = async () => {
+  // PDF Download - dynamically import heavy libraries only when needed
+  const downloadPDF = useCallback(async () => {
     if (!imgRef.current) return;
+
+    // Dynamic imports - these libraries are only loaded when user clicks download
+    const [{ default: html2canvas }, { default: jsPDF }] = await Promise.all([
+      import('html2canvas'),
+      import('jspdf')
+    ]);
 
     const canvas = await html2canvas(imgRef.current, { scale: 2 });
     const imgData = canvas.toDataURL("image/png");
@@ -232,7 +278,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
     pdf.text("© Modern Nature Design Nepal", pageWidth / 2, pageHeight - 12, { align: "center" });
 
     pdf.save(`${name}.pdf`);
-  };
+  }, [name, colors, layerNameList]);
 
   // Default features if none provided
   const displayFeatures = features.length > 0 ? features : [
@@ -292,6 +338,8 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                     src={img}
                     className="h-28 w-20 md:h-34 md:w-28 lg:h-36 lg:w-28 xl:h-52 xl:w-40 object-cover rounded-md flex-shrink-0"
                     alt={`${name} detail ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 ))}
               </div>
@@ -345,9 +393,16 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
               </button>
             </div>
 
-            {/* Color Charts */}
+            {/* Color Charts - Deferred render for faster initial paint */}
             <div className="bg-gray-100 p-2 sm:p-3 md:p-4 pt-4 sm:pt-5 md:pt-6 pb-4 sm:pb-5 md:pb-6 rounded-xl sm:rounded-2xl shadow-md w-full mt-4 sm:mt-6 md:mt-0">
-              {!showChart1000 ? (
+              {!isColorChartReady ? (
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center">
+                    <div className="w-8 h-8 border-3 border-gray-400 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                    <p className="text-sm text-gray-500">Loading color chart...</p>
+                  </div>
+                </div>
+              ) : !showChart1000 ? (
                 <>
                   {/* Chart 1200 */}
                   <h2 className="text-base sm:text-lg md:text-xl font-bold text-center mb-3 sm:mb-4 font-serif">
@@ -360,19 +415,12 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                       {split20(getCurrentColorData1200()).reverse().map((group, i) => (
                         <div className="flex flex-row gap-0.5 sm:gap-1" key={i}>
                           {group.map((colorItem: ColorItem) => (
-                            <div key={colorItem.name} className="flex flex-col items-center">
-                              <div
-                                className="w-[18px] h-[18px] sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
-                                style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
-                                onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
-                                role="button"
-                                tabIndex={0}
-                                aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
-                              />
-                              <div className="text-[6px] sm:text-[7px] md:text-[8px] text-center mt-0.5 text-gray-600 max-w-[18px] sm:max-w-5 md:max-w-6 overflow-hidden text-ellipsis whitespace-nowrap">
-                                {colorItem.name}
-                              </div>
-                            </div>
+                            <ColorSwatch
+                              key={colorItem.name}
+                              colorItem={colorItem}
+                              activeLayer={activeLayer}
+                              onApplyColor={applyColor}
+                            />
                           ))}
                         </div>
                       ))}
@@ -420,19 +468,12 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                       {split20(colorData1000.slice((currentPage1000 - 1) * 200, 200 * currentPage1000).reverse()).map((group, i) => (
                         <div className="flex flex-row gap-0.5 sm:gap-1" key={i}>
                           {group.reverse().map((colorItem: ColorItem) => (
-                            <div key={colorItem.name} className="flex flex-col items-center">
-                              <div
-                                className="w-[18px] h-[18px] sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 cursor-pointer"
-                                style={{ backgroundColor: `rgb(${colorItem.r}, ${colorItem.g}, ${colorItem.b})` }}
-                                onClick={() => applyColor(rgbToHex(colorItem.r, colorItem.g, colorItem.b), colorItem.name)}
-                                role="button"
-                                tabIndex={0}
-                                aria-label={`Set Layer ${activeLayer} to ${colorItem.name}`}
-                              />
-                              <div className="text-[6px] sm:text-[7px] md:text-[8px] text-center mt-0.5 text-gray-600 max-w-[18px] sm:max-w-5 md:max-w-6 overflow-hidden text-ellipsis whitespace-nowrap">
-                                {colorItem.name}
-                              </div>
-                            </div>
+                            <ColorSwatch
+                              key={colorItem.name}
+                              colorItem={colorItem}
+                              activeLayer={activeLayer}
+                              onApplyColor={applyColor}
+                            />
                           ))}
                         </div>
                       ))}
@@ -470,12 +511,14 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
               )}
 
               {/* Toggle Chart Button */}
-              <button
-                onClick={() => setShowChart1000(!showChart1000)}
-                className="border border-gray-400 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md mx-auto block text-center text-xs sm:text-sm hover:bg-gray-200 transition mt-4"
-              >
-                {showChart1000 ? 'Show Chart 1200 (Wool)' : 'Show Chart 1000 (Viscose)'}
-              </button>
+              {isColorChartReady && (
+                <button
+                  onClick={() => setShowChart1000(!showChart1000)}
+                  className="border border-gray-400 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md mx-auto block text-center text-xs sm:text-sm hover:bg-gray-200 transition mt-4"
+                >
+                  {showChart1000 ? 'Show Chart 1200 (Wool)' : 'Show Chart 1000 (Viscose)'}
+                </button>
+              )}
             </div>
 
             {/* Save PDF Button */}

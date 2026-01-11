@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Minus, Plus, X } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -89,40 +89,49 @@ const AllCollections: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const itemsPerPage = 20;
 
-  // Filter carpets based on search query - only match names that START with the exact search query
-  const filteredCarpets = carpets.filter((carpet) => {
-    if (searchQuery.trim() === "") return true; // Show all if search is empty
-    return carpet.name.toLowerCase().startsWith(searchQuery.toLowerCase());
-  });
+  // Memoize filtered carpets to prevent unnecessary recalculations
+  const filteredCarpets = useMemo(() => {
+    if (searchQuery.trim() === "") return carpets;
+    const query = searchQuery.toLowerCase();
+    return carpets.filter((carpet) => carpet.name.toLowerCase().startsWith(query));
+  }, [searchQuery]);
 
   const totalPages = Math.ceil(filteredCarpets.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentCarpets = filteredCarpets.slice(startIndex, endIndex);
+  
+  // Memoize current page carpets
+  const currentCarpets = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return filteredCarpets.slice(startIndex, endIndex);
+  }, [filteredCarpets, currentPage, itemsPerPage]);
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
-  };
+  }, []);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1); // Reset to first page when searching
-  };
+  }, []);
 
-  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
-  };
+  }, []);
 
-  const handlePrevious = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+  const handlePrevious = useCallback(() => {
+    setCurrentPage(prev => prev > 1 ? prev - 1 : prev);
+  }, []);
 
-  const handleNext = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
+  const handleNext = useCallback(() => {
+    setCurrentPage(prev => prev < totalPages ? prev + 1 : prev);
+  }, [totalPages]);
+
+  const handleCarpetClick = useCallback((carpet: Carpet) => {
+    setActiveCarpet(carpet);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setActiveCarpet(null);
+  }, []);
 
   return (
     <>
@@ -165,7 +174,7 @@ const AllCollections: React.FC = () => {
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
                   className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col max-w-[254.4px] sm:max-w-[240px] [@media(min-width:768px)_and_(max-width:820px)]:max-w-none md:max-w-[180px] lg:max-w-none mx-auto"
-                  onClick={() => setActiveCarpet(carpet)}
+                  onClick={() => handleCarpetClick(carpet)}
                 >
                   {/* Image now fills entire card width */}
                   <div className="flex justify-center items-center bg-gray-200 h-[318px] sm:h-[260px] [@media(min-width:768px)_and_(max-width:820px)]:h-[320px] md:h-[240px] lg:h-[280px] xl:h-[380px]">
@@ -173,6 +182,8 @@ const AllCollections: React.FC = () => {
                       src={carpet.imageUrl}
                       alt={carpet.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 
@@ -247,7 +258,7 @@ const AllCollections: React.FC = () => {
                 {/* Close Button */}
                 <div className="absolute top-0 right-0 m-2 bg-white rounded-full z-10">
                   <button
-                    onClick={() => setActiveCarpet(null)}
+                    onClick={handleCloseModal}
                     className="p-1 text-gray-600 hover:text-gray-900 transition"
                   >
                     <X size={24} />
