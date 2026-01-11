@@ -285,7 +285,7 @@ export default function HeroSection() {
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
                       alt={`${heroinnerSlides[currentSlide].title} - Handcrafted rug`}
-                      className={`w-full h-[240px] md:h-[300px] lg:h-[380px] xl:h-[420px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                      className={`w-full h-[340px] sm:h-[300px] md:h-[300px] lg:h-[380px] xl:h-[420px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;

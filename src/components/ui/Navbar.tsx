@@ -847,18 +847,18 @@ export default function Navbar({ className = '' }: NavbarProps) {
           <Container>
             <div className="py-4 space-y-2">
               <Link
-                to="/collections"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mobile-menu-item block w-full text-left text-charcoal drop-shadow-sm hover:bg-white/30 px-4 py-3 rounded-lg text-base"
-              >
-                Collections
-              </Link>
-              <Link
                 to="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mobile-menu-item block w-full text-left text-charcoal drop-shadow-sm hover:bg-white/30 px-4 py-3 rounded-lg text-base"
               >
                 About
+              </Link>
+              <Link
+                to="/collections"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mobile-menu-item block w-full text-left text-charcoal drop-shadow-sm hover:bg-white/30 px-4 py-3 rounded-lg text-base"
+              >
+                Collections
               </Link>
               <Link
                 to="/services"

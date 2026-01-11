@@ -34,7 +34,7 @@ const AboutUsPage: React.FC = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
-      <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8 xl:gap-12">
+      <div className="flex flex-col xl:flex-row w-full gap-8 xl:gap-12 mt-4 sm:mt-6 md:mt-8">
 
         {/* Left Content */}
         <div className="w-full xl:w-1/2 space-y-4 sm:space-y-6 xl:text-left text-center">
@@ -57,7 +57,7 @@ const AboutUsPage: React.FC = () => {
             </div>
             <br />
             Beyond business, we believe in empowerment and purpose - offering fair employment to skilled artisans and helping preserve Nepal's cultural legacy. Every rug we create is a unique masterpiece - a fusion of artistry, ethics, and emotion - adorning prestigious interiors, homes, and hotels around the world.
-            </p>
+          </p>
         </div>
 
         {/* Right Video */}
@@ -66,7 +66,7 @@ const AboutUsPage: React.FC = () => {
             ref={videoRef}
             src="https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/IMG_5373.MOV"
             controls
-            className="rounded-2xl shadow-lg w-[280px] h-[380px] sm:w-[320px] sm:h-[450px] md:w-[350px] md:h-[500px] xl:w-full xl:h-[820px] object-cover [@media(min-width:1024px)_and_(max-width:1366px)]:w-[350px] [@media(min-width:1024px)_and_(max-width:1366px)]:h-[500px]"
+            className="rounded-2xl shadow-lg w-[350px] h-[380px] sm:w-[400px] sm:h-[450px] md:w-[460px] md:h-[520px] xl:w-[620px] xl:h-[680px] object-cover [@media(min-width:1024px)_and_(max-width:1366px)]:w-[460px] [@media(min-width:1024px)_and_(max-width:1366px)]:h-[520px]"
           />
         </div>
 

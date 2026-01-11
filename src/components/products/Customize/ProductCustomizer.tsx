@@ -275,7 +275,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
               Product Preview
             </p>
             <div
-              className="border bg-gray-50 w-full overflow-hidden rounded-lg md:max-w-md lg:max-w-full"
+              className="border bg-gray-50 w-full overflow-hidden rounded-lg md:max-w-lg lg:max-w-full md:min-h-[580px] lg:min-h-[560px] xl:min-h-0"
               style={{ aspectRatio: '500/580' }}
             >
               <div className="w-full h-full" ref={imgRef}>
@@ -285,12 +285,12 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
 
             {/* Detail Images - Hidden on mobile, visible on iPad and larger */}
             {detailImages.length > 0 && (
-              <div className="hidden md:flex flex-nowrap gap-2 lg:gap-2.5 justify-center md:justify-start overflow-x-auto">
+              <div className="hidden md:flex flex-nowrap gap-2 lg:gap-2.5 justify-center overflow-x-auto">
                 {detailImages.map((img, index) => (
                   <img
                     key={index}
                     src={img}
-                    className="h-28 w-20 md:h-32 md:w-24 lg:h-52 lg:w-40 object-cover rounded-md flex-shrink-0"
+                    className="h-28 w-20 md:h-34 md:w-28 lg:h-36 lg:w-28 xl:h-52 xl:w-40 object-cover rounded-md flex-shrink-0"
                     alt={`${name} detail ${index + 1}`}
                   />
                 ))}
