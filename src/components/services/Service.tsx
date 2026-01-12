@@ -14,7 +14,7 @@ interface ServiceSection {
 const services: ServiceSection[] = [
   {
     id: "1",
-    title: "Trial & Samples",
+    title: "Strike-off & Samples",
     subtitle: "From Feel to Finish",
     image:
       "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.webp",

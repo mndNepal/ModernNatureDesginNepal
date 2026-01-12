@@ -42,8 +42,8 @@ export default function About() {
       </div>
       </section>
 
-      <ProductionProcessPage />
       <DyingProcessPage />
+      <ProductionProcessPage />
       <PhilosophyPage />
       <Footer />
     </div>
