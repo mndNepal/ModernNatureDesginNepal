@@ -7,6 +7,13 @@ import colorDataC from '../../../../colorC.json';
 import colorDataD from '../../../../colorD.json';
 import colorDataE from '../../../../colorE.json';
 import { colorData1000 } from './colorData1000';
+import color700 from '../../../../color700.json';
+
+const colorDataA700 =color700[0];
+const colorDataB700 =color700[1];
+const colorDataC700 =color700[2];
+const colorDataD700 =color700[3];
+const colorDataE700 =color700[4];
 
 const config = {
   name: "Broken Mirror",
@@ -34,6 +41,11 @@ const BrokenMirrorNew: React.FC = () => (
     colorData1200C={colorDataC}
     colorData1200D={colorDataD}
     colorData1200E={colorDataE}
+      colorData700A={colorDataA700}
+    colorData700B={colorDataB700}
+    colorData700C={colorDataC700}
+    colorData700D={colorDataD700}
+    colorData700E={colorDataE700}
     LayerComponent={BrokenMirrorLayer}
   />
 );
