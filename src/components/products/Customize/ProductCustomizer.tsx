@@ -118,7 +118,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
   const [currentPage1200, setCurrentPage1200] = useState(1);
   const [currentPage700, setCurrentPage700] = useState(1);
   const [showChart1000, setShowChart1000] = useState(false);
-  const [showChartId,setShowChartId] = useState(0); // 0=1200, 1=>1000, 2=>700
+  const [showChartId, setShowChartId] = useState(0); // 0=1200, 1=>1000, 2=>700
   const totalPages1000 = 5;
   const totalPages1200 = 5;
   const totalPages700 = 5;
@@ -271,13 +271,13 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
     'Delivery Time: 2.5-3 months',
   ];
 
-  const get_toggle_text_list = (current_id)=>{
+  const get_toggle_text_list = (current_id) => {
     let textlist = [
-      {"id":0,"text":"Show Chart 1200(Wool)"},
-      {"id":1,"text":"Show Chart 1000(Viscos)"},
-      {"id":2,"text":"Show Chart 700(TBH)"}
+      { "id": 0, "text": "Show Chart 1200(Wool)" },
+      { "id": 1, "text": "Show Chart 1000(Viscos)" },
+      { "id": 2, "text": "Show Chart 700(TBH)" }
     ]
-    let filtered_text_list = textlist.filter((obj)=> obj.id != current_id);
+    let filtered_text_list = textlist.filter((obj) => obj.id != current_id);
     return filtered_text_list;
   }
 
@@ -292,7 +292,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
 
         {/* Main Content Grid */}
         <div className="flex flex-col md:flex-row w-full max-w-7xl gap-4 sm:gap-6">
-          
+
           {/* Left Column - Preview & Features */}
           <div className="w-full md:w-1/2 lg:w-2/5 space-y-4">
             {/* Key Features */}
@@ -337,7 +337,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
 
           {/* Right Column - Color Selection */}
           <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col gap-4 sm:gap-6">
-            
+
             {/* Instructions */}
             <div className="bg-gray-100 p-3 sm:p-4 shadow-sm border rounded-lg">
               <h2 className="font-semibold text-sm sm:text-base mb-2">Changing Colors is Easy:</h2>
@@ -372,7 +372,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   </div>
                 </div>
               ))}
-              
+
               {/* Reset Button */}
               <button
                 onClick={resetColors}
@@ -390,7 +390,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                   <h2 className="text-base sm:text-lg md:text-xl font-bold text-center mb-3 sm:mb-4 font-serif">
                     Color Chart ARS 1200 Wool Box
                   </h2>
-                  
+
                   {/* Color Grid */}
                   <div className="w-full overflow-x-auto flex justify-center">
                     <div className="flex flex-col gap-0.5 sm:gap-1">
@@ -444,13 +444,13 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                     </button>
                   </div>
                 </>
-              ) :showChartId == 1? (
+              ) : showChartId == 1 ? (
                 <>
                   {/* Chart 1000 */}
                   <h2 className="text-base sm:text-lg md:text-xl font-bold text-center mb-3 sm:mb-4 font-serif">
                     Color Chart ARS 1000 Viscose Box
                   </h2>
-                  
+
                   {/* Color Grid */}
                   <div className="w-full overflow-x-auto flex justify-center">
                     <div className="flex flex-col gap-0.5 sm:gap-1">
@@ -504,13 +504,13 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                     </button>
                   </div>
                 </>
-              ):
+              ) :
                 <>
                   {/* Chart 700 */}
                   <h2 className="text-base sm:text-lg md:text-xl font-bold text-center mb-3 sm:mb-4 font-serif">
                     Color Chart ARS 700 Wool Box
                   </h2>
-                  
+
                   {/* Color Grid */}
                   <div className="w-full overflow-x-auto flex justify-center">
                     <div className="flex flex-col gap-0.5 sm:gap-1">
@@ -564,7 +564,7 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                     </button>
                   </div>
                 </>
-              
+
               }
 
               {/* Toggle Chart Button */}
@@ -582,22 +582,20 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                 {showChartId == 0? 'Show Chart 1000(Viscose)':showChartId==1?'Show Chart 700(TBH)':'Show Chart 1200(Wool)'}
               </button> */}
 
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-3 sm:mt-4">
+<div className="flex flex-wrap justify-center gap-4 sm:gap-4 mt-3 sm:mt-4">
+  {get_toggle_text_list(showChartId).map((toggle_text_list) => {
+    return (
+      <button
+        key={toggle_text_list.id}
+        onClick={() => setShowChartId(toggle_text_list.id)}
+        className="border border-gray-400 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-gray-200 transition"
+      >
+        {toggle_text_list.text}
+      </button>
+    );
+  })}
+</div>
 
-              {get_toggle_text_list(showChartId).map((toggle_text_list)=>{
-                let toggle_id = toggle_text_list.id;
-                let toggle_text = toggle_text_list.text;
-                return(
-                  <button
-                    onClick={() => setShowChartId(toggle_id)} // Toggle between 0,1,2
-                    className="border border-gray-400  sm:px-4 py-1.5 sm:py-2 rounded-md mx-auto block text-end text-xs sm:text-sm hover:bg-gray-200 transition mt-4"
-                  >
-                    {toggle_text}
-                  </button>
-                )
-
-              })}
-              </div>
 
 
 
@@ -612,15 +610,15 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                 🖨 Save your creation as PDF
               </button>
 
-              <button
+              {/* <button
                 onClick={downloadPDF}
                 className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
               >
                 🖨 Send your creation
-              </button>
+              </button> */}
 
             </div>
-            
+
             {/* Disclaimer */}
             <p className="text-[10px] sm:text-xs text-gray-500 text-center sm:text-left">
               Images are color simulations for visualization purposes only. Actual yarns or poms must be used for accurate color selection.
