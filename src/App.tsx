@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
-import { BiMessageRoundedDots } from "react-icons/bi";
+// import { BiMessageRoundedDots } from "react-icons/bi";
 
 // Eagerly load main pages for fast initial navigation
 import Home from "@/pages/Home";
@@ -185,7 +185,7 @@ export default function App() {
       </Suspense>
 
       {/* 💬 Chatbot Floating Button */}
-      <button
+      {/* <button
         onClick={() => {
           // TODO: open chatbot modal / widget
           console.log("Open Chatbot");
@@ -193,7 +193,7 @@ export default function App() {
         className="fixed bottom-28 right-8 z-50 bg-blue-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:scale-110 transition-transform"
       >
         <BiMessageRoundedDots className="w-7 h-7 sm:w-10 sm:h-10" />
-      </button>
+      </button> */}
 
 
       {/* 🔥 WhatsApp Floating Button */}

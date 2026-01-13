@@ -582,19 +582,19 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                 {showChartId == 0? 'Show Chart 1000(Viscose)':showChartId==1?'Show Chart 700(TBH)':'Show Chart 1200(Wool)'}
               </button> */}
 
-<div className="flex flex-wrap justify-center gap-4 sm:gap-4 mt-3 sm:mt-4">
-  {get_toggle_text_list(showChartId).map((toggle_text_list) => {
-    return (
-      <button
-        key={toggle_text_list.id}
-        onClick={() => setShowChartId(toggle_text_list.id)}
-        className="border border-gray-400 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-gray-200 transition"
-      >
-        {toggle_text_list.text}
-      </button>
-    );
-  })}
-</div>
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-4 mt-3 sm:mt-4">
+                {get_toggle_text_list(showChartId).map((toggle_text_list) => {
+                  return (
+                    <button
+                      key={toggle_text_list.id}
+                      onClick={() => setShowChartId(toggle_text_list.id)}
+                      className="border border-gray-400 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-gray-200 transition"
+                    >
+                      {toggle_text_list.text}
+                    </button>
+                  );
+                })}
+              </div>
 
 
 
