@@ -15,9 +15,13 @@ interface FormData {
 }
 
 interface FormErrors {
+  subject?: string;
   name?: string;
   email?: string;
   contact?: string;
+  address?: string;
+  message?: string;
+  country?: string;
 }
 
 export default function StudioBanner() {
@@ -35,6 +39,7 @@ export default function StudioBanner() {
     email: '',
     contact: '',
     message: '',
+    subject:''
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -42,6 +47,7 @@ export default function StudioBanner() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,8 +68,37 @@ export default function StudioBanner() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
+      if (allowedTypes.includes(file.type)) {
+        setSelectedFile(file);
+      } else {
+        alert('Please select a valid file (JPG, PNG, or PDF)');
+        e.target.value = '';
+      }
+    }
+  };
+
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+
+    if (!formData.country.trim()) {
+      newErrors.country = 'Country is required';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+
+    if (!formData.address.trim()) {
+      newErrors.address = 'Address is required';
+    }
+
     if (!/^[a-zA-Z\s]+$/.test(formData.name)) newErrors.name = 'Name can contain only alphabets';
     if (!formData.email.includes('@')) newErrors.email = "Email must include '@'";
     if (!/^\d+$/.test(formData.contact)) newErrors.contact = 'Contact must contain only numbers';
@@ -86,7 +121,7 @@ export default function StudioBanner() {
     .then(() => {
       setSending(false);
       setSent(true);
-      setFormData({ name: '', address: '', country: '', email: '', contact: '', message: '' });
+      setFormData({ name: '', address: '', country: '', email: '', contact: '', message: '',subject:'' });
     })
     .catch(() => {
       setSending(false);
@@ -107,6 +142,21 @@ export default function StudioBanner() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-charcoal mb-4 sm:mb-5 text-center pt-6 sm:pt-0">Contact Us</h2>
 
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 max-w-lg mx-auto">
+              {/* Subject */}
+              <div>
+                <label htmlFor="subject" className="block mb-1 text-xs sm:text-sm text-gray-700">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.subject ? 'border-red-500' : 'border-gray-300'}`}
+                  required
+                />
+                {errors.subject && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.subject}</p>}
+              </div>
+
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block mb-1 text-xs sm:text-sm text-gray-700">Name</label>
@@ -131,9 +181,24 @@ export default function StudioBanner() {
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.address ? 'border-red-500' : 'border-gray-300'}`}
+                />
+                {errors.address && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.address}</p>}
+
+              </div>
+
+              {/* Company */}
+              <div>
+                <label htmlFor="company" className="block mb-1 text-xs sm:text-sm text-gray-700">Company (Optional)</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
                   className="w-full p-2 sm:p-2.5 text-sm sm:text-base border border-gray-300 rounded"
                 />
-              </div>
+              </div>              
 
               {/* Country */}
               <div>
@@ -144,8 +209,10 @@ export default function StudioBanner() {
                   name="country"
                   value={formData.country}
                   onChange={handleChange}
-                  className="w-full p-2 sm:p-2.5 text-sm sm:text-base border border-gray-300 rounded"
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.country ? 'border-red-500' : 'border-gray-300'}`}
                 />
+                {errors.country && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.country}</p>}
+
               </div>
 
               {/* Email */}
@@ -177,18 +244,39 @@ export default function StudioBanner() {
                 {errors.contact && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.contact}</p>}
               </div>
 
+              {/* File Upload */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Choose a File (Optional)
+                </label>
+                <input
+                  type="file"
+                  name="file"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                  onChange={handleFileChange}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm sm:text-base file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100"
+                />
+                {selectedFile && (
+                  <p className="text-gray-600 text-xs sm:text-sm mt-1">
+                    Selected: {selectedFile.name}
+                  </p>
+                )}
+              </div>
+
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block mb-1 text-xs sm:text-sm text-gray-700">Your Message</label>
+                <label htmlFor="message" className="block mb-1 text-xs sm:text-sm text-gray-700">Your Message / Special Instruction</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={3}
-                  className="w-full p-2 sm:p-2.5 text-sm sm:text-base border border-gray-300 rounded"
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.country ? 'border-red-500' : 'border-gray-300'}`}
                   required
                 />
+                {errors.message && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message}</p>}
+
               </div>
 
               {/* Submit */}
