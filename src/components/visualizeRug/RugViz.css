@@ -1,0 +1,426 @@
+/* RugViz Pro - Component Styles */
+
+.rugviz-container {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.rugviz-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.rugviz-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rugviz-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: #2d5a4a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rugviz-logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+.rugviz-logo-text span {
+  color: #2d5a4a;
+}
+
+.rugviz-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buttons */
+.rugviz-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #333;
+  transition: background 0.15s ease;
+}
+
+.rugviz-btn:hover {
+  background: #f0f0f0;
+}
+
+.rugviz-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rugviz-btn-primary {
+  background: #2d5a4a;
+  color: white;
+}
+
+.rugviz-btn-primary:hover {
+  background: #1e4436;
+}
+
+.rugviz-btn-primary:disabled {
+  background: #2d5a4a;
+}
+
+.rugviz-divider {
+  width: 1px;
+  height: 24px;
+  background: #e5e5e5;
+  margin: 0 8px;
+}
+
+/* Loader */
+.rugviz-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: rugviz-spin 0.8s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes rugviz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Viewport */
+.rugviz-viewport {
+  position: relative;   /* IMPORTANT (so absolute positioning works) */
+  width: 100%;
+  height: calc(100vh - 140px); /* adjust if your nav/bottom bar differ */
+  background: #e9e9e9;
+  overflow: hidden;
+}
+
+
+.rugviz-bg-layer {
+  position: absolute;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Empty State */
+.rugviz-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #666;
+  z-index: 5;
+}
+
+.rugviz-empty-icon {
+  font-size: 64px;
+  opacity: 0.5;
+}
+
+.rugviz-empty-state p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Watermark */
+.rugviz-watermark {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 30;
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rugviz-watermark span {
+  color: #2d5a4a;
+  font-weight: 600;
+}
+
+/* Bottom Bar */
+.rugviz-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  justify-content: space-between;
+}
+
+.rugviz-rug-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rugviz-rug-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+.rugviz-rug-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #ccc;
+}
+
+.rugviz-rug-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rugviz-rug-label {
+  font-size: 12px;
+  color: #999;
+}
+
+.rugviz-rug-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.rugviz-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Scale Control */
+.rugviz-scale-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rugviz-scale-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: background 0.15s ease;
+}
+
+.rugviz-scale-btn:hover {
+  background: #f5f5f5;
+}
+
+.rugviz-scale-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+}
+
+.rugviz-scale-label {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.rugviz-scale-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  outline: none;
+}
+
+.rugviz-scale-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #2d5a4a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rugviz-scale-slider input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #2d5a4a;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.rugviz-spacer {
+  width: 120px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rugviz-nav {
+    padding: 0 8px;
+  }
+
+  .rugviz-nav-actions {
+    gap: 4px;
+  }
+
+  .rugviz-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .rugviz-bottom-bar {
+    padding: 0 12px;
+    height: 70px;
+  }
+
+  .rugviz-bottom-actions {
+    gap: 12px;
+  }
+
+  .rugviz-scale-slider {
+    width: 80px;
+  }
+}
+
+
+/* -------------------- Loading Overlay (API call) -------------------- */
+.rugviz-loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 15, 12, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.rugviz-loading-card {
+  width: min(520px, calc(100% - 32px));
+  border-radius: 18px;
+  padding: 18px 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+.rugviz-loading-spinner {
+  grid-row: 1 / span 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid rgba(45, 90, 74, 0.18);
+  border-top-color: rgba(45, 90, 74, 0.95);
+  animation: rugvizSpin 0.9s linear infinite;
+}
+
+@keyframes rugvizSpin {
+  to { transform: rotate(360deg); }
+}
+
+.rugviz-loading-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rugviz-loading-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #16352b;
+  letter-spacing: 0.2px;
+}
+
+.rugviz-loading-subtitle {
+  font-size: 13px;
+  color: rgba(22, 53, 43, 0.75);
+  line-height: 1.35;
+}
+
+.rugviz-loading-progress {
+  grid-column: 2;
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.rugviz-loading-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(45, 90, 74, 0.8);
+  animation: rugvizDot 1.2s ease-in-out infinite;
+}
+
+.rugviz-loading-dot:nth-child(2) { animation-delay: 0.15s; }
+.rugviz-loading-dot:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes rugvizDot {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}

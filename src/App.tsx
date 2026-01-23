@@ -9,6 +9,8 @@ import Products from "@/pages/Products";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+// import RugViz from "./components/visualizeRug/RugViz"
+import RugVisualizerPage from "./components/visualizeRug/RugVisualizerPage";
 
 // Lazy load heavy components - only loaded when user navigates to them
 const AllCollections = lazy(() => import("./components/products/Collections/AllCollections"));
@@ -181,6 +183,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/rug-visualizer" element={<RugVisualizerPage />} />
         </Routes>
       </Suspense>
 

@@ -3,6 +3,8 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import { useNavigate } from "react-router-dom";
+
 
 // ==================== TYPE DEFINITIONS ====================
 
@@ -281,6 +283,41 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
     return filtered_text_list;
   }
 
+ const navigate = useNavigate();
+
+const captureRugPreview = async () => {
+  if (!imgRef.current) return null;
+
+  // Let UI paint first (prevents "freeze" feeling)
+  await new Promise((r) => requestAnimationFrame(() => r(null)));
+
+  const canvas = await html2canvas(imgRef.current, {
+    scale: 1.25,              // ✅ faster than 2
+    backgroundColor: null,
+    useCORS: true,
+    logging: false,
+  });
+
+  // Use toDataURL directly (fast enough after lowering scale)
+  return canvas.toDataURL("image/png", 0.92);
+};
+
+const handleGoToAR = async () => {
+  const rugImageUrl = await captureRugPreview();
+  if (!rugImageUrl) return;
+
+  const payload = {
+    rugImageUrl,
+    rugName: name,
+  };
+
+  localStorage.setItem("rugviz_payload", JSON.stringify(payload));
+
+  // Let localStorage write + navigation happen smoothly
+  await new Promise((r) => requestAnimationFrame(() => r(null)));
+
+  navigate("/rug-visualizer", { state: payload });
+};
   return (
     <>
       <Navbar />
@@ -610,6 +647,14 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
                 🖨 Save your creation as PDF
               </button>
 
+              <button
+                onClick={handleGoToAR}
+                className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                Visualize your creation in AR
+              </button>
+
+              
               {/* <button
                 onClick={downloadPDF}
                 className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
