@@ -83,6 +83,7 @@ export default function Footer(): JSX.Element {
           name: "Craftmanship",
           action: () => navigate("/", { state: { scrollTo: "craftmanship-section" } }),
         },
+        { name: "Blog", action: () => setShowModal(true) },
         { name: "Terms & Policy", action: () => setShowModal(true) },
       ],
     },

@@ -92,6 +92,9 @@ const carpets: Carpet[] = [
 { id: 'rug-078', name: '9', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
 { id: 'rug-079', name: '10', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
 { id: 'rug-080', name: '11', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+{ id: 'rug-081', name: '12', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+{ id: 'rug-082', name: '13', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+
 
 ];
 

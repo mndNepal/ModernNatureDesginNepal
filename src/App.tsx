@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 // import RugViz from "./components/visualizeRug/RugViz"
 import RugVisualizerPage from "./components/visualizeRug/RugVisualizerPage";
+import RugCare from "./pages/RugCare";
 
 // Lazy load heavy components - only loaded when user navigates to them
 const AllCollections = lazy(() => import("./components/products/Collections/AllCollections"));
@@ -97,6 +98,9 @@ const h = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
 const i = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
 const j = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
 const k = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const l = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const m = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+
 
 
 // Loading fallback component
@@ -202,10 +206,14 @@ export default function App() {
           <Route path="/products/i" element={<AankhiJhyal />} />
           <Route path="/products/j" element={<AankhiJhyal />} />
           <Route path="/products/k" element={<AankhiJhyal />} />
+          <Route path="/products/l" element={<AankhiJhyal />} />
+          <Route path="/products/m" element={<AankhiJhyal />} />
+
 
 
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/rug-care" element={<RugCare />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/rug-visualizer" element={<RugVisualizerPage />} />
         </Routes>
