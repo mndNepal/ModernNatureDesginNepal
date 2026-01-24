@@ -10,6 +10,7 @@ import PhilosophyPage from "@/components/about/PhilosophyPage";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import WhyChooseUs from "@/components/about/WhyChooseUs";
 
 export default function About() {
   const location = useLocation();
@@ -44,6 +45,7 @@ export default function About() {
 
       <DyingProcessPage />
       <ProductionProcessPage />
+      <WhyChooseUs />
       <PhilosophyPage />
       <Footer />
     </div>

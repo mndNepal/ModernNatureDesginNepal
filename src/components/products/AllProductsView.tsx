@@ -77,6 +77,17 @@ const products: Product[] = [
   { id: 'rug-067', name: 'Water Coin', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/WaterCoin.webp' },
   { id: 'rug-068', name: 'Water Lilies', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/WaterLilies.webp' },
   { id: 'rug-069', name: 'Weave', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-070', name: '1', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-071', name: '2', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-072', name: '3', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-073', name: '4', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-074', name: '5', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-075', name: '6', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-076', name: '7', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-077', name: '8', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-078', name: '9', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-079', name: '10', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+  { id: 'rug-080', name: '11', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
 ];
 
 // Helper to get product URL

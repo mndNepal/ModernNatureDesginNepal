@@ -86,6 +86,18 @@ const WaterBrust = lazy(() => import("./components/products/Customize/WaterBrust
 const WaterCoin = lazy(() => import("./components/products/Customize/WaterCoinNew"));
 const WaterLilies = lazy(() => import("./components/products/Customize/WaterLiliesNew"));
 const Weave = lazy(() => import("./components/products/Customize/WeaveNew"));
+const a = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const b = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const c = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const d = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const e = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const f = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const g = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const h = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const i = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const j = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const k = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+
 
 // Loading fallback component
 function PageLoader() {
@@ -179,6 +191,18 @@ export default function App() {
           <Route path="/products/watercoin" element={<WaterCoin />} />
           <Route path="/products/waterlilies" element={<WaterLilies />} />
           <Route path="/products/weave" element={<Weave />} />
+          <Route path="/products/a" element={<AankhiJhyal />} />
+          <Route path="/products/b" element={<AankhiJhyal />} />
+          <Route path="/products/c" element={<AankhiJhyal />} />
+          <Route path="/products/d" element={<AankhiJhyal />} />
+          <Route path="/products/e" element={<AankhiJhyal />} />
+          <Route path="/products/f" element={<AankhiJhyal />} />
+          <Route path="/products/g" element={<AankhiJhyal />} />
+          <Route path="/products/h" element={<AankhiJhyal />} />
+          <Route path="/products/i" element={<AankhiJhyal />} />
+          <Route path="/products/j" element={<AankhiJhyal />} />
+          <Route path="/products/k" element={<AankhiJhyal />} />
+
 
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
