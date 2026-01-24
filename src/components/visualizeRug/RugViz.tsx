@@ -6,8 +6,8 @@ const RugViz = ({
   apiEndpoint = 'https://dharmendrasinghchaudhary44--sam3-flask-api-create-wsgi.modal.run/api/analyze',
   rugImageUrl = null,
   rugName = 'Rug',
-  onExit = () => {},
-  onProductPage = () => {}
+  onExit = () => { },
+  onProductPage = () => { }
 }) => {
   // Refs
   const viewportRef = useRef(null);
@@ -745,13 +745,15 @@ const RugViz = ({
     <div className="rugviz-container">
       <nav className="rugviz-nav">
         <div className="rugviz-logo">
-          <div className="rugviz-logo-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-            </svg>
+          <div>
+            <img
+              src="/assets/images/navbar/MND_Logo.png"
+              alt="logo"
+              className="h-8 w-8 sm:h-8 sm:w-8 lg:h-14 lg:w-14 flex-shrink-0 ml-20"
+            />
           </div>
           {/* ✅ Changed brand text */}
-          <span className="rugviz-logo-text">MND Nepal</span>
+          <span className="rugviz-logo-text">Modern Nature Design Nepal</span>
         </div>
 
         <div className="rugviz-nav-actions">

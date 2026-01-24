@@ -31,7 +31,7 @@
   gap: 8px;
 }
 
-.rugviz-logo-icon {
+/* .rugviz-logo-icon {
   width: 32px;
   height: 32px;
   background: #2d5a4a;
@@ -39,13 +39,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .rugviz-logo-text {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.02em;
   color: #1a1a1a;
+  font-size: 24px;
 }
 
 .rugviz-logo-text span {
@@ -152,6 +153,7 @@
 .rugviz-empty-icon {
   font-size: 64px;
   opacity: 0.5;
+  margin-top: 220px;
 }
 
 .rugviz-empty-state p {
