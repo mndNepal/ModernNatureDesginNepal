@@ -34,6 +34,26 @@ const RugViz = ({
   const scaleRef = useRef(currentScale);
   useEffect(() => { scaleRef.current = currentScale; }, [currentScale]);
 
+  // Demo room images (replace later)
+  const demoRooms = [
+    {
+      label: "Living room",
+      url: '/demos/IMG-20260125-WA0003.webp',
+    },
+    {
+      label: "Minimal room",
+      url: '/demos/IMG-20260125-WA0004.webp',
+    },
+    {
+      label: "Cozy interior",
+      url: '/demos/IMG-20260125-WA0005.webp',
+    },
+    {
+      label: "Modern space",
+      url: '/demos/IMG-20260125-WA0006.webp',
+    },
+  ];
+
   // Refs for interaction state
   const interactionRef = useRef({
     isDragging: false,
@@ -661,30 +681,65 @@ const RugViz = ({
     }
   }, [apiEndpoint, roomImage, isRugLoaded, createRug]);
 
+  // ------------------- Common: apply new room image (same flow as upload) -------------------
+  const applyNewRoomImage = useCallback((dataUrl) => {
+    analyzedOnceRef.current = false;
+
+    setRoomImage(dataUrl);
+    interactionRef.current.shadowTexture = null;
+
+    if (rugMeshRef.current) {
+      sceneRef.current.remove(rugMeshRef.current);
+      rugMeshRef.current = null;
+    }
+
+    setHasRug(false);
+    setAnalyzeStatus('Analyze Scene');
+  }, []);
+
   // ------------------- Upload room image (AUTO-ANALYZE) -------------------
   const handleRoomUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    analyzedOnceRef.current = false;
-
     const reader = new FileReader();
-    reader.onload = async (ev) => {
-      setRoomImage(ev.target.result);
-      interactionRef.current.shadowTexture = null;
-
-      if (rugMeshRef.current) {
-        sceneRef.current.remove(rugMeshRef.current);
-        rugMeshRef.current = null;
-      }
-
-      setHasRug(false);
-      setAnalyzeStatus('Analyze Scene');
+    reader.onload = (ev) => {
+      applyNewRoomImage(ev.target.result);
     };
     reader.readAsDataURL(file);
   };
 
-  // ✅ When roomImage is set after upload, automatically analyze once
+  // ------------------- Demo click: fetch -> dataURL -> apply (AUTO-ANALYZE stays same) -------------------
+  const handleDemoRoomClick = async (url) => {
+    try {
+      setIsAnalyzing(true);
+      setAnalyzeStatus('Loading demo...');
+
+      const res = await fetch(url);
+      const blob = await res.blob();
+
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        setIsAnalyzing(false);
+        setAnalyzeStatus('Analyze Scene');
+        applyNewRoomImage(ev.target.result);
+      };
+      reader.onerror = () => {
+        setIsAnalyzing(false);
+        setAnalyzeStatus('Retry');
+        alert("Failed to load demo image.");
+      };
+
+      reader.readAsDataURL(blob);
+    } catch (err) {
+      console.error(err);
+      setIsAnalyzing(false);
+      setAnalyzeStatus('Retry');
+      alert("Failed to load demo image.");
+    }
+  };
+
+  // ✅ When roomImage is set after upload/demo, automatically analyze once
   useEffect(() => {
     if (!roomImage) return;
     if (!isRugLoaded) return;
@@ -752,7 +807,6 @@ const RugViz = ({
               className="h-8 w-8 sm:h-8 sm:w-8 lg:h-14 lg:w-14 flex-shrink-0 ml-20"
             />
           </div>
-          {/* ✅ Changed brand text */}
           <span className="rugviz-logo-text">Modern Nature Design Nepal</span>
         </div>
 
@@ -764,7 +818,6 @@ const RugViz = ({
           <button className="rugviz-btn" onClick={onProductPage}>ⓘ Go to product page</button>
           <div className="rugviz-divider" />
 
-          {/* ✅ Analyze button remains but optional; flow is auto-analyze now */}
           <button
             className="rugviz-btn rugviz-btn-primary"
             onClick={handleAnalyze}
@@ -809,6 +862,7 @@ const RugViz = ({
           <div className="rugviz-empty-state">
             <div className="rugviz-empty-icon">🖼</div>
             <p>Upload a room photo to get started</p>
+
             <button
               className="rugviz-btn rugviz-btn-primary"
               onClick={() => document.getElementById('room-input').click()}
@@ -817,6 +871,27 @@ const RugViz = ({
             </button>
           </div>
         )}
+
+        {/* ✅ Demo Sidebar - ALWAYS VISIBLE, RIGHT SIDE, SCROLLABLE */}
+        <div className="rugviz-demo-sidebar">
+          <div className="rugviz-demo-header">
+            <span className="rugviz-demo-title-sidebar">Try Demo Rooms</span>
+          </div>
+          <div className="rugviz-demo-scroll">
+            {demoRooms.map((d) => (
+              <button
+                key={d.url}
+                type="button"
+                className="rugviz-demo-card"
+                onClick={() => handleDemoRoomClick(d.url)}
+                aria-label={`Use demo room: ${d.label}`}
+              >
+                <img className="rugviz-demo-card-img" src={d.url} alt={d.label} loading="lazy" />
+                <div className="rugviz-demo-card-label">{d.label}</div>
+              </button>
+            ))}
+          </div>
+        </div>
 
         <img
           ref={bgLayerRef}
@@ -828,9 +903,6 @@ const RugViz = ({
           onLoad={updateLayout}
         />
       </div>
-
-      {/* ✅ Removed watermark completely */}
-      {/* <div className="rugviz-watermark">Powered by <span>RugViz Pro</span></div> */}
 
       <div className="rugviz-bottom-bar">
         <div className="rugviz-rug-preview">
