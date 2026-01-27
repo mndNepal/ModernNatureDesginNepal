@@ -49,13 +49,13 @@ const RugViz = ({
       url: '/demos/IMG-20260125-WA0005.webp',
     },
     {
-      label: "Living Room",
+      label: "Living room",
       url: '/demos/IMG-20260125-WA0006.webp',
     },
     {
       label: "Office",
-      url: '/demos/IMG-20260125-WA0001.jpeg',
-    },
+      url: "/demos/IMG-20260125-WA0001.jpeg",
+    }
   ];
 
   // Refs for interaction state
