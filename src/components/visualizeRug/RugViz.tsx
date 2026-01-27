@@ -37,20 +37,24 @@ const RugViz = ({
   // Demo room images (replace later)
   const demoRooms = [
     {
-      label: "Living room",
+      label: "Bedroom",
       url: '/demos/IMG-20260125-WA0003.webp',
     },
     {
-      label: "Minimal room",
+      label: "Kitchen",
       url: '/demos/IMG-20260125-WA0004.webp',
     },
     {
-      label: "Cozy interior",
+      label: "Lobby",
       url: '/demos/IMG-20260125-WA0005.webp',
     },
     {
-      label: "Modern space",
+      label: "Living Room",
       url: '/demos/IMG-20260125-WA0006.webp',
+    },
+    {
+      label: "Office",
+      url: '/demos/IMG-20260125-WA0001.jpeg',
     },
   ];
 
