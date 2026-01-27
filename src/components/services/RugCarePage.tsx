@@ -107,6 +107,97 @@ const RugCarePage = () => {
         </div>
       </section>
 
+      <div className="max-w-6xl mx-auto px-4 py-20">
+        <h2 className="text-3xl font-semibold text-center mb-4">
+          Rug Stain Removal Tips & Cleaning Solutions
+        </h2>
+
+        <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          Different stains require different treatments. Always test before applying.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* Safe Solutions */}
+          <div className="bg-white rounded-3xl shadow-lg p-8">
+            <h3 className="text-xl font-semibold mb-4">
+              Safe Cleaning Solutions for Wool Rugs
+            </h3>
+
+            <ul className="space-y-3 text-gray-600 list-disc list-inside">
+              <li>
+                <span className="font-medium">Wool-safe detergent & vinegar:</span>
+                <br />
+                Mix 1 teaspoon of wool-approved detergent with 1 teaspoon of white
+                vinegar in 1 liter of warm water.
+              </li>
+              <li>
+                <span className="font-medium">Warm water:</span> Ideal for light stains.
+              </li>
+              <li>
+                <span className="font-medium">Cold water:</span> Best for delicate fibers.
+              </li>
+              <li>
+                <span className="font-medium">Vinegar or lemon solution:</span> Mild
+                solution for light stains.
+              </li>
+            </ul>
+          </div>
+
+          {/* Solvent Based */}
+          <div className="bg-white rounded-3xl shadow-lg p-8">
+            <h3 className="text-xl font-semibold mb-4">
+              Solvent-Based Rug Cleaners
+              <span className="block text-sm text-gray-500 font-normal">
+                (Use Carefully)
+              </span>
+            </h3>
+
+            <ul className="space-y-3 text-gray-600 list-disc list-inside">
+              <li>
+                Dry-cleaning fluid, mineral turpentine, or lighter fuel
+                <span className="block text-sm text-gray-500">
+                  (use in ventilated areas only)
+                </span>
+              </li>
+              <li>
+                Denatured ethanol
+                <span className="block text-sm text-gray-500">
+                  (away from heat or flames)
+                </span>
+              </li>
+              <li>
+                Hydrogen peroxide (20 volume), diluted 1:10
+                <span className="block text-sm text-gray-500">
+                  (avoid dark rugs)
+                </span>
+              </li>
+              <li>Dye stripper diluted 1:50 (not for patterned or dark rugs)</li>
+            </ul>
+          </div>
+
+          {/* Specialty Treatments */}
+          <div className="bg-white rounded-3xl shadow-lg p-8">
+            <h3 className="text-xl font-semibold mb-4">
+              Specialty Rug Stain Treatments
+            </h3>
+
+            <ul className="space-y-3 text-gray-600 list-disc list-inside">
+              <li>Chewing gum removers or freezing agents</li>
+              <li>Nail polish remover (apply carefully)</li>
+              <li>
+                Absorbent powders (salt or talc)
+                <span className="block text-sm text-gray-500">
+                  apply overnight, then vacuum
+                </span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+
       {/* ================= FINAL IMAGE + CONCLUSION ================= */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
