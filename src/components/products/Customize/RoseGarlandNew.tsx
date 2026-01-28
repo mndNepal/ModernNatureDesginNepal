@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCustomizer from './ProductCustomizer';
-import AankhiJhyalLayer from './AankhiJhyalLayer';
+import RoseGarlandLayer from './RoseGarlandLayer';
 import colorDataA from '../../../../color.json';
 import colorDataB from '../../../../colorb.json';
 import colorDataC from '../../../../colorC.json';
@@ -16,10 +16,14 @@ const colorDataD700 =color700[3];
 const colorDataE700 =color700[4];
 
 const config = {
-  name: "Aankhi Jhyal",
+  name: "Rose Garland",
   layers: [
-    { src: "/layers/AankhiJhyal/AankhiJhyal1.png", defaultColor: "#b2945f", defaultName: "DT 07" },
-    { src: "/layers/AankhiJhyal/AankhiJhyal2.png", defaultColor: "#191e2a", defaultName: "BM 02" },
+    { src: "/layers/RoseGarland/RoseGarland1.png", defaultColor: "#070B1E", defaultName: "BA 02" },
+    { src: "/layers/RoseGarland/RoseGarland2.png", defaultColor: "#151C30", defaultName: "BT 04" },
+    { src: "/layers/RoseGarland/RoseGarland3.png", defaultColor: "#183941", defaultName: "CE 02" },
+    { src: "/layers/RoseGarland/RoseGarland4.png", defaultColor: "#6F8A68", defaultName: "CD 07" },
+    { src: "/layers/RoseGarland/RoseGarland5.png", defaultColor: "#E5D3A3", defaultName: "DC 11" },
+
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
@@ -28,7 +32,7 @@ const config = {
   ],
 };
 
-const AankhiJhyalNew: React.FC = () => (
+const RoseGarlandNew: React.FC = () => (
   <ProductCustomizer
     config={config}
     colorData1000={colorData1000}
@@ -42,8 +46,8 @@ const AankhiJhyalNew: React.FC = () => (
     colorData700C={colorDataC700}
     colorData700D={colorDataD700}
     colorData700E={colorDataE700}
-    LayerComponent={AankhiJhyalLayer}
+    LayerComponent={RoseGarlandLayer}
   />
 );
 
-export default AankhiJhyalNew;
+export default RoseGarlandNew;

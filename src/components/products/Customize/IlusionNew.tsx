@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCustomizer from './ProductCustomizer';
-import AankhiJhyalLayer from './AankhiJhyalLayer';
+import IlusionLayer from './IlusionLayer';
 import colorDataA from '../../../../color.json';
 import colorDataB from '../../../../colorb.json';
 import colorDataC from '../../../../colorC.json';
@@ -16,10 +16,13 @@ const colorDataD700 =color700[3];
 const colorDataE700 =color700[4];
 
 const config = {
-  name: "Aankhi Jhyal",
+  name: "Ilusion",
   layers: [
-    { src: "/layers/AankhiJhyal/AankhiJhyal1.png", defaultColor: "#b2945f", defaultName: "DT 07" },
-    { src: "/layers/AankhiJhyal/AankhiJhyal2.png", defaultColor: "#191e2a", defaultName: "BM 02" },
+    { src: "/layers/Ilusion/Ilusion1.png", defaultColor: "#781D23", defaultName: "AT 03" },
+    { src: "/layers/Ilusion/Ilusion2.png", defaultColor: "#BE9265", defaultName: "DS 07" },
+    { src: "/layers/Ilusion/Ilusion3.png", defaultColor: "#FCEECC", defaultName: "DR 12" },
+    { src: "/layers/Ilusion/Ilusion4.png", defaultColor: "#C0C5AF", defaultName: "CR 09" },
+    { src: "/layers/Ilusion/Ilusion5.png", defaultColor: "#94B1AD", defaultName: "CG 10" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
@@ -28,7 +31,7 @@ const config = {
   ],
 };
 
-const AankhiJhyalNew: React.FC = () => (
+const IlusionNew: React.FC = () => (
   <ProductCustomizer
     config={config}
     colorData1000={colorData1000}
@@ -42,8 +45,8 @@ const AankhiJhyalNew: React.FC = () => (
     colorData700C={colorDataC700}
     colorData700D={colorDataD700}
     colorData700E={colorDataE700}
-    LayerComponent={AankhiJhyalLayer}
+    LayerComponent={IlusionLayer}
   />
 );
 
-export default AankhiJhyalNew;
+export default IlusionNew;

@@ -87,19 +87,18 @@ const WaterBrust = lazy(() => import("./components/products/Customize/WaterBrust
 const WaterCoin = lazy(() => import("./components/products/Customize/WaterCoinNew"));
 const WaterLilies = lazy(() => import("./components/products/Customize/WaterLiliesNew"));
 const Weave = lazy(() => import("./components/products/Customize/WeaveNew"));
-const a = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const b = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const c = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const d = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const e = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const f = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const g = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const h = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const i = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const j = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const k = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const l = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
-const m = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const Kopila = lazy(() => import("./components/products/Customize/KopilaNew"));
+const Chaal = lazy(() => import("./components/products/Customize/ChaalNew"));
+const AnkhaNani = lazy(() => import("./components/products/Customize/AnkhaNaniNew"));
+const Ilusion = lazy(() => import("./components/products/Customize/IlusionNew"));
+const Bloom = lazy(() => import("./components/products/Customize/BloomNew"));
+const Maya = lazy(() => import("./components/products/Customize/MayaNew"));
+const Graha = lazy(() => import("./components/products/Customize/GrahaNew"));
+const Scale = lazy(() => import("./components/products/Customize/ScaleNew"));
+const TulsiBibaha = lazy(() => import("./components/products/Customize/TulsiBibahaNew"));
+const Pooja = lazy(() => import("./components/products/Customize/PoojaNew"));
+const Trisul = lazy(() => import("./components/products/Customize/TrisulNew"));
+const RoseGarland = lazy(() => import("./components/products/Customize/RoseGarlandNew"));
 
 
 
@@ -195,19 +194,18 @@ export default function App() {
           <Route path="/products/watercoin" element={<WaterCoin />} />
           <Route path="/products/waterlilies" element={<WaterLilies />} />
           <Route path="/products/weave" element={<Weave />} />
-          <Route path="/products/a" element={<AankhiJhyal />} />
-          <Route path="/products/b" element={<AankhiJhyal />} />
-          <Route path="/products/c" element={<AankhiJhyal />} />
-          <Route path="/products/d" element={<AankhiJhyal />} />
-          <Route path="/products/e" element={<AankhiJhyal />} />
-          <Route path="/products/f" element={<AankhiJhyal />} />
-          <Route path="/products/g" element={<AankhiJhyal />} />
-          <Route path="/products/h" element={<AankhiJhyal />} />
-          <Route path="/products/i" element={<AankhiJhyal />} />
-          <Route path="/products/j" element={<AankhiJhyal />} />
-          <Route path="/products/k" element={<AankhiJhyal />} />
-          <Route path="/products/l" element={<AankhiJhyal />} />
-          <Route path="/products/m" element={<AankhiJhyal />} />
+          <Route path="/products/kopila" element={<Kopila />} />
+          <Route path="/products/chaal" element={<Chaal />} />
+          <Route path="/products/ankhanani" element={<AnkhaNani />} />
+          <Route path="/products/ilusion" element={<Ilusion />} />
+          <Route path="/products/bloom" element={<Bloom />} />
+          <Route path="/products/maya" element={<Maya />} />
+          <Route path="/products/graha" element={<Graha />} />
+          <Route path="/products/scale" element={<Scale />} />
+          <Route path="/products/tulsibibaha" element={<TulsiBibaha />} />
+          <Route path="/products/pooja" element={<Pooja />} />
+          <Route path="/products/trisul" element={<Trisul />} />
+          <Route path="/products/rosegarland" element={<RoseGarland />} />
 
 
 

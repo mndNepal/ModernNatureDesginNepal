@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function AankhiJhyalLayer({ layers, imgref }) {
+export default function BloomLayer({ layers, imgref }) {
   const canvasRefs = useRef([]);
   const offscreenRefs = useRef([]);
   const containerRef = useRef(null);

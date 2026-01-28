@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCustomizer from './ProductCustomizer';
-import AankhiJhyalLayer from './AankhiJhyalLayer';
+import GrahaLayer from './GrahaLayer';
 import colorDataA from '../../../../color.json';
 import colorDataB from '../../../../colorb.json';
 import colorDataC from '../../../../colorC.json';
@@ -16,10 +16,14 @@ const colorDataD700 =color700[3];
 const colorDataE700 =color700[4];
 
 const config = {
-  name: "Aankhi Jhyal",
+  name: "Graha",
   layers: [
-    { src: "/layers/AankhiJhyal/AankhiJhyal1.png", defaultColor: "#b2945f", defaultName: "DT 07" },
-    { src: "/layers/AankhiJhyal/AankhiJhyal2.png", defaultColor: "#191e2a", defaultName: "BM 02" },
+    { src: "/layers/Graha/Graha1.png", defaultColor: "#A09174", defaultName: "CN 09" },
+    { src: "/layers/Graha/Graha2.png", defaultColor: "#68BAC8", defaultName: "CJ 08" },
+    { src: "/layers/Graha/Graha3.png", defaultColor: "#EBDCB4", defaultName: "DT 11" },
+    { src: "/layers/Graha/Graha4.png", defaultColor: "#D8C4AB", defaultName: "AH 07" },
+
+
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
@@ -28,7 +32,7 @@ const config = {
   ],
 };
 
-const AankhiJhyalNew: React.FC = () => (
+const GrahaNew: React.FC = () => (
   <ProductCustomizer
     config={config}
     colorData1000={colorData1000}
@@ -42,8 +46,8 @@ const AankhiJhyalNew: React.FC = () => (
     colorData700C={colorDataC700}
     colorData700D={colorDataD700}
     colorData700E={colorDataE700}
-    LayerComponent={AankhiJhyalLayer}
+    LayerComponent={GrahaLayer}
   />
 );
 
-export default AankhiJhyalNew;
+export default GrahaNew;

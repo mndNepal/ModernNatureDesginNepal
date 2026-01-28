@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCustomizer from './ProductCustomizer';
-import AankhiJhyalLayer from './AankhiJhyalLayer';
+import KopilaLayer from './KopilaLayer';
 import colorDataA from '../../../../color.json';
 import colorDataB from '../../../../colorb.json';
 import colorDataC from '../../../../colorC.json';
@@ -16,10 +16,13 @@ const colorDataD700 =color700[3];
 const colorDataE700 =color700[4];
 
 const config = {
-  name: "Aankhi Jhyal",
+  name: "Kopila",
   layers: [
-    { src: "/layers/AankhiJhyal/AankhiJhyal1.png", defaultColor: "#b2945f", defaultName: "DT 07" },
-    { src: "/layers/AankhiJhyal/AankhiJhyal2.png", defaultColor: "#191e2a", defaultName: "BM 02" },
+    { src: "/layers/Kopila/Kopila1.png", defaultColor: "#B01A40", defaultName: "AP 03" },
+    { src: "/layers/Kopila/Kopila2.png", defaultColor: "#133862", defaultName: "BI 01" },
+    { src: "/layers/Kopila/Kopila3.png", defaultColor: "#9B7834", defaultName: "DF 05" },
+    { src: "/layers/Kopila/Kopila4.png", defaultColor: "#F9F8F5", defaultName: "AH 12" },
+    { src: "/layers/Kopila/Kopila5.png", defaultColor: "#1D88C2", defaultName: "CJ 05" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
@@ -28,7 +31,7 @@ const config = {
   ],
 };
 
-const AankhiJhyalNew: React.FC = () => (
+const KopilaNew: React.FC = () => (
   <ProductCustomizer
     config={config}
     colorData1000={colorData1000}
@@ -42,8 +45,8 @@ const AankhiJhyalNew: React.FC = () => (
     colorData700C={colorDataC700}
     colorData700D={colorDataD700}
     colorData700E={colorDataE700}
-    LayerComponent={AankhiJhyalLayer}
+    LayerComponent={KopilaLayer}
   />
 );
 
-export default AankhiJhyalNew;
+export default KopilaNew;

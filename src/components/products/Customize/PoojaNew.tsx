@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCustomizer from './ProductCustomizer';
-import AankhiJhyalLayer from './AankhiJhyalLayer';
+import PoojaLayer from './PoojaLayer';
 import colorDataA from '../../../../color.json';
 import colorDataB from '../../../../colorb.json';
 import colorDataC from '../../../../colorC.json';
@@ -16,10 +16,15 @@ const colorDataD700 =color700[3];
 const colorDataE700 =color700[4];
 
 const config = {
-  name: "Aankhi Jhyal",
+  name: "Pooja",
   layers: [
-    { src: "/layers/AankhiJhyal/AankhiJhyal1.png", defaultColor: "#b2945f", defaultName: "DT 07" },
-    { src: "/layers/AankhiJhyal/AankhiJhyal2.png", defaultColor: "#191e2a", defaultName: "BM 02" },
+    { src: "/layers/Pooja/Pooja1.png", defaultColor: "#5E5542", defaultName: "CO 04" },
+    { src: "/layers/Pooja/Pooja2.png", defaultColor: "#9A8E7C", defaultName: "AC 07" },
+    { src: "/layers/Pooja/Pooja3.png", defaultColor: "#D6CFB6", defaultName: "DA 11" },
+    { src: "/layers/Pooja/Pooja4.png", defaultColor: "#F5EFDC", defaultName: "AH 10" },
+    { src: "/layers/Pooja/Pooja5.png", defaultColor: "#B7BAA7", defaultName: "CT 12" },
+    { src: "/layers/Pooja/Pooja6.png", defaultColor: "#ACBDAB", defaultName: "CS 10" },
+
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
@@ -28,7 +33,7 @@ const config = {
   ],
 };
 
-const AankhiJhyalNew: React.FC = () => (
+const PoojaNew: React.FC = () => (
   <ProductCustomizer
     config={config}
     colorData1000={colorData1000}
@@ -42,8 +47,8 @@ const AankhiJhyalNew: React.FC = () => (
     colorData700C={colorDataC700}
     colorData700D={colorDataD700}
     colorData700E={colorDataE700}
-    LayerComponent={AankhiJhyalLayer}
+    LayerComponent={PoojaLayer}
   />
 );
 
-export default AankhiJhyalNew;
+export default PoojaNew;

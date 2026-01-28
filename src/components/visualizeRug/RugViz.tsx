@@ -879,7 +879,11 @@ const RugViz = ({
         {/* ✅ Demo Sidebar - ALWAYS VISIBLE, RIGHT SIDE, SCROLLABLE */}
         <div className="rugviz-demo-sidebar">
           <div className="rugviz-demo-header">
-            <span className="rugviz-demo-title-sidebar">Try Demo Rooms</span>
+            <span className="rugviz-demo-title-sidebar">
+              Dont have your room? <br />
+              Try in our demo room
+            </span>
+
           </div>
           <div className="rugviz-demo-scroll">
             {demoRooms.map((d) => (

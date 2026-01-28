@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCustomizer from './ProductCustomizer';
-import AankhiJhyalLayer from './AankhiJhyalLayer';
+import MayaLayer from './MayaLayer';
 import colorDataA from '../../../../color.json';
 import colorDataB from '../../../../colorb.json';
 import colorDataC from '../../../../colorC.json';
@@ -16,10 +16,14 @@ const colorDataD700 =color700[3];
 const colorDataE700 =color700[4];
 
 const config = {
-  name: "Aankhi Jhyal",
+  name: "Maya",
   layers: [
-    { src: "/layers/AankhiJhyal/AankhiJhyal1.png", defaultColor: "#b2945f", defaultName: "DT 07" },
-    { src: "/layers/AankhiJhyal/AankhiJhyal2.png", defaultColor: "#191e2a", defaultName: "BM 02" },
+    { src: "/layers/Maya/Maya1.png", defaultColor: "#E8E6DB", defaultName: "CR 12" },
+    { src: "/layers/Maya/Maya2.png", defaultColor: "#C2C0B4", defaultName: "CA 11" },
+    { src: "/layers/Maya/Maya3.png", defaultColor: "#998D86", defaultName: "AE 08" },
+    { src: "/layers/Maya/Maya4.png", defaultColor: "#854B58", defaultName: "EF 05" },
+    { src: "/layers/Maya/Maya5.png", defaultColor: "#41464E", defaultName: "BM 04" },
+
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
@@ -28,7 +32,7 @@ const config = {
   ],
 };
 
-const AankhiJhyalNew: React.FC = () => (
+const MayaNew: React.FC = () => (
   <ProductCustomizer
     config={config}
     colorData1000={colorData1000}
@@ -42,8 +46,8 @@ const AankhiJhyalNew: React.FC = () => (
     colorData700C={colorDataC700}
     colorData700D={colorDataD700}
     colorData700E={colorDataE700}
-    LayerComponent={AankhiJhyalLayer}
+    LayerComponent={MayaLayer}
   />
 );
 
-export default AankhiJhyalNew;
+export default MayaNew;
