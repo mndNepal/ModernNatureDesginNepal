@@ -18,9 +18,9 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Ankha Nani",
   layers: [
-    { src: "/layers/AnkhaNani/AnkhaNani1.png", defaultColor: "#F9F8F5", defaultName: "AH 12" },
+    { src: "/layers/AnkhaNani/AnkhaNani3.png", defaultColor: "#F9F8F5", defaultName: "AH 12" },
     { src: "/layers/AnkhaNani/AnkhaNani2.png", defaultColor: "#FFF4D2", defaultName: "DM 12" },
-    { src: "/layers/AnkhaNani/AnkhaNani3.png", defaultColor: "#9D5C35", defaultName: "DQ 04" },
+    { src: "/layers/AnkhaNani/AnkhaNani1.png", defaultColor: "#9D5C35", defaultName: "DQ 04" },
 
   ],
   detailImages: [

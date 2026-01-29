@@ -18,8 +18,8 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Chaal",
   layers: [
-    { src: "/layers/Chaal/Chaal1.png", defaultColor: "#9BC4BC", defaultName: "CI 09" },
-    { src: "/layers/Chaal/Chaal2.png", defaultColor: "#FDECBD", defaultName: "DR 11" },
+    { src: "/layers/Chaal/Chaal2.png", defaultColor: "#9BC4BC", defaultName: "CI 09" },
+    { src: "/layers/Chaal/Chaal1.png", defaultColor: "#FDECBD", defaultName: "DR 11" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Chaal1.webp',

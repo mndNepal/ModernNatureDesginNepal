@@ -18,11 +18,11 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Maya",
   layers: [
-    { src: "/layers/Maya/Maya1.png", defaultColor: "#E8E6DB", defaultName: "CR 12" },
-    { src: "/layers/Maya/Maya2.png", defaultColor: "#C2C0B4", defaultName: "CA 11" },
+    { src: "/layers/Maya/Maya5.png", defaultColor: "#E8E6DB", defaultName: "CR 12" },
+    { src: "/layers/Maya/Maya4.png", defaultColor: "#C2C0B4", defaultName: "CA 11" },
     { src: "/layers/Maya/Maya3.png", defaultColor: "#998D86", defaultName: "AE 08" },
-    { src: "/layers/Maya/Maya4.png", defaultColor: "#854B58", defaultName: "EF 05" },
-    { src: "/layers/Maya/Maya5.png", defaultColor: "#41464E", defaultName: "BM 04" },
+    { src: "/layers/Maya/Maya2.png", defaultColor: "#854B58", defaultName: "EF 05" },
+    { src: "/layers/Maya/Maya1.png", defaultColor: "#41464E", defaultName: "BM 04" },
 
   ],
   detailImages: [

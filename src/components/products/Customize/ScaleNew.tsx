@@ -18,8 +18,8 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Scale",
   layers: [
-    { src: "/layers/Scale/Scale1.png", defaultColor: "#781d23", defaultName: "AT 03" },
-    { src: "/layers/Scale/Scale2.png", defaultColor: "#e5d3a3", defaultName: "DC 11" },
+    { src: "/layers/Scale/Scale2.png", defaultColor: "#781d23", defaultName: "AT 03" },
+    { src: "/layers/Scale/Scale1.png", defaultColor: "#e5d3a3", defaultName: "DC 11" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Scale1.webp',

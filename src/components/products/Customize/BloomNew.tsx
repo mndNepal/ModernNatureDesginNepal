@@ -18,10 +18,10 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Bloom",
   layers: [
-    { src: "/layers/Bloom/Bloom1.png", defaultColor: "#AAAFBE", defaultName: "BK 09" },
-    { src: "/layers/Bloom/Bloom2.png", defaultColor: "#6F798A", defaultName: "BK 06" },
-    { src: "/layers/Bloom/Bloom3.png", defaultColor: "#31394E", defaultName: "BL 04" },
-    { src: "/layers/Bloom/Bloom4.png", defaultColor: "#AE5B3B", defaultName: "DN 08" },
+    { src: "/layers/Bloom/Bloom4.png", defaultColor: "#AAAFBE", defaultName: "BK 09" },
+    { src: "/layers/Bloom/Bloom3.png", defaultColor: "#6F798A", defaultName: "BK 06" },
+    { src: "/layers/Bloom/Bloom2.png", defaultColor: "#31394E", defaultName: "BL 04" },
+    { src: "/layers/Bloom/Bloom1.png", defaultColor: "#AE5B3B", defaultName: "DN 08" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Bloom1.webp',

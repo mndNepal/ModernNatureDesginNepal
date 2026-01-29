@@ -18,11 +18,11 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Ilusion",
   layers: [
-    { src: "/layers/Ilusion/Ilusion1.png", defaultColor: "#781D23", defaultName: "AT 03" },
-    { src: "/layers/Ilusion/Ilusion2.png", defaultColor: "#BE9265", defaultName: "DS 07" },
+    { src: "/layers/Ilusion/Ilusion5.png", defaultColor: "#781D23", defaultName: "AT 03" },
+    { src: "/layers/Ilusion/Ilusion4.png", defaultColor: "#BE9265", defaultName: "DS 07" },
     { src: "/layers/Ilusion/Ilusion3.png", defaultColor: "#FCEECC", defaultName: "DR 12" },
-    { src: "/layers/Ilusion/Ilusion4.png", defaultColor: "#C0C5AF", defaultName: "CR 09" },
-    { src: "/layers/Ilusion/Ilusion5.png", defaultColor: "#94B1AD", defaultName: "CG 10" },
+    { src: "/layers/Ilusion/Ilusion2.png", defaultColor: "#C0C5AF", defaultName: "CR 09" },
+    { src: "/layers/Ilusion/Ilusion1.png", defaultColor: "#94B1AD", defaultName: "CG 10" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Ilusion1.webp',

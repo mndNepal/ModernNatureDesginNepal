@@ -18,11 +18,11 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Rose Garland",
   layers: [
-    { src: "/layers/RoseGarland/RoseGarland1.png", defaultColor: "#070B1E", defaultName: "BA 02" },
-    { src: "/layers/RoseGarland/RoseGarland2.png", defaultColor: "#151C30", defaultName: "BT 04" },
+    { src: "/layers/RoseGarland/RoseGarland5.png", defaultColor: "#070B1E", defaultName: "BA 02" },
+    { src: "/layers/RoseGarland/RoseGarland4.png", defaultColor: "#151C30", defaultName: "BT 04" },
     { src: "/layers/RoseGarland/RoseGarland3.png", defaultColor: "#183941", defaultName: "CE 02" },
-    { src: "/layers/RoseGarland/RoseGarland4.png", defaultColor: "#6F8A68", defaultName: "CD 07" },
-    { src: "/layers/RoseGarland/RoseGarland5.png", defaultColor: "#E5D3A3", defaultName: "DC 11" },
+    { src: "/layers/RoseGarland/RoseGarland2.png", defaultColor: "#6F8A68", defaultName: "CD 07" },
+    { src: "/layers/RoseGarland/RoseGarland1.png", defaultColor: "#E5D3A3", defaultName: "DC 11" },
 
   ],
   detailImages: [

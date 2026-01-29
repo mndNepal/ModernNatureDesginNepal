@@ -18,12 +18,12 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Pooja",
   layers: [
-    { src: "/layers/Pooja/Pooja1.png", defaultColor: "#5E5542", defaultName: "CO 04" },
-    { src: "/layers/Pooja/Pooja2.png", defaultColor: "#9A8E7C", defaultName: "AC 07" },
-    { src: "/layers/Pooja/Pooja3.png", defaultColor: "#D6CFB6", defaultName: "DA 11" },
-    { src: "/layers/Pooja/Pooja4.png", defaultColor: "#F5EFDC", defaultName: "AH 10" },
-    { src: "/layers/Pooja/Pooja5.png", defaultColor: "#B7BAA7", defaultName: "CT 12" },
-    { src: "/layers/Pooja/Pooja6.png", defaultColor: "#ACBDAB", defaultName: "CS 10" },
+    { src: "/layers/Pooja/Pooja6.png", defaultColor: "#5E5542", defaultName: "CO 04" },
+    { src: "/layers/Pooja/Pooja5.png", defaultColor: "#9A8E7C", defaultName: "AC 07" },
+    { src: "/layers/Pooja/Pooja4.png", defaultColor: "#D6CFB6", defaultName: "DA 11" },
+    { src: "/layers/Pooja/Pooja3.png", defaultColor: "#F5EFDC", defaultName: "AH 10" },
+    { src: "/layers/Pooja/Pooja2.png", defaultColor: "#B7BAA7", defaultName: "CT 12" },
+    { src: "/layers/Pooja/Pooja1.png", defaultColor: "#ACBDAB", defaultName: "CS 10" },
 
   ],
   detailImages: [

@@ -18,10 +18,10 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Graha",
   layers: [
-    { src: "/layers/Graha/Graha1.png", defaultColor: "#A09174", defaultName: "CN 09" },
-    { src: "/layers/Graha/Graha2.png", defaultColor: "#68BAC8", defaultName: "CJ 08" },
-    { src: "/layers/Graha/Graha3.png", defaultColor: "#EBDCB4", defaultName: "DT 11" },
-    { src: "/layers/Graha/Graha4.png", defaultColor: "#D8C4AB", defaultName: "AH 07" },
+    { src: "/layers/Graha/Graha4.png", defaultColor: "#A09174", defaultName: "CN 09" },
+    { src: "/layers/Graha/Graha3.png", defaultColor: "#68BAC8", defaultName: "CJ 08" },
+    { src: "/layers/Graha/Graha2.png", defaultColor: "#EBDCB4", defaultName: "DT 11" },
+    { src: "/layers/Graha/Graha1.png", defaultColor: "#D8C4AB", defaultName: "AH 07" },
 
 
   ],

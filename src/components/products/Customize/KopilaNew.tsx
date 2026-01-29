@@ -18,11 +18,11 @@ const colorDataE700 =color700[4];
 const config = {
   name: "Kopila",
   layers: [
-    { src: "/layers/Kopila/Kopila1.png", defaultColor: "#B01A40", defaultName: "AP 03" },
-    { src: "/layers/Kopila/Kopila2.png", defaultColor: "#133862", defaultName: "BI 01" },
+    { src: "/layers/Kopila/Kopila5.png", defaultColor: "#B01A40", defaultName: "AP 03" },
+    { src: "/layers/Kopila/Kopila4.png", defaultColor: "#133862", defaultName: "BI 01" },
     { src: "/layers/Kopila/Kopila3.png", defaultColor: "#9B7834", defaultName: "DF 05" },
-    { src: "/layers/Kopila/Kopila4.png", defaultColor: "#F9F8F5", defaultName: "AH 12" },
-    { src: "/layers/Kopila/Kopila5.png", defaultColor: "#1D88C2", defaultName: "CJ 05" },
+    { src: "/layers/Kopila/Kopila2.png", defaultColor: "#F9F8F5", defaultName: "AH 12" },
+    { src: "/layers/Kopila/Kopila1.png", defaultColor: "#1D88C2", defaultName: "CJ 05" },
   ],
   detailImages: [
     'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Kopila1.webp',
