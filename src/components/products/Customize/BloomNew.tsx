@@ -24,9 +24,9 @@ const config = {
     { src: "/layers/Bloom/Bloom4.png", defaultColor: "#AE5B3B", defaultName: "DN 08" },
   ],
   detailImages: [
-    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
-    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal2.webp',
-    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal3.webp',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Bloom1.webp',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Bloom2.webp',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/Bloom3.webp',
   ],
 };
 

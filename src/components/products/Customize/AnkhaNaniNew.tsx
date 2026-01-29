@@ -24,9 +24,9 @@ const config = {
 
   ],
   detailImages: [
-    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal1.webp',
-    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal2.webp',
-    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/aankhijhyal3.webp',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/AnkhaNani1.webp',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/AnkhaNani2.webp',
+    'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/ProductDetailImages/AnkhaNani3.webp',
   ],
 };
 
