@@ -570,7 +570,7 @@
 
   /* Viewport needs more space for bottom sidebar */
   .rugviz-viewport {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 235px);
     margin-top: 50px;
   }
 
@@ -582,7 +582,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 130px;
+    height: 115px;
     flex-direction: column;
     border-left: none;
     border-top: 1px solid #e5e5e5;
@@ -590,14 +590,14 @@
   }
 
   .rugviz-demo-header {
-    padding: 8px 12px;
+    padding: 6px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .rugviz-demo-title-sidebar {
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
   }
 
@@ -609,14 +609,14 @@
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 8px 12px;
-    gap: 10px;
-    padding-bottom: 8px;
+    padding: 6px 12px;
+    gap: 8px;
+    padding-bottom: 6px;
   }
 
   /* Horizontal scrollbar styling */
   .rugviz-demo-scroll::-webkit-scrollbar {
-    height: 4px;
+    height: 3px;
     width: auto;
   }
 
@@ -630,10 +630,10 @@
   }
 
   .rugviz-demo-card {
-    min-width: 100px;
-    width: 100px;
-    padding: 6px;
-    gap: 4px;
+    min-width: 80px;
+    width: 80px;
+    padding: 4px;
+    gap: 2px;
   }
 
   .rugviz-demo-card:hover {
@@ -645,20 +645,22 @@
   }
 
   .rugviz-demo-card-img {
-    height: 60px;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 4px;
   }
 
   .rugviz-demo-card-label {
-    font-size: 10px;
-    padding: 2px 0;
+    font-size: 8px;
+    padding: 1px 0;
+    line-height: 1.2;
+    display: block;
   }
 
   /* Bottom bar adjustments */
   .rugviz-bottom-bar {
     padding: 0 12px;
     height: 70px;
-    bottom: 130px; /* Push above demo sidebar */
+    bottom: 115px; /* Push above demo sidebar */
   }
 
   .rugviz-rug-preview img {
@@ -773,50 +775,52 @@
   }
 
   .rugviz-viewport {
-    height: calc(100vh - 228px);
+    height: calc(100vh - 215px);
     margin-top: 48px;
   }
 
   /* Demo sidebar - bottom */
   .rugviz-demo-sidebar {
-    height: 110px;
+    height: 105px;
   }
 
   .rugviz-demo-header {
-    padding: 6px 10px;
+    padding: 5px 10px;
   }
 
   .rugviz-demo-title-sidebar {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .rugviz-demo-scroll {
-    padding: 6px 10px;
-    gap: 8px;
+    padding: 5px 10px;
+    gap: 6px;
   }
 
   .rugviz-demo-card {
-    min-width: 85px;
-    width: 85px;
-    padding: 5px;
-    gap: 3px;
-    border-radius: 8px;
+    min-width: 70px;
+    width: 70px;
+    padding: 3px;
+    gap: 2px;
+    border-radius: 6px;
   }
 
   .rugviz-demo-card-img {
-    height: 50px;
+    height: 45px;
     border-radius: 4px;
   }
 
   .rugviz-demo-card-label {
-    font-size: 9px;
+    font-size: 7px;
+    line-height: 1.2;
+    display: block;
   }
 
   /* Bottom bar */
   .rugviz-bottom-bar {
     height: 62px;
     padding: 0 8px;
-    bottom: 110px;
+    bottom: 105px;
   }
 
   .rugviz-rug-preview {
@@ -925,52 +929,54 @@
   }
 
   .rugviz-viewport {
-    height: calc(100vh - 206px);
+    height: calc(100vh - 195px);
     margin-top: 46px;
   }
 
   /* Demo sidebar - bottom */
   .rugviz-demo-sidebar {
-    height: 100px;
+    height: 95px;
   }
 
   .rugviz-demo-header {
-    padding: 5px 8px;
+    padding: 4px 8px;
   }
 
   .rugviz-demo-title-sidebar {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .rugviz-demo-scroll {
-    padding: 5px 8px;
-    gap: 6px;
+    padding: 4px 8px;
+    gap: 5px;
   }
 
   .rugviz-demo-card {
-    min-width: 75px;
-    width: 75px;
-    padding: 4px;
-    gap: 3px;
-    border-radius: 6px;
+    min-width: 60px;
+    width: 60px;
+    padding: 3px;
+    gap: 2px;
+    border-radius: 5px;
     border-width: 1px;
   }
 
   .rugviz-demo-card-img {
-    height: 45px;
-    border-radius: 4px;
+    height: 40px;
+    border-radius: 3px;
   }
 
   .rugviz-demo-card-label {
-    font-size: 8px;
-    padding: 1px 0;
+    font-size: 6px;
+    padding: 0;
+    line-height: 1.1;
+    display: block;
   }
 
   /* Bottom bar */
   .rugviz-bottom-bar {
     height: 54px;
     padding: 0 6px;
-    bottom: 100px;
+    bottom: 95px;
   }
 
   .rugviz-rug-preview {
@@ -1085,48 +1091,51 @@
   }
 
   .rugviz-viewport {
-    height: calc(100vh - 194px);
+    height: calc(100vh - 179px);
     margin-top: 44px;
   }
 
   /* Demo sidebar - bottom */
   .rugviz-demo-sidebar {
-    height: 90px;
+    height: 85px;
   }
 
   .rugviz-demo-header {
-    padding: 4px 6px;
+    padding: 3px 6px;
   }
 
   .rugviz-demo-title-sidebar {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .rugviz-demo-scroll {
-    padding: 4px 6px;
-    gap: 5px;
+    padding: 3px 6px;
+    gap: 4px;
   }
 
   .rugviz-demo-card {
-    min-width: 65px;
-    width: 65px;
-    padding: 3px;
-    gap: 2px;
+    min-width: 52px;
+    width: 52px;
+    padding: 2px;
+    gap: 1px;
   }
 
   .rugviz-demo-card-img {
-    height: 40px;
+    height: 35px;
+    border-radius: 3px;
   }
 
   .rugviz-demo-card-label {
-    font-size: 7px;
+    font-size: 5px;
+    line-height: 1.1;
+    display: block;
   }
 
   /* Bottom bar */
   .rugviz-bottom-bar {
     height: 50px;
     padding: 0 4px;
-    bottom: 90px;
+    bottom: 85px;
   }
 
   .rugviz-rug-preview img {
@@ -1183,46 +1192,50 @@
   }
 
   .rugviz-viewport {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 115px);
     margin-top: 40px;
   }
 
   /* Demo sidebar on bottom but smaller in landscape */
   .rugviz-demo-sidebar {
-    height: 80px;
+    height: 75px;
   }
 
   .rugviz-demo-header {
-    padding: 4px 8px;
+    padding: 3px 8px;
   }
 
   .rugviz-demo-title-sidebar {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .rugviz-demo-scroll {
-    padding: 4px 8px;
-    gap: 6px;
+    padding: 3px 8px;
+    gap: 5px;
   }
 
   .rugviz-demo-card {
-    min-width: 70px;
-    width: 70px;
-    padding: 3px;
+    min-width: 55px;
+    width: 55px;
+    padding: 2px;
+    gap: 1px;
   }
 
   .rugviz-demo-card-img {
-    height: 35px;
+    height: 32px;
+    border-radius: 3px;
   }
 
   .rugviz-demo-card-label {
-    font-size: 8px;
+    font-size: 6px;
+    line-height: 1.1;
+    display: block;
   }
 
   .rugviz-bottom-bar {
     height: 40px;
     padding: 0 8px;
-    bottom: 80px;
+    bottom: 75px;
   }
 
   .rugviz-rug-preview img {
