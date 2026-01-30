@@ -1,4 +1,4 @@
-/* RugViz Pro - Component Styles */
+/* RugViz Pro - Component Styles - Mobile Responsive */
 
 .rugviz-container {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -31,12 +31,18 @@
   gap: 8px;
 }
 
+.rugviz-logo img {
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+  margin-left: 0;
+}
+
 .rugviz-logo-text {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.02em;
   color: #1a1a1a;
-  font-size: 24px;
 }
 
 .rugviz-logo-text span {
@@ -63,6 +69,7 @@
   background: transparent;
   color: #333;
   transition: background 0.15s ease;
+  white-space: nowrap;
 }
 
 .rugviz-btn:hover {
@@ -119,6 +126,7 @@
   height: calc(100vh - 140px);
   background: #e9e9e9;
   overflow: hidden;
+  margin-top: 56px;
 }
 
 .rugviz-bg-layer {
@@ -138,6 +146,8 @@
   color: #666;
   z-index: 5;
   height: 100%;
+  padding: 20px;
+  text-align: center;
 }
 
 .rugviz-empty-icon {
@@ -151,26 +161,12 @@
   margin: 0;
 }
 
-/* ✅ Demo Sidebar - Right Side, ALWAYS VISIBLE, Scrollable */
-/* .rugviz-demo-sidebar {
+/* Demo Sidebar - Right Side on Desktop, Bottom on Mobile */
+.rugviz-demo-sidebar {
   position: absolute;
   top: 0;
   right: 0;
-  width: 280px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.98);
-  border-left: 1px solid #e5e5e5;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.05);
-} */
-
-.rugviz-demo-sidebar {
-  position: absolute;
-  top: 3rem;        /* ✅ pushes below navbar */
-  right: 0;
-  bottom: 0;        /* ✅ keeps full scroll */
+  bottom: 0;
   width: 280px;
   background: rgba(255, 255, 255, 0.98);
   border-left: 1px solid #e5e5e5;
@@ -192,6 +188,7 @@
   font-weight: 600;
   color: #2d5a4a;
   display: block;
+  line-height: 1.4;
 }
 
 .rugviz-demo-scroll {
@@ -201,7 +198,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
 }
 
 /* Custom scrollbar for demo sidebar */
@@ -233,6 +230,7 @@
   flex-direction: column;
   gap: 8px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .rugviz-demo-card:hover {
@@ -401,44 +399,6 @@
   width: 120px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .rugviz-nav {
-    padding: 0 8px;
-  }
-
-  .rugviz-nav-actions {
-    gap: 4px;
-  }
-
-  .rugviz-btn {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-
-  .rugviz-bottom-bar {
-    padding: 0 12px;
-    height: 70px;
-  }
-
-  .rugviz-bottom-actions {
-    gap: 12px;
-  }
-
-  .rugviz-scale-slider {
-    width: 80px;
-  }
-
-  /* Make demo sidebar narrower on mobile */
-  .rugviz-demo-sidebar {
-    width: 220px;
-  }
-
-  .rugviz-demo-card-img {
-    height: 120px;
-  }
-}
-
 /* -------------------- Loading Overlay (API call) -------------------- */
 .rugviz-loading-overlay {
   position: absolute;
@@ -475,7 +435,9 @@
 }
 
 @keyframes rugvizSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .rugviz-loading-text {
@@ -512,10 +474,799 @@
   animation: rugvizDot 1.2s ease-in-out infinite;
 }
 
-.rugviz-loading-dot:nth-child(2) { animation-delay: 0.15s; }
-.rugviz-loading-dot:nth-child(3) { animation-delay: 0.30s; }
+.rugviz-loading-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.rugviz-loading-dot:nth-child(3) {
+  animation-delay: 0.30s;
+}
 
 @keyframes rugvizDot {
-  0%, 100% { transform: translateY(0); opacity: 0.35; }
-  50% { transform: translateY(-6px); opacity: 1; }
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* ==================== RESPONSIVE STYLES ==================== */
+
+/* Large Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .rugviz-logo-text {
+    font-size: 16px;
+  }
+
+  .rugviz-logo img {
+    height: 28px;
+    width: 28px;
+  }
+
+  .rugviz-demo-sidebar {
+    width: 240px;
+  }
+
+  .rugviz-demo-card-img {
+    height: 140px;
+  }
+
+  .rugviz-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .rugviz-bottom-bar {
+    padding: 0 16px;
+  }
+
+  .rugviz-bottom-actions {
+    gap: 16px;
+  }
+}
+
+/* Tablets (max-width: 768px) - SIDEBAR MOVES TO BOTTOM */
+@media (max-width: 768px) {
+  .rugviz-nav {
+    padding: 0 8px;
+    height: 50px;
+  }
+
+  .rugviz-logo img {
+    height: 24px;
+    width: 24px;
+  }
+
+  .rugviz-logo-text {
+    font-size: 13px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .rugviz-nav-actions {
+    gap: 4px;
+  }
+
+  .rugviz-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  /* Hide text on some buttons, show only icons */
+  .rugviz-btn-text-hide {
+    font-size: 0;
+  }
+
+  .rugviz-divider {
+    margin: 0 4px;
+    height: 20px;
+  }
+
+  /* Viewport needs more space for bottom sidebar */
+  .rugviz-viewport {
+    height: calc(100vh - 250px);
+    margin-top: 50px;
+  }
+
+  /* ===== DEMO SIDEBAR - MOVE TO BOTTOM ===== */
+  .rugviz-demo-sidebar {
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    flex-direction: column;
+    border-left: none;
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .rugviz-demo-header {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rugviz-demo-title-sidebar {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .rugviz-demo-title-sidebar br {
+    display: none;
+  }
+
+  .rugviz-demo-scroll {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 12px;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+
+  /* Horizontal scrollbar styling */
+  .rugviz-demo-scroll::-webkit-scrollbar {
+    height: 4px;
+    width: auto;
+  }
+
+  .rugviz-demo-scroll::-webkit-scrollbar-track {
+    background: #f5f5f5;
+  }
+
+  .rugviz-demo-scroll::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 2px;
+  }
+
+  .rugviz-demo-card {
+    min-width: 100px;
+    width: 100px;
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .rugviz-demo-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .rugviz-demo-card:active {
+    transform: translateY(-1px);
+  }
+
+  .rugviz-demo-card-img {
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  .rugviz-demo-card-label {
+    font-size: 10px;
+    padding: 2px 0;
+  }
+
+  /* Bottom bar adjustments */
+  .rugviz-bottom-bar {
+    padding: 0 12px;
+    height: 70px;
+    bottom: 130px; /* Push above demo sidebar */
+  }
+
+  .rugviz-rug-preview img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .rugviz-rug-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .rugviz-rug-label {
+    font-size: 10px;
+  }
+
+  .rugviz-rug-name {
+    font-size: 12px;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .rugviz-bottom-actions {
+    gap: 12px;
+  }
+
+  .rugviz-scale-slider {
+    width: 80px;
+  }
+
+  .rugviz-scale-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .rugviz-spacer {
+    width: 60px;
+  }
+
+  /* Empty state */
+  .rugviz-empty-icon {
+    font-size: 48px;
+  }
+
+  .rugviz-empty-state p {
+    font-size: 14px;
+  }
+
+  /* Loading overlay */
+  .rugviz-loading-card {
+    width: calc(100% - 24px);
+    padding: 14px;
+    grid-template-columns: 36px 1fr;
+    gap: 8px 12px;
+  }
+
+  .rugviz-loading-spinner {
+    width: 36px;
+    height: 36px;
+    border-width: 3px;
+  }
+
+  .rugviz-loading-title {
+    font-size: 14px;
+  }
+
+  .rugviz-loading-subtitle {
+    font-size: 12px;
+  }
+}
+
+/* Small Tablets & Large Phones (max-width: 640px) */
+@media (max-width: 640px) {
+  .rugviz-nav {
+    height: 48px;
+    padding: 0 6px;
+  }
+
+  .rugviz-logo {
+    gap: 6px;
+  }
+
+  .rugviz-logo img {
+    height: 22px;
+    width: 22px;
+  }
+
+  .rugviz-logo-text {
+    font-size: 11px;
+    max-width: 90px;
+  }
+
+  .rugviz-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+    border-radius: 5px;
+  }
+
+  .rugviz-divider {
+    display: none;
+  }
+
+  .rugviz-loader {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+  }
+
+  .rugviz-viewport {
+    height: calc(100vh - 228px);
+    margin-top: 48px;
+  }
+
+  /* Demo sidebar - bottom */
+  .rugviz-demo-sidebar {
+    height: 110px;
+  }
+
+  .rugviz-demo-header {
+    padding: 6px 10px;
+  }
+
+  .rugviz-demo-title-sidebar {
+    font-size: 11px;
+  }
+
+  .rugviz-demo-scroll {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .rugviz-demo-card {
+    min-width: 85px;
+    width: 85px;
+    padding: 5px;
+    gap: 3px;
+    border-radius: 8px;
+  }
+
+  .rugviz-demo-card-img {
+    height: 50px;
+    border-radius: 4px;
+  }
+
+  .rugviz-demo-card-label {
+    font-size: 9px;
+  }
+
+  /* Bottom bar */
+  .rugviz-bottom-bar {
+    height: 62px;
+    padding: 0 8px;
+    bottom: 110px;
+  }
+
+  .rugviz-rug-preview {
+    gap: 8px;
+  }
+
+  .rugviz-rug-preview img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rugviz-rug-placeholder {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .rugviz-rug-info {
+    max-width: 60px;
+  }
+
+  .rugviz-rug-label {
+    font-size: 9px;
+  }
+
+  .rugviz-rug-name {
+    font-size: 11px;
+    max-width: 60px;
+  }
+
+  .rugviz-bottom-actions {
+    gap: 8px;
+  }
+
+  .rugviz-scale-control {
+    gap: 6px;
+  }
+
+  .rugviz-scale-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+
+  .rugviz-scale-slider {
+    width: 60px;
+  }
+
+  .rugviz-scale-label {
+    font-size: 9px;
+  }
+
+  .rugviz-spacer {
+    width: 40px;
+  }
+
+  /* Empty state */
+  .rugviz-empty-state {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .rugviz-empty-icon {
+    font-size: 40px;
+  }
+
+  .rugviz-empty-state p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .rugviz-nav {
+    height: 46px;
+    padding: 0 4px;
+  }
+
+  .rugviz-logo {
+    gap: 4px;
+  }
+
+  .rugviz-logo img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .rugviz-logo-text {
+    font-size: 10px;
+    max-width: 70px;
+  }
+
+  .rugviz-nav-actions {
+    gap: 2px;
+  }
+
+  .rugviz-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+    border-radius: 4px;
+    gap: 3px;
+  }
+
+  .rugviz-btn-primary {
+    padding: 5px 8px;
+  }
+
+  .rugviz-viewport {
+    height: calc(100vh - 206px);
+    margin-top: 46px;
+  }
+
+  /* Demo sidebar - bottom */
+  .rugviz-demo-sidebar {
+    height: 100px;
+  }
+
+  .rugviz-demo-header {
+    padding: 5px 8px;
+  }
+
+  .rugviz-demo-title-sidebar {
+    font-size: 10px;
+  }
+
+  .rugviz-demo-scroll {
+    padding: 5px 8px;
+    gap: 6px;
+  }
+
+  .rugviz-demo-card {
+    min-width: 75px;
+    width: 75px;
+    padding: 4px;
+    gap: 3px;
+    border-radius: 6px;
+    border-width: 1px;
+  }
+
+  .rugviz-demo-card-img {
+    height: 45px;
+    border-radius: 4px;
+  }
+
+  .rugviz-demo-card-label {
+    font-size: 8px;
+    padding: 1px 0;
+  }
+
+  /* Bottom bar */
+  .rugviz-bottom-bar {
+    height: 54px;
+    padding: 0 6px;
+    bottom: 100px;
+  }
+
+  .rugviz-rug-preview {
+    gap: 6px;
+  }
+
+  .rugviz-rug-preview img {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  .rugviz-rug-placeholder {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .rugviz-rug-label {
+    font-size: 8px;
+  }
+
+  .rugviz-rug-name {
+    font-size: 10px;
+    max-width: 50px;
+  }
+
+  .rugviz-bottom-actions {
+    gap: 6px;
+  }
+
+  .rugviz-scale-control {
+    gap: 4px;
+  }
+
+  .rugviz-scale-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .rugviz-scale-slider {
+    width: 50px;
+  }
+
+  .rugviz-scale-label {
+    font-size: 8px;
+  }
+
+  .rugviz-spacer {
+    width: 20px;
+  }
+
+  /* Empty state */
+  .rugviz-empty-icon {
+    font-size: 36px;
+  }
+
+  .rugviz-empty-state p {
+    font-size: 12px;
+  }
+
+  /* Loading overlay */
+  .rugviz-loading-card {
+    width: calc(100% - 16px);
+    padding: 12px;
+    border-radius: 12px;
+    grid-template-columns: 30px 1fr;
+    gap: 6px 10px;
+  }
+
+  .rugviz-loading-spinner {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+
+  .rugviz-loading-title {
+    font-size: 12px;
+  }
+
+  .rugviz-loading-subtitle {
+    font-size: 10px;
+  }
+
+  .rugviz-loading-dot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Extra Small Phones (max-width: 360px) */
+@media (max-width: 360px) {
+  .rugviz-nav {
+    height: 44px;
+  }
+
+  .rugviz-logo img {
+    height: 18px;
+    width: 18px;
+  }
+
+  .rugviz-logo-text {
+    font-size: 9px;
+    max-width: 60px;
+  }
+
+  .rugviz-btn {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .rugviz-viewport {
+    height: calc(100vh - 194px);
+    margin-top: 44px;
+  }
+
+  /* Demo sidebar - bottom */
+  .rugviz-demo-sidebar {
+    height: 90px;
+  }
+
+  .rugviz-demo-header {
+    padding: 4px 6px;
+  }
+
+  .rugviz-demo-title-sidebar {
+    font-size: 9px;
+  }
+
+  .rugviz-demo-scroll {
+    padding: 4px 6px;
+    gap: 5px;
+  }
+
+  .rugviz-demo-card {
+    min-width: 65px;
+    width: 65px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .rugviz-demo-card-img {
+    height: 40px;
+  }
+
+  .rugviz-demo-card-label {
+    font-size: 7px;
+  }
+
+  /* Bottom bar */
+  .rugviz-bottom-bar {
+    height: 50px;
+    padding: 0 4px;
+    bottom: 90px;
+  }
+
+  .rugviz-rug-preview img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .rugviz-rug-placeholder {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .rugviz-rug-label {
+    display: none;
+  }
+
+  .rugviz-rug-name {
+    font-size: 9px;
+    max-width: 40px;
+  }
+
+  .rugviz-scale-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .rugviz-scale-slider {
+    width: 40px;
+  }
+
+  .rugviz-scale-label {
+    display: none;
+  }
+
+  .rugviz-spacer {
+    width: 10px;
+  }
+
+  .rugviz-empty-icon {
+    font-size: 32px;
+  }
+
+  .rugviz-empty-state p {
+    font-size: 11px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .rugviz-nav {
+    height: 40px;
+  }
+
+  .rugviz-viewport {
+    height: calc(100vh - 140px);
+    margin-top: 40px;
+  }
+
+  /* Demo sidebar on bottom but smaller in landscape */
+  .rugviz-demo-sidebar {
+    height: 80px;
+  }
+
+  .rugviz-demo-header {
+    padding: 4px 8px;
+  }
+
+  .rugviz-demo-title-sidebar {
+    font-size: 10px;
+  }
+
+  .rugviz-demo-scroll {
+    padding: 4px 8px;
+    gap: 6px;
+  }
+
+  .rugviz-demo-card {
+    min-width: 70px;
+    width: 70px;
+    padding: 3px;
+  }
+
+  .rugviz-demo-card-img {
+    height: 35px;
+  }
+
+  .rugviz-demo-card-label {
+    font-size: 8px;
+  }
+
+  .rugviz-bottom-bar {
+    height: 40px;
+    padding: 0 8px;
+    bottom: 80px;
+  }
+
+  .rugviz-rug-preview img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .rugviz-rug-placeholder {
+    width: 28px;
+    height: 28px;
+  }
+
+  .rugviz-scale-btn {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .rugviz-btn:hover {
+    background: transparent;
+  }
+
+  .rugviz-btn-primary:hover {
+    background: #2d5a4a;
+  }
+
+  .rugviz-demo-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #e5e5e5;
+  }
+
+  .rugviz-demo-card:active {
+    border-color: #2d5a4a;
+    transform: scale(0.98);
+  }
+
+  .rugviz-scale-btn:hover {
+    background: white;
+  }
+
+  .rugviz-scale-btn:active {
+    background: #f0f0f0;
+  }
 }

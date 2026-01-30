@@ -305,10 +305,22 @@ const RugViz = ({
     const overlayCanvas = overlayCanvasRef.current;
     if (!overlayCanvas) return;
 
-    const handleMouseMove = (e) => {
+    const getPointerPosition = (e) => {
       const rect = overlayCanvas.getBoundingClientRect();
-      const mx = e.clientX - rect.left;
-      const my = e.clientY - rect.top;
+      if (e.touches && e.touches.length > 0) {
+        return {
+          x: e.touches[0].clientX - rect.left,
+          y: e.touches[0].clientY - rect.top
+        };
+      }
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
+    };
+
+    const handleMouseMove = (e) => {
+      const { x: mx, y: my } = getPointerPosition(e);
       const interaction = interactionRef.current;
 
       if (interaction.isRotating && rugMeshRef.current) {
@@ -350,9 +362,7 @@ const RugViz = ({
     const handleMouseDown = (e) => {
       if (!rugMeshRef.current) return;
 
-      const rect = overlayCanvas.getBoundingClientRect();
-      const mx = e.clientX - rect.left;
-      const my = e.clientY - rect.top;
+      const { x: mx, y: my } = getPointerPosition(e);
       const interaction = interactionRef.current;
 
       for (const i of [2, 3]) {
@@ -375,6 +385,7 @@ const RugViz = ({
       if (hits.length > 0) {
         interaction.isDragging = true;
         overlayCanvas.style.cursor = 'move';
+        e.preventDefault();
       }
     };
 
@@ -386,14 +397,23 @@ const RugViz = ({
       overlayCanvas.style.cursor = interaction.hoveredHandle >= 0 ? 'grab' : 'default';
     };
 
+    // Mouse events
     overlayCanvas.addEventListener('mousemove', handleMouseMove);
     overlayCanvas.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
+
+    // Touch events for mobile
+    overlayCanvas.addEventListener('touchmove', handleMouseMove, { passive: false });
+    overlayCanvas.addEventListener('touchstart', handleMouseDown, { passive: false });
+    window.addEventListener('touchend', handleMouseUp);
 
     return () => {
       overlayCanvas.removeEventListener('mousemove', handleMouseMove);
       overlayCanvas.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
+      overlayCanvas.removeEventListener('touchmove', handleMouseMove);
+      overlayCanvas.removeEventListener('touchstart', handleMouseDown);
+      window.removeEventListener('touchend', handleMouseUp);
     };
   }, []);
 
@@ -804,22 +824,19 @@ const RugViz = ({
     <div className="rugviz-container">
       <nav className="rugviz-nav">
         <div className="rugviz-logo">
-          <div>
-            <img
-              src="/assets/images/navbar/MND_Logo.png"
-              alt="logo"
-              className="h-8 w-8 sm:h-8 sm:w-8 lg:h-14 lg:w-14 flex-shrink-0 ml-20"
-            />
-          </div>
+          <img
+            src="/assets/images/navbar/MND_Logo.png"
+            alt="logo"
+          />
           <span className="rugviz-logo-text">Modern Nature Design Nepal</span>
         </div>
 
         <div className="rugviz-nav-actions">
-          <button className="rugviz-btn" onClick={onExit}>✕ Exit</button>
+          <button className="rugviz-btn" onClick={onExit}>✕ <span className="rugviz-btn-text">Exit</span></button>
           <div className="rugviz-divider" />
-          <button className="rugviz-btn" onClick={handleShare}>↗ Share</button>
-          <button className="rugviz-btn" onClick={handleDownload}>↓ Download</button>
-          <button className="rugviz-btn" onClick={onProductPage}>ⓘ Go to product page</button>
+          <button className="rugviz-btn" onClick={handleShare}>↗ <span className="rugviz-btn-text">Share</span></button>
+          <button className="rugviz-btn" onClick={handleDownload}>↓ <span className="rugviz-btn-text">Download</span></button>
+          <button className="rugviz-btn" onClick={onProductPage}>ⓘ <span className="rugviz-btn-text">Product</span></button>
           <div className="rugviz-divider" />
 
           <button
@@ -827,7 +844,7 @@ const RugViz = ({
             onClick={handleAnalyze}
             disabled={!roomImage || isAnalyzing || !isRugLoaded}
           >
-            ✨ {analyzeStatus}
+            ✨ <span className="rugviz-btn-text">{analyzeStatus}</span>
             {isAnalyzing && <span className="rugviz-loader" />}
           </button>
         </div>
@@ -945,7 +962,7 @@ const RugViz = ({
           <div className="rugviz-divider" />
 
           <button className="rugviz-btn" onClick={() => document.getElementById('room-input').click()}>
-            🔄 Change Room
+            🔄 <span className="rugviz-btn-text">Change Room</span>
           </button>
         </div>
 
