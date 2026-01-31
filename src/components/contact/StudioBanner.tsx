@@ -303,9 +303,8 @@ export default function StudioBanner() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 lg:items-stretch">
           {/* Left Column: Contact Form */}
           <div
-            className={`bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 transition-all duration-800 h-full ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 transition-all duration-800 h-full ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-charcoal mb-4 sm:mb-5 text-center pt-6 sm:pt-0">
               Contact Us
@@ -326,9 +325,8 @@ export default function StudioBanner() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.subject ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.subject ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.subject && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.subject}</p>}
@@ -344,9 +342,8 @@ export default function StudioBanner() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.name ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.name ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.name && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>}
@@ -362,9 +359,8 @@ export default function StudioBanner() {
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.address ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.address ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.address && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.address}</p>}
@@ -394,9 +390,8 @@ export default function StudioBanner() {
                   name="country"
                   value={formData.country}
                   onChange={handleChange}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.country ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.country ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.country && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.country}</p>}
@@ -412,9 +407,8 @@ export default function StudioBanner() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.email ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.email ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.email && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>}
@@ -430,9 +424,8 @@ export default function StudioBanner() {
                   name="contact"
                   value={formData.contact}
                   onChange={handleChange}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.contact ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.contact ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.contact && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.contact}</p>}
@@ -480,9 +473,8 @@ export default function StudioBanner() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={3}
-                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${
-                    errors.message ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full p-2 sm:p-2.5 text-sm sm:text-base border rounded ${errors.message ? "border-red-500" : "border-gray-300"
+                    }`}
                   required
                 />
                 {errors.message && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message}</p>}
@@ -506,9 +498,8 @@ export default function StudioBanner() {
 
           {/* Right Column: Visit Us Card (unchanged) */}
           <div
-            className={`bg-off-white rounded-lg p-4 sm:p-6 md:p-8 lg:p-12 shadow-lg transition-all duration-800 ${
-              isVisible ? "opacity-100 translate-x-0 shadow-xl" : "opacity-0 translate-x-8 shadow-lg"
-            }`}
+            className={`bg-off-white rounded-lg p-4 sm:p-6 md:p-8 lg:p-12 shadow-lg transition-all duration-800 ${isVisible ? "opacity-100 translate-x-0 shadow-xl" : "opacity-0 translate-x-8 shadow-lg"
+              }`}
             style={{
               transitionDelay: isVisible ? "300ms" : "0ms",
               transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
@@ -516,16 +507,14 @@ export default function StudioBanner() {
           >
             <div className="mb-4 sm:mb-6">
               <span
-                className={`inline-block text-xs sm:text-sm font-medium uppercase tracking-wide mb-2 transition-all duration-600 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                }`}
+                className={`inline-block text-xs sm:text-sm font-medium uppercase tracking-wide mb-2 transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                  }`}
               >
                 Experience Hand-Knotted Mastery
               </span>
               <h2
-                className={`font-serif text-2xl sm:text-3xl lg:text-4xl font-medium text-charcoal mb-4 sm:mb-6 transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
+                className={`font-serif text-2xl sm:text-3xl lg:text-4xl font-medium text-charcoal mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
               >
                 Visit Us
               </h2>
@@ -533,9 +522,8 @@ export default function StudioBanner() {
 
             <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               <p
-                className={`text-sm sm:text-base text-charcoal/70 leading-relaxed transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                }`}
+                className={`text-sm sm:text-base text-charcoal/70 leading-relaxed transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                  }`}
               >
                 Explore our showroom in Lalitpur, Nepal - meet our artisans, see traditional weaving in action,
                 and find the perfect rug for your space.
@@ -543,9 +531,8 @@ export default function StudioBanner() {
 
               <div className="space-y-3 sm:space-y-4">
                 <div
-                  className={`transition-all duration-600 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                  }`}
+                  className={`transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                    }`}
                 >
                   <h4 className="font-medium text-sm sm:text-base text-charcoal mb-1 sm:mb-2">Showroom Hours</h4>
                   <p className="text-xs sm:text-sm text-charcoal/70">
@@ -556,9 +543,8 @@ export default function StudioBanner() {
                 </div>
 
                 <div
-                  className={`transition-all duration-600 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                  }`}
+                  className={`transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                    }`}
                 >
                   <h4 className="font-medium text-sm sm:text-base text-charcoal mb-1 sm:mb-2">Location</h4>
                   <p className="text-xs sm:text-sm text-charcoal/70">
@@ -569,9 +555,8 @@ export default function StudioBanner() {
                 </div>
 
                 <div
-                  className={`transition-all duration-600 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                  }`}
+                  className={`transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                    }`}
                 >
                   <h4 className="font-medium text-sm sm:text-base text-charcoal mb-1 sm:mb-2">Contact</h4>
                   <div className="text-xs sm:text-sm text-charcoal/70 space-y-2">
@@ -602,9 +587,8 @@ export default function StudioBanner() {
                   "noopener,noreferrer"
                 )
               }
-              className={`bg-mint-green text-charcoal px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base font-medium hover:bg-mint-green/90 transition-all duration-600 w-full sm:w-auto ${
-                isVisible ? "opacity-100 translate-y-0 shadow-md hover:shadow-lg" : "opacity-0 translate-y-4 shadow-sm"
-              }`}
+              className={`bg-mint-green text-charcoal px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base font-medium hover:bg-mint-green/90 transition-all duration-600 w-full sm:w-auto ${isVisible ? "opacity-100 translate-y-0 shadow-md hover:shadow-lg" : "opacity-0 translate-y-4 shadow-sm"
+                }`}
               style={{
                 transitionDelay: isVisible ? "500ms" : "0ms",
                 transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
@@ -612,6 +596,19 @@ export default function StudioBanner() {
             >
               Find a showroom
             </button>
+
+            <div className="mt-12 w-full h-64 sm:h-72 md:h-80 rounded-lg overflow-hidden shadow-md">
+              <iframe
+                title="Modern Nature Design Nepal Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.197370308496!2d85.3437677!3d27.6277484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb173a709414c3%3A0x982c4a313e31facb!2sModern%20Nature%20Design%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
       </Container>

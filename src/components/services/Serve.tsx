@@ -27,9 +27,9 @@ export default function WhoWeServe() {
   );
 
   return (
-    <section className="relative bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Begnas%20Lake.png')] bg-cover bg-center w-full py-10 sm:py-14 md:py-20">
+    <section className="relative bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/BegnasLake.webp')] bg-cover bg-center w-full py-10 sm:py-14 md:py-20">
       {/* Glass overlay */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-md"></div>
+      <div className="absolute inset-0"></div>
       
       <div className="relative z-10">
         <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-semibold text-[#1f3b5c] mb-6 sm:mb-8 md:mb-12 drop-shadow-sm">

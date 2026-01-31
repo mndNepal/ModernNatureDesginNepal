@@ -93,7 +93,7 @@ const products: Product[] = [
 ];
 
 // Helper to get product URL
-const getProductUrl = (name: string) => `/products/${name.toLowerCase().replace(/\s+/g, "")}`;
+const getProductUrl = (name: string) => `/color-customizer/${name.toLowerCase().replace(/\s+/g, "")}`;
 
 const AllProductsView: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");

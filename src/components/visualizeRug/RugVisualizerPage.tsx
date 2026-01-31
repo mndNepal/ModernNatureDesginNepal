@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import RugViz from "./RugViz"; // adjust path
+import Footer from "../ui/Footer";
 
 export default function RugVisualizerPage() {
   const { state } = useLocation();
@@ -25,6 +26,7 @@ export default function RugVisualizerPage() {
   }
 
   return (
+    <>
     <RugViz
       apiEndpoint="https://dharmendrasinghchaudhary44--sam3-flask-api-create-wsgi.modal.run/api/analyze"
       rugImageUrl={payload.rugImageUrl}
@@ -32,5 +34,8 @@ export default function RugVisualizerPage() {
       onExit={() => navigate(-1)}
       onProductPage={() => navigate(`/products/${payload.productId || ""}`)}
     />
+
+    <Footer />
+    </>
   );
 }

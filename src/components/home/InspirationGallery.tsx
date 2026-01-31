@@ -138,7 +138,7 @@ export default function InspirationGalleryMinimal() {
             {/* CENTER COLUMN */}
             <div className="flex flex-col-reverse md:flex-col gap-4 text-center">
               <motion.div
-                className="mx-auto overflow-hidden rounded-lg shadow-md hover:shadow-xl transition h-[420px] md:h-[410px] lg:h-[520px] lg:-mt-[110px] w-[85%] md:w-[90%]"
+                className="mx-auto overflow-hidden rounded-lg shadow-md hover:shadow-xl transition h-[420px] md:h-[410px] lg:h-[570px] lg:-mt-[110px] w-[85%] md:w-[90%]"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.design} className="w-full h-full object-cover" />

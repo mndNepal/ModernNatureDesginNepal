@@ -29,9 +29,9 @@ const ProductCard = memo(function ProductCard({ product, onProductClick }: Produ
   const handleClick = () => {
     const normalizedName = product.name.toLowerCase().replace(/\s+/g, "");
     if (customizeProductsNormalized.has(normalizedName)) {
-      navigate(`/products/${normalizedName}`);
+      navigate(`/color-customizer/${normalizedName}`);
     } else {
-      navigate(`/product/${product.id}`);
+      navigate(`/color-customizer/${product.id}`);
     }
     onProductClick?.(product);
   };

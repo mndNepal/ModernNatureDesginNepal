@@ -53,7 +53,7 @@ const WhyChooseUs: FC = () => {
                                 <img
                                     src={image}
                                     alt=""
-                                    className="h-20 w-20 object-contain"
+                                    className="h-20 w-20 object-cover"
                                 />
                             </div>
 

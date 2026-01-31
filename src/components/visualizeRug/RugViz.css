@@ -264,11 +264,11 @@
 
 /* Bottom Bar */
 .rugviz-bottom-bar {
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 140px;
   background: white;
   border-top: 1px solid #e5e5e5;
   z-index: 50;
@@ -331,14 +331,14 @@
 .rugviz-scale-control {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
 }
 
 .rugviz-scale-btn {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid #e5e5e5;
+  border: 2px solid #e5e5e5;
   background: white;
   display: flex;
   align-items: center;
@@ -358,10 +358,11 @@
   flex-direction: column;
   align-items: center;
   width: 120px;
+  margin-bottom: 28px;
 }
 
 .rugviz-scale-label {
-  font-size: 11px;
+  font-size: 20px;
   color: #999;
   margin-bottom: 4px;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
 import './RugViz.css';
+import { Link } from 'react-router-dom';
 
 const RugViz = ({
   apiEndpoint = 'https://dharmendrasinghchaudhary44--sam3-flask-api-create-wsgi.modal.run/api/analyze',
@@ -823,13 +824,13 @@ const RugViz = ({
   return (
     <div className="rugviz-container">
       <nav className="rugviz-nav">
-        <div className="rugviz-logo">
+        <Link to="/" className="rugviz-logo">
           <img
             src="/assets/images/navbar/MND_Logo.png"
             alt="logo"
           />
           <span className="rugviz-logo-text">Modern Nature Design Nepal</span>
-        </div>
+        </Link>
 
         <div className="rugviz-nav-actions">
           <button className="rugviz-btn" onClick={onExit}>✕ <span className="rugviz-btn-text">Exit</span></button>

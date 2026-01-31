@@ -275,9 +275,9 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
 
   const get_toggle_text_list = (current_id) => {
     let textlist = [
-      { "id": 0, "text": "Show Chart 1200(Wool)" },
-      { "id": 1, "text": "Show Chart 1000(Viscos)" },
-      { "id": 2, "text": "Show Chart 700(TBH)" }
+      { "id": 0, "text": "Show Chart 1200 (Wool)" },
+      { "id": 1, "text": "Show Chart 1000 (Viscos)" },
+      { "id": 2, "text": "Show Chart 700 (Viscos)" }
     ]
     let filtered_text_list = textlist.filter((obj) => obj.id != current_id);
     return filtered_text_list;
@@ -651,7 +651,7 @@ const handleGoToAR = async () => {
                 onClick={handleGoToAR}
                 className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Try your creation in AR 📱  
+                Try this carpet in your room 📱  
               </button>
 
               

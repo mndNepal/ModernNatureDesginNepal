@@ -65,10 +65,10 @@ const latestDesigns: DesignCard[] = [
   },
   {
     id: 'design-4',
-    name: 'Manaslu Circuit',
+    name: 'Ilusion',
     title: 'Key Features',
     description: 'Clean lines and subtle textures for modern spaces',
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/ManasluCircut.webp',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Ilusion.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction

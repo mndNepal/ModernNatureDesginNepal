@@ -175,7 +175,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
             {/* 🔥 ORIGINAL Color Customizer Button — UNCHANGED */}
             <Link
-              to="/products"
+              to="/color-customizer"
               onMouseEnter={() => setActiveNavItem('Color Customizer')}
               onMouseLeave={() => setActiveNavItem(null)}
               className={`inline-flex items-center justify-center px-3 py-0.5 rounded-xl text-lg font-bold shadow-md transition-all duration-300
