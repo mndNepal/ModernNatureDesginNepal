@@ -398,7 +398,7 @@ const RugViz = ({
       overlayCanvas.style.cursor = interaction.hoveredHandle >= 0 ? 'grab' : 'default';
     };
 
-    // Mouse events
+    // Mouse events for move
     overlayCanvas.addEventListener('mousemove', handleMouseMove);
     overlayCanvas.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
