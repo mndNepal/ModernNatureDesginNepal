@@ -69,7 +69,7 @@ By using our website, you agree to respect our policies and creative integrity.`
         { name: "About", action: () => navigate("/about") },
         { name: "Services", action: () => navigate("/services") },
         { name: "Contact", action: () => navigate("/contact") },
-        { name: "Color Customizer", action: () => navigate("/products") },
+        { name: "Color Customizer", action: () => navigate("/color-customizer") },
       ],
     },
     about: {
