@@ -28,7 +28,7 @@ export default function RugVisualizerPage() {
   return (
     <>
     <RugViz
-      apiEndpoint="https://dharmendrasinghchaudhary44--sam3-flask-api-create-wsgi.modal.run/api/analyze"
+      apiEndpoint="https://modernnaturedesignnepal46--sam3-flask-api-create-wsgi.modal.run/api/analyze"
       rugImageUrl={payload.rugImageUrl}
       rugName={payload.rugName}
       onExit={() => navigate(-1)}

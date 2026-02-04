@@ -4,7 +4,7 @@ import './RugViz.css';
 import { Link } from 'react-router-dom';
 
 const RugViz = ({
-  apiEndpoint = 'https://dharmendrasinghchaudhary44--sam3-flask-api-create-wsgi.modal.run/api/analyze',
+  apiEndpoint = 'https://modernnaturedesignnepal46--sam3-flask-api-create-wsgi.modal.run/api/analyze',
   rugImageUrl = null,
   rugName = 'Rug',
   onExit = () => { },
