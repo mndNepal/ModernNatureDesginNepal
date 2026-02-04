@@ -255,9 +255,26 @@ export default function Navbar({ className = '' }: NavbarProps) {
               <Link
                 to="/color-customizer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-1 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 px-3 py-2 text-sm font-semibold text-gray-900 shadow-md"
+                className="mt-3 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 px-4 py-2 text-sm font-bold text-gray-900 shadow-md"
               >
-                Color Customizer
+                <span className="flex space-x-0.5 drop-shadow-sm tracking-wide">
+                  <span className="text-red-500">C</span>
+                  <span className="text-orange-500">O</span>
+                  <span className="text-yellow-400">L</span>
+                  <span className="text-green-500">O</span>
+                  <span className="text-blue-500">R</span>
+                  <span>&nbsp;</span>
+                  <span className="text-purple-500">C</span>
+                  <span className="text-pink-500">U</span>
+                  <span className="text-indigo-500">S</span>
+                  <span className="text-red-400">T</span>
+                  <span className="text-orange-400">O</span>
+                  <span className="text-yellow-500">M</span>
+                  <span className="text-green-400">I</span>
+                  <span className="text-blue-400">Z</span>
+                  <span className="text-purple-400">E</span>
+                  <span className="text-pink-400">R</span>
+                </span>
               </Link>
             </div>
           </div>
