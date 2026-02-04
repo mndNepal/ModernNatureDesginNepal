@@ -619,13 +619,14 @@ const handleGoToAR = async () => {
                 {showChartId == 0? 'Show Chart 1000(Viscose)':showChartId==1?'Show Chart 700(TBH)':'Show Chart 1200(Wool)'}
               </button> */}
 
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-4 mt-3 sm:mt-4">
+              {/* Chart toggle buttons */}
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4">
                 {get_toggle_text_list(showChartId).map((toggle_text_list) => {
                   return (
                     <button
                       key={toggle_text_list.id}
                       onClick={() => setShowChartId(toggle_text_list.id)}
-                      className="border border-gray-400 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-gray-200 transition"
+                      className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white/90 px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-colors"
                     >
                       {toggle_text_list.text}
                     </button>
@@ -638,20 +639,22 @@ const handleGoToAR = async () => {
 
             </div>
 
-            {/* Save PDF Button */}
-            <div className="flex justify-center ">
+            {/* Primary Actions */}
+            <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mt-2">
               <button
                 onClick={downloadPDF}
-                className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
+                className="inline-flex items-center justify-center gap-1 rounded-full bg-black px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-white shadow-md hover:bg-gray-800 active:scale-[0.98] transition"
               >
-                🖨 Save your creation as PDF
+                <span className="text-base sm:text-lg">🖨</span>
+                <span>Save as PDF</span>
               </button>
 
               <button
                 onClick={handleGoToAR}
-                className="mx-auto bg-black text-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-gray-800 transition-colors"
+                className="inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-white shadow-md hover:from-emerald-600 hover:to-teal-700 active:scale-[0.98] transition"
               >
-                Try this carpet in your room 📱  
+                <span>Try in your room</span>
+                <span className="text-base sm:text-lg">📱</span>
               </button>
 
               

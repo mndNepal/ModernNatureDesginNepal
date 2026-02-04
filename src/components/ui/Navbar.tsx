@@ -91,7 +91,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
     >
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20">
-
           {/* Logo */}
           <div onClick={scrollToTop} className="cursor-pointer">
             <Link to="/" className="flex items-center space-x-3">
@@ -108,7 +107,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Desktop Nav */}
           <div className="hidden xl:flex items-center space-x-6 ml-auto">
-
             <Link
               to="/about"
               className={`navbar-item px-4 py-3 rounded-lg ${activeNavItem === 'about' ? 'active' : ''}`}
@@ -118,10 +116,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
               About
             </Link>
 
-            <Link
-              to="/collections"
-              className="navbar-item px-4 py-3 rounded-lg"
-            >
+            <Link to="/collections" className="navbar-item px-4 py-3 rounded-lg">
               Collections
             </Link>
 
@@ -166,10 +161,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
               )}
             </div>
 
-            <Link
-              to="/contact"
-              className="navbar-item px-4 py-3 rounded-lg"
-            >
+            <Link to="/contact" className="navbar-item px-4 py-3 rounded-lg">
               Contact
             </Link>
 
@@ -179,9 +171,11 @@ export default function Navbar({ className = '' }: NavbarProps) {
               onMouseEnter={() => setActiveNavItem('Color Customizer')}
               onMouseLeave={() => setActiveNavItem(null)}
               className={`inline-flex items-center justify-center px-3 py-0.5 rounded-xl text-lg font-bold shadow-md transition-all duration-300
-                ${activeNavItem === 'Color Customizer'
-                  ? 'scale-105 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 text-gray-900'
-                  : 'bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 text-gray-900 hover:opacity-90 hover:scale-105'}`}
+                ${
+                  activeNavItem === 'Color Customizer'
+                    ? 'scale-105 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 text-gray-900'
+                    : 'bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 text-gray-900 hover:opacity-90 hover:scale-105'
+                }`}
             >
               <span className="flex space-x-0.5 drop-shadow-sm">
                 <span className="text-red-500">C</span>
@@ -207,11 +201,67 @@ export default function Navbar({ className = '' }: NavbarProps) {
           {/* Mobile Menu Button */}
           <button
             className="xl:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
+
+        {/* Mobile Nav Menu */}
+        {isMobileMenuOpen && (
+          <div className="xl:hidden mt-2 mb-3 rounded-2xl border border-white/40 bg-white/95 shadow-lg backdrop-blur-md">
+            <div className="flex flex-col px-4 py-3 space-y-2 text-sm">
+              <Link
+                to="/about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2 border-b border-gray-100 last:border-b-0 text-charcoal"
+              >
+                About
+              </Link>
+
+              <Link
+                to="/collections"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2 border-b border-gray-100 last:border-b-0 text-charcoal"
+              >
+                Collections
+              </Link>
+
+              <Link
+                to="/services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2 border-b border-gray-100 text-charcoal"
+              >
+                Services
+              </Link>
+
+              <Link
+                to="/rug-care"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2 border-b border-gray-100 text-charcoal"
+              >
+                Rug Care
+              </Link>
+
+              <Link
+                to="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2 border-b border-gray-100 text-charcoal"
+              >
+                Contact
+              </Link>
+
+              <Link
+                to="/color-customizer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-1 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 px-3 py-2 text-sm font-semibold text-gray-900 shadow-md"
+              >
+                Color Customizer
+              </Link>
+            </div>
+          </div>
+        )}
       </Container>
     </nav>
   );

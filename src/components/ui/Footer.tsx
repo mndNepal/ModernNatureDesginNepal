@@ -143,7 +143,7 @@ By using our website, you agree to respect our policies and creative integrity.`
                   Modern Nature Design Nepal
                 </h2>
               </div>
-              <p className="text-off-white/70 text-sm mb-4">
+              <p className="text-off-white/70 text-sm mb-4 text-justify">
                 Hand-Knotted in Nepal, each rug is a masterpiece of heritage and
                 precision, seamlessly blending traditional weaving artistry with
                 contemporary design. Crafted for discerning interiors around the
@@ -182,13 +182,16 @@ By using our website, you agree to respect our policies and creative integrity.`
             ))}
 
             <div
-              className={`transform transition-all duration-800 ${animatedElements.has("social")
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-                }`}
+              className={`transform transition-all duration-800 lg:col-span-6 xl:col-span-1 xl:row-start-1 xl:col-start-6 ${
+                animatedElements.has("social")
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
-              <h3 className="font-medium mb-3 text-sm ml-28">Follow Us</h3>
-              <div className="flex space-x-6 ml-24">
+              <h3 className="font-medium mb-3 text-sm text-left lg:text-center xl:text-left ml-0 xl:ml-28">
+                Follow Us
+              </h3>
+              <div className="flex justify-start lg:justify-center xl:justify-start space-x-6 ml-0 xl:ml-24">
                 {socialLinks.map((s, i) => (
                   <a
                     key={i}
