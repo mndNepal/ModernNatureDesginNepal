@@ -13,11 +13,12 @@ export default function Footer(): JSX.Element {
   const [modalType, setModalType] = useState<"terms" | "blog">("terms");
   const navigate = useNavigate();
   const [showFullBlog, setShowFullBlog] = useState(false);
+  const [showFullBlog2, setShowFullBlog2] = useState(false);
 
   const handleCloseModal = () => {
-  setShowModal(false);
-  setShowFullBlog(false);
-};
+    setShowModal(false);
+    setShowFullBlog(false);
+  };
 
   const legalText = `At Modern Nature Design Nepal, your trust, privacy, and creativity are our top priorities. Here’s everything you need to know when interacting with our website and services:
   
@@ -182,11 +183,10 @@ By using our website, you agree to respect our policies and creative integrity.`
             ))}
 
             <div
-              className={`transform transition-all duration-800 lg:col-span-6 xl:col-span-1 xl:row-start-1 xl:col-start-6 ${
-                animatedElements.has("social")
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
-              }`}
+              className={`transform transition-all duration-800 lg:col-span-6 xl:col-span-1 xl:row-start-1 xl:col-start-6 ${animatedElements.has("social")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+                }`}
             >
               <h3 className="font-medium mb-3 text-sm text-left lg:text-center xl:text-left ml-0 xl:ml-28">
                 Follow Us
@@ -217,7 +217,6 @@ By using our website, you agree to respect our policies and creative integrity.`
       {/* MODAL */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          {/* MODAL WRAPPER */}
           <div className="relative bg-white text-black rounded-xl max-w-3xl w-full max-h-[85vh]">
 
             <button
@@ -228,7 +227,6 @@ By using our website, you agree to respect our policies and creative integrity.`
               <span className="text-xl leading-none">×</span>
             </button>
 
-            {/* SCROLLABLE CONTENT */}
             <div className="p-6 overflow-y-auto max-h-[85vh]">
               <div className="pb-4 mb-4 border-b border-gray-200 pr-12">
                 <h2 className="text-xl font-bold">
@@ -244,7 +242,8 @@ By using our website, you agree to respect our policies and creative integrity.`
                 </div>
               ) : (
                 <article className="text-sm leading-relaxed space-y-10">
-                  {/* INTRO */}
+
+                  {/* ================= BLOG 1 ================= */}
                   <section className="space-y-4">
                     <h3 className="font-serif text-[22px]">
                       A Buyer’s Guide to Working with Hand-Knotted Rug Exporters in Nepal
@@ -456,17 +455,132 @@ By using our website, you agree to respect our policies and creative integrity.`
                         </p>
                       </section>
 
-                      <div className="flex">
-                        <button
-                          onClick={() => setShowFullBlog(false)}
-                          className="px-6 py-2 text-sm font-medium border border-black rounded-full hover:bg-black hover:text-white transition"
-                        >
-                          See less
-                        </button>
-                      </div>
-
+                      <button
+                        onClick={() => setShowFullBlog(false)}
+                        className="px-6 py-2 text-sm font-medium border border-black rounded-full hover:bg-black hover:text-white transition"
+                      >
+                        See less
+                      </button>
                     </div>
                   )}
+
+                  {/* ================= BLOG 2 ================= */}
+                  <section className="space-y-4 pt-10 border-t border-gray-200">
+                    <h3 className="font-serif text-[22px]">
+                      Why Nepalese Hand-Knotted Rug Exporters Are the First Choice of Global Designers
+                    </h3>
+
+                    <p>
+                      When it comes to high-end interior design, details make the difference—and few elements define a space as powerfully as a handcrafted rug. For designers working on luxury residential, hospitality, and commercial projects worldwide, Nepalese hand-knotted rugs have become a trusted choice rooted in craftsmanship, flexibility, and cultural heritage.
+                    </p>
+
+                    {!showFullBlog2 && (
+                      <button
+                        onClick={() => setShowFullBlog2(true)}
+                        className="px-6 py-2 text-sm font-medium border border-black rounded-full hover:bg-black hover:text-white transition"
+                      >
+                        Read more
+                      </button>
+                    )}
+                  </section>
+
+                  {showFullBlog2 && (
+                    <section className="space-y-4">
+                      <img src="/blog/4.png" className="w-full h-[350px] rounded-xl object-cover" />
+
+
+                      {/* SECTION 1 */}
+                      <h4 className="font-serif text-xl">1. Heritage Craftsmanship That Stands Apart</h4>
+                      <p>Nepal is home to master artisans whose rug-weaving skills have been passed down through generations. Nepalese hand-knotted rugs are admired for their precision, durability, and artistic detailing—ranging from classic Persian-inspired motifs to clean, contemporary designs.
+                        Each rug is crafted entirely by hand, often taking weeks or months to complete, resulting in a truly unique piece. This authenticity and individuality are what global designers value most.</p>
+
+
+                      {/* SECTION 2 */}
+                      <h4 className="font-serif text-xl">2. Complete Customization for Design-Led Projects</h4>
+                      <p>One of the key reasons designers prefer Nepalese exporters is the freedom to customize every aspect of a rug. Manufacturers offer:</p>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Custom sizes and shapes</li>
+                        <li>Tailored color palettes</li>
+                        <li>Exclusive designs or logos</li>
+                        <li>Material options including wool, silk, cotton, and jute</li>
+                      </ul>
+                      <p>From luxury hotels to private villas and boutique retail spaces, Nepalese rug manufacturers bring design concepts to life with precision and care.</p>
+
+                      {/* SECTION 3 */}
+                      <section className="space-y-4">
+                        <h4 className="font-serif text-xl">
+                          3. Versatile Styles and Rich Textures
+                        </h4>
+
+                        <p>
+                          Nepalese rug exporters offer an extensive variety of styles, making them ideal for diverse interior themes.
+                          Designers can choose from:
+                        </p>
+
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Traditional and classic motifs</li>
+                          <li>Modern and minimalist textures</li>
+                          <li>Eco-friendly jute and cotton rugs</li>
+                          <li>Bold tribal and artistic statement designs</li>
+                        </ul>
+
+                        <p>
+                          This versatility allows seamless integration into both timeless and trend-driven interiors.
+                        </p>
+                      </section>
+
+                      {/* SECTION 4 */}
+                      <section className="space-y-4">
+                        <h4 className="font-serif text-xl">
+                          4. Professional Export Support and Global Reach
+                        </h4>
+
+                        <p>
+                          Top Nepalese exporters combine artisanal excellence with international trade expertise.
+                          They provide reliable end-to-end services, including:
+                        </p>
+
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Timely global shipping</li>
+                          <li>Export documentation</li>
+                          <li>Quality inspections</li>
+                          <li>Sampling and pre-production approvals</li>
+                        </ul>
+
+                        <p>
+                          Companies like <strong>Genie Carpet Manufacturers</strong> work closely with global designers to ensure
+                          smooth communication, dependable timelines, and consistent quality.
+                        </p>
+                      </section>
+
+                      {/* SECTION 5 */}
+                      <section className="space-y-4">
+                        <h4 className="font-serif text-xl">
+                          5. Premium Quality at Competitive Value
+                        </h4>
+
+                        <p>
+                          Nepalese hand-knotted rugs deliver exceptional value. Designers benefit from premium materials,
+                          skilled craftsmanship, and competitive pricing—allowing them to create luxury interiors
+                          while maintaining budget control.
+                        </p>
+                      </section>
+
+                      <h4 className="font-serif text-xl">Final Thoughts</h4>
+                      <p>
+                        For global interior designers, Nepalese hand-knotted rug exporters offer the ideal balance of tradition, customization, quality, and reliability. From concept to completion, partnering with Nepalese rug manufacturers adds lasting value to both residential and commercial projects.
+                        Genie Carpet Manufacturers is proud to be among the trusted exporters bringing Nepalese craftsmanship to the global design community—offering timeless rugs that elevate every space.
+                      </p>
+
+                      <button
+                        onClick={() => setShowFullBlog2(false)}
+                        className="px-6 py-2 text-sm font-medium border border-black rounded-full hover:bg-black hover:text-white transition"
+                      >
+                        See less
+                      </button>
+                    </section>
+                  )}
+
                 </article>
               )}
 
@@ -482,6 +596,8 @@ By using our website, you agree to respect our policies and creative integrity.`
           </div>
         </div>
       )}
+
+
     </footer>
   );
 }
