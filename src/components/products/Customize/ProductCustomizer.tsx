@@ -276,8 +276,8 @@ const ProductCustomizer: React.FC<ProductCustomizerProps> = ({
   const get_toggle_text_list = (current_id) => {
     let textlist = [
       { "id": 0, "text": "Show Chart 1200 (Wool)" },
-      { "id": 1, "text": "Show Chart 1000 (Viscos)" },
-      { "id": 2, "text": "Show Chart 700 (Viscos)" }
+      { "id": 1, "text": "Show Chart 1000 (Viscose)" },
+      { "id": 2, "text": "Show Chart 700 (Viscose)" }
     ]
     let filtered_text_list = textlist.filter((obj) => obj.id != current_id);
     return filtered_text_list;
