@@ -836,7 +836,7 @@ const RugViz = ({
           <button className="rugviz-btn" onClick={onExit}>✕ <span className="rugviz-btn-text">Exit</span></button>
           <div className="rugviz-divider" />
           <button className="rugviz-btn" onClick={handleDownload}>↓ <span className="rugviz-btn-text">Download</span></button>
-          <button className="rugviz-btn" onClick={onProductPage}>ⓘ <span className="rugviz-btn-text">Product</span></button>
+          <button className="rugviz-btn" onClick={onProductPage}>ⓘ <span className="rugviz-btn-text">Products</span></button>
           <div className="rugviz-divider" />
 
           <button

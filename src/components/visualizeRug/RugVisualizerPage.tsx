@@ -32,7 +32,7 @@ export default function RugVisualizerPage() {
       rugImageUrl={payload.rugImageUrl}
       rugName={payload.rugName}
       onExit={() => navigate(-1)}
-      onProductPage={() => navigate(`/products/${payload.productId || ""}`)}
+      onProductPage={() => navigate(`/collections`)}
     />
 
     <Footer />

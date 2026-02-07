@@ -548,7 +548,7 @@ By using our website, you agree to respect our policies and creative integrity.`
                         </ul>
 
                         <p>
-                          Companies like <strong>Genie Carpet Manufacturers</strong> work closely with global designers to ensure
+                          Companies like <strong>Modern Nature Design Nepal</strong> work closely with global designers to ensure
                           smooth communication, dependable timelines, and consistent quality.
                         </p>
                       </section>

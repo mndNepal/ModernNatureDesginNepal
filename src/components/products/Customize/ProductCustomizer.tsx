@@ -653,8 +653,7 @@ const handleGoToAR = async () => {
                 onClick={handleGoToAR}
                 className="inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-white shadow-md hover:from-emerald-600 hover:to-teal-700 active:scale-[0.98] transition"
               >
-                <span>Try in your room</span>
-                <span className="text-base sm:text-lg">📱</span>
+                <span>Try in your space</span>
               </button>
 
               

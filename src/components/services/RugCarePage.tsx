@@ -131,7 +131,7 @@ const RugCarePage = () => {
           Rug Stain Removal Tips & Cleaning Solutions
         </h2>
 
-        <p className="text-base text-gray-600 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed text-justify mt-8">
+        <p className="text-base text-center text-gray-600 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed mt-8 mb-8">
           Different stains require different treatments and always test before applying.
         </p>
 
