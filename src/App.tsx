@@ -1,171 +1,233 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
+// import { BiMessageRoundedDots } from "react-icons/bi";
 
+// Eagerly load main pages for fast initial navigation
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import AankhiJhyal from "./components/products/Customize/AankhiJhyal";
-import Attraction from "./components/products/Customize/Attraction";
-import Baasn from "./components/products/Customize/Baasn";
-import BayLeaves from "./components/products/Customize/Bayleaves";
-import Bubbles from "./components/products/Customize/Bubbles";
-import BurningRope from "./components/products/Customize/BurningRope";
-import Cells from "./components/products/Customize/Cells";
-import Childhood from "./components/products/Customize/Childhood";
-import Festival from "./components/products/Customize/Festival";
-import FountainWater from "./components/products/Customize/FountainWater";
-import Gurung from "./components/products/Customize/Gurung";
-import Holi from "./components/products/Customize/Holi";
-import Imagination from "./components/products/Customize/Imagination";
-import JungleTribes from "./components/products/Customize/JungleTribes";
-import LakheFace from "./components/products/Customize/LakheFace";
-import Majesty from "./components/products/Customize/Majesty";
-import ManasluCircuit from "./components/products/Customize/ManasluCircuit";
-import Maze from "./components/products/Customize/Maze";
-import Mirror from "./components/products/Customize/Mirror";
-import MonkeyTemple from "./components/products/Customize/MonkeyTemple";
-import MorningSun from "./components/products/Customize/MorningSun";
-import NaghDaha from "./components/products/Customize/NaghDaha";
-import NamcheBazar from "./components/products/Customize/NamcheBazar";
-import OnBoard from "./components/products/Customize/OnBoard";
-import OnTheRoad from "./components/products/Customize/OnTheRoad";
-import BegnasLake from "./components/products/Customize/BegnasLake";
-import Path from "./components/products/Customize/Path";
-import RainForest from "./components/products/Customize/RainForest";
-import Retro from "./components/products/Customize/Retro";
-import SherpaLove from "./components/products/Customize/SherpaLove";
-import Shreepanch from "./components/products/Customize/Shreepanch";
-import Shyala from "./components/products/Customize/Shyala";
-import Sweet16 from "./components/products/Customize/Sweet16";
-import TeraiFarm from "./components/products/Customize/TeraiFarm";
-import Thoughts from "./components/products/Customize/Thoughts";
-import Tides from "./components/products/Customize/Tides";
-import Trek from "./components/products/Customize/Trek";
-import TsumValleyPatan from "./components/products/Customize/TsumValley";
-import UndefinedUniverse from "./components/products/Customize/UndefinedUniverse";
-import Vines from "./components/products/Customize/Vines";
-import WaterBrust from "./components/products/Customize/WaterBrust";
-import WaterCoin from "./components/products/Customize/WaterCoin";
-import Weave from "./components/products/Customize/Weave";
-import Pari from "./components/products/Customize/Pari";
-import Chakati from "./components/products/Customize/Chakati";
-import Chino from "./components/products/Customize/Chino";
-import Kaath from "./components/products/Customize/Kaath";
-import Landmark from "./components/products/Customize/Landmark";
-import Paisa from "./components/products/Customize/Paisa";
-import Ping from "./components/products/Customize/Ping";
-import PuranoJhyal from "./components/products/Customize/PuranoJhyal";
-import Smoke from "./components/products/Customize/Smoke";
-import AllCollections from "./components/products/Collections/AllCollections";
-import Mandro from "./components/products/Customize/Mandro";
-import Tihar from "./components/products/Customize/Tihar";
-import TheWall from "./components/products/Customize/TheWall";
-import Ring from "./components/products/Customize/Ring";
-import Lalitpur from "./components/products/Customize/Lalitpur";
-import BrokenMirror from "./components/products/Customize/BrokenMirror";
-import Illusion from "./components/products/Customize/Illusion";
-import Beehive from "./components/products/Customize/Beehive";
-import Kunda from "./components/products/Customize/Kunda";
-import BudiAunla from "./components/products/Customize/BudiAunla";
-import Sukool from "./components/products/Customize/Sukool";
-import WaterLilies from "./components/products/Customize/WaterLilies";
-import Echo from "./components/products/Customize/Echo";
-import BirendraTaal from "./components/products/Customize/BirendraTaal";
-import Phulchoki from "./components/products/Customize/Phulchoki";
-import Kapaal from "./components/products/Customize/Kapaal";
-import Thaali from "./components/products/Customize/Thaali";
-import OurExperience from "./components/home/OurExperience";
+// import RugViz from "./components/visualizeRug/RugViz"
+import RugVisualizerPage from "./components/visualizeRug/RugVisualizerPage";
+import RugCare from "./pages/RugCare";
+
+// Lazy load heavy components - only loaded when user navigates to them
+const AllCollections = lazy(() => import("./components/products/Collections/AllCollections"));
+const OurExperience = lazy(() => import("./components/home/OurExperience"));
+
+// Lazy load all product customizer pages
+const AankhiJhyal = lazy(() => import("./components/products/Customize/AankhiJhyalNew"));
+const Attraction = lazy(() => import("./components/products/Customize/AttractionNew"));
+const Baasn = lazy(() => import("./components/products/Customize/BaasnNew"));
+const BayLeaves = lazy(() => import("./components/products/Customize/BayleavesNew"));
+const Beehive = lazy(() => import("./components/products/Customize/BeehiveNew"));
+const BegnasLake = lazy(() => import("./components/products/Customize/BegnasLakeNew"));
+const BirendraTaal = lazy(() => import("./components/products/Customize/BirendraTaalNew"));
+const BrokenMirror = lazy(() => import("./components/products/Customize/BrokenMirrorNew"));
+const Bubbles = lazy(() => import("./components/products/Customize/BubblesNew"));
+const BudiAunla = lazy(() => import("./components/products/Customize/BudiAunlaNew"));
+const BurningRope = lazy(() => import("./components/products/Customize/BurningRopeNew"));
+const Cells = lazy(() => import("./components/products/Customize/CellsNew"));
+const Chakati = lazy(() => import("./components/products/Customize/ChakatiNew"));
+const Childhood = lazy(() => import("./components/products/Customize/ChildhoodNew"));
+const Chino = lazy(() => import("./components/products/Customize/ChinoNew"));
+const Echo = lazy(() => import("./components/products/Customize/EchoNew"));
+const Festival = lazy(() => import("./components/products/Customize/FestivalNew"));
+const FountainWater = lazy(() => import("./components/products/Customize/FountainWaterNew"));
+const Gurung = lazy(() => import("./components/products/Customize/GurungNew"));
+const Holi = lazy(() => import("./components/products/Customize/HoliNew"));
+const Illusion = lazy(() => import("./components/products/Customize/IllusionNew"));
+const Imagination = lazy(() => import("./components/products/Customize/ImaginationNew"));
+const JungleTribes = lazy(() => import("./components/products/Customize/JungleTribesNew"));
+const Kaath = lazy(() => import("./components/products/Customize/KaathNew"));
+const Kapaal = lazy(() => import("./components/products/Customize/KapaalNew"));
+const Kunda = lazy(() => import("./components/products/Customize/KundaNew"));
+const LakheFace = lazy(() => import("./components/products/Customize/LakheFaceNew"));
+const Lalitpur = lazy(() => import("./components/products/Customize/LalitpurNew"));
+const Landmark = lazy(() => import("./components/products/Customize/LandmarkNew"));
+const Majesty = lazy(() => import("./components/products/Customize/MajestyNew"));
+const ManasluCircuit = lazy(() => import("./components/products/Customize/ManasluCircuitNew"));
+const Mandro = lazy(() => import("./components/products/Customize/MandroNew"));
+const Maze = lazy(() => import("./components/products/Customize/MazeNew"));
+const Mirror = lazy(() => import("./components/products/Customize/MirrorNew"));
+const MonkeyTemple = lazy(() => import("./components/products/Customize/MonkeyTempleNew"));
+const MorningSun = lazy(() => import("./components/products/Customize/MorningSunNew"));
+const NaghDaha = lazy(() => import("./components/products/Customize/NaghDahaNew"));
+const NamcheBazar = lazy(() => import("./components/products/Customize/NamcheBazarNew"));
+const OnBoard = lazy(() => import("./components/products/Customize/OnBoardNew"));
+const OnTheRoad = lazy(() => import("./components/products/Customize/OnTheRoadNew"));
+const Paisa = lazy(() => import("./components/products/Customize/PaisaNew"));
+const Pari = lazy(() => import("./components/products/Customize/PariNew"));
+const Path = lazy(() => import("./components/products/Customize/PathNew"));
+const Phulchoki = lazy(() => import("./components/products/Customize/PhulchokiNew"));
+const Ping = lazy(() => import("./components/products/Customize/PingNew"));
+const PuranoJhyal = lazy(() => import("./components/products/Customize/PuranoJhyalNew"));
+const RainForest = lazy(() => import("./components/products/Customize/RainForestNew"));
+const Retro = lazy(() => import("./components/products/Customize/RetroNew"));
+const Ring = lazy(() => import("./components/products/Customize/RingNew"));
+const SherpaLove = lazy(() => import("./components/products/Customize/SherpaLoveNew"));
+const Shreepanch = lazy(() => import("./components/products/Customize/ShreepanchNew"));
+const Shyala = lazy(() => import("./components/products/Customize/ShyalaNew"));
+const Smoke = lazy(() => import("./components/products/Customize/SmokeNew"));
+const Sukool = lazy(() => import("./components/products/Customize/SukoolNew"));
+const Sweet16 = lazy(() => import("./components/products/Customize/Sweet16New"));
+const TeraiFarm = lazy(() => import("./components/products/Customize/TeraiFarmNew"));
+const Thaali = lazy(() => import("./components/products/Customize/ThaaliNew"));
+const TheWall = lazy(() => import("./components/products/Customize/TheWallNew"));
+const Thoughts = lazy(() => import("./components/products/Customize/ThoughtsNew"));
+const Tides = lazy(() => import("./components/products/Customize/TidesNew"));
+const Tihar = lazy(() => import("./components/products/Customize/TiharNew"));
+const Trek = lazy(() => import("./components/products/Customize/TrekNew"));
+const TsumValleyPatan = lazy(() => import("./components/products/Customize/TsumValleyNew"));
+const UndefinedUniverse = lazy(() => import("./components/products/Customize/UndefinedUniverseNew"));
+const Vines = lazy(() => import("./components/products/Customize/VinesNew"));
+const WaterBrust = lazy(() => import("./components/products/Customize/WaterBrustNew"));
+const WaterCoin = lazy(() => import("./components/products/Customize/WaterCoinNew"));
+const WaterLilies = lazy(() => import("./components/products/Customize/WaterLiliesNew"));
+const Weave = lazy(() => import("./components/products/Customize/WeaveNew"));
+const Kopila = lazy(() => import("./components/products/Customize/KopilaNew"));
+const Chaal = lazy(() => import("./components/products/Customize/ChaalNew"));
+const AnkhaNani = lazy(() => import("./components/products/Customize/AnkhaNaniNew"));
+const Ilusion = lazy(() => import("./components/products/Customize/IlusionNew"));
+const Bloom = lazy(() => import("./components/products/Customize/BloomNew"));
+const Maya = lazy(() => import("./components/products/Customize/MayaNew"));
+const Graha = lazy(() => import("./components/products/Customize/GrahaNew"));
+const Scale = lazy(() => import("./components/products/Customize/ScaleNew"));
+const TulsiBibaha = lazy(() => import("./components/products/Customize/TulsiBibahaNew"));
+const Pooja = lazy(() => import("./components/products/Customize/PoojaNew"));
+const Trisul = lazy(() => import("./components/products/Customize/TrisulNew"));
+const RoseGarland = lazy(() => import("./components/products/Customize/RoseGarlandNew"));
 
 
 
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-off-white">
+      <div className="text-center">
+        <div className="w-12 h-12 border-4 border-charcoal border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-charcoal/70">Loading...</p>
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/craftmanship" element={<OurExperience />} />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/craftmanship" element={<OurExperience />} />
 
-        <Route path="/collections" element={<AllCollections />} />
-        <Route path="/products" element={<Products />} />
+          <Route path="/collections" element={<AllCollections />} />
+          <Route path="/color-customizer" element={<Products />} />
 
-        <Route path="/products/aankhijhyal" element={<AankhiJhyal />} />
-        <Route path="/products/attraction" element={<Attraction />} />
-        <Route path="/products/baasn" element={<Baasn />} />
-        <Route path="/products/bayleaves" element={<BayLeaves />} />
-        <Route path="/products/bubbles" element={<Bubbles />} />
-        <Route path="/products/burningrope" element={<BurningRope />} />
-        <Route path="/products/cells" element={<Cells />} />
-        <Route path="/products/childhood" element={<Childhood />} />
-        <Route path="/products/festival" element={<Festival />} />
-        <Route path="/products/fountainwater" element={<FountainWater />} />
-        <Route path="/products/gurung" element={<Gurung />} />
-        <Route path="/products/holi" element={<Holi />} />
-        <Route path="/products/imagination" element={<Imagination />} />
-        <Route path="/products/jungletribes" element={<JungleTribes />} />
-        <Route path="/products/lakheface" element={<LakheFace />} />
-        <Route path="/products/majesty" element={<Majesty />} />
-        <Route path="/products/manaslucircuit" element={<ManasluCircuit />} />
-        <Route path="/products/maze" element={<Maze />} />
-        <Route path="/products/mirror" element={<Mirror />} />
-        <Route path="/products/monkeytemple" element={<MonkeyTemple />} />
-        <Route path="/products/morningsun" element={<MorningSun />} />
-        <Route path="/products/naghdaha" element={<NaghDaha />} />
-        <Route path="/products/namchebazar" element={<NamcheBazar />} />
-        <Route path="/products/onboard" element={<OnBoard />} />
-        <Route path="/products/ontheroad" element={<OnTheRoad />} />
-        <Route path="/products/begnaslake" element={<BegnasLake />} />
-        <Route path="/products/path" element={<Path />} />
-        <Route path="/products/rainforest" element={<RainForest />} />
-        <Route path="/products/retro" element={<Retro />} />
-        <Route path="/products/sherpalove" element={<SherpaLove />} />
-        <Route path="/products/shreepanch" element={<Shreepanch />} />
-        <Route path="/products/shyala" element={<Shyala />} />
-        <Route path="/products/sweet16" element={<Sweet16 />} />
-        <Route path="/products/teraifarm" element={<TeraiFarm />} />
-        <Route path="/products/thoughts" element={<Thoughts />} />
-        <Route path="/products/tides" element={<Tides />} />
-        <Route path="/products/trek" element={<Trek />} />
-        <Route path="/products/tsumvalleypatan" element={<TsumValleyPatan />} />
-        <Route path="/products/undefineduniverse" element={<UndefinedUniverse />} />
-        <Route path="/products/vines" element={<Vines />} />
-        <Route path="/products/waterbrust" element={<WaterBrust />} />
-        <Route path="/products/watercoin" element={<WaterCoin />} />
-        <Route path="/products/weave" element={<Weave />} />
-        <Route path="/products/pari" element={<Pari />} />
-        <Route path="/products/chakati" element={<Chakati />} />
-        <Route path="/products/chino" element={<Chino />} />
-        <Route path="/products/kaath" element={<Kaath />} />
-        <Route path="/products/landmark" element={<Landmark />} />
-        <Route path="/products/paisa" element={<Paisa />} />
-        <Route path="/products/ping" element={<Ping />} />
-        <Route path="/products/puranojhyal" element={<PuranoJhyal />} />
-        <Route path="/products/smoke" element={<Smoke />} />
-        <Route path="/products/mandro" element={<Mandro />} />
-        <Route path="/products/tihar" element={<Tihar />} />
-        <Route path="/products/thewall" element={<TheWall />} />
-        <Route path="/products/ring" element={<Ring />} />
-        <Route path="/products/lalitpur" element={<Lalitpur />} />
-        <Route path="/products/brokenmirror" element={<BrokenMirror />} />
-        <Route path="/products/illusion" element={<Illusion />} />
-        <Route path="/products/beehive" element={<Beehive />} />
-        <Route path="/products/kunda" element={<Kunda />} />
-        <Route path="/products/budiaunla" element={<BudiAunla />} />
-        <Route path="/products/sukool" element={<Sukool />} />
-        <Route path="/products/waterlilies" element={<WaterLilies />} />
-        <Route path="/products/birendrataal" element={<BirendraTaal />} />
-        <Route path="/products/echo" element={<Echo />} />
-        <Route path="/products/kapaal" element={<Kapaal />} />
-        <Route path="/products/phulchoki" element={<Phulchoki />} />
-        <Route path="/products/thaali" element={<Thaali />} />
+          <Route path="/color-customizer/aankhijhyal" element={<AankhiJhyal />} />
+          <Route path="/color-customizer/attraction" element={<Attraction />} />
+          <Route path="/color-customizer/baasn" element={<Baasn />} />
+          <Route path="/color-customizer/bayleaves" element={<BayLeaves />} />
+          <Route path="/color-customizer/beehive" element={<Beehive />} />
+          <Route path="/color-customizer/begnaslake" element={<BegnasLake />} />
+          <Route path="/color-customizer/birendrataal" element={<BirendraTaal />} />
+          <Route path="/color-customizer/brokenmirror" element={<BrokenMirror />} />
+          <Route path="/color-customizer/bubbles" element={<Bubbles />} />
+          <Route path="/color-customizer/budiaunla" element={<BudiAunla />} />
+          <Route path="/color-customizer/burningrope" element={<BurningRope />} />
+          <Route path="/color-customizer/cells" element={<Cells />} />
+          <Route path="/color-customizer/chakati" element={<Chakati />} />
+          <Route path="/color-customizer/childhood" element={<Childhood />} />
+          <Route path="/color-customizer/chino" element={<Chino />} />
+          <Route path="/color-customizer/echo" element={<Echo />} />
+          <Route path="/color-customizer/festival" element={<Festival />} />
+          <Route path="/color-customizer/fountainwater" element={<FountainWater />} />
+          <Route path="/color-customizer/gurung" element={<Gurung />} />
+          <Route path="/color-customizer/holi" element={<Holi />} />
+          <Route path="/color-customizer/illusion" element={<Illusion />} />
+          <Route path="/color-customizer/imagination" element={<Imagination />} />
+          <Route path="/color-customizer/jungletribes" element={<JungleTribes />} />
+          <Route path="/color-customizer/kaath" element={<Kaath />} />
+          <Route path="/color-customizer/kapaal" element={<Kapaal />} />
+          <Route path="/color-customizer/kunda" element={<Kunda />} />
+          <Route path="/color-customizer/lakheface" element={<LakheFace />} />
+          <Route path="/color-customizer/lalitpur" element={<Lalitpur />} />
+          <Route path="/color-customizer/landmark" element={<Landmark />} />
+          <Route path="/color-customizer/majesty" element={<Majesty />} />
+          <Route path="/color-customizer/manaslucircuit" element={<ManasluCircuit />} />
+          <Route path="/color-customizer/mandro" element={<Mandro />} />
+          <Route path="/color-customizer/maze" element={<Maze />} />
+          <Route path="/color-customizer/mirror" element={<Mirror />} />
+          <Route path="/color-customizer/monkeytemple" element={<MonkeyTemple />} />
+          <Route path="/color-customizer/morningsun" element={<MorningSun />} />
+          <Route path="/color-customizer/naghdaha" element={<NaghDaha />} />
+          <Route path="/color-customizer/namchebazar" element={<NamcheBazar />} />
+          <Route path="/color-customizer/onboard" element={<OnBoard />} />
+          <Route path="/color-customizer/ontheroad" element={<OnTheRoad />} />
+          <Route path="/color-customizer/paisa" element={<Paisa />} />
+          <Route path="/color-customizer/pari" element={<Pari />} />
+          <Route path="/color-customizer/path" element={<Path />} />
+          <Route path="/color-customizer/phulchoki" element={<Phulchoki />} />
+          <Route path="/color-customizer/ping" element={<Ping />} />
+          <Route path="/color-customizer/puranojhyal" element={<PuranoJhyal />} />
+          <Route path="/color-customizer/rainforest" element={<RainForest />} />
+          <Route path="/color-customizer/retro" element={<Retro />} />
+          <Route path="/color-customizer/ring" element={<Ring />} />
+          <Route path="/color-customizer/sherpalove" element={<SherpaLove />} />
+          <Route path="/color-customizer/shreepanch" element={<Shreepanch />} />
+          <Route path="/color-customizer/shyala" element={<Shyala />} />
+          <Route path="/color-customizer/smoke" element={<Smoke />} />
+          <Route path="/color-customizer/sukool" element={<Sukool />} />
+          <Route path="/color-customizer/sweet16" element={<Sweet16 />} />
+          <Route path="/color-customizer/teraifarm" element={<TeraiFarm />} />
+          <Route path="/color-customizer/thaali" element={<Thaali />} />
+          <Route path="/color-customizer/thewall" element={<TheWall />} />
+          <Route path="/color-customizer/thoughts" element={<Thoughts />} />
+          <Route path="/color-customizer/tides" element={<Tides />} />
+          <Route path="/color-customizer/tihar" element={<Tihar />} />
+          <Route path="/color-customizer/trek" element={<Trek />} />
+          <Route path="/color-customizer/tsumvalleypatan" element={<TsumValleyPatan />} />
+          <Route path="/color-customizer/undefineduniverse" element={<UndefinedUniverse />} />
+          <Route path="/color-customizer/vines" element={<Vines />} />
+          <Route path="/color-customizer/waterbrust" element={<WaterBrust />} />
+          <Route path="/color-customizer/watercoin" element={<WaterCoin />} />
+          <Route path="/color-customizer/waterlilies" element={<WaterLilies />} />
+          <Route path="/color-customizer/weave" element={<Weave />} />
+          <Route path="/color-customizer/kopila" element={<Kopila />} />
+          <Route path="/color-customizer/chaal" element={<Chaal />} />
+          <Route path="/color-customizer/ankhanani" element={<AnkhaNani />} />
+          <Route path="/color-customizer/ilusion" element={<Ilusion />} />
+          <Route path="/color-customizer/bloom" element={<Bloom />} />
+          <Route path="/color-customizer/maya" element={<Maya />} />
+          <Route path="/color-customizer/graha" element={<Graha />} />
+          <Route path="/color-customizer/scale" element={<Scale />} />
+          <Route path="/color-customizer/tulsibibaha" element={<TulsiBibaha />} />
+          <Route path="/color-customizer/pooja" element={<Pooja />} />
+          <Route path="/color-customizer/trisul" element={<Trisul />} />
+          <Route path="/color-customizer/rosegarland" element={<RoseGarland />} />
 
 
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/rug-care" element={<RugCare />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/rug-visualizer" element={<RugVisualizerPage />} />
+        </Routes>
+      </Suspense>
+
+      {/* 💬 Chatbot Floating Button */}
+      {/* <button
+        onClick={() => {
+          // TODO: open chatbot modal / widget
+          console.log("Open Chatbot");
+        }}
+        className="fixed bottom-28 right-8 z-50 bg-blue-600 text-white rounded-full p-3 sm:p-4 shadow-lg hover:scale-110 transition-transform"
+      >
+        <BiMessageRoundedDots className="w-7 h-7 sm:w-10 sm:h-10" />
+      </button> */}
+
 
       {/* 🔥 WhatsApp Floating Button */}
 
@@ -173,9 +235,9 @@ export default function App() {
         href="https://wa.me/9779851197564"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-10 right-8 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform"
+        className="fixed bottom-10 right-8 z-50 bg-green-500 text-white rounded-full p-3 sm:p-4 shadow-lg hover:scale-110 transition-transform"
       >
-        <FaWhatsapp size={40} />
+        <FaWhatsapp className="w-7 h-7 sm:w-10 sm:h-10" />
       </a>
     </>
   );

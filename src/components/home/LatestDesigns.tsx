@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, memo, useCallback } from 'react';
 import { X } from 'lucide-react';
 import Container from '../ui/Container.tsx';
 
@@ -65,10 +65,10 @@ const latestDesigns: DesignCard[] = [
   },
   {
     id: 'design-4',
-    name: 'Manaslu Circuit',
+    name: 'Ilusion',
     title: 'Key Features',
     description: 'Clean lines and subtle textures for modern spaces',
-    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/ManasluCircut.webp',
+    image: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Ilusion.webp',
     detailedDescription: `
             Hand-knotted by master artisans
             Premium yarn construction
@@ -101,10 +101,10 @@ interface CarouselCardProps {
   index?: number;
 }
 
-function CarouselCard({ design, onClick, isVisible = true, index = 0 }: CarouselCardProps) {
+const CarouselCard = memo(function CarouselCard({ design, onClick, isVisible = true, index = 0 }: CarouselCardProps) {
   return (
     <div
-      className={`flex-shrink-0 w-72 sm:w-80 h-80 sm:h-96 cursor-pointer group transition-all duration-500 hover:scale-105 hover:z-20 relative transform will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+      className={`flex-shrink-0 w-40 sm:w-80 h-64 sm:h-96 cursor-pointer group transition-all duration-500 hover:scale-105 hover:z-20 relative transform will-change-transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       style={{
         transitionDelay: `${400 + (index * 100)}ms`,
@@ -119,6 +119,7 @@ function CarouselCard({ design, onClick, isVisible = true, index = 0 }: Carousel
             alt={design.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
         </div>
@@ -142,9 +143,9 @@ function CarouselCard({ design, onClick, isVisible = true, index = 0 }: Carousel
       </div>
     </div>
   );
-}
+});
 
-function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | null; isOpen: boolean; onClose: () => void }) {
+const ExpandedCardModal = memo(function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | null; isOpen: boolean; onClose: () => void }) {
   if (!isOpen || !design) return null;
 
   return (
@@ -209,7 +210,7 @@ function ExpandedCardModal({ design, isOpen, onClose }: { design: DesignCard | n
       </div>
     </div>
   );
-}
+});
 
 export default function LatestDesigns() {
   const [selectedDesign, setSelectedDesign] = useState<DesignCard | null>(null);
@@ -247,12 +248,20 @@ export default function LatestDesigns() {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-scroll functionality
+  // Auto-scroll functionality with visibility detection
   useEffect(() => {
     const carousel = carouselRef.current;
     if (!carousel || isPaused) return;
 
+    let isTabVisible = !document.hidden;
+
     const scroll = () => {
+      // Don't animate if tab is not visible - saves CPU
+      if (!isTabVisible) {
+        animationRef.current = requestAnimationFrame(scroll);
+        return;
+      }
+
       scrollPosition.current += 0.8; // Smooth scrolling speed
 
       // Reset position when we've scrolled through one complete set
@@ -268,6 +277,13 @@ export default function LatestDesigns() {
       animationRef.current = requestAnimationFrame(scroll);
     };
 
+    // Handle tab visibility changes
+    const handleVisibilityChange = () => {
+      isTabVisible = !document.hidden;
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     // Start from the middle set to allow seamless backward looping if needed
     const cardWidth = 320 + 24;
     const singleSetWidth = cardWidth * latestDesigns.length;
@@ -276,29 +292,30 @@ export default function LatestDesigns() {
     animationRef.current = requestAnimationFrame(scroll);
 
     return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
   }, [isPaused]);
 
-  const handleCardClick = (design: DesignCard) => {
+  const handleCardClick = useCallback((design: DesignCard) => {
     setSelectedDesign(design);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
     setTimeout(() => setSelectedDesign(null), 300);
-  };
+  }, []);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setIsPaused(true);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsPaused(false);
-  };
+  }, []);
 
   return (
     <>
@@ -346,8 +363,8 @@ export default function LatestDesigns() {
           </div>
 
           {/* Gradient overlays for smooth edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-r from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-l from-off-white via-off-white/80 to-transparent pointer-events-none z-10" />
         </div>
 
         {/* Instructions */}

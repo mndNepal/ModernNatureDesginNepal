@@ -14,8 +14,8 @@ interface ServiceSection {
 const services: ServiceSection[] = [
   {
     id: "1",
-    title: "Strike-Offs & Samples",
-    subtitle: "See. Feel. Perfect Your Design.",
+    title: "Strike-off & Samples",
+    subtitle: "From Feel to Finish",
     image:
       "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service1.webp",
     description: `
@@ -69,7 +69,7 @@ const services: ServiceSection[] = [
   {
     id: "5",
     title: "Shipment & Delivery",
-    subtitle: "Your Rugs, Anywhere in the World",
+    subtitle: "Rugs Without Borders",
     image:
       "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/service5.jpeg",
     description: `
@@ -97,53 +97,53 @@ const Services: React.FC = () => {
   const secondRowServices = services.slice(3);
 
   return (
-    <section className="relative z-30 min-h-screen py-28 flex justify-center bg-cover bg-center bg-no-repeat bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/1c4725c6-9f4d-4f84-a439-197e6e827a29.jpg')]">
-      <div className="w-11/12 md:w-4/5">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+    <section className="relative z-30 min-h-screen py-16 sm:py-20 md:py-28 flex justify-center bg-cover bg-center bg-no-repeat bg-[url('https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/1c4725c6-9f4d-4f84-a439-197e6e827a29.jpg')]">
+      <div className="w-[95%] sm:w-11/12 md:w-4/5 px-2 sm:px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-gray-900 pt-6 sm:pt-0">
           Our Services
         </h1>
 
-        {/* First Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10 place-items-center">
+        {/* First Row - 3 cards */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-6 md:mb-10">
           {firstRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border cursor-pointer"
+              className="w-[280px] sm:w-[46%] lg:w-[320px] xl:w-[340px] max-w-[340px] bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden border cursor-pointer"
               onClick={() => setActiveService(service)}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-56 object-cover"
+                className="w-full h-40 sm:h-44 md:h-48 object-cover"
               />
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold">{service.title}</h2>
-                <p className="text-lg">{service.subtitle}</p>
+              <div className="p-4 sm:p-4 md:p-5">
+                <h2 className="text-lg sm:text-lg md:text-xl font-semibold">{service.title}</h2>
+                <p className="text-sm sm:text-sm md:text-base">{service.subtitle}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Second Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center ml-40 mr-40">
+        {/* Second Row - 2 cards */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6">
           {secondRowServices.map((service) => (
             <motion.div
               key={service.id}
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-[380px] bg-gray-200 rounded-2xl shadow-md overflow-hidden border cursor-pointer"
+              className="w-[280px] sm:w-[46%] lg:w-[320px] xl:w-[340px] max-w-[340px] bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden border cursor-pointer"
               onClick={() => setActiveService(service)}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-56 object-cover"
+                className="w-full h-40 sm:h-44 md:h-48 object-cover"
               />
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold">{service.title}</h2>
-                <p className="text-lg">{service.subtitle}</p>
+              <div className="p-4 sm:p-4 md:p-5">
+                <h2 className="text-lg sm:text-lg md:text-xl font-semibold">{service.title}</h2>
+                <p className="text-sm sm:text-sm md:text-base">{service.subtitle}</p>
               </div>
             </motion.div>
           ))}
@@ -153,49 +153,58 @@ const Services: React.FC = () => {
         <AnimatePresence>
           {activeService && (
             <motion.div
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex items-center justify-center p-6"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 md:p-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setActiveService(null)}
             >
               <motion.div
-                className="bg-white rounded-3xl shadow-2xl w-full max-w-5xl flex flex-col md:flex-row overflow-hidden"
+                className="bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-2xl flex flex-col md:flex-row overflow-hidden max-h-[80vh]"
                 initial={{ scale: 0.95, y: 50, opacity: 0 }}
                 animate={{ scale: 1, y: 0, opacity: 1 }}
                 exit={{ scale: 0.95, y: 50, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
               >
-                <img
-                  src={activeService.image}
-                  alt={activeService.title}
-                  className="md:w-1/2 h-64 md:h-auto object-cover"
-                />
+                {/* Image Section */}
+                <div className="md:w-2/5 flex-shrink-0">
+                  <img
+                    src={activeService.image}
+                    alt={activeService.title}
+                    className="w-full h-40 sm:h-48 md:h-full object-cover"
+                  />
+                </div>
 
-                <div className="md:w-1/2 p-8 overflow-y-auto max-h-[90vh]">
-                  <div className="flex justify-between mb-4">
-                    <h2 className="text-3xl font-semibold">
+                {/* Content Section */}
+                <div className="md:w-3/5 p-4 sm:p-5 overflow-y-auto max-h-[45vh] md:max-h-[80vh]">
+                  <div className="flex justify-between items-start mb-2 sm:mb-3">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold pr-2">
                       {activeService.title}
                     </h2>
-                    <button onClick={() => setActiveService(null)}>
-                      <X size={28} />
+                    <button 
+                      onClick={() => setActiveService(null)}
+                      className="flex-shrink-0 p-1 hover:bg-gray-100 rounded-full transition-colors"
+                    >
+                      <X size={20} />
                     </button>
                   </div>
 
-                  <p className="text-lg mb-6">
+                  <p className="text-sm sm:text-base font-medium text-gray-600 mb-3 sm:mb-4">
                     {activeService.subtitle}
                   </p>
 
                   <div
-                    className="text-gray-700"
+                    className="text-xs sm:text-sm text-gray-700 leading-relaxed"
                     dangerouslySetInnerHTML={{
                       __html: activeService.description,
                     }}
                   />
 
                   {activeService.id === "3" && (
-                    <div className="mt-8 flex justify-center">
+                    <div className="mt-4 sm:mt-6 flex justify-center">
                       <Link
                         to="/products"
-                        className="inline-flex items-center px-6 py-2 rounded-xl text-lg font-bold shadow-md transition-all duration-300
+                        className="inline-flex items-center px-4 py-2 rounded-lg text-sm sm:text-base font-bold shadow-md transition-all duration-300
                         bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 hover:scale-105"
                       >
                         COLOR CUSTOMIZER

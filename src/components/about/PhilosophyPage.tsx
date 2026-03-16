@@ -147,7 +147,7 @@ const PhilosophyPage: React.FC = () => {
   const cards = [
     {
       id: "mission",
-      icon: <Heart className="w-8 h-8 text-amber-600" />,
+      icon: <Heart className="w-full h-full text-amber-600" />,
       title: "Our Mission",
       content: (
         <>
@@ -165,7 +165,7 @@ const PhilosophyPage: React.FC = () => {
     },
     {
       id: "vision",
-      icon: <Globe className="w-8 h-8 text-amber-600" />,
+      icon: <Globe className="w-full h-full text-amber-600" />,
       title: "Our Vision",
       content: (
         <>
@@ -183,7 +183,7 @@ const PhilosophyPage: React.FC = () => {
     },
     {
       id: "values",
-      icon: <Compass className="w-8 h-8 text-amber-600" />,
+      icon: <Compass className="w-full h-full text-amber-600" />,
       title: "Our Values",
       content: (
         <ul className="list-disc list-inside text-gray-700 text-lg leading-relaxed space-y-2">
@@ -196,7 +196,7 @@ const PhilosophyPage: React.FC = () => {
     },
     {
       id: "craftsmanship",
-      icon: <Scissors className="w-8 h-8 text-amber-600" />,
+      icon: <Scissors className="w-full h-full text-amber-600" />,
       title: "Craftsmanship at Its Finest",
       content: (
         <>
@@ -222,21 +222,21 @@ const PhilosophyPage: React.FC = () => {
 
   return (
     <motion.section
-      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-20 px-6 md:px-20"
+      className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
-      <div className="max-w-6xl mx-auto text-center space-y-10">
+      <div className="max-w-6xl mx-auto text-center space-y-6 sm:space-y-10">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-gray-800 drop-shadow-sm"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 drop-shadow-sm"
           variants={fadeInUp}
         >
           Our Philosophy
         </motion.h2>
         <motion.p
-          className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto"
+          className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto"
           variants={fadeInUp}
         >
           Discover the values and vision that shape every rug we create - a blend of heritage, ethics, and artistic excellence.
@@ -244,7 +244,7 @@ const PhilosophyPage: React.FC = () => {
 
         {/* Cards Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mt-6 sm:mt-10"
           variants={fadeInUp}
         >
           {cards.map((card) => (
@@ -253,10 +253,10 @@ const PhilosophyPage: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setActiveCard(card.id)}
-              className="cursor-pointer bg-gray-200 shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl p-8 flex flex-col items-center justify-center border border-gray-100"
+              className="cursor-pointer bg-gray-200 shadow-md hover:shadow-xl transition-all duration-300 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center border border-gray-100"
             >
-              {card.icon}
-              <h3 className="text-2xl font-semibold text-gray-800 mt-4">{card.title}</h3>
+              <div className="w-6 h-6 sm:w-8 sm:h-8">{card.icon}</div>
+              <h3 className="text-sm sm:text-base md:text-xl lg:text-2xl font-semibold text-gray-800 mt-2 sm:mt-4 text-center">{card.title}</h3>
             </motion.div>
           ))}
         </motion.div>
@@ -274,25 +274,25 @@ const PhilosophyPage: React.FC = () => {
             onClick={() => setActiveCard(null)}
           >
             <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[80vh]"
+              className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-md sm:max-w-lg md:max-w-xl w-full p-4 sm:p-6 relative overflow-y-auto max-h-[70vh] sm:max-h-[75vh]"
               variants={modalVariants}
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setActiveCard(null)}
-                className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+                className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
               {/* Icon and Heading in a single line */}
-              <div className="flex items-center gap-4 mb-6 border-b pb-3">
-                {selectedCard.icon}
-                <h3 className="text-3xl font-semibold text-gray-800">{selectedCard.title}</h3>
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 border-b pb-2">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0">{selectedCard.icon}</div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">{selectedCard.title}</h3>
               </div>
 
               {/* Content */}
-              <div className="text-left">{selectedCard.content}</div>
+              <div className="text-left text-sm sm:text-base">{selectedCard.content}</div>
             </motion.div>
           </motion.div>
         )}

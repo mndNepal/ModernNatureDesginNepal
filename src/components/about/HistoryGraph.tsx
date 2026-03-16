@@ -20,30 +20,32 @@ const data = [
 const HistoryGraph: React.FC = () => {
   return (
     <>
-      <div className="bg-white shadow-md rounded-2xl p-6 mt-10 mb-10">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
+      <div className="bg-white shadow-md rounded-xl sm:rounded-2xl p-2 pt-4 sm:pt-6">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4 text-center">
           MND Nepal Growth Timeline
         </h3>
-        <ResponsiveContainer width="100%" height={580}>
-          <LineChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip
-              formatter={(value, name, props) => [
-                `${value} rugs`,
-                props.payload.milestone,
-              ]}
-            />
-            <Line
-              type="monotone"
-              dataKey="rugs"
-              stroke="#14b8a6"
-              strokeWidth={3}
-              dot={{ r: 6 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+        <div className="w-full md:w-[85%] md:mx-auto h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[450px] 2xl:h-[600px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="year" tick={{ fontSize: 12 }} />
+              <YAxis tick={{ fontSize: 12 }} />
+              <Tooltip
+                formatter={(value, name, props) => [
+                  `${value} rugs`,
+                  props.payload.milestone,
+                ]}
+              />
+              <Line
+                type="monotone"
+                dataKey="rugs"
+                stroke="#14b8a6"
+                strokeWidth={2}
+                dot={{ r: 4 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* <p className="text-gray-600 text-lg md:text-xl leading-relaxed">

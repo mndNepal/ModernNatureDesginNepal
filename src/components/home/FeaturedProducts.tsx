@@ -246,9 +246,8 @@ export default function FeaturedProducts() {
       <Container>
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <SectionHeading
-            title="The Rugs Everyone's Talking About - Hand Knotted for You"
-            className="mb-6 lg:mb-14 whitespace-nowrap text-[clamp(14px,4vw,24px)]"
-
+            title="The Rugs Everyone's Talking About — Hand Knotted for You"
+            className="mb-6 lg:mb-14 text-center"
           />
         </div>
 

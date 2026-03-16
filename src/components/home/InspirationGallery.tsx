@@ -22,9 +22,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/inspiration2.jpg",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/inspiration2_1.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/inspiration2_3.jpg",
-    inspirationDesc: "From the trail to creation — inspired by a timeless moment at Gokyo Lake.",
-    translationDesc: "Transforming natural forms into artistic language — woven into a rug.",
-    finishedDesc: "A meticulously hand-knotted masterpiece brought to life by skilled Nepalese artisans.",
+    inspirationDesc: "From the trail to creation — inspired by Gokyo Lake's beauty.",
+    translationDesc: "Transforming natural forms into artistic language — woven into timeless rugs.",
+    finishedDesc: "A hand-knotted masterpiece crafted by skilled artisans.",
   },
   {
     id: "m2",
@@ -33,9 +33,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/manaslu.jpg",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/manaslu1.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/manaslu3.jpg",
-    inspirationDesc: "A meditative weave born from Himalayan temples.",
-    translationDesc: "From raw earth to refined expressions.",
-    finishedDesc: "A testment to precision, passion, and Nepali craftsmanship.",
+    inspirationDesc: "A meditative weave born from the sacred beauty of Himalayan temples.",
+    translationDesc: "From raw earth to refined artistic expressions of timeless design.",
+    finishedDesc: "A testament to precision, passion, and the finest Nepali craftsmanship.",
   },
 
   {
@@ -45,9 +45,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Pancha Kunda Photo.JPG",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/Pancha Kunda 1.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/panchkunda1.jpg",
-    inspirationDesc: "Are  reflection of Panchakunda Lake's still waters and spiritual calm -woven into luxury.",
-    translationDesc: "Panchakunda Lake's crystal calm and himalayan power, woven into timeless design.",
-    finishedDesc: "From loom to living room pure elegance underfoot.",
+    inspirationDesc: "A reflection of Panchakunda Lake's still waters and spiritual calm.",
+    translationDesc: "Panchakunda's crystal calm and Himalayan power, woven into timeless design.",
+    finishedDesc: "From loom to living room — pure elegance woven underfoot.",
   },
 
   {
@@ -57,9 +57,9 @@ const ITEMS: Item[] = [
     photo: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar3.jpg",
     design: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar.jpg",
     carpet: "https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/extra_images/tihar1.jpg",
-    inspirationDesc: "An abstract celebration of Tihar's soulful energy.",
-    translationDesc: "Where organic beauty becomes woven expression. ",
-    finishedDesc: "An heirloom-level rug, born from Nepal's finest hands",
+    inspirationDesc: "An abstract celebration of Tihar's vibrant colors and soulful energy.",
+    translationDesc: "Where organic beauty and tradition become woven artistic expression.",
+    finishedDesc: "An heirloom-quality rug, handcrafted by Nepal's finest artisans.",
   },
 ];
 
@@ -79,30 +79,30 @@ export default function InspirationGalleryMinimal() {
   const item = ITEMS[index];
 
   return (
-    <div className="w-full bg-[#f7f7f7] py-20 relative overflow-hidden -ml-[15px]">
+    <div className="w-full bg-[#f7f7f7] py-12 md:py-16 relative overflow-hidden">
 
-      {/* LEFT ARROW — OUTSIDE */}
+      {/* LEFT ARROW */}
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full 
-                   z-20 p-3 rounded-full bg-white shadow hover:shadow-lg transition"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 
+                   z-20 p-1.5 md:p-2 rounded-full bg-white/90 shadow hover:shadow-lg transition"
       >
-        <ChevronLeft size={26} />
+        <ChevronLeft size={18} className="md:w-5 md:h-5" />
       </button>
 
-      {/* RIGHT ARROW — OUTSIDE */}
+      {/* RIGHT ARROW */}
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full 
-                   z-20 p-3 rounded-full bg-white shadow hover:shadow-lg transition"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 
+                   z-20 p-1.5 md:p-2 rounded-full bg-white/90 shadow hover:shadow-lg transition"
       >
-        <ChevronRight size={26} />
+        <ChevronRight size={18} className="md:w-5 md:h-5" />
       </button>
 
-      <div className="w-[90%] mx-auto px-4">
-        <div className="mb-14">
-          <h2 className="text-center text-4xl md:text-3xl font-extrabold mt-1 leading-tight">
-            From Nature’s Palette to Timeless Hand-Knotted Rugs
+      <div className="w-[92%] mx-auto px-3 md:px-4">
+        <div className="mb-6 md:mb-10">
+          <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold leading-tight">
+            From Nature's Palette to Timeless Hand-Knotted Rugs
           </h2>
         </div>
 
@@ -113,22 +113,22 @@ export default function InspirationGalleryMinimal() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="grid grid-cols-1 md:grid-cols-3"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-6 lg:mt-[170px]"
           >
             {/* LEFT COLUMN */}
-            <div className="space-y-6 text-center md:text-left mt-10">
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
-                  <span className="text-xl">▲</span>
+            <div className="space-y-4 text-center md:text-left">
+              <div className="flex flex-col items-center md:items-start gap-1.5">
+                <div className="w-8 h-8 border rounded-full flex items-center justify-center text-gray-700">
+                  <span className="text-base">▲</span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-wide">INSPIRATION</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+                <h3 className="text-base font-semibold tracking-wide">INSPIRATION</h3>
+                <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
                   {item.inspirationDesc}
                 </p>
               </div>
 
               <motion.div
-                className="w-full max-w-sm md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full h-56 md:h-72 lg:h-72 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.photo} className="w-full h-full object-cover" />
@@ -136,39 +136,39 @@ export default function InspirationGalleryMinimal() {
             </div>
 
             {/* CENTER COLUMN */}
-            <div className="space-y-6 text-center md:ml-14">
+            <div className="flex flex-col-reverse md:flex-col gap-4 text-center">
               <motion.div
-                className="w-full max-w-xs md:w-[80%] mx-auto h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="mx-auto overflow-hidden rounded-lg shadow-md hover:shadow-xl transition h-[420px] md:h-[410px] lg:h-[570px] lg:-mt-[110px] w-[85%] md:w-[90%]"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.design} className="w-full h-full object-cover" />
               </motion.div>
 
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
-                  <span className="text-xl">✦</span>
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="w-8 h-8 border rounded-full flex items-center justify-center text-gray-700">
+                  <span className="text-base">✦</span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-wide">ARTISTIC TRANSLATION</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+                <h3 className="text-base font-semibold tracking-wide">ARTISTIC TRANSLATION</h3>
+                <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
                   {item.translationDesc}
                 </p>
               </div>
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="space-y-6 text-center md:text-right mt-10">
-              <div className="flex flex-col md:items-end gap-2">
-                <div className="w-10 h-10 border rounded-full flex items-center justify-center text-gray-700">
-                  <span className="text-xl">❉</span>
+            <div className="space-y-4 text-center md:text-right">
+              <div className="flex flex-col items-center md:items-end gap-1.5">
+                <div className="w-8 h-8 border rounded-full flex items-center justify-center text-gray-700">
+                  <span className="text-base">❉</span>
                 </div>
-                <h3 className="text-lg font-semibold tracking-wide">FINISHED CARPET</h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+                <h3 className="text-base font-semibold tracking-wide">FINISHED CARPET</h3>
+                <p className="text-gray-600 text-xs leading-relaxed max-w-xs mx-auto md:mx-0">
                   {item.finishedDesc}
                 </p>
               </div>
 
               <motion.div
-                className="w-full max-w-sm md:max-w-md lg:w-[500px] h-64 md:h-80 lg:h-[340px] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
+                className="w-full h-56 md:h-72 lg:h-72 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition"
                 whileHover={{ scale: 1.03 }}
               >
                 <img src={item.carpet} className="w-full h-full object-cover" />
@@ -178,12 +178,12 @@ export default function InspirationGalleryMinimal() {
         </AnimatePresence>
 
         {/* DOTS */}
-        <div className="flex justify-center gap-3 mt-10">
+        <div className="flex justify-center gap-2 mt-6 md:mt-8">
           {ITEMS.map((_, i) => (
             <motion.div
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${index === i ? "bg-black scale-125" : "bg-gray-400"
+              className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full cursor-pointer transition-all duration-300 ${index === i ? "bg-black scale-125" : "bg-gray-400"
                 }`}
               whileHover={{ scale: 1.3 }}
             ></motion.div>

@@ -10,6 +10,7 @@ import PhilosophyPage from "@/components/about/PhilosophyPage";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import WhyChooseUs from "@/components/about/WhyChooseUs";
 
 export default function About() {
   const location = useLocation();
@@ -29,19 +30,22 @@ export default function About() {
 
       <AboutUsPage />
 
-      <div className="flex flex-col lg:flex-row gap-8 w-[90%] mx-auto mb-10">
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-amber-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20">
+        <div className="flex flex-col xl:flex-row gap-8 w-full">
         {/* TARGET SCROLL SECTION */}
-        <div id="ourstory-section" className="w-full lg:w-45%">
+          <div id="ourstory-section" className="w-full xl:w-[48%]">
           <OurHistoryPage />
         </div>
 
-        <div className="w-full lg:w-45%">
+          <div className="w-full md:w-[70%] lg:w-[60%] xl:w-[48%] md:mx-auto xl:mx-0">
           <HistoryGraph />
         </div>
       </div>
+      </section>
 
-      <ProductionProcessPage />
       <DyingProcessPage />
+      <ProductionProcessPage />
+      <WhyChooseUs />
       <PhilosophyPage />
       <Footer />
     </div>

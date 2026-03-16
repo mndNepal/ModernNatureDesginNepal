@@ -134,46 +134,80 @@ export default function HeroSection() {
     };
   }, []);
 
-  // Image preloading
+  // Optimized image preloading - load first image immediately, others lazily
   useEffect(() => {
     const preloadImages = async () => {
-      const loadPromises = heroSlides.map((slide) => {
-        return new Promise<void>((resolve, reject) => {
+      // Load first image immediately for fast initial render
+      const firstSlide = heroSlides[0];
+      const firstImg = new Image();
+      firstImg.onload = () => {
+        setImageLoadStates(prev => ({ ...prev, [firstSlide.id]: true }));
+        setImagesPreloaded(true); // Allow render after first image loads
+      };
+      firstImg.onerror = () => {
+        setImageLoadStates(prev => ({ ...prev, [firstSlide.id]: false }));
+        setImagesPreloaded(true);
+      };
+      firstImg.src = firstSlide.image;
+
+      // Load remaining images in background after a delay
+      setTimeout(() => {
+        heroSlides.slice(1).forEach((slide) => {
           const img = new Image();
           img.onload = () => {
             setImageLoadStates(prev => ({ ...prev, [slide.id]: true }));
-            resolve();
           };
           img.onerror = () => {
             console.warn(`Failed to load image: ${slide.image}`);
             setImageLoadStates(prev => ({ ...prev, [slide.id]: false }));
-            resolve(); // Still resolve to not block other images
           };
           img.src = slide.image;
         });
-      });
-
-      try {
-        await Promise.all(loadPromises);
-        setImagesPreloaded(true);
-      } catch (error) {
-        console.error('Error preloading images:', error);
-        setImagesPreloaded(true); // Continue anyway
-      }
+      }, 1000); // Delay loading other images by 1 second
     };
 
     preloadImages();
   }, []);
 
-  // Autoplay functionality
+  // Autoplay functionality with visibility detection
   useEffect(() => {
     if (!imagesPreloaded) return;
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 7000);
+    let intervalId: ReturnType<typeof setInterval> | null = null;
 
-    return () => clearInterval(interval);
+    const startAutoplay = () => {
+      if (intervalId) return;
+      intervalId = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      }, 7000);
+    };
+
+    const stopAutoplay = () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Start autoplay if tab is visible
+    if (!document.hidden) {
+      startAutoplay();
+    }
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      stopAutoplay();
+    };
   }, [imagesPreloaded]);
 
   const goToSlide = (index: number) => {
@@ -199,7 +233,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20 md:pt-0"
     >
       {/* Background Images */}
       <div className="absolute inset-0">
@@ -226,6 +260,7 @@ export default function HeroSection() {
                 alt={slide.title}
                 className={`w-full text-center h-full object-cover transition-opacity duration-500 ${isLoaded !== false ? 'opacity-100' : 'opacity-75'
                   }`}
+                decoding="async"
                 onError={(e) => {
                   console.warn(`Image failed to load: ${slide.image}`);
                   const target = e.target as HTMLImageElement;
@@ -247,21 +282,21 @@ export default function HeroSection() {
 
       {/* Content */}
       <div ref={contentRef} className="relative z-10 w-full">
-        <div className="max-w-container mx-auto px-gutter">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="text-white">
-              <div className={`bg-charcoal/80 backdrop-blur-sm p-8 lg:p-12 rounded-lg transform transition-all duration-1000 ease-out ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
+            <div className="text-white relative z-20 flex justify-center md:justify-start px-6 md:px-0">
+              <div className={`bg-charcoal/90 backdrop-blur-md p-6 md:p-8 lg:p-12 rounded-2xl transform transition-all duration-1000 ease-out w-full ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
                 }`}>
-                <h1 className={`font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-4 transform transition-all duration-1000 delay-200 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                <h1 className={`font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6 transform transition-all duration-1000 delay-200 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                   {heroSlides[currentSlide].title}
                 </h1>
-                <h2 className={`text-xl md:text-2xl font-medium text-mint-green mb-6 transform transition-all duration-1000 delay-400 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                <h2 className={`text-lg md:text-xl lg:text-2xl font-medium text-mint-green mb-4 lg:mb-6 transform transition-all duration-1000 delay-400 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                   {heroSlides[currentSlide].subtitle}
                 </h2>
-                <p className={`text-lg leading-relaxed mb-8 text-off-white transform transition-all duration-1000 delay-600 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                <p className={`text-sm md:text-base lg:text-lg leading-relaxed text-off-white/90 transform transition-all duration-1000 delay-600 ease-out ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                   }`}>
                   {heroSlides[currentSlide].description}
                 </p>
@@ -273,20 +308,21 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right Content - Living Room Scene */}
-            <div className={` relative transform transition-all duration-1000 delay-300 ease-out ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
+            {/* Right Content - Rug Image */}
+            <div className={`relative transform transition-all duration-1000 delay-300 ease-out flex justify-center md:justify-center px-6 md:px-0 mt-6 md:mt-8 lg:mt-12 ${isContentVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
               }`}>
-              <div>
+              <div className="w-full max-w-[200px] md:max-w-[220px] lg:max-w-[280px] xl:max-w-[320px]">
                 {imagesPreloaded ? (
-                  <div className='md:m-0 md:p-0 m-0 p-4 md:pb-0'>
+                  <div className='shadow-2xl rounded-xl overflow-hidden'>
                     <img
                       src={imageLoadStates[heroSlides[currentSlide].id] !== false
                         ? heroinnerSlides[currentSlide].image
                         : 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
                       }
-                      alt={`${heroinnerSlides[currentSlide].title} - Cozy living room with handcrafted rug`}
-                      className={`w-full h-[450px] max-w-sm md:max-w-none object-scale-down rounded-lg transition-all duration-1000 ease-out hover:scale-105 ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
+                      alt={`${heroinnerSlides[currentSlide].title} - Handcrafted rug`}
+                      className={`w-full h-[340px] sm:h-[300px] md:h-[300px] lg:h-[380px] xl:h-[420px] object-cover transition-all duration-1000 ease-out ${imageLoadStates[heroSlides[currentSlide].id] !== false ? 'opacity-100' : 'opacity-75'
                         }`}
+                      decoding="async"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         const fallback = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
@@ -295,11 +331,10 @@ export default function HeroSection() {
                         }
                       }}
                     />
-
                   </div>
                 ) : (
-                  <div className="w-48 h-48 bg-charcoal/20 rounded-lg shadow-2xl flex items-center justify-center">
-                    <div className="w-6 h-6 border-2 border-mint-green border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-full h-96 bg-charcoal/20 rounded-xl shadow-2xl flex items-center justify-center">
+                    <div className="w-8 h-8 border-2 border-mint-green border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
               </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Minus, Plus, X } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -81,75 +81,98 @@ const carpets: Carpet[] = [
 { id: 'rug-067', name: 'Water Coin', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/WaterCoin.webp' },
 { id: 'rug-068', name: 'Water Lilies', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/WaterLilies.webp' },
 { id: 'rug-069', name: 'Weave', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Weave.webp' },
+{ id: 'rug-070', name: 'Kopila', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Kopila.webp' },
+{ id: 'rug-071', name: 'Chaal', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Chaal.webp' },
+{ id: 'rug-072', name: 'Ankha Nani', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/AnkhaNani.webp' },
+{ id: 'rug-073', name: 'Ilusion', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Ilusion.webp' },
+{ id: 'rug-074', name: 'Bloom', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Bloom.webp' },
+{ id: 'rug-075', name: 'Maya', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Maya.webp' },
+{ id: 'rug-076', name: 'Graha', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Graha.webp' },
+{ id: 'rug-077', name: 'Scale', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Scale.webp' },
+{ id: 'rug-078', name: 'Tulsi Bibaha', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/TulsiBibaha.webp' },
+{ id: 'rug-079', name: 'Pooja', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Pooja.webp' },
+{ id: 'rug-080', name: 'Trisul', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/Trisul.webp' },
+{ id: 'rug-081', name: 'Rose Garland', imageUrl: 'https://pub-c2cf1f77f6a849c7a4b53fbc7d6573d1.r2.dev/products/RoseGarland.webp' },
+
+
 ];
 
 const AllCollections: React.FC = () => {
   const [activeCarpet, setActiveCarpet] = useState<Carpet | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-  const itemsPerPage = 16;
+  const itemsPerPage = 20;
 
-  // Filter carpets based on search query - only match names that START with the exact search query
-  const filteredCarpets = carpets.filter((carpet) => {
-    if (searchQuery.trim() === "") return true; // Show all if search is empty
-    return carpet.name.toLowerCase().startsWith(searchQuery.toLowerCase());
-  });
+  // Memoize filtered carpets to prevent unnecessary recalculations
+  const filteredCarpets = useMemo(() => {
+    if (searchQuery.trim() === "") return carpets;
+    const query = searchQuery.toLowerCase();
+    return carpets.filter((carpet) => carpet.name.toLowerCase().startsWith(query));
+  }, [searchQuery]);
 
   const totalPages = Math.ceil(filteredCarpets.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentCarpets = filteredCarpets.slice(startIndex, endIndex);
+  
+  // Memoize current page carpets
+  const currentCarpets = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return filteredCarpets.slice(startIndex, endIndex);
+  }, [filteredCarpets, currentPage, itemsPerPage]);
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
-  };
+  }, []);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setCurrentPage(1); // Reset to first page when searching
-  };
+  }, []);
 
-  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
-  };
+  }, []);
 
-  const handlePrevious = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+  const handlePrevious = useCallback(() => {
+    setCurrentPage(prev => prev > 1 ? prev - 1 : prev);
+  }, []);
 
-  const handleNext = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
+  const handleNext = useCallback(() => {
+    setCurrentPage(prev => prev < totalPages ? prev + 1 : prev);
+  }, [totalPages]);
+
+  const handleCarpetClick = useCallback((carpet: Carpet) => {
+    setActiveCarpet(carpet);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setActiveCarpet(null);
+  }, []);
 
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-[#fdfdfb] py-20">
-        {/* Container with 80% width centered */}
-        <div className="w-4/5 mx-auto">
+      <section className="min-h-screen bg-[#fdfdfb] pt-20 pb-10 sm:py-20">
+        {/* Container with responsive width centered */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 [@media(min-width:768px)_and_(max-width:820px)]:w-[90%] [@media(min-width:768px)_and_(max-width:820px)]:px-2">
 
-          <div className="flex justify-between items-center mt-10 mb-10 px-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4 sm:mt-6 md:mt-10 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-4 max-w-[254.4px] sm:max-w-none mx-auto sm:mx-0">
             {/* Heading - Left */}
-            <h1 className="text-4xl md:text-4xl font-bold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
               All Collections
             </h1>
 
             {/* Search Input - Right */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 w-full sm:w-auto">
               <input
                 type="text"
                 placeholder="Search products"
                 value={searchQuery}
                 onChange={handleSearchInputChange}
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                className="border border-gray-900 rounded-lg px-3 py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-sm"
+                className="border border-gray-900 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 focus:outline-none focus:ring-gray-900 focus:border-gray-900 text-xs sm:text-sm flex-1 sm:flex-none sm:w-40 md:w-48"
               />
               <button 
                 onClick={handleSearch}
-                className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+                className="bg-gray-900 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-gray-700 transition text-xs sm:text-sm"
               >
                 Search
               </button>
@@ -157,22 +180,24 @@ const AllCollections: React.FC = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:768px)_and_(max-width:820px)]:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 [@media(min-width:768px)_and_(max-width:820px)]:gap-6 [@media(min-width:768px)_and_(max-width:820px)]:px-4">
             {currentCarpets.length > 0 ? (
               currentCarpets.map((carpet) => (
                 <motion.div
                   key={carpet.id}
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className="bg-gray-200 rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col"
-                  onClick={() => setActiveCarpet(carpet)}
+                  className="bg-gray-200 rounded-xl sm:rounded-2xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition flex flex-col max-w-[254.4px] sm:max-w-[240px] [@media(min-width:768px)_and_(max-width:820px)]:max-w-none md:max-w-[180px] lg:max-w-none mx-auto"
+                  onClick={() => handleCarpetClick(carpet)}
                 >
                   {/* Image now fills entire card width */}
-                  <div className="flex justify-center items-center bg-gray-200 h-[400px]">
+                  <div className="flex justify-center items-center bg-gray-200 h-[318px] sm:h-[260px] [@media(min-width:768px)_and_(max-width:820px)]:h-[320px] md:h-[240px] lg:h-[280px] xl:h-[380px]">
                     <img
                       src={carpet.imageUrl}
                       alt={carpet.name}
-                      className="w-full h-full"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 
@@ -193,20 +218,20 @@ const AllCollections: React.FC = () => {
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div className="flex justify-center items-center mt-10 space-x-2">
+            <div className="flex justify-center items-center mt-6 sm:mt-10 space-x-1 sm:space-x-2">
               <button
                 onClick={handlePrevious}
                 disabled={currentPage === 1}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
               >
-                Previous
+                Prev
               </button>
 
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
-                  className={`px-4 py-2 rounded-lg transition ${currentPage === index + 1
+                  className={`px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-lg transition ${currentPage === index + 1
                     ? 'bg-gray-800 text-white'
                     : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                     }`}
@@ -218,7 +243,7 @@ const AllCollections: React.FC = () => {
               <button
                 onClick={handleNext}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition"
               >
                 Next
               </button>
@@ -247,7 +272,7 @@ const AllCollections: React.FC = () => {
                 {/* Close Button */}
                 <div className="absolute top-0 right-0 m-2 bg-white rounded-full z-10">
                   <button
-                    onClick={() => setActiveCarpet(null)}
+                    onClick={handleCloseModal}
                     className="p-1 text-gray-600 hover:text-gray-900 transition"
                   >
                     <X size={24} />
