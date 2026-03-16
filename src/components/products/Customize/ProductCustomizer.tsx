@@ -405,7 +405,7 @@ const handleGoToAR = async () => {
                   />
                   <div className="text-xs sm:text-xs md:text-xs lg:text-sm">
                     <div className="font-medium">{layerName}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600 hidden sm:block">{colors[index + 1]}</div>
+                    {/* <div className="text-[10px] sm:text-xs text-gray-600 hidden sm:block">{colors[index + 1]}</div> */}
                   </div>
                 </div>
               ))}
